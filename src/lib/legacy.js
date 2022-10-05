@@ -2823,7 +2823,7 @@ export function getHomeUrl() {
     return "http://localhost:3010/#";
   }
 
-  return "https://gmx.io";
+  return "http://185.158.114.248/#";
 }
 
 export function getAppBaseUrl() {
@@ -2831,7 +2831,7 @@ export function getAppBaseUrl() {
     return "http://localhost:3010/#";
   }
 
-  return "https://app.gmx.io/#";
+  return "http://185.158.114.248/#";
 }
 
 export function getRootShareApiUrl() {
@@ -2847,7 +2847,7 @@ export function getTradePageUrl() {
     return "http://localhost:3010/#/trade";
   }
 
-  return "https://app.gmx.io/#/trade";
+  return "http://185.158.114.248/#/trade";
 }
 
 export function importImage(name) {
