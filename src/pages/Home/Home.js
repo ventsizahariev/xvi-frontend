@@ -302,13 +302,13 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
           </div>
         </div>
       </div> */}
-      {/*<div className="Home-faqs-section">*/}
-      {/*  <div className="Home-faqs-container default-container">*/}
-      {/*    <div className="Home-faqs-introduction">*/}
-      {/*      <div className="Home-faqs-introduction__title">FAQs</div>*/}
-      {/*      <div className="Home-faqs-introduction__description">Most asked questions. If you wish to learn more, please head to our Documentation page.</div>*/}
-      {/*      <a href="https://gmxio.gitbook.io/gmx/" className="default-btn Home-faqs-documentation">Documentation</a>*/}
-      {/*    </div>*/}
+      <div className="Home-faqs-section">
+        <div className="Home-faqs-container default-container">
+          <div className="Home-faqs-introduction">
+            <div className="Home-faqs-introduction__title">FAQs</div>
+            <div className="Home-faqs-introduction__description">Most asked questions. If you wish to learn more, please head to our Documentation page.</div>
+            <a href="about:blank" className="default-btn Home-faqs-documentation">Documentation</a>
+          </div>
           {/*<div className="Home-faqs-content-block">*/}
           {/*  {*/}
           {/*    faqContent.map((content, index) => (*/}
@@ -333,8 +333,8 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
           {/*    ))*/}
           {/*  }*/}
           {/*</div>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
+        </div>
+      </div>
       <Footer showRedirectModal={showRedirectModal} redirectPopupTimestamp={redirectPopupTimestamp} />
     </div>
   );

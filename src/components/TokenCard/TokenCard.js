@@ -69,17 +69,17 @@ export default function TokenCard({ showRedirectModal }) {
           <div className="Home-token-card-option-action">
             <div className="buy">
               <BuyLink to="/buy_leveragepro" className="default-btn" network={BSC_TESTNET}>
-                <Trans>Buy on BSC</Trans>
+                <Trans>Buy on Binance</Trans>
               </BuyLink>
             </div>
-            {/*<a*/}
-            {/*  href="https://gmxio.gitbook.io/gmx/tokenomics"*/}
-            {/*  target="_blank"*/}
-            {/*  rel="noreferrer"*/}
-            {/*  className="default-btn read-more"*/}
-            {/*>*/}
-            {/*  <Trans>Read more</Trans>*/}
-            {/*</a>*/}
+            <a
+              href="about:blank"
+              target="_blank"
+              rel="noreferrer"
+              className="default-btn read-more"
+            >
+              <Trans>Read more</Trans>
+            </a>
           </div>
         </div>
       </div>
@@ -98,20 +98,20 @@ export default function TokenCard({ showRedirectModal }) {
           <div className="Home-token-card-option-action">
             <div className="buy">
               <BuyLink to="/buy_glp" className="default-btn" network={BSC_TESTNET}>
-                <Trans>Buy on BSC</Trans>
+                <Trans>Buy on Binance</Trans>
               </BuyLink>
               {/*<BuyLink to="/buy_glp" className="default-btn" network={AVALANCHE}>*/}
               {/*  <Trans>Buy on Avalanche</Trans>*/}
               {/*</BuyLink>*/}
             </div>
-            {/*<a*/}
-            {/*  href="https://gmxio.gitbook.io/gmx/glp"*/}
-            {/*  target="_blank"*/}
-            {/*  rel="noreferrer"*/}
-            {/*  className="default-btn read-more"*/}
-            {/*>*/}
-            {/*  <Trans>Read more</Trans>*/}
-            {/*</a>*/}
+            <a
+              href="about:blank"
+              target="_blank"
+              rel="noreferrer"
+              className="default-btn read-more"
+            >
+              <Trans>Read more</Trans>
+            </a>
           </div>
         </div>
       </div>

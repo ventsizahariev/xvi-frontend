@@ -21,28 +21,28 @@ export default function Ecosystem() {
   const gmxPages = [
     {
       title: "LeveragePro Governance",
-      link: "https://gov.gmx.io/",
+      link: "about:blank",
       linkLabel: "gov.leveragepro.io",
       about: "LeveragePro Governance Page",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "LeveragePro Stats",
-      link: "https://stats.gmx.io/",
+      link: "about:blank",
       linkLabel: "stats.leveragepro.io",
       about: "LeveragePro Stats Page",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "LeveragePro Proposals",
-      link: "https://snapshot.org/#/gmx.eth",
+      link: "about:blank",
       linkLabel: "snapshot.org",
       about: "LeveragePro Proposals Voting page",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "LeveragePro Announcements",
-      link: "https://t.me/GMX_Announcements",
+      link: "about:blank",
       linkLabel: "t.me",
       about: "LeveragePro Announcements and Updates",
       chainIds: [BSC_TESTNET],
@@ -52,101 +52,101 @@ export default function Ecosystem() {
   const communityProjects = [
     {
       title: "LeveragePro Blueberry Club",
-      link: "https://www.blueberry.club/",
+      link: "about:blank",
       linkLabel: "blueberry.club",
       about: "LeveragePro Blueberry NFTs",
       creatorLabel: "@xm92boi",
-      creatorLink: "https://t.me/xm92boi",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "LeveragePro Leaderboard",
-      link: "https://www.gmx.house/",
+      link: "about:blank",
       linkLabel: "leveragepro.house",
       about: "Leaderboard for LeveragePro traders",
       creatorLabel: "@Itburnz",
-      creatorLink: "https://t.me/Itburnz",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "LeveragePro Positions Bot",
-      link: "https://t.me/GMXPositions",
+      link: "about:blank",
       linkLabel: "t.me",
       about: "Telegram bot for LeveragePro position updates",
       creatorLabel: "@zhongfu",
-      creatorLink: "https://t.me/zhongfu",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "Blueberry Pulse",
-      link: "https://blueberrypulse.substack.com/",
+      link: "about:blank",
       linkLabel: "substack.com",
       about: "LeveragePro Weekly Updates",
       creatorLabel: "@puroscohiba",
-      creatorLink: "https://t.me/puroscohiba",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "DegenClip",
-      link: "https://degenclip.com/gmx",
+      link: "about:blank",
       linkLabel: "degenclip.com",
       about: "Community curated tweet collection",
       creatorLabel: "@ox21l",
-      creatorLink: "https://t.me/ox21l",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "LeveragePro Yield Simulator",
-      link: "https://gmx.defisims.com/",
+      link: "about:blank",
       linkLabel: "defisims.com",
       about: "Yield simulator for LeveragePro",
       creatorLabel: "@kyzoeth",
-      creatorLink: "https://twitter.com/kyzoeth",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "LeveragePro Returns Calculator",
-      link: "https://docs.google.com/spreadsheets/u/4/d/1mQZlztz_NpTg5qQiYIzc_Ls1OTLfMOUtmEQN-WW8jj4/copy",
+      link: "about:blank",
       linkLabel: "docs.google.com",
       about: "Returns calculator for LeveragePro and GLP",
       creatorLabel: "@AStoicTrader1",
-      creatorLink: "https://twitter.com/AStoicTrader1",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "LeveragePro Compound Calculator",
-      link: "https://docs.google.com/spreadsheets/d/14DiIE1wZkK9-Y5xSx1PzIgmpcj4ccz1YVw5nwzIWLgI/edit#gid=0",
+      link: "about:blank",
       linkLabel: "docs.google.com",
       about: "Optimal compound interval calculator",
       creatorLabel: "@ChasenKaminsky",
-      creatorLink: "https://twitter.com/ChasenKaminsky",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "LeveragePro Trading Stats",
-      link: "https://t.me/GMXTradingStats",
+      link: "about:blank",
       linkLabel: "t.me",
       about: "Telegram bot for Open Interest on LeveragePro",
       creatorLabel: "@SniperMonke2",
-      creatorLink: "https://twitter.com/SniperMonke2",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "LeveragePro Staking Bot",
-      link: "https://t.me/GMX_Staking_bot",
+      link: "about:blank",
       linkLabel: "t.me",
       about: "LeveragePro staking rewards updates and insights",
       creatorLabel: "@LeveragePro_Staking_bot",
-      creatorLink: "https://twitter.com/GMX_Staking_bot",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "LeveragePro Staking Calculator",
-      link: "https://gmxstaking.com",
+      link: "about:blank",
       linkLabel: "leverageprostaking.com",
       about: "LeveragePro staking calculator",
       creatorLabel: "@n1njawtf",
-      creatorLink: "https://t.me/n1njawtf",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
   ];
@@ -154,74 +154,74 @@ export default function Ecosystem() {
   const dashboardProjects = [
     {
       title: "LeveragePro Referrals Dashboard",
-      link: "https://www.gmxreferrals.com/",
+      link: "about:blank",
       linkLabel: "LeverageProReferrals.com",
       about: "Dashboard for LeveragePro referral stats",
       creatorLabel: "@kyzoeth",
-      creatorLink: "https://twitter.com/kyzoeth",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "LeveragePro Terminal",
-      link: "https://gmxterminal.com",
+      link: "about:blank",
       linkLabel: "LeverageProTerminal.com",
       about: "LeveragePro explorer for stats and traders",
       creatorLabel: "@vipineth",
-      creatorLink: "https://t.me/vipineth",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "LeveragePro Analytics",
-      link: "https://gmxstats.com/",
+      link: "about:blank",
       linkLabel: "LeverageProStats.com",
       about: "Financial reports and protocol analytics",
       creatorLabel: "@CryptoMessiah",
-      creatorLink: "https://t.me/LarpCapital",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "TokenTerminal",
-      link: "https://tokenterminal.com/terminal/projects/gmx",
+      link: "about:blank",
       linkLabel: "tokenterminal.com",
       about: "LeveragePro fundamentals",
       creatorLabel: "@tokenterminal",
-      creatorLink: "https://twitter.com/tokenterminal",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "CryptoFees",
-      link: "https://cryptofees.info",
+      link: "about:blank",
       linkLabel: "cryptofees.info",
       about: "Fees generated by LeveragePro",
       creatorLabel: "@CryptoFeesInfo",
-      creatorLink: "https://twitter.com/CryptoFeesInfo",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "Shogun Dashboard (Dune Arbitrum)",
-      link: "https://dune.com/shogun/gmx-analytics-arbitrum",
+      link: "about:blank",
       linkLabel: "dune.com",
       about: "Protocol analytics",
       creatorLabel: "@JamesCliffyz",
-      creatorLink: "https://twitter.com/JamesCliffyz",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "Shogun Dashboard (Dune Avalanche)",
-      link: "https://dune.com/shogun/gmx-analytics-avalanche",
+      link: "about:blank",
       linkLabel: "dune.com",
       about: "Protocol analytics",
       creatorLabel: "@JamesCliffyz",
-      creatorLink: "https://twitter.com/JamesCliffyz",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
       title: "LeveragePro Perpetuals Data",
-      link: "https://app.laevitas.ch/altsderivs/GMX/perpetualswaps",
+      link: "about:blank",
       linkLabel: "laevitas.ch",
       about: "LeveragePro Perpetuals Data",
       creatorLabel: "@laevitas1",
-      creatorLink: "https://twitter.com/laevitas1",
+      creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
   ];
@@ -349,25 +349,25 @@ export default function Ecosystem() {
   const telegramGroups = [
     {
       title: "LeveragePro",
-      link: "https://t.me/GMX_IO",
+      link: "about:blank",
       linkLabel: "t.me",
       about: "Telegram Group",
     },
     {
       title: "LeveragePro (Chinese)",
-      link: "https://t.me/gmxch",
+      link: "about:blank",
       linkLabel: "t.me",
       about: "Telegram Group (Chinese)",
     },
     {
       title: "LeveragePro (Portuguese)",
-      link: "https://t.me/GMX_Portuguese",
+      link: "about:blank",
       linkLabel: "t.me",
       about: "Telegram Group (Portuguese)",
     },
     {
       title: "LeveragePro Trading Chat",
-      link: "https://t.me/gambittradingchat",
+      link: "about:blank",
       linkLabel: "t.me",
       about: "LeveragePro community discussion",
     },
@@ -389,150 +389,150 @@ export default function Ecosystem() {
             </div>
           </div>
           <div className="DashboardV2-projects">
-            {/*{gmxPages.map((item) => {*/}
-            {/*  const linkLabel = item.linkLabel ? item.linkLabel : item.link;*/}
-            {/*  return (*/}
-            {/*    <div className="App-card" key={item.title}>*/}
-            {/*      <div className="App-card-title">*/}
-            {/*        {item.title}*/}
-            {/*        <div className="App-card-title-icon">*/}
-            {/*          {item.chainIds.map((network) => (*/}
-            {/*            <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />*/}
-            {/*          ))}*/}
-            {/*        </div>*/}
-            {/*      </div>*/}
-            {/*      <div className="App-card-divider"></div>*/}
-            {/*      <div className="App-card-content">*/}
-            {/*        <div className="App-card-row">*/}
-            {/*          <div className="label">*/}
-            {/*            <Trans>Link</Trans>*/}
-            {/*          </div>*/}
-            {/*          <div>*/}
-            {/*            <a href={item.link} target="_blank" rel="noopener noreferrer">*/}
-            {/*              {linkLabel}*/}
-            {/*            </a>*/}
-            {/*          </div>*/}
-            {/*        </div>*/}
-            {/*        <div className="App-card-row">*/}
-            {/*          <div className="label">*/}
-            {/*            <Trans>About</Trans>*/}
-            {/*          </div>*/}
-            {/*          <div>{item.about}</div>*/}
-            {/*        </div>*/}
-            {/*      </div>*/}
-            {/*    </div>*/}
-            {/*  );*/}
-            {/*})}*/}
+            {gmxPages.map((item) => {
+              const linkLabel = item.linkLabel ? item.linkLabel : item.link;
+              return (
+                <div className="App-card" key={item.title}>
+                  <div className="App-card-title">
+                    {item.title}
+                    <div className="App-card-title-icon">
+                      {item.chainIds.map((network) => (
+                        <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="App-card-divider"></div>
+                  <div className="App-card-content">
+                    <div className="App-card-row">
+                      <div className="label">
+                        <Trans>Link</Trans>
+                      </div>
+                      <div>
+                        <a href={item.link} target="_blank" rel="noopener noreferrer">
+                          {linkLabel}
+                        </a>
+                      </div>
+                    </div>
+                    <div className="App-card-row">
+                      <div className="label">
+                        <Trans>About</Trans>
+                      </div>
+                      <div>{item.about}</div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-          {/*<div className="Tab-title-section">*/}
-          {/*  <div className="Page-title">*/}
-          {/*    <Trans>Community Projects</Trans>*/}
-          {/*  </div>*/}
-          {/*  <div className="Page-description">*/}
-          {/*    <Trans>Projects developed by the LeveragePro community.</Trans>*/}
-          {/*  </div>*/}
-          {/*</div>*/}
-          {/*<div className="DashboardV2-projects">*/}
-          {/*  {communityProjects.map((item) => {*/}
-          {/*    const linkLabel = item.linkLabel ? item.linkLabel : item.link;*/}
-          {/*    return (*/}
-          {/*      <div className="App-card" key={item.title}>*/}
-          {/*        <div className="App-card-title">*/}
-          {/*          {item.title}*/}
-          {/*          <div className="App-card-title-icon">*/}
-          {/*            {item.chainIds.map((network) => (*/}
-          {/*              <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />*/}
-          {/*            ))}*/}
-          {/*          </div>*/}
-          {/*        </div>*/}
-          {/*        <div className="App-card-divider"></div>*/}
-          {/*        <div className="App-card-content">*/}
-          {/*          <div className="App-card-row">*/}
-          {/*            <div className="label">*/}
-          {/*              <Trans>Link</Trans>*/}
-          {/*            </div>*/}
-          {/*            <div>*/}
-          {/*              <a href={item.link} target="_blank" rel="noopener noreferrer">*/}
-          {/*                {linkLabel}*/}
-          {/*              </a>*/}
-          {/*            </div>*/}
-          {/*          </div>*/}
-          {/*          <div className="App-card-row">*/}
-          {/*            <div className="label">*/}
-          {/*              <Trans>About</Trans>*/}
-          {/*            </div>*/}
-          {/*            <div>{item.about}</div>*/}
-          {/*          </div>*/}
-          {/*          <div className="App-card-row">*/}
-          {/*            <div className="label">*/}
-          {/*              <Trans>Creator</Trans>*/}
-          {/*            </div>*/}
-          {/*            <div>*/}
-          {/*              <a href={item.creatorLink} target="_blank" rel="noopener noreferrer">*/}
-          {/*                {item.creatorLabel}*/}
-          {/*              </a>*/}
-          {/*            </div>*/}
-          {/*          </div>*/}
-          {/*        </div>*/}
-          {/*      </div>*/}
-          {/*    );*/}
-          {/*  })}*/}
-          {/*</div>*/}
-          {/*<div className="Tab-title-section">*/}
-          {/*  <div className="Page-title">*/}
-          {/*    <Trans>Dashboards</Trans>*/}
-          {/*  </div>*/}
-          {/*  <div className="Page-description">*/}
-          {/*    <Trans>LeveragePro dashboards and analytics.</Trans>*/}
-          {/*  </div>*/}
-          {/*</div>*/}
-          {/*<div className="DashboardV2-projects">*/}
-          {/*  {dashboardProjects.map((item) => {*/}
-          {/*    const linkLabel = item.linkLabel ? item.linkLabel : item.link;*/}
-          {/*    return (*/}
-          {/*      <div className="App-card" key={item.title}>*/}
-          {/*        <div className="App-card-title">*/}
-          {/*          {item.title}*/}
-          {/*          <div className="App-card-title-icon">*/}
-          {/*            {item.chainIds.map((network) => (*/}
-          {/*              <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />*/}
-          {/*            ))}*/}
-          {/*          </div>*/}
-          {/*        </div>*/}
+          <div className="Tab-title-section">
+            <div className="Page-title">
+              <Trans>Community Projects</Trans>
+            </div>
+            <div className="Page-description">
+              <Trans>Projects developed by the LeveragePro community.</Trans>
+            </div>
+          </div>
+          <div className="DashboardV2-projects">
+            {communityProjects.map((item) => {
+              const linkLabel = item.linkLabel ? item.linkLabel : item.link;
+              return (
+                <div className="App-card" key={item.title}>
+                  <div className="App-card-title">
+                    {item.title}
+                    <div className="App-card-title-icon">
+                      {item.chainIds.map((network) => (
+                        <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="App-card-divider"></div>
+                  <div className="App-card-content">
+                    <div className="App-card-row">
+                      <div className="label">
+                        <Trans>Link</Trans>
+                      </div>
+                      <div>
+                        <a href={item.link} target="_blank" rel="noopener noreferrer">
+                          {linkLabel}
+                        </a>
+                      </div>
+                    </div>
+                    <div className="App-card-row">
+                      <div className="label">
+                        <Trans>About</Trans>
+                      </div>
+                      <div>{item.about}</div>
+                    </div>
+                    <div className="App-card-row">
+                      <div className="label">
+                        <Trans>Creator</Trans>
+                      </div>
+                      <div>
+                        <a href={item.creatorLink} target="_blank" rel="noopener noreferrer">
+                          {item.creatorLabel}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="Tab-title-section">
+            <div className="Page-title">
+              <Trans>Dashboards</Trans>
+            </div>
+            <div className="Page-description">
+              <Trans>LeveragePro dashboards and analytics.</Trans>
+            </div>
+          </div>
+          <div className="DashboardV2-projects">
+            {dashboardProjects.map((item) => {
+              const linkLabel = item.linkLabel ? item.linkLabel : item.link;
+              return (
+                <div className="App-card" key={item.title}>
+                  <div className="App-card-title">
+                    {item.title}
+                    <div className="App-card-title-icon">
+                      {item.chainIds.map((network) => (
+                        <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
+                      ))}
+                    </div>
+                  </div>
 
-          {/*        <div className="App-card-divider"></div>*/}
-          {/*        <div className="App-card-content">*/}
-          {/*          <div className="App-card-row">*/}
-          {/*            <div className="label">*/}
-          {/*              <Trans>Link</Trans>*/}
-          {/*            </div>*/}
-          {/*            <div>*/}
-          {/*              <a href={item.link} target="_blank" rel="noopener noreferrer">*/}
-          {/*                {linkLabel}*/}
-          {/*              </a>*/}
-          {/*            </div>*/}
-          {/*          </div>*/}
-          {/*          <div className="App-card-row">*/}
-          {/*            <div className="label">*/}
-          {/*              <Trans>About</Trans>*/}
-          {/*            </div>*/}
-          {/*            <div>{item.about}</div>*/}
-          {/*          </div>*/}
-          {/*          <div className="App-card-row">*/}
-          {/*            <div className="label">*/}
-          {/*              <Trans>Creator</Trans>*/}
-          {/*            </div>*/}
-          {/*            <div>*/}
-          {/*              <a href={item.creatorLink} target="_blank" rel="noopener noreferrer">*/}
-          {/*                {item.creatorLabel}*/}
-          {/*              </a>*/}
-          {/*            </div>*/}
-          {/*          </div>*/}
-          {/*        </div>*/}
-          {/*      </div>*/}
-          {/*    );*/}
-          {/*  })}*/}
-          {/*</div>*/}
+                  <div className="App-card-divider"></div>
+                  <div className="App-card-content">
+                    <div className="App-card-row">
+                      <div className="label">
+                        <Trans>Link</Trans>
+                      </div>
+                      <div>
+                        <a href={item.link} target="_blank" rel="noopener noreferrer">
+                          {linkLabel}
+                        </a>
+                      </div>
+                    </div>
+                    <div className="App-card-row">
+                      <div className="label">
+                        <Trans>About</Trans>
+                      </div>
+                      <div>{item.about}</div>
+                    </div>
+                    <div className="App-card-row">
+                      <div className="label">
+                        <Trans>Creator</Trans>
+                      </div>
+                      <div>
+                        <a href={item.creatorLink} target="_blank" rel="noopener noreferrer">
+                          {item.creatorLabel}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
           {/*<div className="Tab-title-section">*/}
           {/*  <div className="Page-title">*/}
           {/*    <Trans>Partnerships and Integrations</Trans>*/}
@@ -587,43 +587,43 @@ export default function Ecosystem() {
           {/*    );*/}
           {/*  })}*/}
           {/*</div>*/}
-          {/*<div className="Tab-title-section">*/}
-          {/*  <div className="Page-title">*/}
-          {/*    <Trans>Telegram Groups</Trans>*/}
-          {/*  </div>*/}
-          {/*  <div className="Page-description">*/}
-          {/*    <Trans>Community-led Telegram groups.</Trans>*/}
-          {/*  </div>*/}
-          {/*</div>*/}
-          {/*<div className="DashboardV2-projects">*/}
-          {/*  {telegramGroups.map((item) => {*/}
-          {/*    const linkLabel = item.linkLabel ? item.linkLabel : item.link;*/}
-          {/*    return (*/}
-          {/*      <div className="App-card" key={item.title}>*/}
-          {/*        <div className="App-card-title">{item.title}</div>*/}
-          {/*        <div className="App-card-divider"></div>*/}
-          {/*        <div className="App-card-content">*/}
-          {/*          <div className="App-card-row">*/}
-          {/*            <div className="label">*/}
-          {/*              <Trans>Link</Trans>*/}
-          {/*            </div>*/}
-          {/*            <div>*/}
-          {/*              <a href={item.link} target="_blank" rel="noopener noreferrer">*/}
-          {/*                {linkLabel}*/}
-          {/*              </a>*/}
-          {/*            </div>*/}
-          {/*          </div>*/}
-          {/*          <div className="App-card-row">*/}
-          {/*            <div className="label">*/}
-          {/*              <Trans>About</Trans>*/}
-          {/*            </div>*/}
-          {/*            <div>{item.about}</div>*/}
-          {/*          </div>*/}
-          {/*        </div>*/}
-          {/*      </div>*/}
-          {/*    );*/}
-          {/*  })}*/}
-          {/*</div>*/}
+          <div className="Tab-title-section">
+            <div className="Page-title">
+              <Trans>Telegram Groups</Trans>
+            </div>
+            <div className="Page-description">
+              <Trans>Community-led Telegram groups.</Trans>
+            </div>
+          </div>
+          <div className="DashboardV2-projects">
+            {telegramGroups.map((item) => {
+              const linkLabel = item.linkLabel ? item.linkLabel : item.link;
+              return (
+                <div className="App-card" key={item.title}>
+                  <div className="App-card-title">{item.title}</div>
+                  <div className="App-card-divider"></div>
+                  <div className="App-card-content">
+                    <div className="App-card-row">
+                      <div className="label">
+                        <Trans>Link</Trans>
+                      </div>
+                      <div>
+                        <a href={item.link} target="_blank" rel="noopener noreferrer">
+                          {linkLabel}
+                        </a>
+                      </div>
+                    </div>
+                    <div className="App-card-row">
+                      <div className="label">
+                        <Trans>About</Trans>
+                      </div>
+                      <div>{item.about}</div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
         <Footer />
       </div>

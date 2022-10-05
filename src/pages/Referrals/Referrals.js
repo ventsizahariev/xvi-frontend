@@ -120,23 +120,23 @@ function Referrals({ connectWallet, setPendingTxns, pendingTxns }) {
             <div className="Page-title">
               <Trans>Referrals</Trans>
             </div>
-            {/*<div className="Page-description">*/}
-            {/*  <Trans>*/}
-            {/*    Get fee discounts and earn rebates through the LeveragePro referral program.*/}
-            {/*    <br />*/}
-            {/*    For more information, please read the{" "}*/}
-            {/*    <a target="_blank" rel="noopener noreferrer" href="https://gmxio.gitbook.io/gmx/referrals">*/}
-            {/*      referral program details*/}
-            {/*    </a>*/}
-            {/*    .*/}
-            {/*  </Trans>*/}
-            {/*</div>*/}
+            <div className="Page-description">
+              <Trans>
+                Get fee discounts and earn rebates through the LeveragePro referral program.
+                <br />
+                For more information, please read the{" "}
+                <a target="_blank" rel="noopener noreferrer" href="about:blank">
+                  referral program details
+                </a>
+                .
+              </Trans>
+            </div>
           </div>
         </div>
-        {/*<div className="referral-tab-container">*/}
-        {/*  <Tab options={TAB_OPTIONS} option={activeTab} setOption={setActiveTab} onChange={setActiveTab} />*/}
-        {/*</div>*/}
-        {/*{activeTab === AFFILIATES ? renderAffiliatesTab() : renderTradersTab()}*/}
+        <div className="referral-tab-container">
+          <Tab options={TAB_OPTIONS} option={activeTab} setOption={setActiveTab} onChange={setActiveTab} />
+        </div>
+        {activeTab === AFFILIATES ? renderAffiliatesTab() : renderTradersTab()}
       </div>
       <Footer />
     </SEO>
