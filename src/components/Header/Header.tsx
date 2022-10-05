@@ -5,7 +5,7 @@ import { AppHeaderUser } from "./AppHeaderUser";
 import { HeaderLink } from "./HeaderLink";
 import { AppHeaderLinks } from "./AppHeaderLinks";
 
-import logoImg from "../../img/logo_GMX.svg";
+import logoImg from "../../img/ic_gmx_custom.svg";
 import logoSmallImg from "../../img/logo_GMX_small.svg";
 import { RiMenuLine } from "react-icons/ri";
 import { FaTimes } from "react-icons/fa";
@@ -37,11 +37,11 @@ type Props = {
 };
 
 export function Header({
-   disconnectAccountAndCloseSettings,
-   openSettings,
-   setWalletModalVisible,
-   redirectPopupTimestamp,
-   showRedirectModal
+  disconnectAccountAndCloseSettings,
+  openSettings,
+  setWalletModalVisible,
+  redirectPopupTimestamp,
+  showRedirectModal
 }: Props) {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false);
   const [isNativeSelectorModalVisible, setIsNativeSelectorModalVisible] = useState(false);
@@ -101,8 +101,11 @@ export function Header({
               redirectPopupTimestamp={redirectPopupTimestamp}
               showRedirectModal={showRedirectModal}
             >
-              <img src={logoImg} className="big" alt="GMX Logo" />
               <img src={logoSmallImg} className="small" alt="GMX Logo" />
+              <span style={{ fontSize: 28, color: "white" }}>
+                <img src={logoImg} className="big" alt="GMX Logo" style={{ height: 24 }} />
+                &nbsp;LeveragePro
+              </span>
             </HeaderLink>
             <AppHeaderLinks redirectPopupTimestamp={redirectPopupTimestamp} showRedirectModal={showRedirectModal} />
           </div>

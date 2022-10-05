@@ -1,13 +1,12 @@
-import { useWeb3React } from "@web3-react/core";
+import {useWeb3React} from "@web3-react/core";
 import AddressDropdown from "../AddressDropdown/AddressDropdown";
-import { ConnectWalletButton } from "../Common/Button";
-import React, { useCallback, useEffect } from "react";
-import { HeaderLink } from "./HeaderLink";
+import {ConnectWalletButton} from "../Common/Button";
+import React, {useCallback, useEffect} from "react";
+import {HeaderLink} from "./HeaderLink";
 import connectWalletImg from "../../img/ic_wallet_24.svg";
 
 import "./Header.css";
-import { isHomeSite, ARBITRUM, AVALANCHE, getAccountUrl, getChainName,  switchNetwork, useChainId } from "../../lib/legacy";
-import {ARBITRUM_TESTNET, isDevelopment} from "../../lib/legacy";
+import {BSC, BSC_TESTNET, getAccountUrl, getChainName, isHomeSite, switchNetwork, useChainId} from "../../lib/legacy";
 import cx from "classnames";
 import {Trans} from "@lingui/macro";
 import NetworkDropdown from "../NetworkDropdown/NetworkDropdown";
@@ -35,27 +34,39 @@ export function AppHeaderUser({
   const showConnectionOptions = !isHomeSite();
 
   const networkOptions = [
+    // {
+    //   label: getChainName(ARBITRUM),
+    //   value: ARBITRUM,
+    //   icon: "ic_arbitrum_24.svg",
+    //   color: "#264f79",
+    // },
+    // {
+    //   label: getChainName(AVALANCHE),
+    //   value: AVALANCHE,
+    //   icon: "ic_avalanche_24.svg",
+    //   color: "#E841424D",
+    // },
     {
-      label: getChainName(ARBITRUM),
-      value: ARBITRUM,
-      icon: "ic_arbitrum_24.svg",
+      label: getChainName(BSC),
+      value: BSC,
+      icon: "ic_binance_logo.svg",
       color: "#264f79",
     },
     {
-      label: getChainName(AVALANCHE),
-      value: AVALANCHE,
-      icon: "ic_avalanche_24.svg",
-      color: "#E841424D",
-    },
+      label: getChainName(BSC_TESTNET),
+      value: BSC_TESTNET,
+      icon: "ic_binance_logo.svg",
+      color: "#264f79",
+    }
   ];
-  if (isDevelopment()) {
-    networkOptions.push({
-      label: getChainName(ARBITRUM_TESTNET),
-      value: ARBITRUM_TESTNET,
-      icon: "ic_arbitrum_24.svg",
-      color: "#264f79",
-    });
-  }
+  // if (isDevelopment()) {
+  //   networkOptions.push({
+  //     label: getChainName(ARBITRUM_TESTNET),
+  //     value: ARBITRUM_TESTNET,
+  //     icon: "ic_arbitrum_24.svg",
+  //     color: "#264f79",
+  //   });
+  // }
 
   useEffect(() => {
     if (active) {

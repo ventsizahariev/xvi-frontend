@@ -7,7 +7,7 @@ import {
 import { toast } from "react-toastify";
 import { useWeb3React, UnsupportedChainIdError } from "@web3-react/core";
 import { useLocalStorage } from "react-use";
-import { ethers } from "ethers";
+import { errors, ethers } from "ethers";
 import { format as formatDateFn } from "date-fns";
 import Token from "../abis/Token.json";
 import _ from "lodash";
@@ -18,6 +18,7 @@ import OrderBookReader from "../abis/OrderBookReader.json";
 import OrderBook from "../abis/OrderBook.json";
 
 import { getWhitelistedTokens, isValidToken } from "../config/Tokens";
+import { AiOutlineConsoleSql } from "react-icons/ai";
 
 const { AddressZero } = ethers.constants;
 
@@ -26,13 +27,13 @@ export const UI_VERSION = "1.3";
 // use a random placeholder account instead of the zero address as the zero address might have tokens
 export const PLACEHOLDER_ACCOUNT = ethers.Wallet.createRandom().address;
 
-export const MAINNET = 56;
+export const BSC = 56;
 export const AVALANCHE = 43114;
-export const TESTNET = 97;
+export const BSC_TESTNET = 97;
 export const ARBITRUM_TESTNET = 421611;
 export const ARBITRUM = 42161;
 // TODO take it from web3
-export const DEFAULT_CHAIN_ID = ARBITRUM;
+export const DEFAULT_CHAIN_ID = BSC_TESTNET;
 export const CHAIN_ID = DEFAULT_CHAIN_ID;
 
 export const MIN_PROFIT_TIME = 0;
@@ -42,11 +43,13 @@ const SELECTED_NETWORK_LOCAL_STORAGE_KEY = "SELECTED_NETWORK";
 export const IS_NETWORK_DISABLED = {
   [ARBITRUM]: false,
   [AVALANCHE]: false,
+  [BSC]: false,
+  [BSC_TESTNET]: false
 };
 
 const CHAIN_NAMES_MAP = {
-  [MAINNET]: "BSC",
-  [TESTNET]: "BSC Testnet",
+  [BSC]: "BSC",
+  [BSC_TESTNET]: "BSCTestnet",
   [ARBITRUM_TESTNET]: "ArbRinkeby",
   [ARBITRUM]: "Arbitrum",
   [AVALANCHE]: "Avalanche",
@@ -55,10 +58,12 @@ const CHAIN_NAMES_MAP = {
 const GAS_PRICE_ADJUSTMENT_MAP = {
   [ARBITRUM]: "0",
   [AVALANCHE]: "3000000000", // 3 gwei
+  [BSC_TESTNET]: "200000000",
 };
 
 const MAX_GAS_PRICE_MAP = {
   [AVALANCHE]: "200000000000", // 200 gwei
+  [BSC_TESTNET]: "2000000000",
 };
 
 const alchemyWhitelistedDomains = ["gmx.io", "app.gmx.io"];
@@ -270,6 +275,78 @@ export const ICONLINKS = {
       avalanche: "https://snowtrace.io/address/0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e",
     },
   },
+  [BSC_TESTNET]: {
+    GMX: {
+      coingecko: "https://www.coingecko.com/en/coins/gmx",
+      bsctestnet: "https://snowtrace.io/address/0x62edc0692bd897d2295872a9ffcac5425011c661",
+    },
+    GLP: {
+      bsctestnet: "https://snowtrace.io/address/0x9e295B5B976a184B14aD8cd72413aD846C299660",
+    },
+    AVAX: {
+      coingecko: "https://www.coingecko.com/en/coins/bsctestnet",
+    },
+    ETH: {
+      coingecko: "https://www.coingecko.com/en/coins/weth",
+      bsctestnet: "https://snowtrace.io/address/0x49d5c2bdffac6ce2bfdb6640f4f80f226bc10bab",
+    },
+    BTC: {
+      coingecko: "https://www.coingecko.com/en/coins/wrapped-bitcoin",
+      bsctestnet: "https://snowtrace.io/address/0x50b7545627a5162f82a992c33b87adc75187b218",
+    },
+    "BTC.b": {
+      coingecko: "https://www.coingecko.com/en/coins/wrapped-bitcoin",
+      bsctestnet: "https://snowtrace.io/address/0x152b9d0FdC40C096757F570A51E494bd4b943E50",
+    },
+    MIM: {
+      coingecko: "https://www.coingecko.com/en/coins/magic-internet-money",
+      bsctestnet: "https://snowtrace.io/address/0x130966628846bfd36ff31a822705796e8cb8c18d",
+    },
+    "USDC.e": {
+      coingecko: "https://www.coingecko.com/en/coins/usd-coin-bsctestnet-bridged-usdc-e",
+      bsctestnet: "https://snowtrace.io/address/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664",
+    },
+    USDC: {
+      coingecko: "https://www.coingecko.com/en/coins/usd-coin",
+      bsctestnet: "https://snowtrace.io/address/0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e",
+    },
+  },
+  [BSC]: {
+    GMX: {
+      coingecko: "https://www.coingecko.com/en/coins/gmx",
+      bsc: "https://snowtrace.io/address/0x62edc0692bd897d2295872a9ffcac5425011c661",
+    },
+    GLP: {
+      bsc: "https://snowtrace.io/address/0x9e295B5B976a184B14aD8cd72413aD846C299660",
+    },
+    AVAX: {
+      coingecko: "https://www.coingecko.com/en/coins/bsc",
+    },
+    ETH: {
+      coingecko: "https://www.coingecko.com/en/coins/weth",
+      bsc: "https://snowtrace.io/address/0x49d5c2bdffac6ce2bfdb6640f4f80f226bc10bab",
+    },
+    BTC: {
+      coingecko: "https://www.coingecko.com/en/coins/wrapped-bitcoin",
+      bsc: "https://snowtrace.io/address/0x50b7545627a5162f82a992c33b87adc75187b218",
+    },
+    "BTC.b": {
+      coingecko: "https://www.coingecko.com/en/coins/wrapped-bitcoin",
+      bsc: "https://snowtrace.io/address/0x152b9d0FdC40C096757F570A51E494bd4b943E50",
+    },
+    MIM: {
+      coingecko: "https://www.coingecko.com/en/coins/magic-internet-money",
+      bsc: "https://snowtrace.io/address/0x130966628846bfd36ff31a822705796e8cb8c18d",
+    },
+    "USDC.e": {
+      coingecko: "https://www.coingecko.com/en/coins/usd-coin-bsc-bridged-usdc-e",
+      bsc: "https://snowtrace.io/address/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664",
+    },
+    USDC: {
+      coingecko: "https://www.coingecko.com/en/coins/usd-coin",
+      bsc: "https://snowtrace.io/address/0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e",
+    },
+  },
 };
 
 export const platformTokens = {
@@ -309,10 +386,12 @@ export const platformTokens = {
   },
 };
 
-const supportedChainIds = [ARBITRUM, AVALANCHE];
-if (isDevelopment()) {
-  supportedChainIds.push(ARBITRUM_TESTNET);
-}
+const supportedChainIds = [BSC, BSC_TESTNET];
+// if (isDevelopment()) {
+//   supportedChainIds.push(ARBITRUM_TESTNET);
+//   supportedChainIds.push(BSC_TESTNET);
+//   supportedChainIds.push(BSC);
+// }
 const injectedConnector = new InjectedConnector({
   supportedChainIds,
 });
@@ -323,6 +402,8 @@ const getWalletConnectConnector = () => {
     rpc: {
       [AVALANCHE]: AVALANCHE_RPC_PROVIDERS[0],
       [ARBITRUM]: ARBITRUM_RPC_PROVIDERS[0],
+      [BSC_TESTNET]: TESTNET_RPC_PROVIDERS[0],
+      [BSC]: BSC_RPC_PROVIDERS[0],
       [ARBITRUM_TESTNET]: "https://rinkeby.arbitrum.io/rpc",
     },
     qrcode: true,
@@ -344,7 +425,8 @@ export function deserialize(data) {
 }
 
 export function isHomeSite() {
-  return process.env.REACT_APP_IS_HOME_SITE === "true";
+  // return process.env.REACT_APP_IS_HOME_SITE === "true";
+  return window.location.hash === "#/";
 }
 
 export const helperToast = {
@@ -463,7 +545,7 @@ export function getServerBaseUrl(chainId) {
       return fromLocalStorage;
     }
   }
-  if (chainId === MAINNET) {
+  if (chainId === BSC) {
     return "https://gambit-server-staging.uc.r.appspot.com";
   } else if (chainId === ARBITRUM_TESTNET) {
     return "https://gambit-server-devnet.uc.r.appspot.com";
@@ -471,6 +553,8 @@ export function getServerBaseUrl(chainId) {
     return "https://gmx-server-mainnet.uw.r.appspot.com";
   } else if (chainId === AVALANCHE) {
     return "https://gmx-avax-server.uc.r.appspot.com";
+  } else if (chainId === BSC_TESTNET) {
+    return "http://localhost:3020";
   }
   return "https://gmx-server-mainnet.uw.r.appspot.com";
 }
@@ -1249,14 +1333,14 @@ export function getSwapFeeBasisPoints(isStable) {
 }
 
 // BSC TESTNET
-// const RPC_PROVIDERS = [
-//   "https://data-seed-prebsc-1-s1.binance.org:8545",
-//   "https://data-seed-prebsc-2-s1.binance.org:8545",
-//   "https://data-seed-prebsc-1-s2.binance.org:8545",
-//   "https://data-seed-prebsc-2-s2.binance.org:8545",
-//   "https://data-seed-prebsc-1-s3.binance.org:8545",
-//   "https://data-seed-prebsc-2-s3.binance.org:8545"
-// ]
+const TESTNET_RPC_PROVIDERS = [
+  "https://data-seed-prebsc-1-s1.binance.org:8545",
+  "https://data-seed-prebsc-2-s1.binance.org:8545",
+  "https://data-seed-prebsc-1-s2.binance.org:8545",
+  "https://data-seed-prebsc-2-s2.binance.org:8545",
+  "https://data-seed-prebsc-1-s3.binance.org:8545",
+  "https://data-seed-prebsc-2-s3.binance.org:8545",
+];
 
 // BSC MAINNET
 export const BSC_RPC_PROVIDERS = [
@@ -1276,7 +1360,8 @@ export const BSC_RPC_PROVIDERS = [
 ];
 
 const RPC_PROVIDERS = {
-  [MAINNET]: BSC_RPC_PROVIDERS,
+  [BSC_TESTNET]: TESTNET_RPC_PROVIDERS,
+  [BSC]: BSC_RPC_PROVIDERS,
   [ARBITRUM]: ARBITRUM_RPC_PROVIDERS,
   [AVALANCHE]: AVALANCHE_RPC_PROVIDERS,
 };
@@ -1938,9 +2023,9 @@ export function getExplorerUrl(chainId) {
     return "https://ropsten.etherscan.io/";
   } else if (chainId === 42) {
     return "https://kovan.etherscan.io/";
-  } else if (chainId === MAINNET) {
+  } else if (chainId === BSC) {
     return "https://bscscan.com/";
-  } else if (chainId === TESTNET) {
+  } else if (chainId === BSC_TESTNET) {
     return "https://testnet.bscscan.com/";
   } else if (chainId === ARBITRUM_TESTNET) {
     return "https://testnet.arbiscan.io/";
@@ -2113,8 +2198,8 @@ export const getTokenInfo = (infoTokens, tokenAddress, replaceNative, nativeToke
 };
 
 const NETWORK_METADATA = {
-  [MAINNET]: {
-    chainId: "0x" + MAINNET.toString(16),
+  [BSC]: {
+    chainId: "0x" + BSC.toString(16),
     chainName: "BSC",
     nativeCurrency: {
       name: "BNB",
@@ -2124,15 +2209,15 @@ const NETWORK_METADATA = {
     rpcUrls: BSC_RPC_PROVIDERS,
     blockExplorerUrls: ["https://bscscan.com"],
   },
-  [TESTNET]: {
-    chainId: "0x" + TESTNET.toString(16),
+  [BSC_TESTNET]: {
+    chainId: "0x" + BSC_TESTNET.toString(16),
     chainName: "BSC Testnet",
     nativeCurrency: {
       name: "BNB",
       symbol: "BNB",
       decimals: 18,
     },
-    rpcUrls: ["https://data-seed-prebsc-1-s1.binance.org:8545/"],
+    rpcUrls: TESTNET_RPC_PROVIDERS,
     blockExplorerUrls: ["https://testnet.bscscan.com/"],
   },
   [ARBITRUM_TESTNET]: {
@@ -2171,7 +2256,7 @@ const NETWORK_METADATA = {
 };
 
 export const addBscNetwork = async () => {
-  return addNetwork(NETWORK_METADATA[MAINNET]);
+  return addNetwork(NETWORK_METADATA[BSC]);
 };
 
 export const addNetwork = async (metadata) => {
@@ -2735,7 +2820,7 @@ export function isLocal() {
 
 export function getHomeUrl() {
   if (isLocal()) {
-    return "http://localhost:3010";
+    return "http://localhost:3010/#";
   }
 
   return "https://gmx.io";
@@ -2743,7 +2828,7 @@ export function getHomeUrl() {
 
 export function getAppBaseUrl() {
   if (isLocal()) {
-    return "http://localhost:3011/#";
+    return "http://localhost:3010/#";
   }
 
   return "https://app.gmx.io/#";
@@ -2759,7 +2844,7 @@ export function getRootShareApiUrl() {
 
 export function getTradePageUrl() {
   if (isLocal()) {
-    return "http://localhost:3011/#/trade";
+    return "http://localhost:3010/#/trade";
   }
 
   return "https://app.gmx.io/#/trade";

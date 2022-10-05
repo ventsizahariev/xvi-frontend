@@ -1,6 +1,6 @@
 /*eslint-disable*/ module.exports = {
   messages: {
-    ", and use GMX with its built-in browser": ", and use GMX with its built-in browser",
+    ", and use LeveragePro with its built-in browser": ", and use LeveragePro with its built-in browser",
     "24h Volume": "24h Volume",
     "<0>Insufficient liquidity to execute the order</0><1>The mark price which is an aggregate of exchange prices did not reach the specified price</1><2>The specified price was reached but not long enough for it to be executed</2><3>No keeper picked up the order for execution</3>":
       "<0>Insufficient liquidity to execute the order</0><1>The mark price which is an aggregate of exchange prices did not reach the specified price</1><2>The specified price was reached but not long enough for it to be executed</2><3>No keeper picked up the order for execution</3>",

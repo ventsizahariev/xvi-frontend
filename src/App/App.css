@@ -155,9 +155,9 @@
 .App-box-highlight,
 .App-box-solid {
   position: relative;
-  border: 1px solid #1e2136;
+  border: 1px solid var(--cardv2-color) !important;
   border-radius: 0.4rem;
-  background: #16182e;
+  background: var(--cardv1-color);
   font-size: 1.5rem;
 }
 
@@ -798,13 +798,15 @@ a.App-cta,
 button.App-cta {
   color: white;
   text-decoration: none;
-  background: linear-gradient(90deg, rgba(45, 66, 252, 1) 0%, rgba(46, 61, 205, 1) 100%);
+  /* background: linear-gradient(90deg, rgba(45, 66, 252, 1) 0%, rgba(46, 61, 205, 1) 100%); */
+  background: var(--btn-color);
   /* box-shadow: 0 0 0.4rem 0.6rem rgba(45,66,252,0.15); */
 }
 
 a.App-cta:hover,
 button.App-cta:hover:enabled {
-  background: linear-gradient(90deg, rgba(58, 78, 252, 1) 0%, rgba(51, 68, 222, 1) 100%);
+  /* background: linear-gradient(90deg, rgba(58, 78, 252, 1) 0%, rgba(51, 68, 222, 1) 100%); */
+  background: var(--gray10);
   box-shadow: 0 0 0.4rem 0.6rem rgba(45, 66, 252, 0.2);
 }
 
@@ -851,13 +853,14 @@ button.App-button-option {
   display: inline-flex !important;
   align-items: center;
   border: none;
-  background: rgba(43, 55, 94, 1);
+  background: var(--btn-color);
 }
 
 a.App-button-option:hover,
 button.App-button-option:hover:enabled {
-  background: linear-gradient(90deg, rgba(58, 78, 252, 1) 0%, rgba(51, 68, 222, 1) 100%);
-  box-shadow: 0 0 0.4rem 0.6rem rgba(45, 66, 252, 0.2);
+  /* background: linear-gradient(90deg, rgba(58, 78, 252, 1) 0%, rgba(51, 68, 222, 1) 100%); */
+  background: var(--gray10);
+  box-shadow: 0 0 0.4rem 0.6rem var(--btn-color);
 }
 
 button.App-button-option:disabled {
@@ -1133,7 +1136,8 @@ button.App-button {
 
 .App-slider .rc-slider-handle {
   background: #303652;
-  border: solid 2px rgba(45, 66, 252, 1);
+  /* border: solid 2px rgba(45, 66, 252, 1); */
+  border: solid 2px white;
 }
 
 .App-slider .rc-slider-handle:active {

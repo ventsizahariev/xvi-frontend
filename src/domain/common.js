@@ -10,6 +10,9 @@ export const arbitrumReferralsGraphClient = createClient(
 export const avalancheReferralsGraphClient = createClient(
   "https://api.thegraph.com/subgraphs/name/gmx-io/gmx-avalanche-referrals"
 );
+export const testnetReferralsGraphClient = createClient(
+  "https://api.thegraph.com/subgraphs/name/gmx-io/gmx-bsctestnet-referrals"
+);
 
 function createClient(uri) {
   return new ApolloClient({

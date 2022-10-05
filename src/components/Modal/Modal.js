@@ -16,6 +16,7 @@ export default function Modal(props) {
   useEffect(() => {
     function close(e) {
       if (e.keyCode === 27) {
+        console.log(window.location.href, className);
         setIsVisible(false);
       }
     }

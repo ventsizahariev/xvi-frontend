@@ -257,7 +257,7 @@ function MigrationModal(props) {
             <div className="App-info-label">{token.bonus > 0 ? "Base Tokens" : "To Receive"}</div>
             <div className="align-right">
               {baseAmount &&
-                `${formatAmount(baseAmount, 18, 4, true)} GMX ($${formatAmount(
+                `${formatAmount(baseAmount, 18, 4, true)} LeveragePro ($${formatAmount(
                   baseAmountUsd,
                   18 + decimals,
                   2,
@@ -271,7 +271,7 @@ function MigrationModal(props) {
               <div className="App-info-label">Bonus Tokens</div>
               <div className="align-right">
                 {bonusAmount &&
-                  `${formatAmount(bonusAmount, 18, 4, true)} GMX ($${formatAmount(
+                  `${formatAmount(bonusAmount, 18, 4, true)} LeveragePro ($${formatAmount(
                     bonusAmountUsd,
                     18 + decimals,
                     2,
@@ -286,7 +286,7 @@ function MigrationModal(props) {
               <div className="App-info-label">To Receive</div>
               <div className="align-right">
                 {totalAmount &&
-                  `${formatAmount(totalAmount, 18, 4, true)} GMX ($${formatAmount(
+                  `${formatAmount(totalAmount, 18, 4, true)} LeveragePro ($${formatAmount(
                     totalAmountUsd,
                     18 + decimals,
                     2,

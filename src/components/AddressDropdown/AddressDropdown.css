@@ -25,8 +25,8 @@
   width: 100%;
   transform-origin: top right;
   border-radius: 0.4rem;
-  background: #16182e;
-  border: 1px solid #32344c;
+  background: var(--cardv1-color);
+  border: 1px solid var(--cardv2-color);
   list-style: none;
   cursor: pointer;
   outline: none;

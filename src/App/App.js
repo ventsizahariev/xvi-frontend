@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
-import { SWRConfig } from "swr";
-import { ethers } from "ethers";
-import { Web3ReactProvider, useWeb3React } from "@web3-react/core";
-import { Web3Provider } from "@ethersproject/providers";
+import React, {useState, useEffect, useCallback, useRef} from "react";
+import {SWRConfig} from "swr";
+import {ethers} from "ethers";
+import {Web3ReactProvider, useWeb3React} from "@web3-react/core";
+import {Web3Provider} from "@ethersproject/providers";
 import useScrollToTop from "../lib/useScrollToTop";
 
-import { Switch, Route, HashRouter as Router, Redirect, useLocation, useHistory } from "react-router-dom";
+import {Switch, Route, HashRouter as Router, Redirect, useLocation, useHistory} from "react-router-dom";
 
 import {
   ARBITRUM,
@@ -46,20 +46,20 @@ import Home from "../pages/Home/Home";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Ecosystem from "../pages/Ecosystem/Ecosystem";
 import Stake from "../pages/Stake/Stake";
-import { Exchange } from "../pages/Exchange/Exchange";
+import {Exchange} from "../pages/Exchange/Exchange";
 import Actions from "../pages/Actions/Actions";
 import OrdersOverview from "../pages/OrdersOverview/OrdersOverview";
 import PositionsOverview from "../pages/PositionsOverview/PositionsOverview";
 import Referrals from "../pages/Referrals/Referrals";
 import BuyGlp from "../pages/BuyGlp/BuyGlp";
-import BuyGMX from "../pages/BuyGMX/BuyGMX";
+import BuyLeveragePro from "../pages/BuyLeveragePro/BuyLeveragePro";
 import Buy from "../pages/Buy/Buy";
 import NftWallet from "../pages/NftWallet/NftWallet";
 import ClaimEsGmx from "../pages/ClaimEsGmx/ClaimEsGmx";
 import BeginAccountTransfer from "../pages/BeginAccountTransfer/BeginAccountTransfer";
 import CompleteAccountTransfer from "../pages/CompleteAccountTransfer/CompleteAccountTransfer";
 
-import { cssTransition, ToastContainer } from "react-toastify";
+import {cssTransition, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Modal from "../components/Modal/Modal";
 import Checkbox from "../components/Checkbox/Checkbox";
@@ -76,25 +76,25 @@ import useEventToast from "../components/EventToast/useEventToast";
 import EventToastContainer from "../components/EventToast/EventToastContainer";
 import SEO from "../components/Common/SEO";
 import useRouteQuery from "../lib/useRouteQuery";
-import { encodeReferralCode, decodeReferralCode } from "../domain/referrals";
+import {encodeReferralCode, decodeReferralCode} from "../domain/referrals";
 
-import { getContract } from "../config/Addresses";
+import {getContract} from "../config/Addresses";
 import VaultV2 from "../abis/VaultV2.json";
 import VaultV2b from "../abis/VaultV2b.json";
 import PositionRouter from "../abis/PositionRouter.json";
 import PageNotFound from "../pages/PageNotFound/PageNotFound";
 import ReferralTerms from "../pages/ReferralTerms/ReferralTerms";
 import TermsAndConditions from "../pages/TermsAndConditions/TermsAndConditions";
-import { useLocalStorage } from "react-use";
-import { RedirectPopupModal } from "../components/ModalViews/RedirectModal";
-import { REDIRECT_POPUP_TIMESTAMP_KEY } from "../config/ui";
+import {useLocalStorage} from "react-use";
+import {RedirectPopupModal} from "../components/ModalViews/RedirectModal";
+import {REDIRECT_POPUP_TIMESTAMP_KEY} from "../config/ui";
 import Jobs from "../pages/Jobs/Jobs";
 
-import { i18n } from "@lingui/core";
-import { I18nProvider } from "@lingui/react";
-import { Trans, t } from "@lingui/macro";
-import { defaultLocale, dynamicActivate } from "../lib/i18n";
-import { Header } from "../components/Header/Header";
+import {i18n} from "@lingui/core";
+import {I18nProvider} from "@lingui/react";
+import {Trans, t} from "@lingui/macro";
+import {defaultLocale, dynamicActivate} from "../lib/i18n";
+import {Header} from "../components/Header/Header";
 
 if ("ethereum" in window) {
   window.ethereum.autoRefreshOnNetworkChange = false;
@@ -134,8 +134,8 @@ function getWsProvider(active, chainId) {
 function FullApp() {
   const isHome = isHomeSite();
   const exchangeRef = useRef();
-  const { connector, library, deactivate, activate, active } = useWeb3React();
-  const { chainId } = useChainId();
+  const {connector, library, deactivate, activate, active} = useWeb3React();
+  const {chainId} = useChainId();
   const location = useLocation();
   const history = useHistory();
   useEventToast();
@@ -199,15 +199,15 @@ function FullApp() {
       helperToast.error(
         <div>
           <Trans>MetaMask not detected.</Trans>
-          <br />
-          <br />
+          <br/>
+          <br/>
           <a href="https://metamask.io" target="_blank" rel="noopener noreferrer">
             <Trans>Install MetaMask</Trans>
           </a>
           {userOnMobileDevice ? (
-            <Trans>, and use GMX with its built-in browser</Trans>
+            <Trans>, and use LeveragePro with its built-in browser</Trans>
           ) : (
-            <Trans> to start using GMX</Trans>
+            <Trans> to start using LeveragePro</Trans>
           )}
           .
         </div>
@@ -221,15 +221,15 @@ function FullApp() {
       helperToast.error(
         <div>
           <Trans>Coinbase Wallet not detected.</Trans>
-          <br />
-          <br />
+          <br/>
+          <br/>
           <a href="https://www.coinbase.com/wallet" target="_blank" rel="noopener noreferrer">
             <Trans>Install Coinbase Wallet</Trans>
           </a>
           {userOnMobileDevice ? (
-            <Trans>, and use GMX with its built-in browser</Trans>
+            <Trans>, and use LeveragePro with its built-in browser</Trans>
           ) : (
-            <Trans> to start using GMX</Trans>
+            <Trans> to start using LeveragePro</Trans>
           )}
           .
         </div>
@@ -348,7 +348,7 @@ function FullApp() {
                 <a href={txUrl} target="_blank" rel="noopener noreferrer">
                   <Trans>View</Trans>
                 </a>
-                <br />
+                <br/>
               </div>
             );
           }
@@ -360,7 +360,7 @@ function FullApp() {
                 <a href={txUrl} target="_blank" rel="noopener noreferrer">
                   <Trans>View</Trans>
                 </a>
-                <br />
+                <br/>
               </div>
             );
           }
@@ -438,106 +438,99 @@ function FullApp() {
             redirectPopupTimestamp={redirectPopupTimestamp}
             showRedirectModal={showRedirectModal}
           />
-          {isHome && (
-            <Switch>
-              <Route exact path="/">
-                <Home showRedirectModal={showRedirectModal} redirectPopupTimestamp={redirectPopupTimestamp} />
-              </Route>
-              <Route exact path="/referral-terms">
-                <ReferralTerms />
-              </Route>
-              <Route exact path="/terms-and-conditions">
-                <TermsAndConditions />
-              </Route>
-              <Route path="*">
-                <PageNotFound />
-              </Route>
-            </Switch>
-          )}
-          {!isHome && (
-            <Switch>
-              <Route exact path="/">
-                <Redirect to="/dashboard" />
-              </Route>
-              <Route exact path="/trade">
-                <Exchange
-                  ref={exchangeRef}
-                  savedShowPnlAfterFees={savedShowPnlAfterFees}
-                  savedIsPnlInLeverage={savedIsPnlInLeverage}
-                  setSavedIsPnlInLeverage={setSavedIsPnlInLeverage}
-                  savedSlippageAmount={savedSlippageAmount}
-                  setPendingTxns={setPendingTxns}
-                  pendingTxns={pendingTxns}
-                  savedShouldShowPositionLines={savedShouldShowPositionLines}
-                  setSavedShouldShowPositionLines={setSavedShouldShowPositionLines}
-                  connectWallet={connectWallet}
-                  savedShouldDisableOrderValidation={savedShouldDisableOrderValidation}
-                />
-              </Route>
-              <Route exact path="/dashboard">
-                <Dashboard />
-              </Route>
-              <Route exact path="/earn">
-                <Stake setPendingTxns={setPendingTxns} connectWallet={connectWallet} />
-              </Route>
-              <Route exact path="/buy">
-                <Buy
-                  savedSlippageAmount={savedSlippageAmount}
-                  setPendingTxns={setPendingTxns}
-                  connectWallet={connectWallet}
-                />
-              </Route>
-              <Route exact path="/buy_glp">
-                <BuyGlp
-                  savedSlippageAmount={savedSlippageAmount}
-                  setPendingTxns={setPendingTxns}
-                  connectWallet={connectWallet}
-                />
-              </Route>
-              <Route exact path="/jobs">
-                <Jobs />
-              </Route>
-              <Route exact path="/buy_gmx">
-                <BuyGMX />
-              </Route>
-              <Route exact path="/ecosystem">
-                <Ecosystem />
-              </Route>
-              <Route exact path="/referrals">
-                <Referrals pendingTxns={pendingTxns} connectWallet={connectWallet} setPendingTxns={setPendingTxns} />
-              </Route>
-              <Route exact path="/referrals/:account">
-                <Referrals pendingTxns={pendingTxns} connectWallet={connectWallet} setPendingTxns={setPendingTxns} />
-              </Route>
-              <Route exact path="/nft_wallet">
-                <NftWallet />
-              </Route>
-              <Route exact path="/claim_es_gmx">
-                <ClaimEsGmx setPendingTxns={setPendingTxns} />
-              </Route>
-              <Route exact path="/actions">
-                <Actions />
-              </Route>
-              <Route exact path="/actions/:account">
-                <Actions />
-              </Route>
-              <Route exact path="/orders_overview">
-                <OrdersOverview />
-              </Route>
-              <Route exact path="/positions_overview">
-                <PositionsOverview />
-              </Route>
-              <Route exact path="/begin_account_transfer">
-                <BeginAccountTransfer setPendingTxns={setPendingTxns} />
-              </Route>
-              <Route exact path="/complete_account_transfer/:sender/:receiver">
-                <CompleteAccountTransfer setPendingTxns={setPendingTxns} />
-              </Route>
-              <Route path="*">
-                <PageNotFound />
-              </Route>
-            </Switch>
-          )}
+          <Switch>
+            <Route exact path="/">
+              <Home showRedirectModal={showRedirectModal} redirectPopupTimestamp={redirectPopupTimestamp}/>
+            </Route>
+            <Route exact path="/trade">
+              <Exchange
+                ref={exchangeRef}
+                savedShowPnlAfterFees={savedShowPnlAfterFees}
+                savedIsPnlInLeverage={savedIsPnlInLeverage}
+                setSavedIsPnlInLeverage={setSavedIsPnlInLeverage}
+                savedSlippageAmount={savedSlippageAmount}
+                setPendingTxns={setPendingTxns}
+                pendingTxns={pendingTxns}
+                savedShouldShowPositionLines={savedShouldShowPositionLines}
+                setSavedShouldShowPositionLines={setSavedShouldShowPositionLines}
+                connectWallet={connectWallet}
+                savedShouldDisableOrderValidation={savedShouldDisableOrderValidation}
+              />
+            </Route>
+            <Route exact path="/dashboard">
+              <Dashboard/>
+            </Route>
+            <Route exact path="/earn">
+              <Stake setPendingTxns={setPendingTxns} connectWallet={connectWallet}/>
+            </Route>
+            <Route exact path="/buy">
+              <Buy
+                savedSlippageAmount={savedSlippageAmount}
+                setPendingTxns={setPendingTxns}
+                connectWallet={connectWallet}
+              />
+            </Route>
+            <Route exact path="/buy_glp">
+              <BuyGlp
+                savedSlippageAmount={savedSlippageAmount}
+                setPendingTxns={setPendingTxns}
+                connectWallet={connectWallet}
+              />
+            </Route>
+            <Route exact path="/jobs">
+              <Jobs/>
+            </Route>
+            <Route exact path="/buy_leveragepro">
+              <BuyLeveragePro/>
+            </Route>
+            <Route exact path="/ecosystem">
+              <Ecosystem/>
+            </Route>
+            <Route exact path="/referrals">
+              <Referrals pendingTxns={pendingTxns} connectWallet={connectWallet} setPendingTxns={setPendingTxns}/>
+            </Route>
+            <Route exact path="/referrals/:account">
+              <Referrals pendingTxns={pendingTxns} connectWallet={connectWallet} setPendingTxns={setPendingTxns}/>
+            </Route>
+            <Route exact path="/nft_wallet">
+              <NftWallet/>
+            </Route>
+            <Route exact path="/claim_es_gmx">
+              <ClaimEsGmx setPendingTxns={setPendingTxns}/>
+            </Route>
+            <Route exact path="/actions">
+              <Actions/>
+            </Route>
+            <Route exact path="/actions/:account">
+              <Actions/>
+            </Route>
+            <Route exact path="/orders_overview">
+              <OrdersOverview/>
+            </Route>
+            <Route exact path="/positions_overview">
+              <PositionsOverview/>
+            </Route>
+            <Route exact path="/begin_account_transfer">
+              <BeginAccountTransfer setPendingTxns={setPendingTxns}/>
+            </Route>
+            <Route exact path="/complete_account_transfer/:sender/:receiver">
+              <CompleteAccountTransfer setPendingTxns={setPendingTxns}/>
+            </Route>
+            <Route path="*">
+              <PageNotFound/>
+            </Route>
+            <Route exact path="/referral-terms">
+              <ReferralTerms/>
+            </Route>
+            <Route exact path="/terms-and-conditions">
+              <TermsAndConditions/>
+            </Route>
+            <Route path="*">
+              <PageNotFound/>
+            </Route>
+          </Switch>
+          )
+          )
         </div>
       </div>
       <ToastContainer
@@ -551,7 +544,7 @@ function FullApp() {
         draggable={false}
         pauseOnHover
       />
-      <EventToastContainer />
+      <EventToastContainer/>
       <RedirectPopupModal
         redirectModalVisible={redirectModalVisible}
         setRedirectModalVisible={setRedirectModalVisible}
@@ -568,19 +561,19 @@ function FullApp() {
         label="Connect Wallet"
       >
         <button className="Wallet-btn MetaMask-btn" onClick={activateMetaMask}>
-          <img src={metamaskImg} alt="MetaMask" />
+          <img src={metamaskImg} alt="MetaMask"/>
           <div>
             <Trans>MetaMask</Trans>
           </div>
         </button>
         <button className="Wallet-btn CoinbaseWallet-btn" onClick={activateCoinBase}>
-          <img src={coinbaseImg} alt="Coinbase Wallet" />
+          <img src={coinbaseImg} alt="Coinbase Wallet"/>
           <div>
             <Trans>Coinbase Wallet</Trans>
           </div>
         </button>
         <button className="Wallet-btn WalletConnect-btn" onClick={activateWalletConnect}>
-          <img src={walletConnectImg} alt="WalletConnect" />
+          <img src={walletConnectImg} alt="WalletConnect"/>
           <div>
             <Trans>WalletConnect</Trans>
           </div>
@@ -617,13 +610,13 @@ function FullApp() {
             <Trans>Include PnL in leverage display</Trans>
           </Checkbox>
         </div>
-        {isDevelopment() && (
-          <div className="Exchange-settings-row">
-            <Checkbox isChecked={shouldDisableOrderValidation} setIsChecked={setShouldDisableOrderValidation}>
-              <Trans>Disable order validations</Trans>
-            </Checkbox>
-          </div>
-        )}
+        {/*{isDevelopment() && (*/}
+        <div className="Exchange-settings-row">
+          <Checkbox isChecked={shouldDisableOrderValidation} setIsChecked={setShouldDisableOrderValidation}>
+            <Trans>Disable order validations</Trans>
+          </Checkbox>
+        </div>
+        {/*)}*/}
 
         <button className="App-cta Exchange-swap-button" onClick={saveAndCloseSettings}>
           <Trans>Save</Trans>
@@ -640,12 +633,12 @@ function App() {
     dynamicActivate(defaultLanguage);
   }, []);
   return (
-    <SWRConfig value={{ refreshInterval: 5000 }}>
+    <SWRConfig value={{refreshInterval: 5000}}>
       <Web3ReactProvider getLibrary={getLibrary}>
         <SEO>
           <Router>
             <I18nProvider i18n={i18n}>
-              <FullApp />
+              <FullApp/>
             </I18nProvider>
           </Router>
         </SEO>

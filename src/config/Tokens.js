@@ -77,23 +77,12 @@ const TOKENS = {
   ],
   97: [
     {
-      name: "Bitcoin (BTCB)",
-      symbol: "BTC",
-      decimals: 8,
-      address: "0xb19C12715134bee7c4b1Ca593ee9E430dABe7b56",
-    },
-    {
-      name: "Ethereum",
-      symbol: "ETH",
-      decimals: 18,
-      address: "0x1958f7C067226c7C8Ac310Dc994D0cebAbfb2B02",
-    },
-    {
       name: "Binance Coin",
       symbol: "BNB",
       decimals: 18,
       address: ethers.constants.AddressZero,
       isNative: true,
+      isShortable: true,
     },
     {
       name: "Wrapped Binance Coin",
@@ -104,10 +93,24 @@ const TOKENS = {
       baseSymbol: "BNB",
     },
     {
+      name: "Bitcoin (BTCB)",
+      symbol: "BTC",
+      decimals: 8,
+      address: "0xb19C12715134bee7c4b1Ca593ee9E430dABe7b56",
+      isShortable: true,
+    },
+    {
+      name: "Ethereum",
+      symbol: "ETH",
+      decimals: 18,
+      address: "0x1958f7C067226c7C8Ac310Dc994D0cebAbfb2B02",
+      isShortable: true,
+    },
+    {
       name: "USD Gambit",
       symbol: "USDG",
       decimals: 18,
-      address: getContract(97, "USDG"),
+      address: "0x12fE23885BaF83f8eEB5FCa67Ff93Ad2158F3258",
       isUsdg: true,
     },
     {
@@ -116,6 +119,7 @@ const TOKENS = {
       decimals: 18,
       address: "0x3F223C4E5ac67099CB695834b20cCd5E5D5AA9Ef",
       isStable: true,
+      isShortable: true,
     },
   ],
   421611: [

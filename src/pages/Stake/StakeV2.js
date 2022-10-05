@@ -1447,7 +1447,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
             <Trans>
               Stake{" "}
               <a href="https://gmxio.gitbook.io/gmx/tokenomics" target="_blank" rel="noopener noreferrer">
-                GMX
+                LeveragePro
               </a>{" "}
               and{" "}
               <a href="https://gmxio.gitbook.io/gmx/glp" target="_blank" rel="noopener noreferrer">
@@ -1462,7 +1462,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
       <div className="StakeV2-content">
         <div className="StakeV2-cards">
           <div className="App-card StakeV2-gmx-card">
-            <div className="App-card-title">GMX</div>
+            <div className="App-card-title">LeveragePro</div>
             <div className="App-card-divider"></div>
             <div className="App-card-content">
               <div className="App-card-row">
@@ -1663,8 +1663,8 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
               </div>
               <div className="App-card-divider"></div>
               <div className="App-card-options">
-                <Link className="App-button-option App-card-option" to="/buy_gmx">
-                  Buy GMX
+                <Link className="App-button-option App-card-option" to="/buy_leveragepro">
+                  Buy LeveragePro
                 </Link>
                 {active && (
                   <button className="App-button-option App-card-option" onClick={() => showStakeGmxModal()}>
@@ -1906,7 +1906,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
             </div>
           </div>
           <div className="App-card">
-            <div className="App-card-title">Escrowed GMX</div>
+            <div className="App-card-title">Escrowed LeveragePro</div>
             <div className="App-card-divider"></div>
             <div className="App-card-content">
               <div className="App-card-row">
@@ -2020,7 +2020,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
           <div className="Page-title">Vest</div>
           <div className="Page-description">
             <Trans>
-              Convert esGMX tokens to GMX tokens.
+              Convert esGMX tokens to LeveragePro tokens.
               <br />
               Please read the{" "}
               <a href="https://gmxio.gitbook.io/gmx/rewards#vesting" target="_blank" rel="noopener noreferrer">
@@ -2033,7 +2033,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
         <div>
           <div className="StakeV2-cards">
             <div className="App-card StakeV2-gmx-card">
-              <div className="App-card-title">GMX Vault</div>
+              <div className="App-card-title">LeveragePro Vault</div>
               <div className="App-card-divider"></div>
               <div className="App-card-content">
                 <div className="App-card-row">

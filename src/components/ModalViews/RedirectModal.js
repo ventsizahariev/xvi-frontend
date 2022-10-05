@@ -12,6 +12,7 @@ export function RedirectPopupModal({
   removeRedirectPopupTimestamp,
 }) {
   const onClickAgree = () => {
+    setRedirectModalVisible(false)
     if (shouldHideRedirectModal) {
       setRedirectPopupTimestamp(Date.now());
     }

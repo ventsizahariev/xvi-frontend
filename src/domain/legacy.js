@@ -43,6 +43,7 @@ import {
   INCREASE,
   DECREASE,
   ARBITRUM_TESTNET,
+  BSC_TESTNET,
 } from "../lib/legacy";
 import { getTokens, getTokenBySymbol, getWhitelistedTokens } from "../config/Tokens";
 
@@ -116,7 +117,7 @@ export function useInfoTokens(library, chainId, active, tokenBalances, fundingRa
   const indexPricesUrl = getServerUrl(chainId, "/prices");
   const { data: indexPrices } = useSWR([indexPricesUrl], {
     fetcher: (...args) => fetch(...args).then((res) => res.json()),
-    refreshInterval: 500,
+    refreshInterval: 60000,
     refreshWhenHidden: true,
   });
 
@@ -455,6 +456,10 @@ export function useMinExecutionFee(library, active, chainId, infoTokens) {
 
   // multiplier for Avalanche is just the average gas usage
   if (chainId === AVALANCHE) {
+    multiplier = 700000;
+  }
+
+  if (chainId === BSC_TESTNET) {
     multiplier = 700000;
   }
 

@@ -1,11 +1,11 @@
 import { ethers } from "ethers";
 
-import { MAINNET, TESTNET, ARBITRUM_TESTNET, ARBITRUM, AVALANCHE } from "../lib/legacy";
+import { BSC, BSC_TESTNET, ARBITRUM_TESTNET, ARBITRUM, AVALANCHE } from "../lib/legacy";
 
 const { parseEther } = ethers.utils;
 
 const constants = {
-  [MAINNET]: {
+  [BSC]: {
     nativeTokenSymbol: "BNB",
     defaultCollateralSymbol: "BUSD",
     defaultFlagOrdersEnabled: false,
@@ -13,12 +13,17 @@ const constants = {
     v2: false,
   },
 
-  [TESTNET]: {
+  [BSC_TESTNET]: {
     nativeTokenSymbol: "BNB",
+    wrappedTokenSymbol: "WBNB",
     defaultCollateralSymbol: "BUSD",
     defaultFlagOrdersEnabled: true,
     positionReaderPropsLength: 8,
     v2: false,
+    SWAP_ORDER_EXECUTION_GAS_FEE: parseEther("0.01"),
+    INCREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.01"),
+    // contract requires that execution fee be strictly greater than instead of gte
+    DECREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.0100001"),
   },
 
   [ARBITRUM_TESTNET]: {

@@ -764,7 +764,7 @@ export default function GlpSwap(props) {
                         </div>
                         <div className="Tooltip-row">
                           <span className="label">
-                            <Trans>Escrowed GMX APR</Trans>
+                            <Trans>Escrowed LeveragePro APR</Trans>
                           </span>
                           <span>{formatAmount(stakedGlpTrackerApr, 2, 2, false)}%</span>
                         </div>

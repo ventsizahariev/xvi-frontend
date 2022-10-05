@@ -7,7 +7,7 @@ body,
   padding: 0;
   color: white;
   font-size: 10px;
-  background-color: #101124;
+  background-color: var(--background-color);
 }
 
 body {
@@ -68,6 +68,13 @@ input {
   --arbitrum-blue: #28a0f0;
   --border-radius-sm: 0.4rem;
   --error-red: #fa3c58;
+
+  --background-color: #1A1B23;
+  --cardv1-color: #23242F;
+  --cardv2-color: #2C2D3A;
+  --cardv3-color: #353546;
+  --btn-color: #3B3C4E;
+  --gray10: #8B8CA7;
 }
 
 a {
@@ -199,7 +206,7 @@ a.plain {
 }
 
 .default-btn {
-  background: #2d42fc;
+  background: var(--btn-color);
   border-radius: 4px;
   font-size: 1.4rem;
   line-height: 2rem;
@@ -222,7 +229,7 @@ a.plain {
 }
 
 .default-btn:hover {
-  background: #4f60fc;
+  background: var(--gray10);
 }
 
 /* .default-btn:focus {
@@ -234,7 +241,7 @@ a.plain {
 } */
 
 .default-btn:active {
-  background: #5f6ffd;
+  background: var(--gray10);
   border: none;
   padding-left: 1.6rem;
   padding-right: 1.6rem;

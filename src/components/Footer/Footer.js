@@ -2,7 +2,7 @@ import React from "react";
 import cx from "classnames";
 import { t } from "@lingui/macro";
 import "./Footer.css";
-import logoImg from "../../img/ic_gmx_footer.svg";
+import logoImg from "../../img/ic_gmx_custom.svg";
 import twitterIcon from "../../img/ic_twitter.svg";
 import discordIcon from "../../img/ic_discord.svg";
 import telegramIcon from "../../img/ic_telegram.svg";
@@ -39,7 +39,10 @@ export default function Footer({ showRedirectModal, redirectPopupTimestamp }) {
     <div className="Footer">
       <div className={cx("Footer-wrapper", { home: isHome })}>
         <div className="Footer-logo">
-          <img src={logoImg} alt="MetaMask" />
+          <a style={{ fontSize: 28, color: "white" }}>
+            <img src={logoImg} className="big" alt="GMX Logo" style={{ height: 24 }} />
+            &nbsp;LeveragePro
+          </a>
         </div>
         <div className="Footer-social-link-block">
           {socialLinks.map((platform) => {

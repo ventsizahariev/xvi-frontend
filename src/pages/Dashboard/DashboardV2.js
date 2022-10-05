@@ -58,6 +58,7 @@ import avalanche16Icon from "../../img/ic_avalanche_16.svg";
 import arbitrum16Icon from "../../img/ic_arbitrum_16.svg";
 import arbitrum24Icon from "../../img/ic_arbitrum_24.svg";
 import avalanche24Icon from "../../img/ic_avalanche_24.svg";
+import bsc16Icon from "../../img/ic_bsc_16.svg";
 
 import AssetDropdown from "./AssetDropdown";
 import SEO from "../../components/Common/SEO";
@@ -747,8 +748,8 @@ export default function DashboardV2() {
                         <img src={gmx40Icon} alt="gmx40Icon" />
                       </div>
                       <div className="App-card-title-mark-info">
-                        <div className="App-card-title-mark-title">GMX</div>
-                        <div className="App-card-title-mark-subtitle">GMX</div>
+                        <div className="App-card-title-mark-title">LeveragePro</div>
+                        <div className="App-card-title-mark-subtitle">LeveragePro</div>
                       </div>
                       <div>
                         <AssetDropdown assetSymbol="GMX" />
@@ -788,7 +789,7 @@ export default function DashboardV2() {
                       <div className="label">
                         <Trans>Supply</Trans>
                       </div>
-                      <div>{formatAmount(totalGmxSupply, GMX_DECIMALS, 0, true)} GMX</div>
+                      <div>{formatAmount(totalGmxSupply, GMX_DECIMALS, 0, true)} LeveragePro</div>
                     </div>
                     <div className="App-card-row">
                       <div className="label">
@@ -868,11 +869,13 @@ export default function DashboardV2() {
                     <div className="App-card-title-mark">
                       <div className="App-card-title-mark-icon">
                         <img src={glp40Icon} alt="glp40Icon" />
-                        {chainId === ARBITRUM ? (
+                        {/* {chainId === ARBITRUM ? (
                           <img src={arbitrum16Icon} alt="arbitrum16Icon" className="selected-network-symbol" />
                         ) : (
                           <img src={avalanche16Icon} alt="avalanche16Icon" className="selected-network-symbol" />
                         )}
+                         */}
+                        <img src={bsc16Icon} alt="bsc16Icon" className="selected-network-symbol" />
                       </div>
                       <div className="App-card-title-mark-info">
                         <div className="App-card-title-mark-title">GLP</div>
@@ -963,8 +966,9 @@ export default function DashboardV2() {
             <div className="token-table-wrapper App-card">
               <div className="App-card-title">
                 <Trans>GLP Index Composition</Trans>{" "}
-                {chainId === AVALANCHE && <img src={avalanche16Icon} alt="avalanche16Icon" />}
-                {chainId === ARBITRUM && <img src={arbitrum16Icon} alt="arbitrum16Icon" />}
+                {/* {chainId === AVALANCHE && <img src={avalanche16Icon} alt="avalanche16Icon" />}
+                {chainId === ARBITRUM && <img src={arbitrum16Icon} alt="arbitrum16Icon" />} */}
+                <img src={bsc16Icon} alt="bsc16Icon" />
               </div>
               <div className="App-card-divider"></div>
               <table className="token-table">

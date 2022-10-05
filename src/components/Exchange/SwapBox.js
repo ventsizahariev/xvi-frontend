@@ -794,6 +794,7 @@ export default function SwapBox(props) {
     }
 
     const toTokenInfo = getTokenInfo(infoTokens, toTokenAddress);
+    console.log(toTokenAddress, toTokenInfo);
 
     if (!isMarketOrder) {
       if (!triggerRatioValue || triggerRatio.eq(0)) {
@@ -1541,6 +1542,8 @@ export default function SwapBox(props) {
     if (fromTokenAddress === AddressZero) {
       method = "createIncreasePositionETH";
       value = boundedFromAmount.add(minExecutionFee);
+      console.log("path", path);
+      console.log("indexTokenAddress", indexTokenAddress);
       params = [
         path, // _path
         indexTokenAddress, // _indexToken
@@ -1925,6 +1928,7 @@ export default function SwapBox(props) {
               </div>
               <div className="Exchange-swap-section-bottom">
                 <div>
+                  {/* to value */}
                   <input
                     type="number"
                     min="0"

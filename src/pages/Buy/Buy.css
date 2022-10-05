@@ -1,5 +1,5 @@
 .BuyGMXGLP {
-    background: #101124;
+    background: var(--background-color);
     justify-content: space-between;
 }
 

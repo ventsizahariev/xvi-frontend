@@ -27,7 +27,7 @@ export function HeaderLink({
    redirectPopupTimestamp,
    showRedirectModal
 }: Props) {
-  const isOnHomePage = window.location.pathname === "/";
+  const isOnHomePage = window.location.hash === "#/";
   const isHome = isHomeSite();
 
   if (isHome && !(isHomeLink && !isOnHomePage)) {

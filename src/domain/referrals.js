@@ -15,8 +15,9 @@ import {
   fetcher,
   isHashZero,
   REFERRAL_CODE_KEY,
+  BSC_TESTNET,
 } from "../lib/legacy";
-import { arbitrumReferralsGraphClient, avalancheReferralsGraphClient } from "./common";
+import { arbitrumReferralsGraphClient, avalancheReferralsGraphClient, testnetReferralsGraphClient } from "./common";
 import { getContract } from "../config/Addresses";
 import { callContract } from "./legacy";
 import { REGEX_VERIFY_BYTES32 } from "../components/Referrals/referralsHelper";
@@ -30,6 +31,8 @@ function getGraphClient(chainId) {
     return arbitrumReferralsGraphClient;
   } else if (chainId === AVALANCHE) {
     return avalancheReferralsGraphClient;
+  } else if (chainId === BSC_TESTNET) {
+    return testnetReferralsGraphClient;
   }
   throw new Error(`Unsupported chain ${chainId}`);
 }
