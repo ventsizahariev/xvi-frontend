@@ -516,9 +516,6 @@ function FullApp() {
             <Route exact path="/complete_account_transfer/:sender/:receiver">
               <CompleteAccountTransfer setPendingTxns={setPendingTxns}/>
             </Route>
-            <Route path="*">
-              <PageNotFound/>
-            </Route>
             <Route exact path="/referral-terms">
               <ReferralTerms/>
             </Route>

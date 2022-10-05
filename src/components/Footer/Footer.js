@@ -13,23 +13,23 @@ import { isHomeSite, getAppBaseUrl, shouldShowRedirectModal } from "../../lib/le
 
 const footerLinks = {
   home: [
-    { text: t`Terms and Conditions`, link: "/terms-and-conditions" },
-    { text: t`Referral Terms`, link: "/referral-terms" },
-    { text: t`Media Kit`, link: "https://gmxio.gitbook.io/gmx/media-kit", external: true },
+    { text: t`Terms and Conditions`, link: "about:blank", external: true },
+    { text: t`Referral Terms`, link: "about:blank", external: true },
+    { text: t`Media Kit`, link: "about:blank", external: true },
     // { text: "Jobs", link: "/jobs", isAppLink: true },
   ],
   app: [
-    { text: t`Media Kit`, link: "https://gmxio.gitbook.io/gmx/media-kit", external: true },
+    { text: t`Media Kit`, link: "about:blank", external: true },
     // { text: "Jobs", link: "/jobs" },
   ],
 };
 
 const socialLinks = [
-  { link: "https://twitter.com/GMX_IO", name: "Twitter", icon: twitterIcon },
-  { link: "https://medium.com/@gmx.io", name: "Medium", icon: mediumIcon },
-  { link: "https://github.com/gmx-io", name: "Github", icon: githubIcon },
-  { link: "https://t.me/GMX_IO", name: "Telegram", icon: telegramIcon },
-  { link: "https://discord.gg/cxjZYR4gQK", name: "Discord", icon: discordIcon },
+  { link: "about:blank", name: "Twitter", icon: twitterIcon },
+  { link: "about:blank", name: "Medium", icon: mediumIcon },
+  { link: "about:blank", name: "Github", icon: githubIcon },
+  { link: "about:blank", name: "Telegram", icon: telegramIcon },
+  { link: "about:blank", name: "Discord", icon: discordIcon },
 ];
 
 export default function Footer({ showRedirectModal, redirectPopupTimestamp }) {
