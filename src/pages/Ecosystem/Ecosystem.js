@@ -389,150 +389,150 @@ export default function Ecosystem() {
             </div>
           </div>
           <div className="DashboardV2-projects">
-            {gmxPages.map((item) => {
-              const linkLabel = item.linkLabel ? item.linkLabel : item.link;
-              return (
-                <div className="App-card" key={item.title}>
-                  <div className="App-card-title">
-                    {item.title}
-                    <div className="App-card-title-icon">
-                      {item.chainIds.map((network) => (
-                        <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="App-card-divider"></div>
-                  <div className="App-card-content">
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>Link</Trans>
-                      </div>
-                      <div>
-                        <a href={item.link} target="_blank" rel="noopener noreferrer">
-                          {linkLabel}
-                        </a>
-                      </div>
-                    </div>
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>About</Trans>
-                      </div>
-                      <div>{item.about}</div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+            {/*{gmxPages.map((item) => {*/}
+            {/*  const linkLabel = item.linkLabel ? item.linkLabel : item.link;*/}
+            {/*  return (*/}
+            {/*    <div className="App-card" key={item.title}>*/}
+            {/*      <div className="App-card-title">*/}
+            {/*        {item.title}*/}
+            {/*        <div className="App-card-title-icon">*/}
+            {/*          {item.chainIds.map((network) => (*/}
+            {/*            <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />*/}
+            {/*          ))}*/}
+            {/*        </div>*/}
+            {/*      </div>*/}
+            {/*      <div className="App-card-divider"></div>*/}
+            {/*      <div className="App-card-content">*/}
+            {/*        <div className="App-card-row">*/}
+            {/*          <div className="label">*/}
+            {/*            <Trans>Link</Trans>*/}
+            {/*          </div>*/}
+            {/*          <div>*/}
+            {/*            <a href={item.link} target="_blank" rel="noopener noreferrer">*/}
+            {/*              {linkLabel}*/}
+            {/*            </a>*/}
+            {/*          </div>*/}
+            {/*        </div>*/}
+            {/*        <div className="App-card-row">*/}
+            {/*          <div className="label">*/}
+            {/*            <Trans>About</Trans>*/}
+            {/*          </div>*/}
+            {/*          <div>{item.about}</div>*/}
+            {/*        </div>*/}
+            {/*      </div>*/}
+            {/*    </div>*/}
+            {/*  );*/}
+            {/*})}*/}
           </div>
-          <div className="Tab-title-section">
-            <div className="Page-title">
-              <Trans>Community Projects</Trans>
-            </div>
-            <div className="Page-description">
-              <Trans>Projects developed by the LeveragePro community.</Trans>
-            </div>
-          </div>
-          <div className="DashboardV2-projects">
-            {communityProjects.map((item) => {
-              const linkLabel = item.linkLabel ? item.linkLabel : item.link;
-              return (
-                <div className="App-card" key={item.title}>
-                  <div className="App-card-title">
-                    {item.title}
-                    <div className="App-card-title-icon">
-                      {item.chainIds.map((network) => (
-                        <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="App-card-divider"></div>
-                  <div className="App-card-content">
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>Link</Trans>
-                      </div>
-                      <div>
-                        <a href={item.link} target="_blank" rel="noopener noreferrer">
-                          {linkLabel}
-                        </a>
-                      </div>
-                    </div>
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>About</Trans>
-                      </div>
-                      <div>{item.about}</div>
-                    </div>
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>Creator</Trans>
-                      </div>
-                      <div>
-                        <a href={item.creatorLink} target="_blank" rel="noopener noreferrer">
-                          {item.creatorLabel}
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <div className="Tab-title-section">
-            <div className="Page-title">
-              <Trans>Dashboards</Trans>
-            </div>
-            <div className="Page-description">
-              <Trans>LeveragePro dashboards and analytics.</Trans>
-            </div>
-          </div>
-          <div className="DashboardV2-projects">
-            {dashboardProjects.map((item) => {
-              const linkLabel = item.linkLabel ? item.linkLabel : item.link;
-              return (
-                <div className="App-card" key={item.title}>
-                  <div className="App-card-title">
-                    {item.title}
-                    <div className="App-card-title-icon">
-                      {item.chainIds.map((network) => (
-                        <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
-                      ))}
-                    </div>
-                  </div>
+          {/*<div className="Tab-title-section">*/}
+          {/*  <div className="Page-title">*/}
+          {/*    <Trans>Community Projects</Trans>*/}
+          {/*  </div>*/}
+          {/*  <div className="Page-description">*/}
+          {/*    <Trans>Projects developed by the LeveragePro community.</Trans>*/}
+          {/*  </div>*/}
+          {/*</div>*/}
+          {/*<div className="DashboardV2-projects">*/}
+          {/*  {communityProjects.map((item) => {*/}
+          {/*    const linkLabel = item.linkLabel ? item.linkLabel : item.link;*/}
+          {/*    return (*/}
+          {/*      <div className="App-card" key={item.title}>*/}
+          {/*        <div className="App-card-title">*/}
+          {/*          {item.title}*/}
+          {/*          <div className="App-card-title-icon">*/}
+          {/*            {item.chainIds.map((network) => (*/}
+          {/*              <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />*/}
+          {/*            ))}*/}
+          {/*          </div>*/}
+          {/*        </div>*/}
+          {/*        <div className="App-card-divider"></div>*/}
+          {/*        <div className="App-card-content">*/}
+          {/*          <div className="App-card-row">*/}
+          {/*            <div className="label">*/}
+          {/*              <Trans>Link</Trans>*/}
+          {/*            </div>*/}
+          {/*            <div>*/}
+          {/*              <a href={item.link} target="_blank" rel="noopener noreferrer">*/}
+          {/*                {linkLabel}*/}
+          {/*              </a>*/}
+          {/*            </div>*/}
+          {/*          </div>*/}
+          {/*          <div className="App-card-row">*/}
+          {/*            <div className="label">*/}
+          {/*              <Trans>About</Trans>*/}
+          {/*            </div>*/}
+          {/*            <div>{item.about}</div>*/}
+          {/*          </div>*/}
+          {/*          <div className="App-card-row">*/}
+          {/*            <div className="label">*/}
+          {/*              <Trans>Creator</Trans>*/}
+          {/*            </div>*/}
+          {/*            <div>*/}
+          {/*              <a href={item.creatorLink} target="_blank" rel="noopener noreferrer">*/}
+          {/*                {item.creatorLabel}*/}
+          {/*              </a>*/}
+          {/*            </div>*/}
+          {/*          </div>*/}
+          {/*        </div>*/}
+          {/*      </div>*/}
+          {/*    );*/}
+          {/*  })}*/}
+          {/*</div>*/}
+          {/*<div className="Tab-title-section">*/}
+          {/*  <div className="Page-title">*/}
+          {/*    <Trans>Dashboards</Trans>*/}
+          {/*  </div>*/}
+          {/*  <div className="Page-description">*/}
+          {/*    <Trans>LeveragePro dashboards and analytics.</Trans>*/}
+          {/*  </div>*/}
+          {/*</div>*/}
+          {/*<div className="DashboardV2-projects">*/}
+          {/*  {dashboardProjects.map((item) => {*/}
+          {/*    const linkLabel = item.linkLabel ? item.linkLabel : item.link;*/}
+          {/*    return (*/}
+          {/*      <div className="App-card" key={item.title}>*/}
+          {/*        <div className="App-card-title">*/}
+          {/*          {item.title}*/}
+          {/*          <div className="App-card-title-icon">*/}
+          {/*            {item.chainIds.map((network) => (*/}
+          {/*              <img key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />*/}
+          {/*            ))}*/}
+          {/*          </div>*/}
+          {/*        </div>*/}
 
-                  <div className="App-card-divider"></div>
-                  <div className="App-card-content">
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>Link</Trans>
-                      </div>
-                      <div>
-                        <a href={item.link} target="_blank" rel="noopener noreferrer">
-                          {linkLabel}
-                        </a>
-                      </div>
-                    </div>
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>About</Trans>
-                      </div>
-                      <div>{item.about}</div>
-                    </div>
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>Creator</Trans>
-                      </div>
-                      <div>
-                        <a href={item.creatorLink} target="_blank" rel="noopener noreferrer">
-                          {item.creatorLabel}
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          {/*        <div className="App-card-divider"></div>*/}
+          {/*        <div className="App-card-content">*/}
+          {/*          <div className="App-card-row">*/}
+          {/*            <div className="label">*/}
+          {/*              <Trans>Link</Trans>*/}
+          {/*            </div>*/}
+          {/*            <div>*/}
+          {/*              <a href={item.link} target="_blank" rel="noopener noreferrer">*/}
+          {/*                {linkLabel}*/}
+          {/*              </a>*/}
+          {/*            </div>*/}
+          {/*          </div>*/}
+          {/*          <div className="App-card-row">*/}
+          {/*            <div className="label">*/}
+          {/*              <Trans>About</Trans>*/}
+          {/*            </div>*/}
+          {/*            <div>{item.about}</div>*/}
+          {/*          </div>*/}
+          {/*          <div className="App-card-row">*/}
+          {/*            <div className="label">*/}
+          {/*              <Trans>Creator</Trans>*/}
+          {/*            </div>*/}
+          {/*            <div>*/}
+          {/*              <a href={item.creatorLink} target="_blank" rel="noopener noreferrer">*/}
+          {/*                {item.creatorLabel}*/}
+          {/*              </a>*/}
+          {/*            </div>*/}
+          {/*          </div>*/}
+          {/*        </div>*/}
+          {/*      </div>*/}
+          {/*    );*/}
+          {/*  })}*/}
+          {/*</div>*/}
           {/*<div className="Tab-title-section">*/}
           {/*  <div className="Page-title">*/}
           {/*    <Trans>Partnerships and Integrations</Trans>*/}
@@ -587,43 +587,43 @@ export default function Ecosystem() {
           {/*    );*/}
           {/*  })}*/}
           {/*</div>*/}
-          <div className="Tab-title-section">
-            <div className="Page-title">
-              <Trans>Telegram Groups</Trans>
-            </div>
-            <div className="Page-description">
-              <Trans>Community-led Telegram groups.</Trans>
-            </div>
-          </div>
-          <div className="DashboardV2-projects">
-            {telegramGroups.map((item) => {
-              const linkLabel = item.linkLabel ? item.linkLabel : item.link;
-              return (
-                <div className="App-card" key={item.title}>
-                  <div className="App-card-title">{item.title}</div>
-                  <div className="App-card-divider"></div>
-                  <div className="App-card-content">
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>Link</Trans>
-                      </div>
-                      <div>
-                        <a href={item.link} target="_blank" rel="noopener noreferrer">
-                          {linkLabel}
-                        </a>
-                      </div>
-                    </div>
-                    <div className="App-card-row">
-                      <div className="label">
-                        <Trans>About</Trans>
-                      </div>
-                      <div>{item.about}</div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          {/*<div className="Tab-title-section">*/}
+          {/*  <div className="Page-title">*/}
+          {/*    <Trans>Telegram Groups</Trans>*/}
+          {/*  </div>*/}
+          {/*  <div className="Page-description">*/}
+          {/*    <Trans>Community-led Telegram groups.</Trans>*/}
+          {/*  </div>*/}
+          {/*</div>*/}
+          {/*<div className="DashboardV2-projects">*/}
+          {/*  {telegramGroups.map((item) => {*/}
+          {/*    const linkLabel = item.linkLabel ? item.linkLabel : item.link;*/}
+          {/*    return (*/}
+          {/*      <div className="App-card" key={item.title}>*/}
+          {/*        <div className="App-card-title">{item.title}</div>*/}
+          {/*        <div className="App-card-divider"></div>*/}
+          {/*        <div className="App-card-content">*/}
+          {/*          <div className="App-card-row">*/}
+          {/*            <div className="label">*/}
+          {/*              <Trans>Link</Trans>*/}
+          {/*            </div>*/}
+          {/*            <div>*/}
+          {/*              <a href={item.link} target="_blank" rel="noopener noreferrer">*/}
+          {/*                {linkLabel}*/}
+          {/*              </a>*/}
+          {/*            </div>*/}
+          {/*          </div>*/}
+          {/*          <div className="App-card-row">*/}
+          {/*            <div className="label">*/}
+          {/*              <Trans>About</Trans>*/}
+          {/*            </div>*/}
+          {/*            <div>{item.about}</div>*/}
+          {/*          </div>*/}
+          {/*        </div>*/}
+          {/*      </div>*/}
+          {/*    );*/}
+          {/*  })}*/}
+          {/*</div>*/}
         </div>
         <Footer />
       </div>

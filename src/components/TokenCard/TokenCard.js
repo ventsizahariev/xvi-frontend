@@ -72,14 +72,14 @@ export default function TokenCard({ showRedirectModal }) {
                 <Trans>Buy on BSC</Trans>
               </BuyLink>
             </div>
-            <a
-              href="https://gmxio.gitbook.io/gmx/tokenomics"
-              target="_blank"
-              rel="noreferrer"
-              className="default-btn read-more"
-            >
-              <Trans>Read more</Trans>
-            </a>
+            {/*<a*/}
+            {/*  href="https://gmxio.gitbook.io/gmx/tokenomics"*/}
+            {/*  target="_blank"*/}
+            {/*  rel="noreferrer"*/}
+            {/*  className="default-btn read-more"*/}
+            {/*>*/}
+            {/*  <Trans>Read more</Trans>*/}
+            {/*</a>*/}
           </div>
         </div>
       </div>
@@ -104,14 +104,14 @@ export default function TokenCard({ showRedirectModal }) {
               {/*  <Trans>Buy on Avalanche</Trans>*/}
               {/*</BuyLink>*/}
             </div>
-            <a
-              href="https://gmxio.gitbook.io/gmx/glp"
-              target="_blank"
-              rel="noreferrer"
-              className="default-btn read-more"
-            >
-              <Trans>Read more</Trans>
-            </a>
+            {/*<a*/}
+            {/*  href="https://gmxio.gitbook.io/gmx/glp"*/}
+            {/*  target="_blank"*/}
+            {/*  rel="noreferrer"*/}
+            {/*  className="default-btn read-more"*/}
+            {/*>*/}
+            {/*  <Trans>Read more</Trans>*/}
+            {/*</a>*/}
           </div>
         </div>
       </div>
