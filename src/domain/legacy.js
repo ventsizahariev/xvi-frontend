@@ -60,6 +60,8 @@ function getGmxGraphClient(chainId) {
     return avalancheGraphClient;
   } else if (chainId === ARBITRUM_TESTNET) {
     return null;
+  } else if (chainId === BSC_TESTNET) {
+    return null;
   }
   throw new Error(`Unsupported chain ${chainId}`);
 }
