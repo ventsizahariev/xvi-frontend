@@ -3,7 +3,6 @@ import { formatAmount, USD_DECIMALS } from "../../lib/legacy";
 export default function TooltipCard({
   title,
   total,
-  avax,
   arbitrum,
   showDollar = true,
   decimalsForConversion = USD_DECIMALS,
@@ -11,17 +10,10 @@ export default function TooltipCard({
   return (
     <>
       <p className="Tooltip-row">
-        <span className="label">{title} on Arbitrum:</span>
+        <span className="label">{title} on Binance:</span>
         <span className="amount">
           {showDollar && "$"}
           {formatAmount(arbitrum, decimalsForConversion, 0, true)}
-        </span>
-      </p>
-      <p className="Tooltip-row">
-        <span className="label">{title} on Avalanche:</span>
-        <span className="amount">
-          {showDollar && "$"}
-          {formatAmount(avax, decimalsForConversion, 0, true)}
         </span>
       </p>
       <div className="Tooltip-divider" />

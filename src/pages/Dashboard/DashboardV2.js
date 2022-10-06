@@ -405,7 +405,7 @@ export default function DashboardV2() {
               )}
               <br />
               <div>
-                <a href="https://gmxio.gitbook.io/gmx/glp" target="_blank" rel="noopener noreferrer">
+                <a href="about:blank" target="_blank" rel="noopener noreferrer">
                   More Info
                 </a>
               </div>
@@ -770,13 +770,8 @@ export default function DashboardV2() {
                             renderContent={() => (
                               <>
                                 <TooltipCardRow
-                                  label="Price on Arbitrum"
+                                  label="Price on Binance"
                                   amount={formatAmount(gmxPriceFromArbitrum, USD_DECIMALS, 2, true)}
-                                  showDollar={true}
-                                />
-                                <TooltipCardRow
-                                  label="Price on Avalanche"
-                                  amount={formatAmount(gmxPriceFromAvalanche, USD_DECIMALS, 2, true)}
                                   showDollar={true}
                                 />
                               </>

@@ -19,7 +19,7 @@ const constants = {
     defaultCollateralSymbol: "BUSD",
     defaultFlagOrdersEnabled: true,
     positionReaderPropsLength: 8,
-    v2: false,
+    v2: true,
     SWAP_ORDER_EXECUTION_GAS_FEE: parseEther("0.01"),
     INCREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.01"),
     // contract requires that execution fee be strictly greater than instead of gte

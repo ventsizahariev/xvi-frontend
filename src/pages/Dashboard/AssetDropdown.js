@@ -13,11 +13,13 @@ import { Trans } from "@lingui/macro";
 function AssetDropdown({ assetSymbol, assetInfo }) {
   const { active } = useWeb3React();
   const { chainId } = useChainId();
-  let { coingecko, arbitrum, avalanche } = ICONLINKS[chainId][assetSymbol] || {};
+  let { coingecko } = ICONLINKS[chainId][assetSymbol] || {};
   const unavailableTokenSymbols =
     {
       42161: ["ETH"],
       43114: ["AVAX"],
+      97: ["BNB"],
+      56: ["BNB"]
     }[chainId] || [];
 
   return (
@@ -33,26 +35,6 @@ function AssetDropdown({ assetSymbol, assetInfo }) {
                 <img src={coingeckoIcon} alt="Open in Coingecko" />
                 <p>
                   <Trans>Open in Coingecko</Trans>
-                </p>
-              </a>
-            )}
-          </>
-        </Menu.Item>
-        <Menu.Item>
-          <>
-            {arbitrum && (
-              <a href={arbitrum} className="asset-item" target="_blank" rel="noopener noreferrer">
-                <img src={arbitrumIcon} alt="Open in explorer" />
-                <p>
-                  <Trans>Open in Explorer</Trans>
-                </p>
-              </a>
-            )}
-            {avalanche && (
-              <a target="_blank" rel="noopener noreferrer" href={avalanche} className="asset-item">
-                <img src={avalancheIcon} alt="Open in explorer" />
-                <p>
-                  <Trans>Open in Explorer</Trans>
                 </p>
               </a>
             )}
