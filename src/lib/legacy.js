@@ -32,6 +32,7 @@ export const AVALANCHE = 43114;
 export const BSC_TESTNET = 97;
 export const ARBITRUM_TESTNET = 421611;
 export const ARBITRUM = 42161;
+export const VELAS = 106;
 // TODO take it from web3
 export const DEFAULT_CHAIN_ID = BSC_TESTNET;
 export const CHAIN_ID = DEFAULT_CHAIN_ID;
@@ -450,7 +451,7 @@ export function useLocalStorageByChainId(chainId, key, defaultValue) {
           value = value(internalValue[chainId] || defaultValue);
         }
         const newInternalValue = {
-          ...internalValue,
+            ...internalValue,
           [chainId]: value,
         };
         return newInternalValue;
@@ -554,13 +555,23 @@ export function getServerBaseUrl(chainId) {
   } else if (chainId === AVALANCHE) {
     return "https://gmx-avax-server.uc.r.appspot.com";
   } else if (chainId === BSC_TESTNET) {
-    return "http://localhost:3020";
+    return "http://gambit-server-devnet.uc.r.appspot.com";
   }
   return "https://gmx-server-mainnet.uw.r.appspot.com";
 }
 
 export function getServerUrl(chainId, path) {
   return `${getServerBaseUrl(chainId)}${path}`;
+}
+
+export function getPriceServerUrl() {
+  if (isLocal()) {
+    return "http://localhost:3020";
+  }
+  if (isDevelopment()) {
+    return "http://185.158.114.248:3020";
+  }
+  return "https://api.leveragepro.io";
 }
 
 export function isTriggerRatioInverted(fromTokenInfo, toTokenInfo) {
@@ -606,7 +617,7 @@ export function shouldInvertTriggerRatio(tokenA, tokenB) {
 }
 
 export function getExchangeRateDisplay(rate, tokenA, tokenB, opts = {}) {
-  if (!rate || !tokenA || !tokenB) return "...";
+  if (!rate || !tokenA || !tokenB) return "0";
   if (shouldInvertTriggerRatio(tokenA, tokenB)) {
     [tokenA, tokenB] = [tokenB, tokenA];
     rate = PRECISION.mul(PRECISION).div(rate);
@@ -1761,7 +1772,7 @@ export const padDecimals = (amount, minDecimals) => {
 
 export const formatKeyAmount = (map, key, tokenDecimals, displayDecimals, useCommas) => {
   if (!map || !map[key]) {
-    return "...";
+    return "0";
   }
 
   return formatAmount(map[key], tokenDecimals, displayDecimals, useCommas);
@@ -1769,7 +1780,7 @@ export const formatKeyAmount = (map, key, tokenDecimals, displayDecimals, useCom
 
 export const formatArrayAmount = (arr, index, tokenDecimals, displayDecimals, useCommas) => {
   if (!arr || !arr[index]) {
-    return "...";
+    return "0";
   }
 
   return formatAmount(arr[index], tokenDecimals, displayDecimals, useCommas);
@@ -1971,7 +1982,7 @@ export function useAccountOrders(flagOrdersEnabled, overrideAccount) {
 
 export const formatAmount = (amount, tokenDecimals, displayDecimals, useCommas, defaultValue) => {
   if (!defaultValue) {
-    defaultValue = "...";
+    defaultValue = "0";
   }
   if (amount === undefined || amount.toString().length === 0) {
     return defaultValue;
@@ -1992,7 +2003,7 @@ export const formatAmount = (amount, tokenDecimals, displayDecimals, useCommas, 
 
 export const formatAmountFree = (amount, tokenDecimals, displayDecimals) => {
   if (!amount) {
-    return "...";
+    return "0";
   }
   let amountStr = ethers.utils.formatUnits(amount, tokenDecimals);
   amountStr = limitDecimals(amountStr, displayDecimals);
@@ -2011,7 +2022,7 @@ export const parseValue = (value, tokenDecimals) => {
 
 export function numberWithCommas(x) {
   if (!x) {
-    return "...";
+    return "0";
   }
   var parts = x.toString().split(".");
   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -2811,7 +2822,7 @@ export function useDebounce(value, delay) {
 }
 
 export function isDevelopment() {
-  return !window.location.host?.includes("gmx.io") && !window.location.host?.includes("ipfs.io");
+  return !window.location.host?.includes("leveragepro.io");
 }
 
 export function isLocal() {
@@ -2819,35 +2830,33 @@ export function isLocal() {
 }
 
 export function getHomeUrl() {
-  if (isLocal()) {
-    return "http://localhost:3010/#";
-  }
-
-  return "http://185.158.114.248/#";
+  return `${getBaseUrl()}/#`;
 }
 
 export function getAppBaseUrl() {
-  if (isLocal()) {
-    return "http://localhost:3010/#";
-  }
-
-  return "http://185.158.114.248/#";
+  return `${getBaseUrl()}/#`;
 }
 
 export function getRootShareApiUrl() {
   if (isLocal()) {
-    return "https://gmxs.vercel.app";
+    return "https://leveragepro.vercel.app";
   }
 
-  return "https://share.gmx.io";
+  return "https://share.leveragepro.io";
+}
+
+export function getBaseUrl() {
+  if (isLocal()) {
+    return "http://localhost:3010";
+  }
+  if (isDevelopment()) {
+    return "http://185.158.114.248";
+  }
+  return "https://leveragepro.io";
 }
 
 export function getTradePageUrl() {
-  if (isLocal()) {
-    return "http://localhost:3010/#/trade";
-  }
-
-  return "http://185.158.114.248/#/trade";
+  return `${getBaseUrl()}/#/trade`;
 }
 
 export function importImage(name) {

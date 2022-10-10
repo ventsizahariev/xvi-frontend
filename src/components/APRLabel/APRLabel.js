@@ -22,7 +22,7 @@ import GlpManager from "../../abis/GlpManager.json";
 
 import { useWeb3React } from "@web3-react/core";
 
-import { useGmxPrice } from "../../domain/legacy";
+import { useLeveragePrice } from "../../domain/legacy";
 
 import { getContract } from "../../config/Addresses";
 
@@ -34,12 +34,12 @@ export default function APRLabel({ chainId, label }) {
 
   const vaultAddress = getContract(chainId, "Vault");
   const nativeTokenAddress = getContract(chainId, "NATIVE_TOKEN");
-  const gmxAddress = getContract(chainId, "GMX");
+  const gmxAddress = getContract(chainId, "Leverage");
   const esGmxAddress = getContract(chainId, "ES_GMX");
   const bnGmxAddress = getContract(chainId, "BN_GMX");
   const glpAddress = getContract(chainId, "GLP");
 
-  const stakedGmxTrackerAddress = getContract(chainId, "StakedGmxTracker");
+  const stakedGmxTrackerAddress = getContract(chainId, "StakedLeverageTracker");
   const bonusGmxTrackerAddress = getContract(chainId, "BonusGmxTracker");
   const feeGmxTrackerAddress = getContract(chainId, "FeeGmxTracker");
 
@@ -124,7 +124,7 @@ export default function APRLabel({ chainId, label }) {
     }
   );
 
-  const { gmxPrice } = useGmxPrice(chainId, {}, active);
+  const { gmxPrice } = useLeveragePrice(chainId, {}, active);
 
   const gmxSupplyUrl = getServerUrl(chainId, "/gmx_supply");
   const { data: gmxSupply } = useSWR([gmxSupplyUrl], {

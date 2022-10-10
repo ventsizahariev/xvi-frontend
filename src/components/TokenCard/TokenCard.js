@@ -63,7 +63,8 @@ export default function TokenCard({ showRedirectModal }) {
             </Trans>
           </div>
           <div className="Home-token-card-option-apr">
-            <Trans>BSC APR:</Trans> <APRLabel chainId={BSC_TESTNET} label="gmxAprTotal" />,{" "}
+            <Trans>BSC APR:</Trans>
+            {/*<APRLabel chainId={BSC_TESTNET} label="gmxAprTotal" />,{" "}*/}
             {/*<Trans>Avalanche APR:</Trans> <APRLabel chainId={AVALANCHE} label="gmxAprTotal" key="AVALANCHE" />*/}
           </div>
           <div className="Home-token-card-option-action">
@@ -92,7 +93,8 @@ export default function TokenCard({ showRedirectModal }) {
             <Trans>GLP is the liquidity provider token. Accrues 70% of the platform's generated fees.</Trans>
           </div>
           <div className="Home-token-card-option-apr">
-            <Trans>BSC APR:</Trans> <APRLabel chainId={BSC_TESTNET} label="glpAprTotal" key="BSC_TESTNET" />,{" "}
+            <Trans>BSC APR:</Trans>
+            {/*<APRLabel chainId={BSC_TESTNET} label="glpAprTotal" key="BSC_TESTNET" />,{" "}*/}
             {/*<Trans>Avalanche APR:</Trans> <APRLabel chainId={AVALANCHE} label="glpAprTotal" key="AVALANCHE" />*/}
           </div>
           <div className="Home-token-card-option-action">

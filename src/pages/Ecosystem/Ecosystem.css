@@ -10,7 +10,12 @@
   }
 }
 
-img[alt="bsc16Icon"] {
+img.icon-16 {
   width: 16px;
   height: 16px;
+}
+
+img.icon-24 {
+  width: 24px;
+  height: 24px;
 }

@@ -34,7 +34,6 @@ import {
   GLP_DECIMALS,
   USD_DECIMALS,
   BASIS_POINTS_DIVISOR,
-  ARBITRUM,
   PLACEHOLDER_ACCOUNT,
   getBalanceAndSupplyData,
   getDepositBalanceData,
@@ -43,7 +42,7 @@ import {
   getProcessedData,
   getPageTitle,
 } from "../../lib/legacy";
-import { callContract, useGmxPrice, useTotalGmxStaked, useTotalGmxSupply } from "../../domain/legacy";
+import {callContract, useLeveragePrice, useTotalGmxStaked, useTotalLeverageSupply} from "../../domain/legacy";
 import { getConstant } from "../../config/chains";
 
 import useSWR from "swr";
@@ -628,13 +627,13 @@ function CompoundModal(props) {
     true
   );
 
-  const gmxAddress = getContract(chainId, "GMX");
-  const stakedGmxTrackerAddress = getContract(chainId, "StakedGmxTracker");
+  const gmxAddress = getContract(chainId, "Leverage");
+  const stakedLeverageTrackerAddress = getContract(chainId, "StakedLeverageTracker");
 
   const [isApproving, setIsApproving] = useState(false);
 
   const { data: tokenAllowance } = useSWR(
-    active && [active, chainId, gmxAddress, "allowance", account, stakedGmxTrackerAddress],
+    active && [active, chainId, gmxAddress, "allowance", account, stakedLeverageTrackerAddress],
     {
       fetcher: fetcher(library, Token),
     }
@@ -665,7 +664,7 @@ function CompoundModal(props) {
         setIsApproving,
         library,
         tokenAddress: gmxAddress,
-        spender: stakedGmxTrackerAddress,
+        spender: stakedLeverageTrackerAddress,
         chainId,
       });
       return;
@@ -945,12 +944,12 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
 
   const vaultAddress = getContract(chainId, "Vault");
   const nativeTokenAddress = getContract(chainId, "NATIVE_TOKEN");
-  const gmxAddress = getContract(chainId, "GMX");
+  const gmxAddress = getContract(chainId, "Leverage");
   const esGmxAddress = getContract(chainId, "ES_GMX");
   const bnGmxAddress = getContract(chainId, "BN_GMX");
   const glpAddress = getContract(chainId, "GLP");
 
-  const stakedGmxTrackerAddress = getContract(chainId, "StakedGmxTracker");
+  const stakedLeverageTrackerAddress = getContract(chainId, "StakedLeverageTracker");
   const bonusGmxTrackerAddress = getContract(chainId, "BonusGmxTracker");
   const feeGmxTrackerAddress = getContract(chainId, "FeeGmxTracker");
 
@@ -972,25 +971,25 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   const nativeTokenSymbol = getConstant(chainId, "nativeTokenSymbol");
   const wrappedTokenSymbol = getConstant(chainId, "wrappedTokenSymbol");
 
-  const walletTokens = [gmxAddress, esGmxAddress, glpAddress, stakedGmxTrackerAddress];
+  const walletTokens = [gmxAddress, esGmxAddress, glpAddress, stakedLeverageTrackerAddress];
   const depositTokens = [
     gmxAddress,
     esGmxAddress,
-    stakedGmxTrackerAddress,
+    stakedLeverageTrackerAddress,
     bonusGmxTrackerAddress,
     bnGmxAddress,
     glpAddress,
   ];
   const rewardTrackersForDepositBalances = [
-    stakedGmxTrackerAddress,
-    stakedGmxTrackerAddress,
+    stakedLeverageTrackerAddress,
+    stakedLeverageTrackerAddress,
     bonusGmxTrackerAddress,
     feeGmxTrackerAddress,
     feeGmxTrackerAddress,
     feeGlpTrackerAddress,
   ];
   const rewardTrackersForStakingInfo = [
-    stakedGmxTrackerAddress,
+    stakedLeverageTrackerAddress,
     bonusGmxTrackerAddress,
     feeGmxTrackerAddress,
     stakedGlpTrackerAddress,
@@ -1031,7 +1030,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   );
 
   const { data: stakedGmxSupply } = useSWR(
-    [`StakeV2:stakedGmxSupply:${active}`, chainId, gmxAddress, "balanceOf", stakedGmxTrackerAddress],
+    [`StakeV2:stakedGmxSupply:${active}`, chainId, gmxAddress, "balanceOf", stakedLeverageTrackerAddress],
     {
       fetcher: fetcher(library, Token),
     }
@@ -1062,15 +1061,15 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     }
   );
 
-  const { gmxPrice, gmxPriceFromArbitrum, gmxPriceFromAvalanche } = useGmxPrice(
+  const { leveragePrice } = useLeveragePrice(
     chainId,
-    { arbitrum: chainId === ARBITRUM ? library : undefined },
+    library,
     active
   );
 
-  let { total: totalGmxSupply } = useTotalGmxSupply();
+  let { total: totalGmxSupply } = useTotalLeverageSupply();
 
-  let { avax: avaxGmxStaked, arbitrum: arbitrumGmxStaked, total: totalGmxStaked } = useTotalGmxStaked();
+  let { bsc: bscGmxStaked, total: totalGmxStaked } = useTotalGmxStaked();
 
   const gmxSupplyUrl = getServerUrl(chainId, "/gmx_supply");
   const { data: gmxSupply } = useSWR([gmxSupplyUrl], {
@@ -1080,8 +1079,8 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   const isGmxTransferEnabled = true;
 
   let esGmxSupplyUsd;
-  if (esGmxSupply && gmxPrice) {
-    esGmxSupplyUsd = esGmxSupply.mul(gmxPrice).div(expandDecimals(1, 18));
+  if (esGmxSupply && leveragePrice) {
+    esGmxSupplyUsd = esGmxSupply.mul(leveragePrice).div(expandDecimals(1, 18));
   }
 
   let aum;
@@ -1103,7 +1102,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     aum,
     nativeTokenPrice,
     stakedGmxSupply,
-    gmxPrice,
+    leveragePrice,
     gmxSupply
   );
 
@@ -1128,13 +1127,13 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   const bonusGmxInFeeGmx = processedData ? processedData.bonusGmxInFeeGmx : undefined;
 
   let stakedGmxSupplyUsd;
-  if (!totalGmxStaked.isZero() && gmxPrice) {
-    stakedGmxSupplyUsd = totalGmxStaked.mul(gmxPrice).div(expandDecimals(1, 18));
+  if (!totalGmxStaked.isZero() && leveragePrice) {
+    stakedGmxSupplyUsd = totalGmxStaked.mul(leveragePrice).div(expandDecimals(1, 18));
   }
 
   let totalSupplyUsd;
-  if (totalGmxSupply && !totalGmxSupply.isZero() && gmxPrice) {
-    totalSupplyUsd = totalGmxSupply.mul(gmxPrice).div(expandDecimals(1, 18));
+  if (totalGmxSupply && !totalGmxSupply.isZero() && leveragePrice) {
+    totalSupplyUsd = totalGmxSupply.mul(leveragePrice).div(expandDecimals(1, 18));
   }
 
   let maxUnstakeableGmx = bigNumberify(0);
@@ -1165,7 +1164,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     setStakeValue("");
     setStakingTokenSymbol("GMX");
     setStakingTokenAddress(gmxAddress);
-    setStakingFarmAddress(stakedGmxTrackerAddress);
+    setStakingFarmAddress(stakedLeverageTrackerAddress);
     setStakeMethodName("stakeGmx");
   };
 
@@ -1470,15 +1469,15 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                   <Trans>Price</Trans>
                 </div>
                 <div>
-                  {!gmxPrice && "..."}
-                  {gmxPrice && (
+                  {!leveragePrice && "0"}
+                  {leveragePrice && (
                     <Tooltip
                       position="right-bottom"
                       className="nowrap"
-                      handle={"$" + formatAmount(gmxPrice, USD_DECIMALS, 2, true)}
+                      handle={"$" + formatAmount(leveragePrice, USD_DECIMALS, 2, true)}
                       renderContent={() => (
                         <>
-                          Price on Binance: ${formatAmount(gmxPriceFromArbitrum, USD_DECIMALS, 2, true)}
+                          Price on Binance: ${formatAmount(leveragePrice, USD_DECIMALS, 2, true)}
                         </>
                       )}
                     />
@@ -1583,8 +1582,8 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                           <div className="Tooltip-row">
                             <span className="label">Escrowed LeveragePro</span>
                             <span>
-                              {formatKeyAmount(processedData, "stakedGmxTrackerRewards", 18, 4)} ($
-                              {formatKeyAmount(processedData, "stakedGmxTrackerRewardsUsd", USD_DECIMALS, 2, true)})
+                              {formatKeyAmount(processedData, "stakedLeverageTrackerRewards", 18, 4)} ($
+                              {formatKeyAmount(processedData, "stakedLeverageTrackerRewardsUsd", USD_DECIMALS, 2, true)})
                             </span>
                           </div>
                         </>
@@ -1626,7 +1625,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                   <Trans>Total Staked</Trans>
                 </div>
                 <div>
-                  {!totalGmxStaked && "..."}
+                  {!totalGmxStaked && "0"}
                   {totalGmxStaked && (
                     <Tooltip
                       position="right-bottom"
@@ -1638,7 +1637,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                       }
                       renderContent={() => (
                         <>
-                          Binance: {formatAmount(arbitrumGmxStaked, 18, 0, true)} LeveragePro
+                          Binance: {formatAmount(bscGmxStaked, 18, 0, true)} LeveragePro
                         </>
                       )}
                     />
@@ -1649,7 +1648,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                 <div className="label">
                   <Trans>Total Supply</Trans>
                 </div>
-                {!totalGmxSupply && "..."}
+                {!totalGmxSupply && "0"}
                 {totalGmxSupply && (
                   <div>
                     {formatAmount(totalGmxSupply, 18, 0, true)} LeveragePro ($
@@ -1909,7 +1908,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                 <div className="label">
                   <Trans>Price</Trans>
                 </div>
-                <div>${formatAmount(gmxPrice, USD_DECIMALS, 2, true)}</div>
+                <div>${formatAmount(leveragePrice, USD_DECIMALS, 2, true)}</div>
               </div>
               <div className="App-card-row">
                 <div className="label">

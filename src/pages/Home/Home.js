@@ -10,8 +10,6 @@ import costIcon from "../../img/ic_cost.svg";
 import liquidityIcon from "../../img/ic_liquidity.svg";
 import totaluserIcon from "../../img/ic_totaluser.svg";
 
-import arbitrumIcon from "../../img/ic_arbitrum_96.svg";
-import avaIcon from "../../img/ic_avalanche_96.svg";
 
 import bscIcon from "../../img/ic_bsc_96.svg";
 import velasIcon from "../../img/ic_avalanche_96.svg";
@@ -27,9 +25,7 @@ import {
   numberWithCommas,
   getServerUrl,
   USD_DECIMALS,
-  ARBITRUM,
-  AVALANCHE,
-  getTotalVolumeSum,
+  getTotalVolumeSum, BSC_TESTNET,
 } from "../../lib/legacy";
 
 import { useUserStat } from "../../domain/legacy";
@@ -69,73 +65,45 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
     }
   }
 
-  // ARBITRUM
+  // BINANCE
 
-  const arbitrumPositionStatsUrl = getServerUrl(ARBITRUM, "/position_stats");
-  const { data: arbitrumPositionStats } = useSWR([arbitrumPositionStatsUrl], {
+  const bscPositionStatsUrl = getServerUrl(BSC_TESTNET, "/position_stats");
+  const { data: bscPositionStats } = useSWR([bscPositionStatsUrl], {
     fetcher: (...args) => fetch(...args).then((res) => res.json()),
   });
 
-  const arbitrumTotalVolumeUrl = getServerUrl(ARBITRUM, "/total_volume");
-  const { data: arbitrumTotalVolume } = useSWR([arbitrumTotalVolumeUrl], {
+  const bscTotalVolumeUrl = getServerUrl(BSC_TESTNET, "/total_volume");
+  const { data: bscTotalVolume } = useSWR([bscTotalVolumeUrl], {
     fetcher: (...args) => fetch(...args).then((res) => res.json()),
   });
 
-  // AVALANCHE
-
-  const avalanchePositionStatsUrl = getServerUrl(AVALANCHE, "/position_stats");
-  const { data: avalanchePositionStats } = useSWR([avalanchePositionStatsUrl], {
-    fetcher: (...args) => fetch(...args).then((res) => res.json()),
-  });
-
-  const avalancheTotalVolumeUrl = getServerUrl(AVALANCHE, "/total_volume");
-  const { data: avalancheTotalVolume } = useSWR([avalancheTotalVolumeUrl], {
-    fetcher: (...args) => fetch(...args).then((res) => res.json()),
-  });
 
   // Total Volume
-
-  const arbitrumTotalVolumeSum = getTotalVolumeSum(arbitrumTotalVolume);
-  const avalancheTotalVolumeSum = getTotalVolumeSum(avalancheTotalVolume);
+  const bscTotalVolumeSum = getTotalVolumeSum(bscTotalVolume);
 
   let totalVolumeSum = bigNumberify(0);
-  if (arbitrumTotalVolumeSum && avalancheTotalVolumeSum) {
-    totalVolumeSum = totalVolumeSum.add(arbitrumTotalVolumeSum);
-    totalVolumeSum = totalVolumeSum.add(avalancheTotalVolumeSum);
+  if (bscTotalVolumeSum) {
+    totalVolumeSum = totalVolumeSum.add(bscTotalVolumeSum);
   }
 
   // Open Interest
 
   let openInterest = bigNumberify(0);
   if (
-    arbitrumPositionStats &&
-    arbitrumPositionStats.totalLongPositionSizes &&
-    arbitrumPositionStats.totalShortPositionSizes
+    bscPositionStats &&
+    bscPositionStats.totalLongPositionSizes &&
+    bscPositionStats.totalShortPositionSizes
   ) {
-    openInterest = openInterest.add(arbitrumPositionStats.totalLongPositionSizes);
-    openInterest = openInterest.add(arbitrumPositionStats.totalShortPositionSizes);
-  }
-
-  if (
-    avalanchePositionStats &&
-    avalanchePositionStats.totalLongPositionSizes &&
-    avalanchePositionStats.totalShortPositionSizes
-  ) {
-    openInterest = openInterest.add(avalanchePositionStats.totalLongPositionSizes);
-    openInterest = openInterest.add(avalanchePositionStats.totalShortPositionSizes);
+    openInterest = openInterest.add(bscPositionStats.totalLongPositionSizes);
+    openInterest = openInterest.add(bscPositionStats.totalShortPositionSizes);
   }
 
   // user stat
-  const arbitrumUserStats = useUserStat(ARBITRUM);
-  const avalancheUserStats = useUserStat(AVALANCHE);
+  const bscUserStats = useUserStat(BSC_TESTNET);
   let totalUsers = 0;
 
-  if (arbitrumUserStats && arbitrumUserStats.uniqueCount) {
-    totalUsers += arbitrumUserStats.uniqueCount;
-  }
-
-  if (avalancheUserStats && avalancheUserStats.uniqueCount) {
-    totalUsers += avalancheUserStats.uniqueCount;
+  if (bscUserStats && bscUserStats.uniqueCount) {
+    totalUsers += bscUserStats.uniqueCount;
   }
 
   const LaunchExchangeButton = () => {
@@ -307,7 +275,7 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
           <div className="Home-faqs-introduction">
             <div className="Home-faqs-introduction__title">FAQs</div>
             <div className="Home-faqs-introduction__description">Most asked questions. If you wish to learn more, please head to our Documentation page.</div>
-            <a href="about:blank" className="default-btn Home-faqs-documentation">Documentation</a>
+            <a href="about:blank" target="_blank" className="default-btn Home-faqs-documentation">Documentation</a>
           </div>
           {/*<div className="Home-faqs-content-block">*/}
           {/*  {*/}

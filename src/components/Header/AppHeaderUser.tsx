@@ -34,18 +34,6 @@ export function AppHeaderUser({
   const showConnectionOptions = !isHomeSite();
 
   const networkOptions = [
-    // {
-    //   label: getChainName(ARBITRUM),
-    //   value: ARBITRUM,
-    //   icon: "ic_arbitrum_24.svg",
-    //   color: "#264f79",
-    // },
-    // {
-    //   label: getChainName(AVALANCHE),
-    //   value: AVALANCHE,
-    //   icon: "ic_avalanche_24.svg",
-    //   color: "#E841424D",
-    // },
     {
       label: getChainName(BSC),
       value: BSC,
