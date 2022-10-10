@@ -566,12 +566,12 @@ export function getServerUrl(chainId, path) {
 
 export function getPriceServerUrl() {
   if (isLocal()) {
-    return "http://localhost:3020";
+    return "http://localhost:3020/prices";
   }
   if (isDevelopment()) {
-    return "http://185.158.114.248:8080";
+    return "http://185.158.114.248:8080/prices";
   }
-  return "https://api.leveragepro.io";
+  return "https://api.leveragepro.io/prices";
 }
 
 export function isTriggerRatioInverted(fromTokenInfo, toTokenInfo) {
