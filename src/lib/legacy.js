@@ -569,7 +569,7 @@ export function getPriceServerUrl() {
     return "http://localhost:3020";
   }
   if (isDevelopment()) {
-    return "http://185.158.114.248:3020";
+    return "http://185.158.114.248:8080";
   }
   return "https://api.leveragepro.io";
 }

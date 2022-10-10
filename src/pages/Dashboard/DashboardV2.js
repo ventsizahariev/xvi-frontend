@@ -103,6 +103,7 @@ function getPositionStats(positionStats) {
   if (!positionStats || positionStats.length === 0) {
     return null;
   }
+  console.log(positionStats);
   return positionStats.reduce(
     (acc, cv, i) => {
       acc.totalLongPositionSizes = acc.totalLongPositionSizes.add(cv.totalLongPositionSizes);
