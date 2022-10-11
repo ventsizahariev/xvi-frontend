@@ -371,7 +371,7 @@ function FullApp() {
   const positionRouterAddress = getContract(chainId, "PositionRouter");
 
   useEffect(() => {
-    const wsVaultAbi = Vault;
+    const wsVaultAbi = Vault.abi;
     const wsProvider = getWsProvider(active, chainId);
     if (!wsProvider) {
       return;
