@@ -114,7 +114,7 @@ function getWsProvider(active, chainId) {
     return;
   }
   if (chainId === BSC_TESTNET) {
-    return _.sample(RPC_PROVIDERS[chainId]);
+    return new ethers.providers.JsonRpcProvider(_.sample(RPC_PROVIDERS[chainId]));
   }
   return;
 }
