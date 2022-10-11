@@ -1,26 +1,25 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
-import { InjectedConnector } from "@web3-react/injected-connector";
+import React, {useCallback, useEffect, useRef, useState} from "react";
+import {InjectedConnector} from "@web3-react/injected-connector";
 import {
-  WalletConnectConnector,
   UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
+  WalletConnectConnector,
 } from "@web3-react/walletconnect-connector";
-import { toast } from "react-toastify";
-import { useWeb3React, UnsupportedChainIdError } from "@web3-react/core";
-import { useLocalStorage } from "react-use";
-import { errors, ethers } from "ethers";
-import { format as formatDateFn } from "date-fns";
+import {toast} from "react-toastify";
+import {UnsupportedChainIdError, useWeb3React} from "@web3-react/core";
+import {useLocalStorage} from "react-use";
+import {ethers} from "ethers";
+import {format as formatDateFn} from "date-fns";
 import Token from "../abis/Token.json";
 import _ from "lodash";
-import { getContract } from "../config/Addresses";
+import {getContract} from "../config/Addresses";
 import useSWR from "swr";
 
 import OrderBookReader from "../abis/OrderBookReader.json";
 import OrderBook from "../abis/OrderBook.json";
 
-import { getWhitelistedTokens, isValidToken } from "../config/Tokens";
-import { AiOutlineConsoleSql } from "react-icons/ai";
+import {getWhitelistedTokens, isValidToken} from "../config/Tokens";
 
-const { AddressZero } = ethers.constants;
+const {AddressZero} = ethers.constants;
 
 export const UI_VERSION = "1.3";
 
@@ -69,10 +68,6 @@ const MAX_GAS_PRICE_MAP = {
 
 const alchemyWhitelistedDomains = ["gmx.io", "app.gmx.io"];
 
-export function getDefaultArbitrumRpcUrl() {
-  return "https://arb1.arbitrum.io/rpc";
-}
-
 export function getAlchemyHttpUrl() {
   if (alchemyWhitelistedDomains.includes(window.location.host)) {
     return "https://arb-mainnet.g.alchemy.com/v2/ha7CFsr1bx5ZItuR6VZBbhKozcKDY4LZ";
@@ -87,8 +82,6 @@ export function getAlchemyWsUrl() {
   return "wss://arb-mainnet.g.alchemy.com/v2/EmVYwUw0N2tXOuG0SZfe5Z04rzBsCbr2";
 }
 
-const ARBITRUM_RPC_PROVIDERS = [getDefaultArbitrumRpcUrl()];
-const AVALANCHE_RPC_PROVIDERS = ["https://api.avax.network/ext/bc/C/rpc"];
 export const WALLET_CONNECT_LOCALSTORAGE_KEY = "walletconnect";
 export const WALLET_LINK_LOCALSTORAGE_PREFIX = "-walletlink";
 export const SHOULD_EAGER_CONNECT_LOCALSTORAGE_KEY = "eagerconnect";
@@ -113,7 +106,7 @@ export const DUST_BNB = "2000000000000000";
 export const DUST_USD = expandDecimals(1, USD_DECIMALS);
 export const PRECISION = expandDecimals(1, 30);
 export const GLP_DECIMALS = 18;
-export const GMX_DECIMALS = 18;
+export const LEVERAGE_DECIMALS = 18;
 export const DEFAULT_MAX_USDG_AMOUNT = expandDecimals(200 * 1000 * 1000, 18);
 
 export const TAX_BASIS_POINTS = 50;
@@ -401,8 +394,6 @@ const getWalletConnectConnector = () => {
   const chainId = localStorage.getItem(SELECTED_NETWORK_LOCAL_STORAGE_KEY) || DEFAULT_CHAIN_ID;
   return new WalletConnectConnector({
     rpc: {
-      [AVALANCHE]: AVALANCHE_RPC_PROVIDERS[0],
-      [ARBITRUM]: ARBITRUM_RPC_PROVIDERS[0],
       [BSC_TESTNET]: TESTNET_RPC_PROVIDERS[0],
       [BSC]: BSC_RPC_PROVIDERS[0],
       [ARBITRUM_TESTNET]: "https://rinkeby.arbitrum.io/rpc",
@@ -451,7 +442,7 @@ export function useLocalStorageByChainId(chainId, key, defaultValue) {
           value = value(internalValue[chainId] || defaultValue);
         }
         const newInternalValue = {
-            ...internalValue,
+          ...internalValue,
           [chainId]: value,
         };
         return newInternalValue;
@@ -494,7 +485,7 @@ function getTriggerPrice(tokenAddress, max, info, orderOption, triggerPriceUsd) 
   return max ? info.maxPrice : info.minPrice;
 }
 
-export function getLiquidationPriceFromDelta({ liquidationAmount, size, collateral, averagePrice, isLong }) {
+export function getLiquidationPriceFromDelta({liquidationAmount, size, collateral, averagePrice, isLong}) {
   if (!size || size.eq(0)) {
     return;
   }
@@ -548,30 +539,19 @@ export function getServerBaseUrl(chainId) {
   }
   if (chainId === BSC) {
     return "https://gambit-server-staging.uc.r.appspot.com";
-  } else if (chainId === ARBITRUM_TESTNET) {
-    return "https://gambit-server-devnet.uc.r.appspot.com";
-  } else if (chainId === ARBITRUM) {
-    return "https://gmx-server-mainnet.uw.r.appspot.com";
-  } else if (chainId === AVALANCHE) {
-    return "https://gmx-avax-server.uc.r.appspot.com";
   } else if (chainId === BSC_TESTNET) {
-    return "http://gambit-server-devnet.uc.r.appspot.com";
+    if (isLocal()) {
+      return "http://localhost:3020";
+    }
+    if (isDevelopment()) {
+      return "http://185.158.114.248:8080";
+    }
   }
-  return "https://gmx-server-mainnet.uw.r.appspot.com";
+  return "https://api.leveragepro.io";
 }
 
 export function getServerUrl(chainId, path) {
   return `${getServerBaseUrl(chainId)}${path}`;
-}
-
-export function getPriceServerUrl() {
-  if (isLocal()) {
-    return "http://localhost:3020/prices";
-  }
-  if (isDevelopment()) {
-    return "http://185.158.114.248:8080/prices";
-  }
-  return "https://api.leveragepro.io/prices";
 }
 
 export function isTriggerRatioInverted(fromTokenInfo, toTokenInfo) {
@@ -701,7 +681,7 @@ export function getFeeBasisPoints(
 }
 
 export function getBuyGlpToAmount(fromAmount, swapTokenAddress, infoTokens, glpPrice, usdgSupply, totalTokenWeights) {
-  const defaultValue = { amount: bigNumberify(0), feeBasisPoints: 0 };
+  const defaultValue = {amount: bigNumberify(0), feeBasisPoints: 0};
   if (!fromAmount || !swapTokenAddress || !infoTokens || !glpPrice || !usdgSupply || !totalTokenWeights) {
     return defaultValue;
   }
@@ -728,11 +708,11 @@ export function getBuyGlpToAmount(fromAmount, swapTokenAddress, infoTokens, glpP
 
   glpAmount = glpAmount.mul(BASIS_POINTS_DIVISOR - feeBasisPoints).div(BASIS_POINTS_DIVISOR);
 
-  return { amount: glpAmount, feeBasisPoints };
+  return {amount: glpAmount, feeBasisPoints};
 }
 
 export function getSellGlpFromAmount(toAmount, swapTokenAddress, infoTokens, glpPrice, usdgSupply, totalTokenWeights) {
-  const defaultValue = { amount: bigNumberify(0), feeBasisPoints: 0 };
+  const defaultValue = {amount: bigNumberify(0), feeBasisPoints: 0};
   if (!toAmount || !swapTokenAddress || !infoTokens || !glpPrice || !usdgSupply || !totalTokenWeights) {
     return defaultValue;
   }
@@ -759,11 +739,11 @@ export function getSellGlpFromAmount(toAmount, swapTokenAddress, infoTokens, glp
 
   glpAmount = glpAmount.mul(BASIS_POINTS_DIVISOR).div(BASIS_POINTS_DIVISOR - feeBasisPoints);
 
-  return { amount: glpAmount, feeBasisPoints };
+  return {amount: glpAmount, feeBasisPoints};
 }
 
 export function getBuyGlpFromAmount(toAmount, fromTokenAddress, infoTokens, glpPrice, usdgSupply, totalTokenWeights) {
-  const defaultValue = { amount: bigNumberify(0) };
+  const defaultValue = {amount: bigNumberify(0)};
   if (!toAmount || !fromTokenAddress || !infoTokens || !glpPrice || !usdgSupply || !totalTokenWeights) {
     return defaultValue;
   }
@@ -789,11 +769,11 @@ export function getBuyGlpFromAmount(toAmount, fromTokenAddress, infoTokens, glpP
 
   fromAmount = fromAmount.mul(BASIS_POINTS_DIVISOR).div(BASIS_POINTS_DIVISOR - feeBasisPoints);
 
-  return { amount: fromAmount, feeBasisPoints };
+  return {amount: fromAmount, feeBasisPoints};
 }
 
 export function getSellGlpToAmount(toAmount, fromTokenAddress, infoTokens, glpPrice, usdgSupply, totalTokenWeights) {
-  const defaultValue = { amount: bigNumberify(0) };
+  const defaultValue = {amount: bigNumberify(0)};
   if (!toAmount || !fromTokenAddress || !infoTokens || !glpPrice || !usdgSupply || !totalTokenWeights) {
     return defaultValue;
   }
@@ -819,7 +799,7 @@ export function getSellGlpToAmount(toAmount, fromTokenAddress, infoTokens, glpPr
 
   fromAmount = fromAmount.mul(BASIS_POINTS_DIVISOR - feeBasisPoints).div(BASIS_POINTS_DIVISOR);
 
-  return { amount: fromAmount, feeBasisPoints };
+  return {amount: fromAmount, feeBasisPoints};
 }
 
 export function getNextFromAmount(
@@ -834,25 +814,25 @@ export function getNextFromAmount(
   totalTokenWeights,
   forSwap
 ) {
-  const defaultValue = { amount: bigNumberify(0) };
+  const defaultValue = {amount: bigNumberify(0)};
 
   if (!toAmount || !fromTokenAddress || !toTokenAddress || !infoTokens) {
     return defaultValue;
   }
 
   if (fromTokenAddress === toTokenAddress) {
-    return { amount: toAmount };
+    return {amount: toAmount};
   }
 
   const fromToken = getTokenInfo(infoTokens, fromTokenAddress);
   const toToken = getTokenInfo(infoTokens, toTokenAddress);
 
   if (fromToken.isNative && toToken.isWrapped) {
-    return { amount: toAmount };
+    return {amount: toAmount};
   }
 
   if (fromToken.isWrapped && toToken.isNative) {
-    return { amount: toAmount };
+    return {amount: toAmount};
   }
 
   // the realtime price should be used if it is for a transaction to open / close a position
@@ -926,24 +906,24 @@ export function getNextToAmount(
   totalTokenWeights,
   forSwap
 ) {
-  const defaultValue = { amount: bigNumberify(0) };
+  const defaultValue = {amount: bigNumberify(0)};
   if (!fromAmount || !fromTokenAddress || !toTokenAddress || !infoTokens) {
     return defaultValue;
   }
 
   if (fromTokenAddress === toTokenAddress) {
-    return { amount: fromAmount };
+    return {amount: fromAmount};
   }
 
   const fromToken = getTokenInfo(infoTokens, fromTokenAddress);
   const toToken = getTokenInfo(infoTokens, toTokenAddress);
 
   if (fromToken.isNative && toToken.isWrapped) {
-    return { amount: fromAmount };
+    return {amount: fromAmount};
   }
 
   if (fromToken.isWrapped && toToken.isNative) {
-    return { amount: fromAmount };
+    return {amount: fromAmount};
   }
 
   // the realtime price should be used if it is for a transaction to open / close a position
@@ -1102,7 +1082,7 @@ export function getProfitPrice(closePrice, position) {
 
 export function calculatePositionDelta(
   price,
-  { size, collateral, isLong, averagePrice, lastIncreasedTime },
+  {size, collateral, isLong, averagePrice, lastIncreasedTime},
   sizeDelta
 ) {
   if (!sizeDelta) {
@@ -1130,7 +1110,7 @@ export function calculatePositionDelta(
   };
 }
 
-export function getDeltaStr({ delta, deltaPercentage, hasProfit }) {
+export function getDeltaStr({delta, deltaPercentage, hasProfit}) {
   let deltaStr;
   let deltaPercentageStr;
 
@@ -1144,22 +1124,22 @@ export function getDeltaStr({ delta, deltaPercentage, hasProfit }) {
   deltaStr += `$${formatAmount(delta, USD_DECIMALS, 2, true)}`;
   deltaPercentageStr += `${formatAmount(deltaPercentage, 2, 2)}%`;
 
-  return { deltaStr, deltaPercentageStr };
+  return {deltaStr, deltaPercentageStr};
 }
 
 export function getLeverage({
-  size,
-  sizeDelta,
-  increaseSize,
-  collateral,
-  collateralDelta,
-  increaseCollateral,
-  entryFundingRate,
-  cumulativeFundingRate,
-  hasProfit,
-  delta,
-  includeDelta,
-}) {
+                              size,
+                              sizeDelta,
+                              increaseSize,
+                              collateral,
+                              collateralDelta,
+                              increaseCollateral,
+                              entryFundingRate,
+                              cumulativeFundingRate,
+                              hasProfit,
+                              delta,
+                              includeDelta,
+                            }) {
   if (!size && !sizeDelta) {
     return;
   }
@@ -1344,14 +1324,7 @@ export function getSwapFeeBasisPoints(isStable) {
 }
 
 // BSC TESTNET
-const TESTNET_RPC_PROVIDERS = [
-  "https://data-seed-prebsc-1-s1.binance.org:8545",
-  "https://data-seed-prebsc-2-s1.binance.org:8545",
-  "https://data-seed-prebsc-1-s2.binance.org:8545",
-  "https://data-seed-prebsc-2-s2.binance.org:8545",
-  "https://data-seed-prebsc-1-s3.binance.org:8545",
-  "https://data-seed-prebsc-2-s3.binance.org:8545",
-];
+const TESTNET_RPC_PROVIDERS = [getServerUrl(BSC_TESTNET, "/provider")];
 
 // BSC MAINNET
 export const BSC_RPC_PROVIDERS = [
@@ -1370,16 +1343,15 @@ export const BSC_RPC_PROVIDERS = [
   "https://bsc-dataseed4.binance.org",
 ];
 
-const RPC_PROVIDERS = {
+export const RPC_PROVIDERS = {
   [BSC_TESTNET]: TESTNET_RPC_PROVIDERS,
-  [BSC]: BSC_RPC_PROVIDERS,
-  [ARBITRUM]: ARBITRUM_RPC_PROVIDERS,
-  [AVALANCHE]: AVALANCHE_RPC_PROVIDERS,
+  [BSC]: BSC_RPC_PROVIDERS
 };
 
 const FALLBACK_PROVIDERS = {
   [ARBITRUM]: [getAlchemyHttpUrl()],
   [AVALANCHE]: ["https://avax-mainnet.gateway.pokt.network/v1/lb/626f37766c499d003aada23b"],
+  [BSC_TESTNET]: ""
 };
 
 export function shortenAddress(address, length) {
@@ -1420,16 +1392,16 @@ export function hasMetaMaskWalletExtension() {
 }
 
 export function hasCoinBaseWalletExtension() {
-  const { ethereum } = window;
+  const {ethereum} = window;
 
   if (!ethereum?.providers && !ethereum?.isCoinbaseWallet) {
     return false;
   }
-  return window.ethereum.isCoinbaseWallet || ethereum.providers.find(({ isCoinbaseWallet }) => isCoinbaseWallet);
+  return window.ethereum.isCoinbaseWallet || ethereum.providers.find(({isCoinbaseWallet}) => isCoinbaseWallet);
 }
 
 export function activateInjectedProvider(providerName) {
-  const { ethereum } = window;
+  const {ethereum} = window;
 
   if (!ethereum?.providers && !ethereum?.isCoinbaseWallet && !ethereum?.isMetaMask) {
     return undefined;
@@ -1439,11 +1411,11 @@ export function activateInjectedProvider(providerName) {
   if (ethereum?.providers) {
     switch (providerName) {
       case "CoinBase":
-        provider = ethereum.providers.find(({ isCoinbaseWallet }) => isCoinbaseWallet);
+        provider = ethereum.providers.find(({isCoinbaseWallet}) => isCoinbaseWallet);
         break;
       case "MetaMask":
       default:
-        provider = ethereum.providers.find(({ isMetaMask }) => isMetaMask);
+        provider = ethereum.providers.find(({isMetaMask}) => isMetaMask);
         break;
     }
   }
@@ -1458,23 +1430,21 @@ export function getInjectedConnector() {
 }
 
 export function useChainId() {
-  let { chainId } = useWeb3React();
+  let chainId;
 
-  if (!chainId) {
-    const chainIdFromLocalStorage = localStorage.getItem(SELECTED_NETWORK_LOCAL_STORAGE_KEY);
-    if (chainIdFromLocalStorage) {
-      chainId = parseInt(chainIdFromLocalStorage);
-      if (!chainId) {
-        // localstorage value is invalid
-        localStorage.removeItem(SELECTED_NETWORK_LOCAL_STORAGE_KEY);
-      }
+  const chainIdFromLocalStorage = localStorage.getItem(SELECTED_NETWORK_LOCAL_STORAGE_KEY);
+  if (chainIdFromLocalStorage) {
+    chainId = parseInt(chainIdFromLocalStorage);
+    if (!chainId) {
+      // localstorage value is invalid
+      localStorage.removeItem(SELECTED_NETWORK_LOCAL_STORAGE_KEY);
     }
   }
 
   if (!chainId || !supportedChainIds.includes(chainId)) {
     chainId = DEFAULT_CHAIN_ID;
   }
-  return { chainId };
+  return {chainId};
 }
 
 export function useENS(address) {
@@ -1488,10 +1458,11 @@ export function useENS(address) {
         if (name) setENSName(name);
       }
     }
+
     resolveENS();
   }, [address]);
 
-  return { ensName };
+  return {ensName};
 }
 
 export function clearWalletConnectData() {
@@ -1506,7 +1477,7 @@ export function clearWalletLinkData() {
 }
 
 export function useEagerConnect(setActivatingConnector) {
-  const { activate, active } = useWeb3React();
+  const {activate, active} = useWeb3React();
   const [tried, setTried] = useState(false);
 
   useEffect(() => {
@@ -1560,7 +1531,8 @@ export function useEagerConnect(setActivatingConnector) {
           setActivatingConnector(connector);
           await activate(connector, undefined, true);
         }
-      } catch (ex) {}
+      } catch (ex) {
+      }
 
       setTried(true);
     })();
@@ -1579,10 +1551,10 @@ export function useEagerConnect(setActivatingConnector) {
 
 export function useInactiveListener(suppress = false) {
   const injected = getInjectedConnector();
-  const { active, error, activate } = useWeb3React();
+  const {active, error, activate} = useWeb3React();
 
   useEffect(() => {
-    const { ethereum } = window;
+    const {ethereum} = window;
     if (ethereum && ethereum.on && !active && !error && !suppress) {
       const handleConnect = () => {
         activate(injected);
@@ -1623,7 +1595,7 @@ export function getProvider(library, chainId) {
     return library.getSigner();
   }
   provider = _.sample(RPC_PROVIDERS[chainId]);
-  return new ethers.providers.StaticJsonRpcProvider(provider, { chainId });
+  return new ethers.providers.StaticJsonRpcProvider(provider, {chainId});
 }
 
 export function getFallbackProvider(chainId) {
@@ -1632,10 +1604,10 @@ export function getFallbackProvider(chainId) {
   }
 
   const provider = _.sample(FALLBACK_PROVIDERS[chainId]);
-  return new ethers.providers.StaticJsonRpcProvider(provider, { chainId });
+  return new ethers.providers.StaticJsonRpcProvider(provider, {chainId});
 }
 
-export const getContractCall = ({ provider, contractInfo, arg0, arg1, method, params, additionalArgs, onError }) => {
+export const getContractCall = ({provider, contractInfo, arg0, arg1, method, params, additionalArgs, onError}) => {
   if (ethers.utils.isAddress(arg0)) {
     const address = arg0;
     const contract = new ethers.Contract(address, contractInfo.abi, provider);
@@ -1884,11 +1856,11 @@ export function getOrderKey(order) {
 }
 
 export function useAccountOrders(flagOrdersEnabled, overrideAccount) {
-  const { library, account: connectedAccount } = useWeb3React();
+  const {library, account: connectedAccount} = useWeb3React();
   const active = true; // this is used in Actions.js so set active to always be true
   const account = overrideAccount || connectedAccount;
 
-  const { chainId } = useChainId();
+  const {chainId} = useChainId();
   const shouldRequest = active && account && flagOrdersEnabled;
 
   const orderBookAddress = getContract(chainId, "OrderBook");
@@ -1917,7 +1889,7 @@ export function useAccountOrders(flagOrdersEnabled, overrideAccount) {
 
             return ret;
           })
-          .catch(() => ({ swap: [], increase: [], decrease: [] }));
+          .catch(() => ({swap: [], increase: [], decrease: []}));
       };
 
       const fetchLastIndex = async (type) => {
@@ -1932,7 +1904,7 @@ export function useAccountOrders(flagOrdersEnabled, overrideAccount) {
           fetchLastIndex("decrease"),
         ]);
 
-        return { swap, increase, decrease };
+        return {swap, increase, decrease};
       };
 
       const getRange = (to, from) => {
@@ -2103,7 +2075,7 @@ export async function getGasLimit(contract, method, params = [], value) {
     value = defaultValue;
   }
 
-  let gasLimit = await contract.estimateGas[method](...params, { value });
+  let gasLimit = await contract.estimateGas[method](...params, {value});
 
   if (gasLimit.lt(22000)) {
     gasLimit = bigNumberify(22000);
@@ -2113,18 +2085,18 @@ export async function getGasLimit(contract, method, params = [], value) {
 }
 
 export function approveTokens({
-  setIsApproving,
-  library,
-  tokenAddress,
-  spender,
-  chainId,
-  onApproveSubmitted,
-  getTokenInfo,
-  infoTokens,
-  pendingTxns,
-  setPendingTxns,
-  includeMessage,
-}) {
+                                setIsApproving,
+                                library,
+                                tokenAddress,
+                                spender,
+                                chainId,
+                                onApproveSubmitted,
+                                getTokenInfo,
+                                infoTokens,
+                                pendingTxns,
+                                setPendingTxns,
+                                includeMessage,
+                              }) {
   setIsApproving(true);
   const contract = new ethers.Contract(tokenAddress, Token.abi, library.getSigner());
   contract
@@ -2137,7 +2109,7 @@ export function approveTokens({
           <a href={txUrl} target="_blank" rel="noopener noreferrer">
             View status.
           </a>
-          <br />
+          <br/>
         </div>
       );
       if (onApproveSubmitted) {
@@ -2163,8 +2135,8 @@ export function approveTokens({
         failMsg = (
           <div>
             There is not enough ETH in your account on Arbitrum to send this transaction.
-            <br />
-            <br />
+            <br/>
+            <br/>
             <a href={"https://arbitrum.io/bridge-tutorial/"} target="_blank" rel="noopener noreferrer">
               Bridge ETH to Arbitrum
             </a>
@@ -2230,40 +2202,7 @@ const NETWORK_METADATA = {
     },
     rpcUrls: TESTNET_RPC_PROVIDERS,
     blockExplorerUrls: ["https://testnet.bscscan.com/"],
-  },
-  [ARBITRUM_TESTNET]: {
-    chainId: "0x" + ARBITRUM_TESTNET.toString(16),
-    chainName: "Arbitrum Testnet",
-    nativeCurrency: {
-      name: "ETH",
-      symbol: "ETH",
-      decimals: 18,
-    },
-    rpcUrls: ["https://rinkeby.arbitrum.io/rpc"],
-    blockExplorerUrls: ["https://rinkeby-explorer.arbitrum.io/"],
-  },
-  [ARBITRUM]: {
-    chainId: "0x" + ARBITRUM.toString(16),
-    chainName: "Arbitrum",
-    nativeCurrency: {
-      name: "ETH",
-      symbol: "ETH",
-      decimals: 18,
-    },
-    rpcUrls: ARBITRUM_RPC_PROVIDERS,
-    blockExplorerUrls: [getExplorerUrl(ARBITRUM)],
-  },
-  [AVALANCHE]: {
-    chainId: "0x" + AVALANCHE.toString(16),
-    chainName: "Avalanche",
-    nativeCurrency: {
-      name: "AVAX",
-      symbol: "AVAX",
-      decimals: 18,
-    },
-    rpcUrls: AVALANCHE_RPC_PROVIDERS,
-    blockExplorerUrls: [getExplorerUrl(AVALANCHE)],
-  },
+  }
 };
 
 export const addBscNetwork = async () => {
@@ -2271,7 +2210,7 @@ export const addBscNetwork = async () => {
 };
 
 export const addNetwork = async (metadata) => {
-  await window.ethereum.request({ method: "wallet_addEthereumChain", params: [metadata] }).catch();
+  await window.ethereum.request({method: "wallet_addEthereumChain", params: [metadata]}).catch();
 };
 
 export const switchNetwork = async (chainId, active) => {
@@ -2287,7 +2226,7 @@ export const switchNetwork = async (chainId, active) => {
     const chainIdHex = "0x" + chainId.toString(16);
     await window.ethereum.request({
       method: "wallet_switchEthereumChain",
-      params: [{ chainId: chainIdHex }],
+      params: [{chainId: chainIdHex}],
     });
     helperToast.success("Connected to " + getChainName(chainId));
     return getChainName(chainId);
@@ -2332,7 +2271,7 @@ export const getInjectedHandler = (activate) => {
         helperToast.error(
           <div>
             <div>Your wallet is not connected to {getChainName(chainId)}.</div>
-            <br />
+            <br/>
             <div className="clickable underline margin-bottom" onClick={() => switchNetwork(chainId, true)}>
               Switch to {getChainName(chainId)}
             </div>
@@ -2534,7 +2473,7 @@ export function getBalanceAndSupplyData(balances) {
     supplyData[key] = balances[i * propsLength + 1];
   }
 
-  return { balanceData, supplyData };
+  return {balanceData, supplyData};
 }
 
 export function getDepositBalanceData(depositBalances) {
@@ -2625,8 +2564,7 @@ export function getProcessedData(
   aum,
   nativeTokenPrice,
   stakedGmxSupply,
-  gmxPrice,
-  gmxSupply
+  gmxPrice
 ) {
   if (
     !balanceData ||
@@ -2637,8 +2575,7 @@ export function getProcessedData(
     !aum ||
     !nativeTokenPrice ||
     !stakedGmxSupply ||
-    !gmxPrice ||
-    !gmxSupply
+    !gmxPrice
   ) {
     return {};
   }
@@ -2648,7 +2585,7 @@ export function getProcessedData(
   data.gmxBalance = balanceData.gmx;
   data.gmxBalanceUsd = balanceData.gmx.mul(gmxPrice).div(expandDecimals(1, 18));
 
-  data.gmxSupply = bigNumberify(gmxSupply);
+  data.gmxSupply = supplyData.gmx
 
   data.gmxSupplyUsd = data.gmxSupply.mul(gmxPrice).div(expandDecimals(1, 18));
   data.stakedGmxSupply = stakedGmxSupply;
@@ -2796,6 +2733,7 @@ export function getPageTitle(data) {
 export function isHashZero(value) {
   return value === ethers.constants.HashZero;
 }
+
 export function isAddressZero(value) {
   return value === ethers.constants.AddressZero;
 }

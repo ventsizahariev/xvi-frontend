@@ -1,45 +1,40 @@
-import React, {useState, useEffect, useCallback, useRef} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import {SWRConfig} from "swr";
 import {ethers} from "ethers";
-import {Web3ReactProvider, useWeb3React} from "@web3-react/core";
+import {useWeb3React, Web3ReactProvider} from "@web3-react/core";
 import {Web3Provider} from "@ethersproject/providers";
 import useScrollToTop from "../lib/useScrollToTop";
 
-import {Switch, Route, HashRouter as Router, Redirect, useLocation, useHistory} from "react-router-dom";
+import {HashRouter as Router, Route, Switch, useHistory, useLocation} from "react-router-dom";
 
 import {
-  ARBITRUM,
-  AVALANCHE,
-  DEFAULT_SLIPPAGE_AMOUNT,
-  SLIPPAGE_BPS_KEY,
-  IS_PNL_IN_LEVERAGE_KEY,
-  SHOW_PNL_AFTER_FEES_KEY,
-  BASIS_POINTS_DIVISOR,
-  SHOULD_SHOW_POSITION_LINES_KEY,
-  getAppBaseUrl,
-  isHomeSite,
-  clearWalletConnectData,
-  helperToast,
-  getAlchemyWsUrl,
-  useChainId,
-  getInjectedHandler,
-  useEagerConnect,
-  useLocalStorageSerializeKey,
-  useInactiveListener,
-  getExplorerUrl,
-  getWalletConnectHandler,
   activateInjectedProvider,
-  hasMetaMaskWalletExtension,
-  hasCoinBaseWalletExtension,
-  isMobileDevice,
+  BASIS_POINTS_DIVISOR, BSC_TESTNET,
+  clearWalletConnectData,
   clearWalletLinkData,
-  SHOULD_EAGER_CONNECT_LOCALSTORAGE_KEY,
   CURRENT_PROVIDER_LOCALSTORAGE_KEY,
-  REFERRAL_CODE_KEY,
-  REFERRAL_CODE_QUERY_PARAM,
-  isDevelopment,
+  DEFAULT_SLIPPAGE_AMOUNT,
   DISABLE_ORDER_VALIDATION_KEY,
+  getAppBaseUrl,
+  getExplorerUrl,
+  getInjectedHandler,
+  getWalletConnectHandler,
+  hasCoinBaseWalletExtension,
+  hasMetaMaskWalletExtension,
+  helperToast,
+  IS_PNL_IN_LEVERAGE_KEY,
+  isMobileDevice,
   LANGUAGE_LOCALSTORAGE_KEY,
+  REFERRAL_CODE_KEY,
+  REFERRAL_CODE_QUERY_PARAM, RPC_PROVIDERS,
+  SHOULD_EAGER_CONNECT_LOCALSTORAGE_KEY,
+  SHOULD_SHOW_POSITION_LINES_KEY,
+  SHOW_PNL_AFTER_FEES_KEY,
+  SLIPPAGE_BPS_KEY,
+  useChainId,
+  useEagerConnect,
+  useInactiveListener,
+  useLocalStorageSerializeKey,
 } from "../lib/legacy";
 
 import Home from "../pages/Home/Home";
@@ -76,11 +71,10 @@ import useEventToast from "../components/EventToast/useEventToast";
 import EventToastContainer from "../components/EventToast/EventToastContainer";
 import SEO from "../components/Common/SEO";
 import useRouteQuery from "../lib/useRouteQuery";
-import {encodeReferralCode, decodeReferralCode} from "../domain/referrals";
+import {decodeReferralCode, encodeReferralCode} from "../domain/referrals";
 
 import {getContract} from "../config/Addresses";
-import VaultV2 from "../abis/VaultV2.json";
-import VaultV2b from "../abis/VaultV2b.json";
+import Vault from "../abis/Vault.json";
 import PositionRouter from "../abis/PositionRouter.json";
 import PageNotFound from "../pages/PageNotFound/PageNotFound";
 import ReferralTerms from "../pages/ReferralTerms/ReferralTerms";
@@ -92,9 +86,10 @@ import Jobs from "../pages/Jobs/Jobs";
 
 import {i18n} from "@lingui/core";
 import {I18nProvider} from "@lingui/react";
-import {Trans, t} from "@lingui/macro";
+import {t, Trans} from "@lingui/macro";
 import {defaultLocale, dynamicActivate} from "../lib/i18n";
 import {Header} from "../components/Header/Header";
+import _ from "lodash";
 
 if ("ethereum" in window) {
   window.ethereum.autoRefreshOnNetworkChange = false;
@@ -114,25 +109,17 @@ const Zoom = cssTransition({
   duration: 200,
 });
 
-const arbWsProvider = new ethers.providers.WebSocketProvider(getAlchemyWsUrl());
-
-const avaxWsProvider = new ethers.providers.JsonRpcProvider("https://api.avax.network/ext/bc/C/rpc");
-
 function getWsProvider(active, chainId) {
   if (!active) {
     return;
   }
-  if (chainId === ARBITRUM) {
-    return arbWsProvider;
+  if (chainId === BSC_TESTNET) {
+    return _.sample(RPC_PROVIDERS[chainId]);
   }
-
-  if (chainId === AVALANCHE) {
-    return avaxWsProvider;
-  }
+  return;
 }
 
 function FullApp() {
-  const isHome = isHomeSite();
   const exchangeRef = useRef();
   const {connector, library, deactivate, activate, active} = useWeb3React();
   const {chainId} = useChainId();
@@ -384,7 +371,7 @@ function FullApp() {
   const positionRouterAddress = getContract(chainId, "PositionRouter");
 
   useEffect(() => {
-    const wsVaultAbi = chainId === ARBITRUM ? VaultV2.abi : VaultV2b.abi;
+    const wsVaultAbi = Vault;
     const wsProvider = getWsProvider(active, chainId);
     if (!wsProvider) {
       return;

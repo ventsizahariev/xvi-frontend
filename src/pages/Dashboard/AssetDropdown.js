@@ -2,8 +2,6 @@ import { Menu } from "@headlessui/react";
 import { FiChevronDown } from "react-icons/fi";
 import "./AssetDropdown.css";
 import coingeckoIcon from "../../img/ic_coingecko_16.svg";
-import arbitrumIcon from "../../img/ic_arbitrum_16.svg";
-import avalancheIcon from "../../img/ic_avalanche_16.svg";
 import metamaskIcon from "../../img/ic_metamask_16.svg";
 import { addTokenToMetamask, ICONLINKS, platformTokens, useChainId } from "../../lib/legacy";
 import { useWeb3React } from "@web3-react/core";

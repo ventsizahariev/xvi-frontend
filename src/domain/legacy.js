@@ -10,7 +10,6 @@ import PositionManager from "../abis/PositionManager.json";
 import Vault from "../abis/Vault.json";
 import Router from "../abis/Router.json";
 import UniPool from "../abis/UniPool.json";
-import UniswapV2 from "../abis/UniswapV2.json";
 import Token from "../abis/Token.json";
 import VaultReader from "../abis/VaultReader.json";
 import PositionRouter from "../abis/PositionRouter.json";
@@ -40,7 +39,7 @@ import {
   SWAP,
   INCREASE,
   DECREASE,
-  BSC_TESTNET, useChainId, VELAS, getBaseUrl, getPriceServerUrl,
+  BSC_TESTNET
 } from "../lib/legacy";
 import { getTokens, getTokenBySymbol, getWhitelistedTokens } from "../config/Tokens";
 
@@ -107,7 +106,7 @@ export function useInfoTokens(library, chainId, active, tokenBalances, fundingRa
     }
   );
 
-  const indexPricesUrl = getPriceServerUrl();
+  const indexPricesUrl = getServerUrl(chainId, "/prices");
   const { data: indexPrices } = useSWR([indexPricesUrl], {
     fetcher: (...args) => fetch(...args).then((res) => res.json()),
     refreshInterval: 60000,
@@ -530,20 +529,6 @@ export function useLeveragePrice(chainId, libraries, active) {
   }, [updateNativeTokenPrice, updateUniPoolSlot0]);
 
   return { data: leveragePrice, mutate };
-}
-
-// use only the supply endpoint on binance, it includes the supply on avalanche
-export function useTotalLeverageSupply() {
-  const leverageSupplyUrl = getServerUrl(BSC_TESTNET, "/gmx_supply");
-
-  const { data: leverageSupply, mutate: updateLeverageSupply } = useSWR([leverageSupplyUrl], {
-    fetcher: (...args) => fetch(...args).then((res) => res.text()),
-  });
-
-  return {
-    total: leverageSupply ? bigNumberify(leverageSupply) : undefined,
-    mutate: updateLeverageSupply,
-  };
 }
 
 export function useTotalGmxStaked() {

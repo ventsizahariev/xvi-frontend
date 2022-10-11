@@ -7,8 +7,6 @@ import { HiDotsVertical } from "react-icons/hi";
 import "./NetworkDropdown.css";
 import language24Icon from "../../img/ic_language24.svg";
 import settingsIcon from "../../img/ic_settings_16.svg";
-import arbitrumIcon from "../../img/ic_arbitrum_24.svg";
-import avaxIcon from "../../img/ic_avalanche_24.svg";
 import bscIcon from "../../img/ic_binance_logo.svg";
 import checkedIcon from "../../img/ic_checked.svg";
 import { importImage, LANGUAGE_LOCALSTORAGE_KEY } from "../../lib/legacy";

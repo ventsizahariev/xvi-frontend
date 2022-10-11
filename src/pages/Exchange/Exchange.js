@@ -35,10 +35,10 @@ import { approvePlugin, useInfoTokens, useMinExecutionFee, cancelMultipleOrders 
 import { getContract } from "../../config/Addresses";
 import { getTokens, getToken, getWhitelistedTokens, getTokenBySymbol } from "../../config/Tokens";
 
-import Reader from "../../abis/ReaderV2.json";
-import VaultV2 from "../../abis/VaultV2.json";
+import Reader from "../../abis/Reader.json";
+import VaultV2 from "../../abis/Vault.json";
 import Router from "../../abis/Router.json";
-import Token from "../../abis/Token.json";
+import Token from "../../abis/USDG.json";
 
 import Checkbox from "../../components/Checkbox/Checkbox";
 import SwapBox from "../../components/Exchange/SwapBox";

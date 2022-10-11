@@ -9,7 +9,7 @@ import Tooltip from "../../components/Tooltip/Tooltip";
 import Footer from "../../components/Footer/Footer";
 
 import Vault from "../../abis/Vault.json";
-import ReaderV2 from "../../abis/ReaderV2.json";
+import ReaderV2 from "../../abis/Reader.json";
 import Vester from "../../abis/Vester.json";
 import RewardRouter from "../../abis/RewardRouter.json";
 import RewardReader from "../../abis/RewardReader.json";
@@ -42,7 +42,7 @@ import {
   getProcessedData,
   getPageTitle,
 } from "../../lib/legacy";
-import {callContract, useLeveragePrice, useTotalGmxStaked, useTotalLeverageSupply} from "../../domain/legacy";
+import {callContract, useLeveragePrice, useTotalGmxStaked} from "../../domain/legacy";
 import { getConstant } from "../../config/chains";
 
 import useSWR from "swr";
@@ -1067,18 +1067,11 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     active
   );
 
-  let { total: totalGmxSupply } = useTotalLeverageSupply();
-
   let { bsc: bscGmxStaked, total: totalGmxStaked } = useTotalGmxStaked();
-
-  const gmxSupplyUrl = getServerUrl(chainId, "/gmx_supply");
-  const { data: gmxSupply } = useSWR([gmxSupplyUrl], {
-    fetcher: (...args) => fetch(...args).then((res) => res.text()),
-  });
 
   const isGmxTransferEnabled = true;
 
-  let esGmxSupplyUsd;
+  let esGmxSupplyUsd
   if (esGmxSupply && leveragePrice) {
     esGmxSupplyUsd = esGmxSupply.mul(leveragePrice).div(expandDecimals(1, 18));
   }
@@ -1102,8 +1095,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     aum,
     nativeTokenPrice,
     stakedGmxSupply,
-    leveragePrice,
-    gmxSupply
+    leveragePrice
   );
 
   let hasMultiplierPoints = false;
@@ -1125,6 +1117,8 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   }
 
   const bonusGmxInFeeGmx = processedData ? processedData.bonusGmxInFeeGmx : undefined;
+
+  const totalGmxSupply = processedData ? processedData.gmxInStakedGmx : undefined;
 
   let stakedGmxSupplyUsd;
   if (!totalGmxStaked.isZero() && leveragePrice) {

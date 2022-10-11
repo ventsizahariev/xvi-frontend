@@ -20,7 +20,7 @@ import {
   DEFAULT_MAX_USDG_AMOUNT,
   expandDecimals,
   fetcher,
-  formatAmount,
+  formatAmount, formatArrayAmount,
   formatDate,
   formatKeyAmount,
   getChainName,
@@ -28,14 +28,14 @@ import {
   getServerUrl,
   GLP_DECIMALS,
   GLPPOOLCOLORS,
-  GMX_DECIMALS,
+  LEVERAGE_DECIMALS,
   importImage,
   numberWithCommas,
   USD_DECIMALS,
   useChainId,
   VELAS,
 } from "../../lib/legacy";
-import {useInfoTokens, useLeveragePrice, useTotalLeverageSupply,} from "../../domain/legacy";
+import {useInfoTokens, useLeveragePrice} from "../../domain/legacy";
 
 import {getContract} from "../../config/Addresses";
 
@@ -65,7 +65,7 @@ function getVolumeInfo(hourlyVolumes) {
   if (!hourlyVolumes || hourlyVolumes.length === 0) {
     return {};
   }
-  const dailyVolumes = hourlyVolumes.map((hourlyVolume) => {
+  let dailyVolumes = hourlyVolumes.map((hourlyVolume) => {
     const secondsPerHour = 60 * 60;
     const minTime = parseInt(Date.now() / 1000 / secondsPerHour) * secondsPerHour - 24 * secondsPerHour;
     const info = {};
@@ -89,6 +89,9 @@ function getVolumeInfo(hourlyVolumes) {
   if (!dailyVolumes || dailyVolumes.length == 0) {
     return {};
   }
+  if (!dailyVolumes.length) {
+    dailyVolumes = [dailyVolumes];
+  }
   return dailyVolumes.reduce(
     (acc, cv, index) => {
       acc.totalVolume = acc.totalVolume.add(cv.totalVolume);
@@ -103,7 +106,9 @@ function getPositionStats(positionStats) {
   if (!positionStats || positionStats.length === 0) {
     return null;
   }
-  console.log(positionStats);
+  if (!positionStats.length) {
+    positionStats = [positionStats];
+  }
   return positionStats.reduce(
     (acc, cv, i) => {
       acc.totalLongPositionSizes = acc.totalLongPositionSizes.add(cv.totalLongPositionSizes);
@@ -158,8 +163,6 @@ export default function DashboardV2() {
       fetcher: arrayURLFetcher,
     }
   );
-
-  let {total: totalLeverageSupply, mutate: updateTotalLeverageSupply} = useTotalLeverageSupply();
 
   const currentVolumeInfo = getVolumeInfo(hourlyVolumes);
 
@@ -292,12 +295,12 @@ export default function DashboardV2() {
 
   let leverageMarketCap
   if (leveragePrice && totalSupplies && totalSupplies[1]) {
-    leverageMarketCap = leveragePrice.mul(totalSupplies[1]).div(expandDecimals(1, GMX_DECIMALS))
+    leverageMarketCap = leveragePrice.mul(totalSupplies[1]).div(expandDecimals(1, LEVERAGE_DECIMALS))
   }
 
   let stakedLeverageSupplyUsd
   if (leveragePrice && stakedLeverageSupply) {
-    stakedLeverageSupplyUsd = stakedLeverageSupply.mul(leveragePrice).div(expandDecimals(1, GMX_DECIMALS))
+    stakedLeverageSupplyUsd = stakedLeverageSupply.mul(leveragePrice).div(expandDecimals(1, LEVERAGE_DECIMALS))
   }
 
   let aum
@@ -307,7 +310,7 @@ export default function DashboardV2() {
 
   let tvl
   if (aum && leveragePrice && stakedLeverageSupply) {
-    tvl = aum.add(leveragePrice.mul(stakedLeverageSupply).div(expandDecimals(1, GMX_DECIMALS)))
+    tvl = aum.add(leveragePrice.mul(stakedLeverageSupply).div(expandDecimals(1, LEVERAGE_DECIMALS)))
   }
 
   let glpPrice;
@@ -425,18 +428,7 @@ export default function DashboardV2() {
 
   let stakedPercent = 0;
 
-  if (totalLeverageSupply && !totalLeverageSupply.isZero() && stakedLeverageSupply && !stakedLeverageSupply.isZero()) {
-    stakedPercent = stakedLeverageSupply.mul(100).div(totalLeverageSupply).toNumber();
-  }
-
   let liquidityPercent = 0;
-
-  const {data: totalLeverageInLiquidity} = useSWR(["Dashboard:LeverageInLiquidity", chainId, leverageAddress, "balanceOf", poolAddress], {
-    fetcher: fetcher(library, Token),
-  })
-  if (totalLeverageSupply && !totalLeverageSupply.isZero() && totalLeverageInLiquidity) {
-    liquidityPercent = totalLeverageInLiquidity.mul(100).div(totalLeverageSupply).toNumber();
-  }
 
   let notStakedPercent = 100 - stakedPercent - liquidityPercent;
 
@@ -534,7 +526,6 @@ export default function DashboardV2() {
       library.on('block', () => {
         updatePositionStats(undefined, true)
         updateHourlyVolumes(undefined, true)
-        updateTotalLeverageSupply(undefined, true)
         updateAums(undefined, true)
         updateFees(undefined, true)
         updateTotalSupplies(undefined, true)
@@ -547,7 +538,7 @@ export default function DashboardV2() {
       }
     }
   }, [active, library, chainId,
-    updatePositionStats, updateHourlyVolumes, updateTotalLeverageSupply,
+    updatePositionStats, updateHourlyVolumes,
     updateAums, updateFees, updateTotalSupplies, updateStakedGmxSupply,
     updateTotalTokenWeights, updateLeveragePrice])
 
@@ -794,7 +785,7 @@ export default function DashboardV2() {
                       <div className="label">
                         <Trans>Supply</Trans>
                       </div>
-                      <div>{formatAmount(totalLeverageSupply, GMX_DECIMALS, 0, true)} LeveragePro</div>
+                      <div>{formatArrayAmount(totalSupplies, 1, LEVERAGE_DECIMALS, 0, true)} LeveragePro</div>
                     </div>
                     <div className="App-card-row">
                       <div className="label">
@@ -810,7 +801,7 @@ export default function DashboardV2() {
                               title={t`Staked`}
                               testnet={stakedLeverageSupply}
                               total={stakedLeverageSupply}
-                              decimalsForConversion={GMX_DECIMALS}
+                              decimalsForConversion={LEVERAGE_DECIMALS}
                               showDollar={false}
                             />
                           )}

@@ -1,9 +1,10 @@
 import useSWR from "swr";
-import { ARBITRUM, arrayURLFetcher, AVALANCHE, bigNumberify, getServerUrl, getTotalVolumeSum } from "../lib/legacy";
-const ACTIVE_CHAIN_IDS = [ARBITRUM, AVALANCHE];
+import {arrayURLFetcher, bigNumberify, BSC_TESTNET, getServerUrl, getTotalVolumeSum} from "../lib/legacy";
+
+const ACTIVE_CHAIN_IDS = [BSC_TESTNET];
 
 export default function useTotalVolume() {
-  const { data: totalVolume } = useSWR(
+  const {data: totalVolume} = useSWR(
     ACTIVE_CHAIN_IDS.map((chain) => getServerUrl(chain, "/total_volume")),
     {
       fetcher: arrayURLFetcher,
@@ -17,7 +18,7 @@ export default function useTotalVolume() {
         acc.total = acc.total.add(sum);
         return acc;
       },
-      { total: bigNumberify(0) }
+      {total: bigNumberify(0)}
     );
   }
 }

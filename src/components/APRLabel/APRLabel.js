@@ -15,7 +15,7 @@ import {
 } from "../../lib/legacy";
 
 import Vault from "../../abis/Vault.json";
-import ReaderV2 from "../../abis/ReaderV2.json";
+import ReaderV2 from "../../abis/Reader.json";
 import RewardReader from "../../abis/RewardReader.json";
 import Token from "../../abis/Token.json";
 import GlpManager from "../../abis/GlpManager.json";
@@ -126,11 +126,6 @@ export default function APRLabel({ chainId, label }) {
 
   const { gmxPrice } = useLeveragePrice(chainId, {}, active);
 
-  const gmxSupplyUrl = getServerUrl(chainId, "/gmx_supply");
-  const { data: gmxSupply } = useSWR([gmxSupplyUrl], {
-    fetcher: (...args) => fetch(...args).then((res) => res.text()),
-  });
-
   let aum;
   if (aums && aums.length > 0) {
     aum = aums[0].add(aums[1]).div(2);
@@ -150,8 +145,7 @@ export default function APRLabel({ chainId, label }) {
     aum,
     nativeTokenPrice,
     stakedGmxSupply,
-    gmxPrice,
-    gmxSupply
+    gmxPrice
   );
 
   return <>{`${formatKeyAmount(processedData, label, 2, 2, true)}%`}</>;

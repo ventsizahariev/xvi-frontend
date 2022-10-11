@@ -12,7 +12,7 @@ import totaluserIcon from "../../img/ic_totaluser.svg";
 
 
 import bscIcon from "../../img/ic_bsc_96.svg";
-import velasIcon from "../../img/ic_avalanche_96.svg";
+// import velasIcon from "../../img/ic_avalanche_96.svg";
 
 import statsIcon from "../../img/ic_stats.svg";
 import tradingIcon from "../../img/ic_trading.svg";
@@ -34,8 +34,6 @@ import TokenCard from "../../components/TokenCard/TokenCard";
 
 import { Trans } from "@lingui/macro";
 import { HeaderLink } from "../../components/Header/HeaderLink";
-import {FiMinus} from "react-icons/all";
-import {FiPlus} from "react-icons/fi";
 
 export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
   const [openedFAQIndex, setOpenedFAQIndex] = useState(null)

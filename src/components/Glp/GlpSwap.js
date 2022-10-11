@@ -46,9 +46,9 @@ import TokenSelector from "../Exchange/TokenSelector";
 import BuyInputSection from "../BuyInputSection/BuyInputSection";
 import Tooltip from "../Tooltip/Tooltip";
 
-import ReaderV2 from "../../abis/ReaderV2.json";
+import ReaderV2 from "../../abis/Reader.json";
 import RewardReader from "../../abis/RewardReader.json";
-import VaultV2 from "../../abis/VaultV2.json";
+import VaultV2 from "../../abis/Vault.json";
 import GlpManager from "../../abis/GlpManager.json";
 import RewardTracker from "../../abis/RewardTracker.json";
 import Vester from "../../abis/Vester.json";
