@@ -15,10 +15,15 @@ msgstr ""
 
 #: src/App/App.js:208
 #: src/App/App.js:230
-msgid ", and use GMX with its built-in browser"
-msgstr ", そしてGMXをビルトインブラウザーで利用する"
+#~ msgid ", and use GMX with its built-in browser"
+#~ msgstr ", そしてGMXをビルトインブラウザーで利用する"
 
-#: src/pages/Dashboard/DashboardV2.js:583
+#: src/App/App.js:195
+#: src/App/App.js:217
+msgid ", and use LeveragePro with its built-in browser"
+msgstr ""
+
+#: src/pages/Dashboard/DashboardV2.js:597
 msgid "24h Volume"
 msgstr "24時間取引高"
 
@@ -26,11 +31,11 @@ msgstr "24時間取引高"
 msgid "<0>Insufficient liquidity to execute the order</0><1>The mark price which is an aggregate of exchange prices did not reach the specified price</1><2>The specified price was reached but not long enough for it to be executed</2><3>No keeper picked up the order for execution</3>"
 msgstr "<0>注文執行に必要な流動性が不足しています</0><1>諸取引所の価格を集約したマーク価格が指値に達しませんでした</1><2>指値には達したものの執行にはロングの度合いが不十分でした</2><3>どのキーパーも注文を執行しませんでした</3>"
 
-#: src/pages/Stake/StakeV2.js:566
+#: src/pages/Stake/StakeV2.js:565
 msgid "<0>This will withdraw and unreserve all tokens as well as pause vesting.<1/><2/>esGMX tokens that have been converted to GMX will remain as GMX tokens.<3/><4/>To claim GMX tokens without withdrawing, use the \"Claim\" button under the Total Rewards section.<5/><6/></0>"
 msgstr "<0>これによりすべてのトークンは引き出され、リザーブから解除され、べスティングは停止されます。<1/><2/>GMXへ転換されたesGMXトークンはGMXトークンとなります。<3/><4/>引き出しをせずにGMXトークンを請求するには全報酬セクションの下部にある\"請求\"ボタンを使用してください。<5/><6/></0>"
 
-#: src/components/Exchange/SwapBox.js:2101
+#: src/components/Exchange/SwapBox.js:2105
 msgid "A snapshot of the USD value of your collateral is taken when the position is opened."
 msgstr ""
 
@@ -38,8 +43,8 @@ msgstr ""
 msgid "APR"
 msgstr "APR(実質年利)"
 
-#: src/pages/Stake/StakeV2.js:1555
-#: src/pages/Stake/StakeV2.js:1825
+#: src/pages/Stake/StakeV2.js:1546
+#: src/pages/Stake/StakeV2.js:1814
 msgid "APRs are updated weekly on Wednesday and will depend on the fees collected for the week."
 msgstr "APR(実質年利)は毎週水曜日に更新され、その前一週間に得られた手数料によって決まります。"
 
@@ -49,11 +54,10 @@ msgid "AVAILABLE"
 msgstr "利用可能"
 
 #: src/components/Header/AppHeaderLinks.tsx:102
-#: src/pages/Ecosystem/Ecosystem.js:421
-#: src/pages/Ecosystem/Ecosystem.js:465
-#: src/pages/Ecosystem/Ecosystem.js:520
-#: src/pages/Ecosystem/Ecosystem.js:574
-#: src/pages/Ecosystem/Ecosystem.js:621
+#: src/pages/Ecosystem/Ecosystem.js:418
+#: src/pages/Ecosystem/Ecosystem.js:462
+#: src/pages/Ecosystem/Ecosystem.js:517
+#: src/pages/Ecosystem/Ecosystem.js:618
 msgid "About"
 msgstr "内容"
 
@@ -77,7 +81,7 @@ msgstr "機能"
 msgid "Active Referral Code"
 msgstr "有効な紹介コード"
 
-#: src/pages/Dashboard/AssetDropdown.js:75
+#: src/pages/Dashboard/AssetDropdown.js:55
 msgid "Add to Metamask"
 msgstr "メタマスクに追加"
 
@@ -109,12 +113,15 @@ msgstr "請求後、最大で{1} {stakingToken} 対 1esGMXトークンの比率�
 msgid "After claiming, the esGMX tokens will be airdropped to your account on the selected network within 7 days."
 msgstr "請求後7日以内にesGMXトークンは指定のネットワークのあなたのアカウントにエアドロップされます"
 
-#: src/pages/BuyGMX/BuyGMX.js:206
-#: src/pages/BuyGMX/BuyGMX.js:240
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:206
+msgid "After you have BNB, set your network to <0>Binance</0> then click the button below:"
+msgstr ""
+
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:240
 msgid "After you have ETH, set your network to <0>Arbitrum</0> then click the button below:"
 msgstr "ETH入手後、ネットワークを<0>Arbitrum</0>にセットし、以下のボタンをクリックしてください:"
 
-#: src/App/App.js:597
+#: src/App/App.js:574
 msgid "Allowed Slippage"
 msgstr "スリッページ許容量"
 
@@ -131,40 +138,40 @@ msgstr "あなたがリファーしたトレーダー数"
 msgid "Amount to claim"
 msgstr "請求額"
 
-#: src/pages/Home/Home.js:210
+#: src/pages/Home/Home.js:181
 msgid "An aggregate of high-quality price feeds determine when liquidations occur. This keeps positions safe from temporary wicks."
 msgstr "清算が発生した時点で高品質の複数の価格フィードの集成価格が決定します。これによりポジションは一時的な変動から守られます。"
 
 #: src/pages/Ecosystem/Ecosystem.js:580
-msgid "Announcement"
-msgstr "告知"
+#~ msgid "Announcement"
+#~ msgstr "告知"
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js:174
-#: src/pages/Stake/StakeV2.js:654
+#: src/pages/Stake/StakeV2.js:653
 msgid "Approve GMX"
 msgstr "GMXを承認する"
 
 #: src/components/Exchange/PositionEditor.js:256
-#: src/components/Exchange/SwapBox.js:1173
+#: src/components/Exchange/SwapBox.js:1174
 #: src/components/Glp/GlpSwap.js:513
 msgid "Approve {0}"
 msgstr ""
 
-#: src/pages/Stake/StakeV2.js:150
+#: src/pages/Stake/StakeV2.js:149
 msgid "Approve {stakingTokenSymbol}"
 msgstr "{stakingTokenSymbol}を承認する"
 
-#: src/pages/Stake/StakeV2.js:651
+#: src/pages/Stake/StakeV2.js:650
 msgid "Approving GMX..."
 msgstr "GMXを承認中"
 
 #: src/components/Exchange/PositionEditor.js:253
-#: src/components/Exchange/SwapBox.js:1170
+#: src/components/Exchange/SwapBox.js:1171
 #: src/components/Glp/GlpSwap.js:510
 msgid "Approving {0}..."
 msgstr "{0}を承認中"
 
-#: src/pages/Stake/StakeV2.js:147
+#: src/pages/Stake/StakeV2.js:146
 msgid "Approving {stakingTokenSymbol}..."
 msgstr "{stakingTokenSymbol}を承認中"
 
@@ -179,20 +186,24 @@ msgstr "承認中"
 
 #: src/components/TokenCard/TokenCard.js:64
 #: src/components/TokenCard/TokenCard.js:96
-msgid "Arbitrum APR:"
-msgstr "ArbitrumのAPR(実質年利)"
+#~ msgid "Arbitrum APR:"
+#~ msgstr "ArbitrumのAPR(実質年利)"
 
 #: src/pages/Dashboard/DashboardV2.js:564
-msgid "Assets Under Management: GMX staked (All chains) + GLP pool ({chainName})"
-msgstr "管理資産: 全チェーンでステークされているGMX + GLPプール ({chainName})"
+#~ msgid "Assets Under Management: GMX staked (All chains) + GLP pool ({chainName})"
+#~ msgstr "管理資産: 全チェーンでステークされているGMX + GLPプール ({chainName})"
+
+#: src/pages/Dashboard/DashboardV2.js:578
+msgid "Assets Under Management: LeveragePro staked (All chains) + GLP pool ({chainName})"
+msgstr ""
 
 #: src/components/Glp/GlpSwap.js:1311
 msgid "Available"
 msgstr "入手可能"
 
 #: src/components/Exchange/SwapBox.js:344
-#: src/components/Exchange/SwapBox.js:2238
-#: src/components/Exchange/SwapBox.js:2385
+#: src/components/Exchange/SwapBox.js:2242
+#: src/components/Exchange/SwapBox.js:2389
 msgid "Available Liquidity"
 msgstr "入手可能な流動性"
 
@@ -206,7 +217,7 @@ msgstr "GLPに入金可能な金額"
 msgid "Available amount to withdraw from GLP."
 msgstr "GLPから出金可能な金額"
 
-#: src/pages/Home/Home.js:250
+#: src/pages/Home/Home.js:221
 msgid "Available on your preferred network"
 msgstr "選択されたネットワークにて利用可能"
 
@@ -214,20 +225,29 @@ msgstr "選択されたネットワークにて利用可能"
 msgid "Available:"
 msgstr "利用可能"
 
-#: src/pages/BuyGMX/BuyGMX.js:179
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:179
 msgid "Avalanche"
 msgstr "Avalanche"
 
 #: src/components/TokenCard/TokenCard.js:65
 #: src/components/TokenCard/TokenCard.js:97
-msgid "Avalanche APR:"
-msgstr "AvalancheでのAPR(実質年利)"
+#~ msgid "Avalanche APR:"
+#~ msgstr "AvalancheでのAPR(実質年利)"
 
-#: src/pages/BuyGMX/BuyGMX.js:125
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:125
 msgid "Avax is needed on Avalanche to purchase GMX."
 msgstr "AvalancheでGMXを購入するにはAvaxが必要です。"
 
-#: src/components/Exchange/SwapBox.js:1917
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:46
+msgid "BNB is needed on Binance to purchase LeveragePro."
+msgstr ""
+
+#: src/components/TokenCard/TokenCard.js:66
+#: src/components/TokenCard/TokenCard.js:96
+msgid "BSC APR:"
+msgstr ""
+
+#: src/components/Exchange/SwapBox.js:1920
 msgid "Balance"
 msgstr "残高"
 
@@ -237,8 +257,8 @@ msgstr "残高"
 msgid "Balance:"
 msgstr "残高"
 
-#: src/pages/BuyGMX/BuyGMX.js:78
-#: src/pages/BuyGMX/BuyGMX.js:158
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:78
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:158
 msgid "Banxa"
 msgstr "Banxa"
 
@@ -246,20 +266,20 @@ msgstr "Banxa"
 msgid "Begin Transfer"
 msgstr "移転開始"
 
-#: src/pages/BuyGMX/BuyGMX.js:111
-#: src/pages/BuyGMX/BuyGMX.js:188
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:111
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:188
 msgid "Binance"
 msgstr "Binance"
 
-#: src/pages/Stake/StakeV2.js:1604
+#: src/pages/Stake/StakeV2.js:1595
 msgid "Boost Percentage"
 msgstr "ブースト率"
 
-#: src/pages/Stake/StakeV2.js:1302
+#: src/pages/Stake/StakeV2.js:1295
 msgid "Boost your rewards with Multiplier Points. <0>More info</0>."
 msgstr "マルチプライヤーポイントで報酬をブーストする。<0>より詳しい情報</0>"
 
-#: src/components/Exchange/SwapBox.js:2342
+#: src/components/Exchange/SwapBox.js:2346
 msgid "Borrow Fee"
 msgstr "借入手数料"
 
@@ -279,41 +299,56 @@ msgstr "購入"
 msgid "Buy / Sell GLP"
 msgstr "GLPの購入/売却"
 
-#: src/pages/BuyGMX/BuyGMX.js:122
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:122
 msgid "Buy / Transfer AVAX"
 msgstr "AVAXの購入/送信"
 
-#: src/pages/BuyGMX/BuyGMX.js:43
-msgid "Buy / Transfer ETH"
-msgstr "ETHの購入/送信"
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:43
+msgid "Buy / Transfer BNB"
+msgstr ""
 
-#: src/pages/BuyGMX/BuyGMX.js:140
+#: src/pages/BuyGMX/BuyGMX.js:43
+#~ msgid "Buy / Transfer ETH"
+#~ msgstr "ETHの購入/送信"
+
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:140
 msgid "Buy AVAX"
 msgstr "AVAXを購入"
 
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:60
+msgid "Buy BNB"
+msgstr ""
+
 #: src/pages/BuyGMX/BuyGMX.js:60
-msgid "Buy ETH"
-msgstr "ETHを購入"
+#~ msgid "Buy ETH"
+#~ msgstr "ETHを購入"
 
 #: src/components/Glp/GlpSwap.js:97
 #: src/components/Glp/GlpSwap.js:520
 #: src/components/Glp/GlpSwap.js:792
-#: src/pages/Stake/StakeV2.js:1890
+#: src/pages/Stake/StakeV2.js:1879
 msgid "Buy GLP"
 msgstr "GLPを購入"
 
-#: src/pages/BuyGMX/BuyGMX.js:200
-#: src/pages/BuyGMX/BuyGMX.js:234
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:234
 msgid "Buy GMX"
 msgstr "GMXを購入"
 
-#: src/pages/BuyGMX/BuyGMX.js:263
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:263
 msgid "Buy GMX Bonds"
 msgstr "GMXボンドを購入"
 
 #: src/pages/Buy/Buy.js:21
-msgid "Buy GMX or GLP"
-msgstr "GMXまたはGLPを購入"
+#~ msgid "Buy GMX or GLP"
+#~ msgstr "GMXまたはGLPを購入"
+
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:200
+msgid "Buy LeveragePro"
+msgstr ""
+
+#: src/pages/Buy/Buy.js:21
+msgid "Buy LeveragePro or GLP"
+msgstr ""
 
 #: src/components/Glp/GlpSwap.js:551
 msgid "Buy failed."
@@ -321,13 +356,18 @@ msgstr "購入できませんでした。"
 
 #: src/components/TokenCard/TokenCard.js:70
 #: src/components/TokenCard/TokenCard.js:102
-msgid "Buy on Arbitrum"
-msgstr "Arbitrumで購入"
+#~ msgid "Buy on Arbitrum"
+#~ msgstr "Arbitrumで購入"
 
 #: src/components/TokenCard/TokenCard.js:73
 #: src/components/TokenCard/TokenCard.js:105
-msgid "Buy on Avalanche"
-msgstr "Avalancheで購入"
+#~ msgid "Buy on Avalanche"
+#~ msgstr "Avalancheで購入"
+
+#: src/components/TokenCard/TokenCard.js:73
+#: src/components/TokenCard/TokenCard.js:103
+msgid "Buy on Binance"
+msgstr ""
 
 #: src/components/Glp/GlpSwap.js:550
 msgid "Buy submitted."
@@ -375,19 +415,19 @@ msgid "Checking code..."
 msgstr "コード確認中"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js:296
-#: src/pages/Stake/StakeV2.js:817
-#: src/pages/Stake/StakeV2.js:1740
-#: src/pages/Stake/StakeV2.js:1763
+#: src/pages/Stake/StakeV2.js:816
+#: src/pages/Stake/StakeV2.js:1729
+#: src/pages/Stake/StakeV2.js:1752
 msgid "Claim"
 msgstr "請求"
 
-#: src/pages/Stake/StakeV2.js:741
-#: src/pages/Stake/StakeV2.js:865
+#: src/pages/Stake/StakeV2.js:740
+#: src/pages/Stake/StakeV2.js:864
 msgid "Claim GMX Rewards"
 msgstr "GMX報酬の請求"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js:328
-#: src/pages/Stake/StakeV2.js:840
+#: src/pages/Stake/StakeV2.js:839
 msgid "Claim completed!"
 msgstr "請求完了!"
 
@@ -395,13 +435,13 @@ msgstr "請求完了!"
 msgid "Claim esGMX"
 msgstr "esGMXの請求"
 
-#: src/pages/Stake/StakeV2.js:751
-#: src/pages/Stake/StakeV2.js:870
+#: src/pages/Stake/StakeV2.js:750
+#: src/pages/Stake/StakeV2.js:869
 msgid "Claim esGMX Rewards"
 msgstr "esGMX報酬の請求"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js:327
-#: src/pages/Stake/StakeV2.js:839
+#: src/pages/Stake/StakeV2.js:838
 msgid "Claim failed."
 msgstr "請求できませんでした。"
 
@@ -409,21 +449,21 @@ msgstr "請求できませんでした。"
 msgid "Claim submitted!"
 msgstr "請求申し込み完了!"
 
-#: src/pages/Stake/StakeV2.js:838
+#: src/pages/Stake/StakeV2.js:837
 msgid "Claim submitted."
 msgstr "請求申し込み完了"
 
-#: src/pages/Stake/StakeV2.js:761
-#: src/pages/Stake/StakeV2.js:875
+#: src/pages/Stake/StakeV2.js:760
+#: src/pages/Stake/StakeV2.js:874
 msgid "Claim {wrappedTokenSymbol} Rewards"
 msgstr "{wrappedTokenSymbol}報酬の請求"
 
-#: src/pages/Stake/StakeV2.js:2099
+#: src/pages/Stake/StakeV2.js:2088
 msgid "Claimable"
 msgstr "請求可能"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js:293
-#: src/pages/Stake/StakeV2.js:815
+#: src/pages/Stake/StakeV2.js:814
 msgid "Claiming..."
 msgstr "請求中"
 
@@ -455,11 +495,11 @@ msgstr "クローズ中"
 msgid "Code already taken"
 msgstr "そのコードは既に使用されています"
 
-#: src/App/App.js:579
+#: src/App/App.js:556
 msgid "Coinbase Wallet"
 msgstr "コインベースウォレット"
 
-#: src/App/App.js:223
+#: src/App/App.js:210
 msgid "Coinbase Wallet not detected."
 msgstr "コインベースウォレットが検出できません。"
 
@@ -474,16 +514,16 @@ msgstr "担保"
 msgid "Collateral ({0})"
 msgstr ""
 
-#: src/components/Exchange/SwapBox.js:2075
-#: src/components/Exchange/SwapBox.js:2093
+#: src/components/Exchange/SwapBox.js:2079
+#: src/components/Exchange/SwapBox.js:2097
 msgid "Collateral In"
 msgstr ""
 
-#: src/pages/Ecosystem/Ecosystem.js:432
+#: src/pages/Ecosystem/Ecosystem.js:429
 msgid "Community Projects"
 msgstr "コミュニティプロジェクト"
 
-#: src/pages/Ecosystem/Ecosystem.js:598
+#: src/pages/Ecosystem/Ecosystem.js:595
 msgid "Community-led Telegram groups."
 msgstr "コミュニティ主導のTelegramグループ"
 
@@ -495,41 +535,41 @@ msgstr "アカウント移転を完了させる"
 msgid "Complete Transfer"
 msgstr "移転を完了させる"
 
-#: src/pages/Stake/StakeV2.js:659
-#: src/pages/Stake/StakeV2.js:1735
-#: src/pages/Stake/StakeV2.js:1758
+#: src/pages/Stake/StakeV2.js:658
+#: src/pages/Stake/StakeV2.js:1724
+#: src/pages/Stake/StakeV2.js:1747
 msgid "Compound"
 msgstr "請求とステーク"
 
-#: src/pages/Stake/StakeV2.js:693
+#: src/pages/Stake/StakeV2.js:692
 msgid "Compound completed!"
 msgstr "請求とステーク完了!"
 
-#: src/pages/Stake/StakeV2.js:692
+#: src/pages/Stake/StakeV2.js:691
 msgid "Compound failed."
 msgstr "請求とステークができませんでした。"
 
-#: src/pages/Stake/StakeV2.js:691
+#: src/pages/Stake/StakeV2.js:690
 msgid "Compound submitted!"
 msgstr "請求とステークの申し込み完了!"
 
-#: src/pages/Stake/StakeV2.js:657
+#: src/pages/Stake/StakeV2.js:656
 msgid "Compounding..."
 msgstr "請求およびステーク中"
 
-#: src/components/Header/AppHeaderUser.tsx:95
+#: src/components/Header/AppHeaderUser.tsx:94
 msgid "Connect"
 msgstr "接続"
 
-#: src/components/Exchange/SwapBox.js:1146
+#: src/components/Exchange/SwapBox.js:1147
 #: src/components/Glp/GlpSwap.js:496
-#: src/components/Header/AppHeaderUser.tsx:95
+#: src/components/Header/AppHeaderUser.tsx:94
 #: src/components/Referrals/AddAffiliateCode.js:34
 #: src/components/Referrals/JoinReferralCode.js:22
-#: src/pages/Stake/StakeV2.js:1768
-#: src/pages/Stake/StakeV2.js:2009
-#: src/pages/Stake/StakeV2.js:2121
-#: src/pages/Stake/StakeV2.js:2205
+#: src/pages/Stake/StakeV2.js:1757
+#: src/pages/Stake/StakeV2.js:1998
+#: src/pages/Stake/StakeV2.js:2110
+#: src/pages/Stake/StakeV2.js:2194
 msgid "Connect Wallet"
 msgstr "ウォレット接続"
 
@@ -539,10 +579,14 @@ msgid "Continue"
 msgstr "続ける"
 
 #: src/pages/Stake/StakeV2.js:2022
-msgid "Convert esGMX tokens to GMX tokens.<0/>Please read the <1>vesting details</1> before using the vaults."
-msgstr "esGMXトークンをGMXトークンに転換させる。<0/>ボールト使用前に <1>べスティングの詳細</1>を読んでください。"
+#~ msgid "Convert esGMX tokens to GMX tokens.<0/>Please read the <1>vesting details</1> before using the vaults."
+#~ msgstr "esGMXトークンをGMXトークンに転換させる。<0/>ボールト使用前に <1>べスティングの詳細</1>を読んでください。"
 
-#: src/pages/Stake/StakeV2.js:880
+#: src/pages/Stake/StakeV2.js:2011
+msgid "Convert esLeveragePro tokens to LeveragePro tokens.<0/>Please read the <1>vesting details</1> before using the vaults."
+msgstr ""
+
+#: src/pages/Stake/StakeV2.js:879
 msgid "Convert {wrappedTokenSymbol} to {nativeTokenSymbol}"
 msgstr "{wrappedTokenSymbol}から{nativeTokenSymbol}に転換する"
 
@@ -566,7 +610,7 @@ msgstr "注文の作成"
 msgid "Create Referral Code"
 msgstr "紹介コード作成"
 
-#: src/components/Exchange/SwapBox.js:1434
+#: src/components/Exchange/SwapBox.js:1435
 msgid "Created limit order for {0} {1}: {2} USD!"
 msgstr "{0} {1}: {2} USDの指値注文の作成完了!"
 
@@ -578,8 +622,8 @@ msgstr "注文作成中"
 msgid "Creating..."
 msgstr "作成中"
 
-#: src/pages/Ecosystem/Ecosystem.js:471
-#: src/pages/Ecosystem/Ecosystem.js:526
+#: src/pages/Ecosystem/Ecosystem.js:468
+#: src/pages/Ecosystem/Ecosystem.js:523
 msgid "Creator"
 msgstr "作成者"
 
@@ -588,7 +632,7 @@ msgstr "作成者"
 msgid "Current Pool Amount"
 msgstr "現在のプール額"
 
-#: src/pages/Stake/StakeV2.js:511
+#: src/pages/Stake/StakeV2.js:510
 msgid "Current Reserved: {0}<0/>Additional reserve required: {1}<1/>{2}"
 msgstr "現在のリザーブ額: {0}<0/>必要な追加リザーブ: {1}<1/>{2}"
 
@@ -596,7 +640,7 @@ msgstr "現在のリザーブ額: {0}<0/>必要な追加リザーブ: {1}<1/>{2}
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: src/pages/Ecosystem/Ecosystem.js:486
+#: src/pages/Ecosystem/Ecosystem.js:483
 msgid "Dashboards"
 msgstr "ダッシュボード"
 
@@ -605,7 +649,7 @@ msgstr "ダッシュボード"
 msgid "Date"
 msgstr "日付"
 
-#: src/pages/Home/Home.js:156
+#: src/pages/Home/Home.js:127
 msgid "Decentralized<0/>Perpetual Exchange"
 msgstr "分散型<0/>パーペチュアル取引所"
 
@@ -613,10 +657,10 @@ msgstr "分散型<0/>パーペチュアル取引所"
 #: src/components/Exchange/PositionEditor.js:272
 #: src/components/Exchange/PositionEditor.js:460
 #: src/components/Exchange/PositionEditor.js:464
-#: src/pages/Stake/StakeV2.js:426
-#: src/pages/Stake/StakeV2.js:437
-#: src/pages/Stake/StakeV2.js:2126
-#: src/pages/Stake/StakeV2.js:2210
+#: src/pages/Stake/StakeV2.js:425
+#: src/pages/Stake/StakeV2.js:436
+#: src/pages/Stake/StakeV2.js:2115
+#: src/pages/Stake/StakeV2.js:2199
 msgid "Deposit"
 msgstr "入金"
 
@@ -624,7 +668,7 @@ msgstr "入金"
 msgid "Deposit disabled, pending {0} upgrade"
 msgstr ""
 
-#: src/pages/Stake/StakeV2.js:395
+#: src/pages/Stake/StakeV2.js:394
 msgid "Deposit failed!"
 msgstr "入金できませんでした!"
 
@@ -632,7 +676,7 @@ msgstr "入金できませんでした!"
 msgid "Deposit failed."
 msgstr "入金できませんでした。"
 
-#: src/pages/Stake/StakeV2.js:394
+#: src/pages/Stake/StakeV2.js:393
 msgid "Deposit submitted!"
 msgstr "入金申し込み完了!"
 
@@ -640,16 +684,16 @@ msgstr "入金申し込み完了!"
 msgid "Deposit submitted."
 msgstr "入金申し込み完了。"
 
-#: src/pages/Stake/StakeV2.js:396
+#: src/pages/Stake/StakeV2.js:395
 msgid "Deposited!"
 msgstr "入金完了!"
 
 #: src/components/Exchange/PositionEditor.js:247
-#: src/pages/Stake/StakeV2.js:424
+#: src/pages/Stake/StakeV2.js:423
 msgid "Depositing..."
 msgstr "入金中"
 
-#: src/App/App.js:623
+#: src/App/App.js:600
 msgid "Disable order validations"
 msgstr "注文のバリデーションの無効化"
 
@@ -657,11 +701,11 @@ msgstr "注文のバリデーションの無効化"
 msgid "Disconnect"
 msgstr "接続停止"
 
-#: src/App/App.js:612
+#: src/App/App.js:589
 msgid "Display PnL after fees"
 msgstr "手数料込損益の表示"
 
-#: src/pages/Dashboard/DashboardV2.js:858
+#: src/pages/Dashboard/DashboardV2.js:854
 msgid "Distribution"
 msgstr "配分"
 
@@ -670,11 +714,11 @@ msgid "Download"
 msgstr "ダウンロード"
 
 #: src/pages/BuyGMX/BuyGMX.js:46
-msgid "ETH is needed on Arbitrum to purchase GMX."
-msgstr "ArbitrumでGMXを購入するにはETHが必要です。"
+#~ msgid "ETH is needed on Arbitrum to purchase GMX."
+#~ msgstr "ArbitrumでGMXを購入するにはETHが必要です。"
 
 #: src/components/Header/AppHeaderLinks.tsx:70
-#: src/pages/Stake/StakeV2.js:1444
+#: src/pages/Stake/StakeV2.js:1437
 msgid "Earn"
 msgstr "報酬獲得"
 
@@ -699,14 +743,14 @@ msgstr "紹介コード編集"
 
 #: src/components/Exchange/PositionEditor.js:268
 #: src/components/Exchange/PositionSeller.js:638
-#: src/components/Exchange/SwapBox.js:1163
+#: src/components/Exchange/SwapBox.js:1164
 msgid "Enable Leverage"
 msgstr "レバレッジ有効化"
 
 #: src/components/Exchange/OrdersToa.js:26
 #: src/components/Exchange/OrdersToa.js:40
 #: src/components/Exchange/PositionSeller.js:623
-#: src/components/Exchange/SwapBox.js:1183
+#: src/components/Exchange/SwapBox.js:1184
 msgid "Enable Orders"
 msgstr "注文有効化"
 
@@ -719,12 +763,12 @@ msgid "Enable deposit sent."
 msgstr "入金有効化申し込み完了。"
 
 #: src/components/Exchange/PositionSeller.js:667
-#: src/components/Exchange/SwapBox.js:1688
+#: src/components/Exchange/SwapBox.js:1691
 msgid "Enable leverage failed."
 msgstr "レバレッジ有効化できませんでした。"
 
 #: src/components/Exchange/PositionSeller.js:666
-#: src/components/Exchange/SwapBox.js:1687
+#: src/components/Exchange/SwapBox.js:1690
 msgid "Enable leverage sent."
 msgstr "レバレッジ有効化申し込み完了。"
 
@@ -751,16 +795,16 @@ msgstr "レバレッジ有効化中"
 #: src/components/Exchange/PositionEditor.js:264
 #: src/components/Exchange/PositionSeller.js:630
 #: src/components/Exchange/PositionSeller.js:634
-#: src/components/Exchange/SwapBox.js:1157
-#: src/components/Exchange/SwapBox.js:1160
+#: src/components/Exchange/SwapBox.js:1158
+#: src/components/Exchange/SwapBox.js:1161
 msgid "Enabling Leverage..."
 msgstr "レバレッジ有効化中"
 
 #: src/components/Exchange/OrdersToa.js:21
 #: src/components/Exchange/PositionSeller.js:617
 #: src/components/Exchange/PositionSeller.js:620
-#: src/components/Exchange/SwapBox.js:1177
-#: src/components/Exchange/SwapBox.js:1180
+#: src/components/Exchange/SwapBox.js:1178
+#: src/components/Exchange/SwapBox.js:1181
 msgid "Enabling Orders..."
 msgstr "注文有効化中"
 
@@ -785,8 +829,8 @@ msgstr "紹介コードを入力"
 msgid "Enter a code"
 msgstr "コードを入力"
 
-#: src/components/Exchange/SwapBox.js:800
-#: src/components/Exchange/SwapBox.js:873
+#: src/components/Exchange/SwapBox.js:801
+#: src/components/Exchange/SwapBox.js:874
 msgid "Enter a price"
 msgstr "価格を入力"
 
@@ -796,18 +840,18 @@ msgstr "価格を入力"
 #: src/components/Exchange/PositionSeller.js:529
 #: src/components/Exchange/SwapBox.js:782
 #: src/components/Exchange/SwapBox.js:785
-#: src/components/Exchange/SwapBox.js:856
-#: src/components/Exchange/SwapBox.js:870
+#: src/components/Exchange/SwapBox.js:857
+#: src/components/Exchange/SwapBox.js:871
 #: src/components/Glp/GlpSwap.js:427
 #: src/components/Glp/GlpSwap.js:430
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js:275
-#: src/pages/Stake/StakeV2.js:92
-#: src/pages/Stake/StakeV2.js:237
-#: src/pages/Stake/StakeV2.js:379
+#: src/pages/Stake/StakeV2.js:91
+#: src/pages/Stake/StakeV2.js:236
+#: src/pages/Stake/StakeV2.js:378
 msgid "Enter an amount"
 msgstr "額を入力"
 
-#: src/pages/Home/Home.js:224
+#: src/pages/Home/Home.js:195
 msgid "Enter and exit positions with minimal spread and zero price impact. Get the optimal price without incurring additional costs."
 msgstr "最小のスプレッドで価格への影響なしでポジションをオープン、クローズ。追加コストなしで最適価格を入手。"
 
@@ -822,20 +866,24 @@ msgstr "売却したいGLPの額をオーダーフォームに入力し、ここ
 #: src/components/Exchange/PositionSeller.js:1007
 #: src/components/Exchange/PositionsList.js:398
 #: src/components/Exchange/PositionsList.js:461
-#: src/components/Exchange/SwapBox.js:2131
-#: src/components/Exchange/SwapBox.js:2279
+#: src/components/Exchange/SwapBox.js:2135
+#: src/components/Exchange/SwapBox.js:2283
 msgid "Entry Price"
 msgstr "エントリー価格"
 
 #: src/components/Glp/GlpSwap.js:767
-msgid "Escrowed GMX APR"
-msgstr "esGMXのAPR(実質年利)"
+#~ msgid "Escrowed GMX APR"
+#~ msgstr "esGMXのAPR(実質年利)"
+
+#: src/components/Glp/GlpSwap.js:767
+msgid "Escrowed LeveragePro APR"
+msgstr ""
 
 #: src/components/Exchange/PositionEditor.js:572
 msgid "Execution Fee"
 msgstr "執行手数料"
 
-#: src/components/Exchange/SwapBox.js:2311
+#: src/components/Exchange/SwapBox.js:2315
 msgid "Exit Price"
 msgstr "退出価格"
 
@@ -847,7 +895,7 @@ msgstr "手数料"
 #: src/components/Glp/GlpSwap.js:897
 #: src/components/Glp/GlpSwap.js:1363
 #: src/components/Glp/GlpSwap.js:1366
-#: src/pages/Dashboard/DashboardV2.js:663
+#: src/pages/Dashboard/DashboardV2.js:672
 msgid "Fees"
 msgstr "手数料"
 
@@ -859,7 +907,7 @@ msgstr "GLPを売却して入手する資産によって手数料は異なりま
 msgid "Fees may vary depending on which asset you use to buy GLP."
 msgstr "GLPをどの資産で購入するかによって手数料は異なります。"
 
-#: src/pages/Dashboard/DashboardV2.js:654
+#: src/pages/Dashboard/DashboardV2.js:663
 msgid "Fees since"
 msgstr "この時点からの手数料"
 
@@ -867,11 +915,11 @@ msgstr "この時点からの手数料"
 msgid "Fees will be shown once you have entered an amount in the order form."
 msgstr "オーダーフォームに額を入れると手数料が表示されます。"
 
-#: src/components/Exchange/SwapBox.js:1008
+#: src/components/Exchange/SwapBox.js:1009
 msgid "Fetching token info..."
 msgstr "トークン情報入手中"
 
-#: src/pages/Dashboard/DashboardV2.js:724
+#: src/pages/Dashboard/DashboardV2.js:727
 msgid "Floor Price Fund"
 msgstr "フロアプライスファンド"
 
@@ -888,7 +936,7 @@ msgstr "喪失利益はチェックされていません"
 msgid "Funds not utilized by current open positions."
 msgstr "現在オープンされているポジションで利用されていない資金"
 
-#: src/pages/Dashboard/DashboardV2.js:965
+#: src/pages/Dashboard/DashboardV2.js:957
 msgid "GLP Index Composition"
 msgstr "GLPインデックス構成"
 
@@ -905,56 +953,60 @@ msgid "GLP sell disabled, pending {0} upgrade"
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js:387
-msgid "GMX Pages"
-msgstr "GMXのページ"
+#~ msgid "GMX Pages"
+#~ msgstr "GMXのページ"
 
-#: src/pages/BuyGMX/BuyGMX.js:269
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:269
 msgid "GMX bonds can be bought on Olympus Pro with a discount and a small vesting period:"
 msgstr "GMXボンドはOlympus Proで短期のべスティング期間を条件として割引価格で購入できます:"
 
 #: src/pages/Ecosystem/Ecosystem.js:489
-msgid "GMX dashboards and analytics."
-msgstr "GMXのダッシュボードと分析"
+#~ msgid "GMX dashboards and analytics."
+#~ msgstr "GMXのダッシュボードと分析"
 
 #: src/pages/Ecosystem/Ecosystem.js:390
-msgid "GMX ecosystem pages."
-msgstr "GMXエコシステムのページ"
+#~ msgid "GMX ecosystem pages."
+#~ msgstr "GMXエコシステムのページ"
 
 #: src/pages/Home/Home.js:253
-msgid "GMX is currently live on Arbitrum and Avalanche."
-msgstr "GMXは現在ArbitrumとAvalancheで稼働中です。"
+#~ msgid "GMX is currently live on Arbitrum and Avalanche."
+#~ msgstr "GMXは現在ArbitrumとAvalancheで稼働中です。"
 
 #: src/components/TokenCard/TokenCard.js:61
-msgid "GMX is the utility and governance token. Accrues 30% of the platform's generated fees."
-msgstr "GMXはユーティリティトークン兼ガバナンストークンです。プラットフォームが得た手数料の30%を獲得します。"
+#~ msgid "GMX is the utility and governance token. Accrues 30% of the platform's generated fees."
+#~ msgstr "GMXはユーティリティトークン兼ガバナンストークンです。プラットフォームが得た手数料の30%を獲得します。"
 
 #: src/pages/Stake/StakeV2.js:2112
 #: src/pages/Stake/StakeV2.js:2196
-msgid "GMX tokens can be claimed, use the options under the Total Rewards section to claim them."
-msgstr "GMXトークンを請求することができます。請求するには全報酬セクションの下部にある選択肢を利用してください。"
+#~ msgid "GMX tokens can be claimed, use the options under the Total Rewards section to claim them."
+#~ msgstr "GMXトークンを請求することができます。請求するには全報酬セクションの下部にある選択肢を利用してください。"
 
-#: src/pages/Stake/StakeV2.js:1158
-#: src/pages/Stake/StakeV2.js:1249
+#: src/pages/Stake/StakeV2.js:1151
+#: src/pages/Stake/StakeV2.js:1242
 msgid "GMX transfers not yet enabled"
 msgstr "GMX移転は有効化されていません"
 
 #: src/components/Common/SEO.js:8
-msgid "GMX | Decentralized Perpetual Exchange"
-msgstr "\"GMX | 分散型パーペチュアル取引所"
+#~ msgid "GMX | Decentralized Perpetual Exchange"
+#~ msgstr "\"GMX | 分散型パーペチュアル取引所"
 
 #: src/components/Referrals/AddAffiliateCode.js:18
 msgid "Generate Referral Code"
 msgstr "紹介コード作成"
 
 #: src/pages/Referrals/Referrals.js:124
-msgid "Get fee discounts and earn rebates through the GMX referral program.<0/>For more information, please read the <1>referral program details</1>."
-msgstr "GMX紹介プログラムで手数料が割引されリベートが得られます。<0/>より詳しくは、 <1>こちらの紹介プログラム詳細を読んでください</1>."
+#~ msgid "Get fee discounts and earn rebates through the GMX referral program.<0/>For more information, please read the <1>referral program details</1>."
+#~ msgstr "GMX紹介プログラムで手数料が割引されリベートが得られます。<0/>より詳しくは、 <1>こちらの紹介プログラム詳細を読んでください</1>."
 
-#: src/components/Exchange/SwapBox.js:1190
+#: src/pages/Referrals/Referrals.js:124
+msgid "Get fee discounts and earn rebates through the LeveragePro referral program.<0/>For more information, please read the <1>referral program details</1>."
+msgstr ""
+
+#: src/components/Exchange/SwapBox.js:1191
 msgid "High Slippage, Swap Anyway"
 msgstr "大きなスリッページ。ともかく交換する"
 
-#: src/components/Exchange/SwapBox.js:1214
+#: src/components/Exchange/SwapBox.js:1215
 msgid "High USDG Slippage, Long Anyway"
 msgstr "大きなUSDGスリッページ。ともかくロングする"
 
@@ -962,11 +1014,11 @@ msgstr "大きなUSDGスリッページ。ともかくロングする"
 msgid "Home"
 msgstr "ホーム"
 
-#: src/pages/BuyGMX/BuyGMX.js:108
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:108
 msgid "Hop"
 msgstr "ホップ"
 
-#: src/App/App.js:617
+#: src/App/App.js:594
 msgid "Include PnL in leverage display"
 msgstr "レバレッジ表示に損益を含める"
 
@@ -974,7 +1026,7 @@ msgstr "レバレッジ表示に損益を含める"
 msgid "Incorrect Account"
 msgstr "誤ったアカウント"
 
-#: src/components/Exchange/SwapBox.js:1149
+#: src/components/Exchange/SwapBox.js:1150
 msgid "Incorrect Network"
 msgstr "誤ったネットワーク"
 
@@ -986,11 +1038,11 @@ msgstr "誤ったネットワーク"
 msgid "Initial Collateral: ${0}"
 msgstr "初期担保: ${0}"
 
-#: src/App/App.js:227
+#: src/App/App.js:214
 msgid "Install Coinbase Wallet"
 msgstr "コインベースウォレットをインストール"
 
-#: src/App/App.js:205
+#: src/App/App.js:192
 msgid "Install MetaMask"
 msgstr "メタマスクをインストール"
 
@@ -998,11 +1050,11 @@ msgstr "メタマスクをインストール"
 msgid "Insufficient GLP balance"
 msgstr "GLP残高不足"
 
-#: src/components/Exchange/SwapBox.js:817
-#: src/components/Exchange/SwapBox.js:826
-#: src/components/Exchange/SwapBox.js:919
-#: src/components/Exchange/SwapBox.js:928
-#: src/components/Exchange/SwapBox.js:1519
+#: src/components/Exchange/SwapBox.js:818
+#: src/components/Exchange/SwapBox.js:827
+#: src/components/Exchange/SwapBox.js:920
+#: src/components/Exchange/SwapBox.js:929
+#: src/components/Exchange/SwapBox.js:1520
 #: src/components/Glp/GlpSwap.js:460
 msgid "Insufficient liquidity"
 msgstr "流動性不足"
@@ -1011,18 +1063,18 @@ msgstr "流動性不足"
 #~ msgid "Insufficient liquidity\", true, \"BUFFER\""
 #~ msgstr "流動性不足\", true, \"バッファー\""
 
-#: src/components/Exchange/SwapBox.js:976
-#: src/components/Exchange/SwapBox.js:985
-#: src/components/Exchange/SwapBox.js:1031
+#: src/components/Exchange/SwapBox.js:977
+#: src/components/Exchange/SwapBox.js:986
+#: src/components/Exchange/SwapBox.js:1032
 msgid "Insufficient liquidity, change \"Profits In\""
 msgstr "流動性不足、\"利益\"を変更する"
 
-#: src/pages/Stake/StakeV2.js:385
+#: src/pages/Stake/StakeV2.js:384
 msgid "Insufficient staked tokens"
 msgstr "ステークされたトークンが足りていません"
 
 #: src/components/Exchange/SwapBox.js:793
-#: src/components/Exchange/SwapBox.js:866
+#: src/components/Exchange/SwapBox.js:867
 #: src/components/Glp/GlpSwap.js:436
 msgid "Insufficient {0} balance"
 msgstr "{0} 残高の不足"
@@ -1044,7 +1096,7 @@ msgstr "無効な清算価格"
 msgid "Invalid price, see warning"
 msgstr "無効な価格。警告を確認してください"
 
-#: src/App/App.js:298
+#: src/App/App.js:285
 msgid "Invalid slippage value"
 msgstr "無効なスリッページ値"
 
@@ -1057,15 +1109,15 @@ msgstr "無効なスリッページ値"
 #~ msgid "Language"
 #~ msgstr "言語"
 
-#: src/pages/Home/Home.js:144
+#: src/pages/Home/Home.js:115
 msgid "Launch Exchange"
 msgstr "取引開始"
 
-#: src/components/Exchange/SwapBox.js:2425
+#: src/components/Exchange/SwapBox.js:2429
 msgid "Leaderboard"
 msgstr "順位"
 
-#: src/components/Exchange/SwapBox.js:1560
+#: src/components/Exchange/SwapBox.js:1563
 msgid "Leave at least {0} {1} for gas"
 msgstr "ガスのため少なくとも{0} {1} を残しておいてください"
 
@@ -1080,28 +1132,56 @@ msgstr "残りのポジションが10 USD以下"
 #: src/components/Exchange/PositionEditor.js:527
 #: src/components/Exchange/PositionSeller.js:1075
 #: src/components/Exchange/PositionsList.js:251
-#: src/components/Exchange/SwapBox.js:1922
-#: src/components/Exchange/SwapBox.js:2115
+#: src/components/Exchange/SwapBox.js:1925
+#: src/components/Exchange/SwapBox.js:2119
 msgid "Leverage"
 msgstr "レバレッジ"
 
-#: src/components/Exchange/SwapBox.js:849
+#: src/components/Exchange/SwapBox.js:850
 msgid "Leverage disabled, pending {0} upgrade"
 msgstr ""
 
-#: src/components/Exchange/SwapBox.js:1458
+#: src/pages/Ecosystem/Ecosystem.js:384
+msgid "LeveragePro Pages"
+msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js:486
+msgid "LeveragePro dashboards and analytics."
+msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js:387
+msgid "LeveragePro ecosystem pages."
+msgstr ""
+
+#: src/pages/Home/Home.js:224
+msgid "LeveragePro is currently live on Velas and Belas."
+msgstr ""
+
+#: src/components/TokenCard/TokenCard.js:61
+msgid "LeveragePro is the utility and governance token. Accrues 30% of the platform's generated fees."
+msgstr ""
+
+#: src/pages/Stake/StakeV2.js:2101
+#: src/pages/Stake/StakeV2.js:2185
+msgid "LeveragePro tokens can be claimed, use the options under the Total Rewards section to claim them."
+msgstr ""
+
+#: src/components/Common/SEO.js:8
+msgid "LeveragePro | Decentralized Perpetual Exchange"
+msgstr ""
+
+#: src/components/Exchange/SwapBox.js:1459
 msgid "Limit order creation failed."
 msgstr "指値注文が作成できませんでした。"
 
-#: src/components/Exchange/SwapBox.js:1456
+#: src/components/Exchange/SwapBox.js:1457
 msgid "Limit order submitted!"
 msgstr "指値注文提出済!"
 
-#: src/pages/Ecosystem/Ecosystem.js:411
-#: src/pages/Ecosystem/Ecosystem.js:455
-#: src/pages/Ecosystem/Ecosystem.js:510
-#: src/pages/Ecosystem/Ecosystem.js:564
-#: src/pages/Ecosystem/Ecosystem.js:611
+#: src/pages/Ecosystem/Ecosystem.js:408
+#: src/pages/Ecosystem/Ecosystem.js:452
+#: src/pages/Ecosystem/Ecosystem.js:507
+#: src/pages/Ecosystem/Ecosystem.js:608
 msgid "Link"
 msgstr "リンク"
 
@@ -1109,12 +1189,12 @@ msgstr "リンク"
 #: src/components/Exchange/PositionSeller.js:1013
 #: src/components/Exchange/PositionsList.js:404
 #: src/components/Exchange/PositionsList.js:464
-#: src/components/Exchange/SwapBox.js:2146
+#: src/components/Exchange/SwapBox.js:2150
 msgid "Liq. Price"
 msgstr "清算価格"
 
-#: src/components/Exchange/SwapBox.js:916
-#: src/components/Exchange/SwapBox.js:1017
+#: src/components/Exchange/SwapBox.js:917
+#: src/components/Exchange/SwapBox.js:1018
 msgid "Liquidity data not loaded"
 msgstr "流動性データがロードされていません"
 
@@ -1124,18 +1204,18 @@ msgstr "ロード中"
 
 #: src/components/Exchange/PositionsList.js:261
 #: src/components/Exchange/SwapBox.js:214
-#: src/components/Exchange/SwapBox.js:1043
+#: src/components/Exchange/SwapBox.js:1044
 #: src/pages/Actions/Actions.js:108
 #: src/pages/Actions/Actions.js:112
 msgid "Long"
 msgstr "ロング"
 
-#: src/pages/Dashboard/DashboardV2.js:603
-#: src/pages/Dashboard/DashboardV2.js:617
+#: src/pages/Dashboard/DashboardV2.js:615
+#: src/pages/Dashboard/DashboardV2.js:629
 msgid "Long Positions"
 msgstr "ロングポジション"
 
-#: src/components/Exchange/SwapBox.js:1217
+#: src/components/Exchange/SwapBox.js:1218
 msgid "Long {0}"
 msgstr "ロング {0}"
 
@@ -1163,13 +1243,13 @@ msgstr "最大"
 msgid "Mark Price"
 msgstr "マーク価格"
 
-#: src/pages/Dashboard/DashboardV2.js:817
-#: src/pages/Dashboard/DashboardV2.js:908
+#: src/pages/Dashboard/DashboardV2.js:813
+#: src/pages/Dashboard/DashboardV2.js:900
 msgid "Market Cap"
 msgstr "時価総額"
 
-#: src/pages/Stake/StakeV2.js:295
-#: src/pages/Stake/StakeV2.js:444
+#: src/pages/Stake/StakeV2.js:294
+#: src/pages/Stake/StakeV2.js:443
 msgid "Max"
 msgstr "最大"
 
@@ -1182,9 +1262,9 @@ msgstr "{0}の最大キャパシティに到達しています"
 msgid "Max Pool Capacity"
 msgstr "プールの最大キャパシティ"
 
-#: src/pages/Stake/StakeV2.js:95
-#: src/pages/Stake/StakeV2.js:240
-#: src/pages/Stake/StakeV2.js:382
+#: src/pages/Stake/StakeV2.js:94
+#: src/pages/Stake/StakeV2.js:239
+#: src/pages/Stake/StakeV2.js:381
 msgid "Max amount exceeded"
 msgstr "最大値超過"
 
@@ -1192,7 +1272,7 @@ msgstr "最大値超過"
 msgid "Max close amount exceeded"
 msgstr "最大クローズ値超過"
 
-#: src/components/Exchange/SwapBox.js:885
+#: src/components/Exchange/SwapBox.js:886
 msgid "Max leverage: 30.5x"
 msgstr "最大レバレッジ: 30.5倍"
 
@@ -1212,15 +1292,15 @@ msgstr "{0}の最大プールキャパシティ到達"
 msgid "Max pool capacity reached for {0}. Please mint GLP using another token"
 msgstr "{0}の最大プールキャパシティ到達。別のトークンを使用してGLPをミントしてください。"
 
-#: src/App/App.js:308
+#: src/App/App.js:295
 msgid "Max slippage precision is 0.01%"
 msgstr "スリッページの最大精度は0.01%です"
 
-#: src/components/Exchange/SwapBox.js:954
+#: src/components/Exchange/SwapBox.js:955
 msgid "Max {0} long exceeded"
 msgstr "{0}のロングの最大値超過"
 
-#: src/components/Exchange/SwapBox.js:1026
+#: src/components/Exchange/SwapBox.js:1027
 msgid "Max {0} short exceeded"
 msgstr "{0}のショートの最大値超過"
 
@@ -1229,32 +1309,32 @@ msgstr "{0}のショートの最大値超過"
 msgid "Media Kit"
 msgstr "メディアキット"
 
-#: src/App/App.js:573
+#: src/App/App.js:550
 msgid "MetaMask"
 msgstr "メタマスク"
 
-#: src/App/App.js:201
+#: src/App/App.js:188
 msgid "MetaMask not detected."
 msgstr "メタマスクが検出できません。"
 
 #: src/components/Exchange/PositionEditor.js:214
 #: src/components/Exchange/PositionSeller.js:569
-#: src/components/Exchange/SwapBox.js:881
+#: src/components/Exchange/SwapBox.js:882
 msgid "Min leverage: 1.1x"
 msgstr "最小レバレッジ: 1.1倍"
 
 #: src/components/Exchange/PositionEditor.js:197
 #: src/components/Exchange/PositionEditor.js:200
-#: src/components/Exchange/SwapBox.js:877
+#: src/components/Exchange/SwapBox.js:878
 msgid "Min order: 10 USD"
 msgstr "最小オーダー金額: 10 USD"
 
-#: src/pages/Stake/StakeV2.js:1292
+#: src/pages/Stake/StakeV2.js:1285
 msgid "Multiplier Points APR"
 msgstr "マルチプライヤーポイントのAPR(実質年利)"
 
-#: src/pages/BuyGMX/BuyGMX.js:101
-#: src/pages/BuyGMX/BuyGMX.js:185
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:101
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:185
 msgid "Multiswap"
 msgstr "マルチスワップ"
 
@@ -1267,7 +1347,7 @@ msgstr "ネット金額"
 #~ msgid "Networks"
 #~ msgstr "ネットワーク"
 
-#: src/components/NetworkDropdown/NetworkDropdown.js:56
+#: src/components/NetworkDropdown/NetworkDropdown.js:55
 msgid "Networks and Settings"
 msgstr ""
 
@@ -1300,15 +1380,15 @@ msgstr "注文は必ず執行される保証がないことに留意ください
 msgid "Note that there is a minimum holding time of 15 minutes after a purchase."
 msgstr "購入後に15分の最低保有期間が設定されています。"
 
-#: src/pages/BuyGMX/BuyGMX.js:273
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:273
 msgid "Olympus Pro"
 msgstr "Olympus Pro"
 
-#: src/pages/Home/Home.js:184
+#: src/pages/Home/Home.js:155
 msgid "Open Interest"
 msgstr "建玉"
 
-#: src/components/Exchange/SwapBox.js:1143
+#: src/components/Exchange/SwapBox.js:1144
 msgid "Open a position"
 msgstr "ポジションを開く"
 
@@ -1318,10 +1398,10 @@ msgstr "Coingeckoで見る"
 
 #: src/pages/Dashboard/AssetDropdown.js:47
 #: src/pages/Dashboard/AssetDropdown.js:55
-msgid "Open in Explorer"
-msgstr "Explorerで見る"
+#~ msgid "Open in Explorer"
+#~ msgstr "Explorerで見る"
 
-#: src/pages/Home/Home.js:238
+#: src/pages/Home/Home.js:209
 msgid "Open positions through a simple swap interface. Conveniently swap from any supported asset into the position of your choice."
 msgstr "シンプルなスワップインターフェースでポジションを開けます。サポートされているどの資産も好きな資産に簡単に交換可能。"
 
@@ -1350,34 +1430,34 @@ msgstr "注文"
 msgid "Orders cancelled."
 msgstr "注文がキャンセルされました。"
 
-#: src/pages/Dashboard/DashboardV2.js:553
+#: src/pages/Dashboard/DashboardV2.js:566
 msgid "Overview"
 msgstr "概要"
 
-#: src/pages/Dashboard/DashboardV2.js:980
+#: src/pages/Dashboard/DashboardV2.js:971
 msgid "POOL"
 msgstr "プール"
 
 #: src/components/Glp/GlpSwap.js:975
-#: src/pages/Dashboard/DashboardV2.js:977
+#: src/pages/Dashboard/DashboardV2.js:968
 msgid "PRICE"
 msgstr "価格"
 
 #: src/components/Exchange/PositionSeller.js:523
-#: src/components/Exchange/SwapBox.js:852
+#: src/components/Exchange/SwapBox.js:853
 msgid "Page outdated, please refresh"
 msgstr "ページの内容が期限切れです。更新してください。"
 
 #: src/pages/Ecosystem/Ecosystem.js:541
-msgid "Partnerships and Integrations"
-msgstr "パートナーシップと統合"
+#~ msgid "Partnerships and Integrations"
+#~ msgstr "パートナーシップと統合"
 
 #: src/components/Glp/GlpSwap.js:617
 #: src/components/Glp/GlpSwap.js:811
 msgid "Pay"
 msgstr "支払い額"
 
-#: src/pages/Dashboard/DashboardV2.js:737
+#: src/pages/Dashboard/DashboardV2.js:739
 msgid "Platform and GLP index tokens."
 msgstr "プラットフォームとGLPインデックストークン"
 
@@ -1422,13 +1502,13 @@ msgstr "ポジション"
 #: src/components/Exchange/OrdersList.js:96
 #: src/components/Exchange/OrdersList.js:404
 #: src/components/Exchange/PositionSeller.js:916
-#: src/components/Exchange/SwapBox.js:1956
-#: src/components/Exchange/SwapBox.js:2005
+#: src/components/Exchange/SwapBox.js:1960
+#: src/components/Exchange/SwapBox.js:2009
 #: src/components/Glp/GlpSwap.js:702
-#: src/pages/Dashboard/DashboardV2.js:890
-#: src/pages/Stake/StakeV2.js:1470
-#: src/pages/Stake/StakeV2.js:1781
-#: src/pages/Stake/StakeV2.js:1914
+#: src/pages/Dashboard/DashboardV2.js:882
+#: src/pages/Stake/StakeV2.js:1463
+#: src/pages/Stake/StakeV2.js:1770
+#: src/pages/Stake/StakeV2.js:1903
 msgid "Price"
 msgstr "価格"
 
@@ -1436,7 +1516,7 @@ msgstr "価格"
 msgid "Price above Liq. Price"
 msgstr "清算価格を上回る価格"
 
-#: src/components/Exchange/SwapBox.js:890
+#: src/components/Exchange/SwapBox.js:891
 msgid "Price above Mark Price"
 msgstr "マーク価格を上回る価格"
 
@@ -1444,11 +1524,11 @@ msgstr "マーク価格を上回る価格"
 msgid "Price below Liq. Price"
 msgstr "清算価格を下回る価格"
 
-#: src/components/Exchange/SwapBox.js:893
+#: src/components/Exchange/SwapBox.js:894
 msgid "Price below Mark Price"
 msgstr "マーク価格を下回る価格"
 
-#: src/components/Exchange/SwapBox.js:805
+#: src/components/Exchange/SwapBox.js:806
 msgid "Price {0} Mark Price"
 msgstr "価格 {0} マーク価格"
 
@@ -1462,28 +1542,35 @@ msgstr "利益"
 #~ msgstr "利益"
 
 #: src/pages/Ecosystem/Ecosystem.js:435
-msgid "Projects developed by the GMX community."
-msgstr "GMXコミュニティが開発したプロジェクト"
+#~ msgid "Projects developed by the GMX community."
+#~ msgstr "GMXコミュニティが開発したプロジェクト"
+
+#: src/pages/Ecosystem/Ecosystem.js:432
+msgid "Projects developed by the LeveragePro community."
+msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js:544
-msgid "Projects integrated with GMX."
-msgstr "GMXと統合されているプロジェクト"
+#~ msgid "Projects integrated with GMX."
+#~ msgstr "GMXと統合されているプロジェクト"
 
 #: src/pages/BuyGlp/BuyGlp.js:37
 msgid "Purchase <0>GLP tokens</0> to earn {nativeTokenSymbol} fees from swaps and leverages trading."
 msgstr "<0>GLP tokens</0>を購入して、スワップとレバレッジ取引から{nativeTokenSymbol}手数料を獲得する."
 
-#: src/pages/BuyGMX/BuyGMX.js:220
-#: src/pages/BuyGMX/BuyGMX.js:254
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:254
 msgid "Purchase GMX"
 msgstr "GMX購入"
 
-#: src/pages/Stake/StakeV2.js:1902
+#: src/pages/Stake/StakeV2.js:1891
 msgid "Purchase Insurance"
 msgstr "保険購入"
 
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:220
+msgid "Purchase LeveragePro"
+msgstr ""
+
 #: src/components/TokenCard/TokenCard.js:82
-#: src/components/TokenCard/TokenCard.js:114
+#: src/components/TokenCard/TokenCard.js:115
 msgid "Read more"
 msgstr "詳細について読む"
 
@@ -1502,7 +1589,7 @@ msgstr "アフィリエイトとしてこのアカウントが獲得したリベ
 
 #: src/components/Exchange/PositionSeller.js:1159
 #: src/components/Exchange/SwapBox.js:218
-#: src/components/Exchange/SwapBox.js:1040
+#: src/components/Exchange/SwapBox.js:1041
 #: src/components/Glp/GlpSwap.js:618
 #: src/components/Glp/GlpSwap.js:883
 msgid "Receive"
@@ -1524,7 +1611,7 @@ msgstr "受け取り側ではこれまでにGMXトークンをステークした
 msgid "Redemption time not yet reached"
 msgstr "売却までの規定時間に達していません"
 
-#: src/pages/Home/Home.js:206
+#: src/pages/Home/Home.js:177
 msgid "Reduce Liquidation Risks"
 msgstr "清算リスクを減らす"
 
@@ -1573,7 +1660,7 @@ msgstr "{0} {1} の {2} USDの削減を要求しました。"
 msgid "Requested deposit of {0} {1} into {2} {3}."
 msgstr "{0} {1}の{2} {3}への入金を要求しました。"
 
-#: src/components/Exchange/SwapBox.js:1569
+#: src/components/Exchange/SwapBox.js:1572
 msgid "Requested increase of {tokenSymbol} {0} by {1} USD."
 msgstr "{tokenSymbol} {0} の {1} USDの増額を要求しました。"
 
@@ -1581,7 +1668,7 @@ msgstr "{tokenSymbol} {0} の {1} USDの増額を要求しました。"
 msgid "Requested withdrawal of {0} USD from {1} {2}."
 msgstr "{1} {2}からの{0} USDの出金を要求しました。"
 
-#: src/pages/Stake/StakeV2.js:496
+#: src/pages/Stake/StakeV2.js:495
 msgid "Reserve Amount"
 msgstr "リザーブ額"
 
@@ -1589,13 +1676,13 @@ msgstr "リザーブ額"
 msgid "Reserved"
 msgstr "リザーブ済"
 
-#: src/pages/Stake/StakeV2.js:2063
-#: src/pages/Stake/StakeV2.js:2149
+#: src/pages/Stake/StakeV2.js:2052
+#: src/pages/Stake/StakeV2.js:2138
 msgid "Reserved for Vesting"
 msgstr "べスティング用リザーブ済"
 
-#: src/pages/Stake/StakeV2.js:1567
-#: src/pages/Stake/StakeV2.js:1837
+#: src/pages/Stake/StakeV2.js:1558
+#: src/pages/Stake/StakeV2.js:1826
 msgid "Rewards"
 msgstr "報酬"
 
@@ -1603,16 +1690,16 @@ msgstr "報酬"
 msgid "Same as current active code"
 msgstr "現状有効なコードと同じ"
 
-#: src/App/App.js:629
+#: src/App/App.js:606
 msgid "Save"
 msgstr "保存"
 
-#: src/pages/Home/Home.js:220
+#: src/pages/Home/Home.js:191
 msgid "Save on Costs"
 msgstr "コスト削減"
 
 #: src/components/NetworkDropdown/LanguagePopupHome.js:29
-#: src/components/NetworkDropdown/NetworkDropdown.js:49
+#: src/components/NetworkDropdown/NetworkDropdown.js:48
 msgid "Select Language"
 msgstr "言語選択"
 
@@ -1647,7 +1734,7 @@ msgstr "自分への移転はサポートされていません"
 #: src/components/Glp/GlpSwap.js:520
 #: src/components/Glp/GlpSwap.js:652
 #: src/components/Glp/GlpSwap.js:792
-#: src/pages/Stake/StakeV2.js:1893
+#: src/pages/Stake/StakeV2.js:1882
 msgid "Sell GLP"
 msgstr "GLP売却"
 
@@ -1690,22 +1777,22 @@ msgstr "ポジションをシェア"
 
 #: src/components/Exchange/PositionsList.js:261
 #: src/components/Exchange/SwapBox.js:216
-#: src/components/Exchange/SwapBox.js:1045
+#: src/components/Exchange/SwapBox.js:1046
 #: src/pages/Actions/Actions.js:108
 #: src/pages/Actions/Actions.js:112
 msgid "Short"
 msgstr "ショート"
 
-#: src/pages/Dashboard/DashboardV2.js:628
-#: src/pages/Dashboard/DashboardV2.js:642
+#: src/pages/Dashboard/DashboardV2.js:639
+#: src/pages/Dashboard/DashboardV2.js:653
 msgid "Short Positions"
 msgstr "ショートポジション"
 
-#: src/components/Exchange/SwapBox.js:1220
+#: src/components/Exchange/SwapBox.js:1221
 msgid "Short {0}"
 msgstr "{0}をショート"
 
-#: src/pages/Home/Home.js:234
+#: src/pages/Home/Home.js:205
 msgid "Simple Swaps"
 msgstr "シンプルなスワップ"
 
@@ -1716,7 +1803,7 @@ msgstr "シンプルなスワップ"
 msgid "Size"
 msgstr "サイズ"
 
-#: src/App/App.js:302
+#: src/App/App.js:289
 msgid "Slippage should be less than 5%"
 msgstr "スリッページは5%未満"
 
@@ -1724,61 +1811,65 @@ msgstr "スリッページは5%未満"
 #~ msgid "Spanish"
 #~ msgstr "スペイン語"
 
-#: src/components/Exchange/SwapBox.js:2432
+#: src/components/Exchange/SwapBox.js:2436
 msgid "Speed up page loading"
 msgstr "ページの読み込みを速くする"
 
-#: src/pages/Dashboard/DashboardV2.js:914
+#: src/pages/Dashboard/DashboardV2.js:906
 msgid "Stablecoin Percentage"
 msgstr "ステーブルコインの比率"
 
-#: src/pages/Stake/StakeV2.js:155
-#: src/pages/Stake/StakeV2.js:165
-#: src/pages/Stake/StakeV2.js:1999
+#: src/pages/Stake/StakeV2.js:154
+#: src/pages/Stake/StakeV2.js:164
+#: src/pages/Stake/StakeV2.js:1988
 msgid "Stake"
 msgstr "ステーク"
 
 #: src/pages/Stake/StakeV2.js:1447
-msgid "Stake <0>GMX</0> and <1>GLP</1> to earn rewards."
-msgstr "<0>GMX</0>と<1>GLP</1>をステークして報酬を稼ぐ。"
+#~ msgid "Stake <0>GMX</0> and <1>GLP</1> to earn rewards."
+#~ msgstr "<0>GMX</0>と<1>GLP</1>をステークして報酬を稼ぐ。"
 
-#: src/pages/Stake/StakeV2.js:746
+#: src/pages/Stake/StakeV2.js:1440
+msgid "Stake <0>LeveragePro</0> and <1>GLP</1> to earn rewards."
+msgstr ""
+
+#: src/pages/Stake/StakeV2.js:745
 msgid "Stake GMX Rewards"
 msgstr "GMX報酬をステークする"
 
-#: src/pages/Stake/StakeV2.js:736
+#: src/pages/Stake/StakeV2.js:735
 msgid "Stake Multiplier Points"
 msgstr "マルチプライヤーポイントをステークする"
 
-#: src/pages/Stake/StakeV2.js:756
+#: src/pages/Stake/StakeV2.js:755
 msgid "Stake esGMX Rewards"
 msgstr "esGMX報酬をステークする"
 
-#: src/pages/Stake/StakeV2.js:116
+#: src/pages/Stake/StakeV2.js:115
 msgid "Stake failed."
 msgstr "ステークできませんでした。"
 
-#: src/pages/Stake/StakeV2.js:115
+#: src/pages/Stake/StakeV2.js:114
 msgid "Stake submitted!"
 msgstr "ステーク申し込み完了!"
 
-#: src/pages/Dashboard/DashboardV2.js:804
-#: src/pages/Stake/StakeV2.js:1501
-#: src/pages/Stake/StakeV2.js:1796
-#: src/pages/Stake/StakeV2.js:1929
+#: src/pages/Dashboard/DashboardV2.js:801
+#: src/pages/Stake/StakeV2.js:1492
+#: src/pages/Stake/StakeV2.js:1785
+#: src/pages/Stake/StakeV2.js:1918
 msgid "Staked"
 msgstr "ステーク済"
 
-#: src/pages/Stake/StakeV2.js:2041
-#: src/pages/Stake/StakeV2.js:2143
+#: src/pages/Stake/StakeV2.js:2030
+#: src/pages/Stake/StakeV2.js:2132
 msgid "Staked Tokens"
 msgstr "ステークされたトークン"
 
-#: src/pages/Stake/StakeV2.js:153
+#: src/pages/Stake/StakeV2.js:152
 msgid "Staking..."
 msgstr "ステーク中"
 
-#: src/pages/Dashboard/DashboardV2.js:528
+#: src/pages/Dashboard/DashboardV2.js:552
 msgid "Stats"
 msgstr "統計"
 
@@ -1786,29 +1877,29 @@ msgstr "統計"
 msgid "Submit"
 msgstr "提出"
 
-#: src/pages/Dashboard/DashboardV2.js:789
-#: src/pages/Dashboard/DashboardV2.js:896
+#: src/pages/Dashboard/DashboardV2.js:786
+#: src/pages/Dashboard/DashboardV2.js:888
 msgid "Supply"
 msgstr "供給量"
 
-#: src/components/Exchange/SwapBox.js:2221
+#: src/components/Exchange/SwapBox.js:2225
 msgid "Swap"
 msgstr "スワップ"
 
-#: src/components/Exchange/SwapBox.js:1371
+#: src/components/Exchange/SwapBox.js:1372
 msgid "Swap Order created!"
 msgstr "スワップ注文作成完了!"
 
-#: src/components/Exchange/SwapBox.js:1372
+#: src/components/Exchange/SwapBox.js:1373
 msgid "Swap Order creation failed."
 msgstr "スワップ注文が作成できませんでした。"
 
-#: src/components/Exchange/SwapBox.js:1370
+#: src/components/Exchange/SwapBox.js:1371
 msgid "Swap Order submitted!"
 msgstr "スワップ注文提出済!"
 
-#: src/components/Exchange/SwapBox.js:1294
-#: src/components/Exchange/SwapBox.js:1408
+#: src/components/Exchange/SwapBox.js:1295
+#: src/components/Exchange/SwapBox.js:1409
 msgid "Swap failed."
 msgstr "スワップできませんでした。"
 
@@ -1816,7 +1907,7 @@ msgstr "スワップできませんでした。"
 msgid "Swap on {0}"
 msgstr "{0}でスワップ"
 
-#: src/components/Exchange/SwapBox.js:1293
+#: src/components/Exchange/SwapBox.js:1294
 msgid "Swap submitted!"
 msgstr "スワップ申し込み完了!"
 
@@ -1828,17 +1919,17 @@ msgstr ""
 #~ msgid "Switch Network"
 #~ msgstr "ネットワーク変更"
 
-#: src/pages/BuyGMX/BuyGMX.js:98
-#: src/pages/BuyGMX/BuyGMX.js:182
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:98
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:182
 msgid "Synapse"
 msgstr "Synapse"
 
 #: src/components/Glp/GlpSwap.js:972
-#: src/pages/Dashboard/DashboardV2.js:974
+#: src/pages/Dashboard/DashboardV2.js:965
 msgid "TOKEN"
 msgstr "トークン"
 
-#: src/pages/Ecosystem/Ecosystem.js:595
+#: src/pages/Ecosystem/Ecosystem.js:592
 msgid "Telegram Groups"
 msgstr "Telegramグループ"
 
@@ -1846,7 +1937,7 @@ msgstr "Telegramグループ"
 msgid "Terms and Conditions"
 msgstr "規約"
 
-#: src/pages/Stake/StakeV2.js:1549
+#: src/pages/Stake/StakeV2.js:1540
 msgid "The Boosted APR is from your staked Multiplier Points."
 msgstr "APRブーストはステークされたマルチプライヤーポイントから来ています。"
 
@@ -1882,13 +1973,13 @@ msgstr "ティア {0} ({1}%割引)"
 msgid "To complete the transfer, you must switch your connected account to {receiver}."
 msgstr "移転を完了するには、{receiver}のアカウントに接続しなおす必要があります。"
 
-#: src/pages/BuyGMX/BuyGMX.js:127
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:127
 msgid "To purchase GMX on <0>Arbitrum</0>, please change your network."
 msgstr "<0>Arbitrum</0>でGMXを購入するにはネットワークを切り替えてください。"
 
 #: src/pages/BuyGMX/BuyGMX.js:48
-msgid "To purchase GMX on <0>Avalanche</0>, please change your network."
-msgstr "<0>Avalanche</0>でGMXを購入するにはネットワークを切り替えてください。"
+#~ msgid "To purchase GMX on <0>Avalanche</0>, please change your network."
+#~ msgstr "<0>Avalanche</0>でGMXを購入するにはネットワークを切り替えてください。"
 
 #: src/components/Glp/GlpSwap.js:908
 msgid "To reduce fees, select a different asset to pay with."
@@ -1898,12 +1989,12 @@ msgstr "手数料を削減するには別のアセットで支払ってくださ
 msgid "To reduce fees, select a different asset to receive."
 msgstr "手数料を削減するには別のアセットで受け取ってください。"
 
-#: src/pages/Stake/StakeV2.js:1726
+#: src/pages/Stake/StakeV2.js:1715
 msgid "Total"
 msgstr "総計"
 
-#: src/pages/Dashboard/DashboardV2.js:683
-#: src/pages/Dashboard/DashboardV2.js:692
+#: src/pages/Dashboard/DashboardV2.js:690
+#: src/pages/Dashboard/DashboardV2.js:699
 msgid "Total Fees"
 msgstr "手数料総額"
 
@@ -1913,26 +2004,26 @@ msgstr "手数料総額"
 msgid "Total Rebates"
 msgstr "リベート総額"
 
-#: src/pages/Stake/StakeV2.js:1689
+#: src/pages/Stake/StakeV2.js:1678
 msgid "Total Rewards"
 msgstr "報酬総額"
 
-#: src/pages/Dashboard/DashboardV2.js:795
-#: src/pages/Dashboard/DashboardV2.js:902
-#: src/pages/Stake/StakeV2.js:1628
-#: src/pages/Stake/StakeV2.js:1871
-#: src/pages/Stake/StakeV2.js:1979
+#: src/pages/Dashboard/DashboardV2.js:792
+#: src/pages/Dashboard/DashboardV2.js:894
+#: src/pages/Stake/StakeV2.js:1619
+#: src/pages/Stake/StakeV2.js:1860
+#: src/pages/Stake/StakeV2.js:1968
 msgid "Total Staked"
 msgstr "ステーク総額"
 
-#: src/pages/Dashboard/DashboardV2.js:677
+#: src/pages/Dashboard/DashboardV2.js:684
 msgid "Total Stats"
 msgstr "全体統計"
 
 #: src/components/Glp/GlpSwap.js:779
-#: src/pages/Stake/StakeV2.js:1654
-#: src/pages/Stake/StakeV2.js:1880
-#: src/pages/Stake/StakeV2.js:1988
+#: src/pages/Stake/StakeV2.js:1643
+#: src/pages/Stake/StakeV2.js:1869
+#: src/pages/Stake/StakeV2.js:1977
 msgid "Total Supply"
 msgstr "総供給量"
 
@@ -1942,32 +2033,36 @@ msgstr "紹介した全トレーダー"
 
 #: src/components/Referrals/AffiliatesStats.js:74
 #: src/components/Referrals/TradersStats.js:24
-#: src/pages/Home/Home.js:175
+#: src/pages/Home/Home.js:146
 msgid "Total Trading Volume"
 msgstr "トレード総額"
 
-#: src/pages/Home/Home.js:193
+#: src/pages/Home/Home.js:164
 msgid "Total Users"
 msgstr "ユーザー総数"
 
 #: src/components/Referrals/AffiliatesStats.js:124
-#: src/pages/Dashboard/DashboardV2.js:704
-#: src/pages/Dashboard/DashboardV2.js:713
+#: src/pages/Dashboard/DashboardV2.js:709
+#: src/pages/Dashboard/DashboardV2.js:718
 msgid "Total Volume"
 msgstr "総取引量"
 
-#: src/pages/Dashboard/DashboardV2.js:576
+#: src/pages/Dashboard/DashboardV2.js:590
 msgid "Total value of tokens in GLP pool ({chainName})"
 msgstr "GLPプール ({chainName})のトークンの総額"
 
-#: src/components/Header/AppHeaderUser.tsx:88
-#: src/components/Header/AppHeaderUser.tsx:123
+#: src/components/Header/AppHeaderUser.tsx:87
+#: src/components/Header/AppHeaderUser.tsx:122
 msgid "Trade"
 msgstr "トレード"
 
+#: src/pages/Home/Home.js:134
+msgid "Trade BNB, BTC, ETH, BUSD and other top cryptocurrencies with up to 30x leverage directly from your wallet"
+msgstr ""
+
 #: src/pages/Home/Home.js:163
-msgid "Trade BTC, ETH, AVAX and other top cryptocurrencies with up to 30x leverage directly from your wallet"
-msgstr "BTC、ETH、AVAXなどの主要仮想通貨を最大30倍のレバレッジで直接自分のウォレットから取引可能"
+#~ msgid "Trade BTC, ETH, AVAX and other top cryptocurrencies with up to 30x leverage directly from your wallet"
+#~ msgstr "BTC、ETH、AVAXなどの主要仮想通貨を最大30倍のレバレッジで直接自分のウォレットから取引可能"
 
 #: src/components/SettingDropdown/SettingDropdown.js:47
 #~ msgid "Trade Settings"
@@ -1989,7 +2084,7 @@ msgstr "トレーダー"
 msgid "Traders Referred"
 msgstr "紹介したトレーダー"
 
-#: src/components/Exchange/SwapBox.js:2418
+#: src/components/Exchange/SwapBox.js:2422
 msgid "Trading guide"
 msgstr "トレード案内"
 
@@ -1998,7 +2093,7 @@ msgstr "トレード案内"
 msgid "Transaction"
 msgstr "取引"
 
-#: src/pages/BuyGMX/BuyGMX.js:165
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:165
 msgid "Transfer AVAX"
 msgstr "AVAXを送信する"
 
@@ -2006,7 +2101,7 @@ msgstr "AVAXを送信する"
 msgid "Transfer Account"
 msgstr "アカウント移転"
 
-#: src/pages/BuyGMX/BuyGMX.js:85
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:85
 msgid "Transfer ETH"
 msgstr "ETHを送信する"
 
@@ -2048,11 +2143,11 @@ msgstr ""
 msgid "Tweet"
 msgstr "ツイート"
 
-#: src/pages/Home/Home.js:286
+#: src/pages/Home/Home.js:257
 msgid "Two tokens create our ecosystem"
 msgstr "2つのトークンが私たちのエコシステムを作っています"
 
-#: src/App/App.js:347
+#: src/App/App.js:334
 msgid "Txn failed."
 msgstr "トランザクション失敗"
 
@@ -2060,33 +2155,33 @@ msgstr "トランザクション失敗"
 msgid "Type"
 msgstr "タイプ"
 
-#: src/pages/Dashboard/DashboardV2.js:986
+#: src/pages/Dashboard/DashboardV2.js:977
 msgid "UTILIZATION"
 msgstr "利用率"
 
-#: src/pages/Stake/StakeV2.js:280
-#: src/pages/Stake/StakeV2.js:291
-#: src/pages/Stake/StakeV2.js:2004
+#: src/pages/Stake/StakeV2.js:279
+#: src/pages/Stake/StakeV2.js:290
+#: src/pages/Stake/StakeV2.js:1993
 msgid "Unstake"
 msgstr "アンステーク"
 
-#: src/pages/Stake/StakeV2.js:1253
+#: src/pages/Stake/StakeV2.js:1246
 msgid "Unstake GMX"
 msgstr "GMXをアンステークする"
 
-#: src/pages/Stake/StakeV2.js:250
+#: src/pages/Stake/StakeV2.js:249
 msgid "Unstake completed!"
 msgstr "アンステーク完了!"
 
-#: src/pages/Stake/StakeV2.js:249
+#: src/pages/Stake/StakeV2.js:248
 msgid "Unstake failed."
 msgstr "アンステークできませんでした。"
 
-#: src/pages/Stake/StakeV2.js:248
+#: src/pages/Stake/StakeV2.js:247
 msgid "Unstake submitted!"
 msgstr "アンステーク申し込み完了!"
 
-#: src/pages/Stake/StakeV2.js:278
+#: src/pages/Stake/StakeV2.js:277
 msgid "Unstaking..."
 msgstr "アンステーク中"
 
@@ -2102,19 +2197,19 @@ msgstr "更新中"
 msgid "Use the \"Edit\" button to deposit or withdraw collateral."
 msgstr "担保を入金または出金するには\"編集\"ボタンを使用してください。"
 
-#: src/components/Exchange/SwapBox.js:2412
+#: src/components/Exchange/SwapBox.js:2416
 msgid "Useful Links"
 msgstr "有用なリンク"
 
-#: src/pages/BuyGMX/BuyGMX.js:172
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:172
 msgid "Using the Avalanche or Synapse bridges, you can also transfer any other supported cryptocurrency, and receive free AVAX to pay for the network's fees."
 msgstr "AvalancheやSynapseのブリッジを使用すると、サポートされている他のどの仮想通貨でも移転することができ、ネットワークフィーを支払うためのAVAXを無料で受け取ることができます。"
 
-#: src/pages/Stake/StakeV2.js:467
+#: src/pages/Stake/StakeV2.js:466
 msgid "Vault Capacity"
 msgstr "ボールトのキャパシティ"
 
-#: src/pages/Stake/StakeV2.js:480
+#: src/pages/Stake/StakeV2.js:479
 msgid "Vault Capacity for your Account<0/><1/>Deposited: {0} esGMX<2/>Max Capacity: {1} esGMX<3/>"
 msgstr "本アカウントのボールトキャパシティ<0/><1/>入金済: {0} esGMX<2/>最大キャパシティ: {1} esGMX<3/>"
 
@@ -2142,13 +2237,13 @@ msgstr "べスティングされたGLPで引き出されていないもの"
 msgid "Vested GMX not withdrawn"
 msgstr "べスティングされたGMXで引き出されていないもの"
 
-#: src/pages/Stake/StakeV2.js:2072
-#: src/pages/Stake/StakeV2.js:2158
+#: src/pages/Stake/StakeV2.js:2061
+#: src/pages/Stake/StakeV2.js:2147
 msgid "Vesting Status"
 msgstr "べスティング状況"
 
-#: src/App/App.js:349
-#: src/App/App.js:361
+#: src/App/App.js:336
+#: src/App/App.js:348
 msgid "View"
 msgstr "見る"
 
@@ -2160,7 +2255,7 @@ msgstr "<0>staking</0> ページを見る"
 msgid "View in Explorer"
 msgstr "Explorerで見る"
 
-#: src/pages/Dashboard/DashboardV2.js:592
+#: src/pages/Dashboard/DashboardV2.js:606
 msgid "Volume"
 msgstr "取引高"
 
@@ -2184,20 +2279,20 @@ msgstr "警告: 高い手数料"
 msgid "WARNING: This position has a low amount of collateral after deducting borrowing fees, deposit more collateral to reduce the position's liquidation risk."
 msgstr "警告: このポジションは借入手数料を差し引いたあとの担保額が低いため、ポジションの清算リスクを減らすために担保額を増やしてください。"
 
-#: src/pages/Dashboard/DashboardV2.js:983
+#: src/pages/Dashboard/DashboardV2.js:974
 msgid "WEIGHT"
 msgstr "ウェート"
 
-#: src/components/Exchange/SwapBox.js:1167
+#: src/components/Exchange/SwapBox.js:1168
 #: src/components/Glp/GlpSwap.js:507
 msgid "Waiting for Approval"
 msgstr "許可の待機中"
 
 #: src/components/Glp/GlpSwap.js:708
 #: src/components/Glp/GlpSwap.js:1353
-#: src/pages/Stake/StakeV2.js:1492
-#: src/pages/Stake/StakeV2.js:1787
-#: src/pages/Stake/StakeV2.js:1920
+#: src/pages/Stake/StakeV2.js:1483
+#: src/pages/Stake/StakeV2.js:1776
+#: src/pages/Stake/StakeV2.js:1909
 msgid "Wallet"
 msgstr "ウォレット"
 
@@ -2210,11 +2305,11 @@ msgstr "ウォレットが接続されていません"
 msgid "Wallet not connected"
 msgstr "ウォレットが接続されていません"
 
-#: src/App/App.js:585
+#: src/App/App.js:562
 msgid "WalletConnect"
 msgstr "WalletConnect"
 
-#: src/components/Exchange/SwapBox.js:2106
+#: src/components/Exchange/SwapBox.js:2110
 msgid "When closing the position, you can select which token you would like to receive."
 msgstr ""
 
@@ -2222,8 +2317,8 @@ msgstr ""
 #: src/components/Exchange/PositionEditor.js:275
 #: src/components/Exchange/PositionEditor.js:460
 #: src/components/Exchange/PositionEditor.js:464
-#: src/pages/Stake/StakeV2.js:2131
-#: src/pages/Stake/StakeV2.js:2215
+#: src/pages/Stake/StakeV2.js:2120
+#: src/pages/Stake/StakeV2.js:2204
 msgid "Withdraw"
 msgstr "出金"
 
@@ -2231,19 +2326,19 @@ msgstr "出金"
 msgid "Withdraw disabled, pending {0} upgrade"
 msgstr ""
 
-#: src/pages/Stake/StakeV2.js:551
+#: src/pages/Stake/StakeV2.js:550
 msgid "Withdraw failed."
 msgstr "出金できませんでした"
 
-#: src/pages/Stake/StakeV2.js:1243
+#: src/pages/Stake/StakeV2.js:1236
 msgid "Withdraw from GLP Vault"
 msgstr "GLPボールトから出金"
 
-#: src/pages/Stake/StakeV2.js:1232
+#: src/pages/Stake/StakeV2.js:1225
 msgid "Withdraw from GMX Vault"
 msgstr "GMXボールトから出金"
 
-#: src/pages/Stake/StakeV2.js:550
+#: src/pages/Stake/StakeV2.js:549
 msgid "Withdraw submitted."
 msgstr "出金申し込み完了。"
 
@@ -2259,21 +2354,25 @@ msgstr "出金申し込み完了。"
 msgid "Withdrawing..."
 msgstr "出金中"
 
-#: src/pages/Stake/StakeV2.js:552
+#: src/pages/Stake/StakeV2.js:551
 msgid "Withdrawn!"
 msgstr "出金完了!"
 
-#: src/pages/Stake/StakeV2.js:1336
+#: src/pages/Stake/StakeV2.js:1329
 msgid "You are earning {nativeTokenSymbol} rewards with {0} tokens.<0/>Tokens: {amountStr}."
 msgstr "あなたは{nativeTokenSymbol}報酬を{0}トークンで稼いでいます。<0/>トークン: {amountStr}."
 
-#: src/pages/BuyGMX/BuyGMX.js:145
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:145
 msgid "You can buy AVAX directly on <0>Avalanche</0> using Banxa:"
 msgstr "Banxaを使用して<0>Avalanche</0>上で直接AVAXを購入できます:"
 
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:65
+msgid "You can buy BNB directly on <0>Binance</0> using Banxa:"
+msgstr ""
+
 #: src/pages/BuyGMX/BuyGMX.js:65
-msgid "You can buy ETH directly on <0>Arbitrum</0> using Banxa:"
-msgstr "Banxaを使用して<0>Arbitrum</0>上で直接ETHを購入できます:"
+#~ msgid "You can buy ETH directly on <0>Arbitrum</0> using Banxa:"
+#~ msgstr "Banxaを使用して<0>Arbitrum</0>上で直接ETHを購入できます:"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js:377
 msgid "You can check your claim history <0>here</0>."
@@ -2283,13 +2382,17 @@ msgstr "<0>here</0>で請求履歴を確認できます。"
 msgid "You can currently vest a maximum of {0} esGMX tokens at a ratio of {1} {stakingToken} to 1 esGMX."
 msgstr "{1} {stakingToken}対1 esGMXの比率で最大{0} esGMXトークンを現在べスティングすることができます。"
 
-#: src/pages/BuyGMX/BuyGMX.js:170
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:170
 msgid "You can transfer AVAX to Avalanche using any of the below options."
 msgstr "以下のいずれかを使い、AVAXをAvalancheへ送ることができます。"
 
 #: src/pages/BuyGMX/BuyGMX.js:90
-msgid "You can transfer ETH from other networks to Arbitrum using any of the below options:"
-msgstr "以下のいずれかを使い、ETHをArbitrumへ他のネットワークから送ることができます。"
+#~ msgid "You can transfer ETH from other networks to Arbitrum using any of the below options:"
+#~ msgstr "以下のいずれかを使い、ETHをArbitrumへ他のネットワークから送ることができます。"
+
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:90
+msgid "You can transfer ETH from other networks to Binance using any of the below options:"
+msgstr ""
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js:248
 msgid "You have a <0>pending transfer</0> to {pendingReceiver}."
@@ -2299,8 +2402,8 @@ msgstr "{pendingReceiver}への<0>pending transfer</0> があります。"
 msgid "You have a pending transfer from {sender}."
 msgstr "{sender}からの未完了の移転があります。"
 
-#: src/pages/Stake/StakeV2.js:1227
-#: src/pages/Stake/StakeV2.js:1238
+#: src/pages/Stake/StakeV2.js:1220
+#: src/pages/Stake/StakeV2.js:1231
 msgid "You have not deposited any tokens for vesting."
 msgstr "べスティング用のトークンが入金されていません。"
 
@@ -2342,8 +2445,13 @@ msgstr "注文"
 
 #: src/App/App.js:210
 #: src/App/App.js:232
-msgid "to start using GMX"
-msgstr "GMXを始めるには"
+#~ msgid "to start using GMX"
+#~ msgstr "GMXを始めるには"
+
+#: src/App/App.js:197
+#: src/App/App.js:219
+msgid "to start using LeveragePro"
+msgstr ""
 
 #: src/components/NetworkDropdown/NetworkDropdown.js:99
 #~ msgid "{0}"
@@ -2365,8 +2473,8 @@ msgstr "{0} GLPがべスティングのためにリザーブされました。"
 msgid "{0} GLP sold for {1} {2}!"
 msgstr "{0} GLPを売却し、{1} {2}を得ました!"
 
-#: src/components/Exchange/SwapBox.js:941
-#: src/components/Exchange/SwapBox.js:997
+#: src/components/Exchange/SwapBox.js:942
+#: src/components/Exchange/SwapBox.js:998
 #: src/components/Glp/GlpSwap.js:443
 msgid "{0} pool exceeded, try different token"
 msgstr "{0}プールは超過しています。別のトークンを試してください。"
@@ -2375,11 +2483,11 @@ msgstr "{0}プールは超過しています。別のトークンを試してく
 msgid "{0} selected in order form"
 msgstr "{0}がオーダーフォームで選択されました"
 
-#: src/components/Exchange/SwapBox.js:861
+#: src/components/Exchange/SwapBox.js:862
 msgid "{0} {1} not supported"
 msgstr "{0} {1}はサポートされていません"
 
-#: src/pages/Dashboard/DashboardV2.js:532
+#: src/pages/Dashboard/DashboardV2.js:556
 msgid "{chainName} Total Stats start from {totalStatsStartDate}.<0/> For detailed stats:"
 msgstr "{chainName}の全統計の開始日は{totalStatsStartDate}です。<0/> より詳しい統計は:"
 

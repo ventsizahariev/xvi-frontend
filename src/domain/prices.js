@@ -3,7 +3,7 @@ import { gql } from "@apollo/client";
 import useSWR from "swr";
 import { ethers } from "ethers";
 
-import { USD_DECIMALS, CHART_PERIODS, formatAmount, sleep } from "../lib/legacy";
+import {USD_DECIMALS, CHART_PERIODS, formatAmount, sleep, getServerBaseUrl, BSC_TESTNET} from "../lib/legacy";
 import { chainlinkClient } from "./common";
 
 const BigNumber = ethers.BigNumber;
@@ -59,8 +59,8 @@ async function getChartPricesFromStats(chainId, symbol, period) {
   } else if (symbol === "BTC.b") {
     symbol = "BTC";
   }
+  // const hostname = getServerBaseUrl(BSC_TESTNET);
   const hostname = "https://stats.gmx.io/";
-  // const hostname = 'http://localhost:3113/'
   const timeDiff = CHART_PERIODS[period] * 3000;
   const from = Math.floor(Date.now() / 1000 - timeDiff);
   const url = `${hostname}api/candles/${symbol}?preferableChainId=${chainId}&period=${period}&from=${from}&preferableSource=fast`;
