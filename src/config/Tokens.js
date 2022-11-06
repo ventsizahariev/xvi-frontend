@@ -122,6 +122,53 @@ const TOKENS = {
       isShortable: true,
     },
   ],
+  111: [
+    {
+      name: "Binance Coin",
+      symbol: "BNB",
+      decimals: 18,
+      address: ethers.constants.AddressZero,
+      isNative: true,
+      isShortable: true,
+    },
+    {
+      name: "Wrapped Binance Coin",
+      symbol: "WBNB",
+      decimals: 18,
+      address: "0x612777Eea37a44F7a95E3B101C39e1E2695fa6C2",
+      isWrapped: true,
+      baseSymbol: "BNB",
+    },
+    {
+      name: "Bitcoin (BTCB)",
+      symbol: "BTC",
+      decimals: 8,
+      address: "0xb19C12715134bee7c4b1Ca593ee9E430dABe7b56",
+      isShortable: true,
+    },
+    {
+      name: "Ethereum",
+      symbol: "ETH",
+      decimals: 18,
+      address: "0x1958f7C067226c7C8Ac310Dc994D0cebAbfb2B02",
+      isShortable: true,
+    },
+    {
+      name: "USD Gambit",
+      symbol: "USDG",
+      decimals: 18,
+      address: "0x12fE23885BaF83f8eEB5FCa67Ff93Ad2158F3258",
+      isUsdg: true,
+    },
+    {
+      name: "Binance USD",
+      symbol: "BUSD",
+      decimals: 18,
+      address: "0x3F223C4E5ac67099CB695834b20cCd5E5D5AA9Ef",
+      isStable: true,
+      isShortable: true,
+    },
+  ],
   421611: [
     {
       name: "Bitcoin",
@@ -363,7 +410,7 @@ const ADDITIONAL_TOKENS = {
   ],
 };
 
-const CHAIN_IDS = [56, 97, 42161, 421611, 43114];
+const CHAIN_IDS = [56, 97, 42161, 421611, 43114, 111];
 
 const TOKENS_MAP = {};
 const TOKENS_BY_SYMBOL_MAP = {};

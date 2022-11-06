@@ -15,23 +15,21 @@ import {
   fetcher,
   isHashZero,
   REFERRAL_CODE_KEY,
-  BSC_TESTNET,
+  BSC_TESTNET, VELAS_TESTNET,
 } from "../lib/legacy";
-import { arbitrumReferralsGraphClient, avalancheReferralsGraphClient, testnetReferralsGraphClient } from "./common";
+import { testnetReferralsGraphClient } from "./common";
 import { getContract } from "../config/Addresses";
 import { callContract } from "./legacy";
 import { REGEX_VERIFY_BYTES32 } from "../components/Referrals/referralsHelper";
 
-const ACTIVE_CHAINS = [ARBITRUM, AVALANCHE];
+const ACTIVE_CHAINS = [BSC_TESTNET, VELAS_TESTNET];
 const DISTRIBUTION_TYPE_REBATES = "1";
 const DISTRIBUTION_TYPE_DISCOUNT = "2";
 
 function getGraphClient(chainId) {
-  if (chainId === ARBITRUM) {
-    return arbitrumReferralsGraphClient;
-  } else if (chainId === AVALANCHE) {
-    return avalancheReferralsGraphClient;
-  } else if (chainId === BSC_TESTNET) {
+  if (chainId === BSC_TESTNET) {
+    return testnetReferralsGraphClient;
+  } else if (chainId === VELAS_TESTNET) {
     return testnetReferralsGraphClient;
   }
   throw new Error(`Unsupported chain ${chainId}`);

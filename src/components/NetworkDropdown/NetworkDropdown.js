@@ -8,6 +8,7 @@ import "./NetworkDropdown.css";
 import language24Icon from "../../img/ic_language24.svg";
 import settingsIcon from "../../img/ic_settings_16.svg";
 import bscIcon from "../../img/ic_binance_logo.svg";
+import velasIcon from "../../img/ic_velas_logo.svg";
 import checkedIcon from "../../img/ic_checked.svg";
 import { importImage, LANGUAGE_LOCALSTORAGE_KEY } from "../../lib/legacy";
 import { defaultLocale, dynamicActivate, locales } from "../../lib/i18n";
@@ -83,7 +84,8 @@ function NavIcons({ selectorLabel }) {
   return (
     <>
       <button className={cx("btn-primary small transparent")}>
-        <img className="network-dropdown-icon" src={bscIcon} alt={selectorLabel} />
+        {selectorLabel == "BSCTestnet" && <img className="network-dropdown-icon" src={bscIcon} alt={selectorLabel} />}
+        {selectorLabel == "VelasTestnet" && <img className="network-dropdown-icon" src={velasIcon} alt={selectorLabel} />}
       </button>
       <div className="network-dropdown-seperator" />
       <button className={cx("btn-primary small transparent")}>

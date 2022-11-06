@@ -59,8 +59,8 @@ async function getChartPricesFromStats(chainId, symbol, period) {
   } else if (symbol === "BTC.b") {
     symbol = "BTC";
   }
-  // const hostname = getServerBaseUrl(BSC_TESTNET);
-  const hostname = "https://stats.gmx.io/";
+  const hostname = getServerBaseUrl(BSC_TESTNET);
+  // const hostname = "https://stats.gmx.io/";
   const timeDiff = CHART_PERIODS[period] * 3000;
   const from = Math.floor(Date.now() / 1000 - timeDiff);
   const url = `${hostname}api/candles/${symbol}?preferableChainId=${chainId}&period=${period}&from=${from}&preferableSource=fast`;

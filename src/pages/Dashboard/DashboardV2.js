@@ -33,7 +33,7 @@ import {
   numberWithCommas,
   USD_DECIMALS,
   useChainId,
-  VELAS,
+  VELAS_TESTNET,
 } from "../../lib/legacy";
 import {useInfoTokens, useLeveragePrice} from "../../domain/legacy";
 
@@ -51,13 +51,15 @@ import gmx40Icon from "../../img/ic_gmx_40.svg";
 import glp40Icon from "../../img/ic_glp_40.svg";
 import bsc16Icon from "../../img/ic_bsc_16.svg";
 import bsc24Icon from "../../img/ic_bsc_16.svg";
+import velas16Icon from "../../img/ic_velas_16.svg";
+import velas24Icon from "../../img/ic_velas_24.svg";
 
-import AssetDropdown from "./AssetDropdown";
 import SEO from "../../components/Common/SEO";
 import TooltipCard, {TooltipCardRow} from "./TooltipCard";
 import useTotalVolume from "../../domain/useTotalVolume";
+import AssetDropdown from "./AssetDropdown";
 
-const ACTIVE_CHAIN_IDS = [BSC_TESTNET];
+const ACTIVE_CHAIN_IDS = [BSC_TESTNET, VELAS_TESTNET];
 
 const {AddressZero} = ethers.constants;
 
@@ -186,11 +188,6 @@ export default function DashboardV2() {
   const glpAddress = getContract(chainId, "GLP");
   const usdgAddress = getContract(chainId, "USDG");
   const nativeTokenAddress = getContract(chainId, "NATIVE_TOKEN")
-
-  let poolAddress = getContract(chainId, "LeverageBnbPool");
-  if (chainId === VELAS) {
-    poolAddress = getContract(chainId, "LeverageVelasPool");
-  }
 
   const tokensForSupplyQuery = [leverageAddress, glpAddress, usdgAddress];
 
@@ -551,6 +548,7 @@ export default function DashboardV2() {
             <div className="Page-title">
               <Trans>Stats</Trans>&nbsp;
               {chainId === BSC_TESTNET && <img src={bsc24Icon} alt="bsc24Icon" className="icon-24"/>}
+              {chainId === VELAS_TESTNET && <img src={velas24Icon} alt="velas24Icon" className="icon-24"/>}
             </div>
             <div className="Page-description">
               <Trans>
@@ -605,6 +603,7 @@ export default function DashboardV2() {
                         <TooltipCard
                           title={t`Volume`}
                           bsc={currentVolumeInfo?.[BSC_TESTNET].totalVolume}
+                          velas={currentVolumeInfo?.[VELAS_TESTNET].totalVolume}
                         />
                       )}
                     />
@@ -628,6 +627,7 @@ export default function DashboardV2() {
                         <TooltipCard
                           title={t`Long Positions`}
                           bsc={positionStatsInfo?.[BSC_TESTNET].totalLongPositionSizes}
+                          velas={positionStatsInfo?.[VELAS_TESTNET].totalLongPositionSizes}
                           total={positionStatsInfo?.totalLongPositionSizes}
                         />
                       )}
@@ -652,6 +652,7 @@ export default function DashboardV2() {
                         <TooltipCard
                           title={t`Short Positions`}
                           bsc={positionStatsInfo?.[BSC_TESTNET].totalShortPositionSizes}
+                          velas={positionStatsInfo?.[VELAS_TESTNET].totalShortPositionSizes}
                         />
                       )}
                     />
@@ -671,6 +672,7 @@ export default function DashboardV2() {
                           <TooltipCard
                             title={t`Fees`}
                             bsc={currentFees?.[BSC_TESTNET]}
+                            velas={currentFees?.[VELAS_TESTNET]}
                           />
                         )}
                       />
@@ -698,6 +700,7 @@ export default function DashboardV2() {
                         <TooltipCard
                           title={t`Total Fees`}
                           bsc={totalFees?.[BSC_TESTNET]}
+                          velas={totalFees?.[VELAS_TESTNET]}
                           decimalsForConversion={0}
                         />
                       )}
@@ -717,6 +720,7 @@ export default function DashboardV2() {
                         <TooltipCard
                           title={t`Total Volume`}
                           bsc={totalVolume?.[BSC_TESTNET]}
+                          velas={totalVolume?.[VELAS_TESTNET]}
                         />
                       )}
                     />
@@ -733,7 +737,9 @@ export default function DashboardV2() {
           </div>
           <div className="Tab-title-section">
             <div className="Page-title">
-              Tokens {chainId === BSC_TESTNET && <img src={bsc24Icon} alt="bsc24Icon" className="icon-24"/>}
+              Tokens
+              {chainId === BSC_TESTNET && <img src={bsc24Icon} alt="bsc24Icon" className="icon-24"/>}
+              {chainId === VELAS_TESTNET && <img src={velas24Icon} alt="velas24Icon" className="icon-24"/>}
             </div>
             <div className="Page-description">
               <Trans>Platform and GLP index tokens.</Trans>
@@ -865,6 +871,7 @@ export default function DashboardV2() {
                       <div className="App-card-title-mark-icon">
                         <img src={glp40Icon} alt="glp40Icon"/>
                         <img src={bsc16Icon} alt="bsc16Icon" className="selected-network-symbol icon-16"/>
+                        <img src={velas16Icon} alt="velas16Icon" className="selected-network-symbol icon-16"/>
                       </div>
                       <div className="App-card-title-mark-info">
                         <div className="App-card-title-mark-title">GLP</div>
@@ -956,6 +963,7 @@ export default function DashboardV2() {
               <div className="App-card-title">
                 <Trans>GLP Index Composition</Trans>{" "}
                 <img src={bsc16Icon} alt="bsc16Icon" className="icon-16"/>
+                <img src={velas16Icon} alt="velas16Icon" className="icon-16"/>
               </div>
               <div className="App-card-divider"></div>
               <table className="token-table">

@@ -34,7 +34,7 @@ import {
   useChainId,
   useEagerConnect,
   useInactiveListener,
-  useLocalStorageSerializeKey,
+  useLocalStorageSerializeKey, VELAS, VELAS_TESTNET,
 } from "../lib/legacy";
 
 import Home from "../pages/Home/Home";
@@ -114,6 +114,8 @@ function getWsProvider(active, chainId) {
     return;
   }
   if (chainId === BSC_TESTNET) {
+    return new ethers.providers.JsonRpcProvider(_.sample(RPC_PROVIDERS[chainId]));
+  } else if (chainId == VELAS_TESTNET) {
     return new ethers.providers.JsonRpcProvider(_.sample(RPC_PROVIDERS[chainId]));
   }
   return;

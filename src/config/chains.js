@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 
-import { BSC, BSC_TESTNET, ARBITRUM_TESTNET, ARBITRUM, AVALANCHE } from "../lib/legacy";
+import {BSC, BSC_TESTNET, VELAS_TESTNET} from "../lib/legacy";
 
 const { parseEther } = ethers.utils;
 
@@ -12,7 +12,6 @@ const constants = {
     positionReaderPropsLength: 8,
     v2: false,
   },
-
   [BSC_TESTNET]: {
     nativeTokenSymbol: "BNB",
     wrappedTokenSymbol: "WBNB",
@@ -25,42 +24,13 @@ const constants = {
     // contract requires that execution fee be strictly greater than instead of gte
     DECREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.0100001"),
   },
-
-  [ARBITRUM_TESTNET]: {
-    nativeTokenSymbol: "ETH",
-    defaultCollateralSymbol: "USDC",
-    defaultFlagOrdersEnabled: false,
-    positionReaderPropsLength: 9,
-    v2: true,
-
-    SWAP_ORDER_EXECUTION_GAS_FEE: parseEther("0.0003"),
-    INCREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.0003"),
-    // contract requires that execution fee be strictly greater than instead of gte
-    DECREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.000300001"),
-  },
-
-  [ARBITRUM]: {
-    nativeTokenSymbol: "ETH",
-    wrappedTokenSymbol: "WETH",
-    defaultCollateralSymbol: "USDC",
-    defaultFlagOrdersEnabled: false,
-    positionReaderPropsLength: 9,
-    v2: true,
-
-    SWAP_ORDER_EXECUTION_GAS_FEE: parseEther("0.0003"),
-    INCREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.0003"),
-    // contract requires that execution fee be strictly greater than instead of gte
-    DECREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.000300001"),
-  },
-
-  [AVALANCHE]: {
-    nativeTokenSymbol: "AVAX",
-    wrappedTokenSymbol: "WAVAX",
-    defaultCollateralSymbol: "MIM",
+  [VELAS_TESTNET]: {
+    nativeTokenSymbol: "VLX",
+    wrappedTokenSymbol: "WVLX",
+    defaultCollateralSymbol: "BUSD",
     defaultFlagOrdersEnabled: true,
-    positionReaderPropsLength: 9,
+    positionReaderPropsLength: 8,
     v2: true,
-
     SWAP_ORDER_EXECUTION_GAS_FEE: parseEther("0.01"),
     INCREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.01"),
     // contract requires that execution fee be strictly greater than instead of gte

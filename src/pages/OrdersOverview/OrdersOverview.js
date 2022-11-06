@@ -113,7 +113,7 @@ export default function OrdersOverview() {
             if (type === SWAP) {
               const fromToken = getTokenInfo(infoTokens, order.path[0], true, nativeTokenAddress);
               const toTokenAddress = order.path[order.path.length - 1];
-              const toToken = getTokenInfo(infoTokens, toTokenAddress, order.shoudUnwrap, nativeTokenAddress);
+              const toToken = getTokenInfo(infoTokens, toTokenAddress, order.shouldUnwrap, nativeTokenAddress);
 
               let markExchangeRate;
               let prefix;

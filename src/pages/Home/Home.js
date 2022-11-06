@@ -132,7 +132,7 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
             </div>
             <div className="Home-description">
               <Trans>
-                Trade BNB, BTC, ETH, BUSD and other top cryptocurrencies with up to 30x leverage directly from your wallet
+                Trade BTC, ETH, BNB, BUSD and other top cryptocurrencies with up to 30x leverage directly from your wallet
               </Trans>
             </div>
             <LaunchExchangeButton />
@@ -221,7 +221,7 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
               <Trans>Available on your preferred network</Trans>
             </div>
             <div className="Home-cta-info__description">
-              <Trans>LeveragePro is currently live on Velas and Belas.</Trans>
+              <Trans>LeveragePro is currently live on Velas and BSC.</Trans>
             </div>
           </div>
           <div className="Home-cta-options">

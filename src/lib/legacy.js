@@ -32,6 +32,7 @@ export const BSC_TESTNET = 97;
 export const ARBITRUM_TESTNET = 421611;
 export const ARBITRUM = 42161;
 export const VELAS = 106;
+export const VELAS_TESTNET = 111;
 // TODO take it from web3
 export const DEFAULT_CHAIN_ID = BSC_TESTNET;
 export const CHAIN_ID = DEFAULT_CHAIN_ID;
@@ -43,27 +44,26 @@ const SELECTED_NETWORK_LOCAL_STORAGE_KEY = "SELECTED_NETWORK";
 export const IS_NETWORK_DISABLED = {
   [ARBITRUM]: false,
   [AVALANCHE]: false,
-  [BSC]: false,
-  [BSC_TESTNET]: false
+  [BSC_TESTNET]: false,
+  [VELAS_TESTNET]: false
 };
 
 const CHAIN_NAMES_MAP = {
-  [BSC]: "BSC",
   [BSC_TESTNET]: "BSCTestnet",
-  [ARBITRUM_TESTNET]: "ArbRinkeby",
-  [ARBITRUM]: "Arbitrum",
-  [AVALANCHE]: "Avalanche",
+  [VELAS_TESTNET]: "VelasTestnet"
 };
 
 const GAS_PRICE_ADJUSTMENT_MAP = {
   [ARBITRUM]: "0",
   [AVALANCHE]: "3000000000", // 3 gwei
   [BSC_TESTNET]: "200000000",
+  [VELAS_TESTNET]: "200000000",
 };
 
 const MAX_GAS_PRICE_MAP = {
   [AVALANCHE]: "200000000000", // 200 gwei
   [BSC_TESTNET]: "2000000000",
+  [VELAS_TESTNET]: "2000000000",
 };
 
 const alchemyWhitelistedDomains = ["gmx.io", "app.gmx.io"];
@@ -180,95 +180,6 @@ export function getHighExecutionFee(chainId) {
 }
 
 export const ICONLINKS = {
-  [ARBITRUM_TESTNET]: {
-    GMX: {
-      coingecko: "https://www.coingecko.com/en/coins/gmx",
-      arbitrum: "https://arbiscan.io/address/0xfc5a1a6eb076a2c7ad06ed22c90d7e710e35ad0a",
-    },
-    GLP: {
-      arbitrum: "https://testnet.arbiscan.io/token/0xb4f81Fa74e06b5f762A104e47276BA9b2929cb27",
-    },
-  },
-  [ARBITRUM]: {
-    GMX: {
-      coingecko: "https://www.coingecko.com/en/coins/gmx",
-      arbitrum: "https://arbiscan.io/address/0xfc5a1a6eb076a2c7ad06ed22c90d7e710e35ad0a",
-    },
-    GLP: {
-      arbitrum: "https://arbiscan.io/token/0x1aDDD80E6039594eE970E5872D247bf0414C8903",
-    },
-    ETH: {
-      coingecko: "https://www.coingecko.com/en/coins/ethereum",
-    },
-    BTC: {
-      coingecko: "https://www.coingecko.com/en/coins/wrapped-bitcoin",
-      arbitrum: "https://arbiscan.io/address/0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f",
-    },
-    LINK: {
-      coingecko: "https://www.coingecko.com/en/coins/chainlink",
-      arbitrum: "https://arbiscan.io/address/0xf97f4df75117a78c1a5a0dbb814af92458539fb4",
-    },
-    UNI: {
-      coingecko: "https://www.coingecko.com/en/coins/uniswap",
-      arbitrum: "https://arbiscan.io/address/0xfa7f8980b0f1e64a2062791cc3b0871572f1f7f0",
-    },
-    USDC: {
-      coingecko: "https://www.coingecko.com/en/coins/usd-coin",
-      arbitrum: "https://arbiscan.io/address/0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
-    },
-    USDT: {
-      coingecko: "https://www.coingecko.com/en/coins/tether",
-      arbitrum: "https://arbiscan.io/address/0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
-    },
-    DAI: {
-      coingecko: "https://www.coingecko.com/en/coins/dai",
-      arbitrum: "https://arbiscan.io/address/0xda10009cbd5d07dd0cecc66161fc93d7c9000da1",
-    },
-    MIM: {
-      coingecko: "https://www.coingecko.com/en/coins/magic-internet-money",
-      arbitrum: "https://arbiscan.io/address/0xfea7a6a0b346362bf88a9e4a88416b77a57d6c2a",
-    },
-    FRAX: {
-      coingecko: "https://www.coingecko.com/en/coins/frax",
-      arbitrum: "https://arbiscan.io/address/0x17fc002b466eec40dae837fc4be5c67993ddbd6f",
-    },
-  },
-  [AVALANCHE]: {
-    GMX: {
-      coingecko: "https://www.coingecko.com/en/coins/gmx",
-      avalanche: "https://snowtrace.io/address/0x62edc0692bd897d2295872a9ffcac5425011c661",
-    },
-    GLP: {
-      avalanche: "https://snowtrace.io/address/0x9e295B5B976a184B14aD8cd72413aD846C299660",
-    },
-    AVAX: {
-      coingecko: "https://www.coingecko.com/en/coins/avalanche",
-    },
-    ETH: {
-      coingecko: "https://www.coingecko.com/en/coins/weth",
-      avalanche: "https://snowtrace.io/address/0x49d5c2bdffac6ce2bfdb6640f4f80f226bc10bab",
-    },
-    BTC: {
-      coingecko: "https://www.coingecko.com/en/coins/wrapped-bitcoin",
-      avalanche: "https://snowtrace.io/address/0x50b7545627a5162f82a992c33b87adc75187b218",
-    },
-    "BTC.b": {
-      coingecko: "https://www.coingecko.com/en/coins/wrapped-bitcoin",
-      avalanche: "https://snowtrace.io/address/0x152b9d0FdC40C096757F570A51E494bd4b943E50",
-    },
-    MIM: {
-      coingecko: "https://www.coingecko.com/en/coins/magic-internet-money",
-      avalanche: "https://snowtrace.io/address/0x130966628846bfd36ff31a822705796e8cb8c18d",
-    },
-    "USDC.e": {
-      coingecko: "https://www.coingecko.com/en/coins/usd-coin-avalanche-bridged-usdc-e",
-      avalanche: "https://snowtrace.io/address/0xa7d7079b0fead91f3e65f86e8915cb59c1a4c664",
-    },
-    USDC: {
-      coingecko: "https://www.coingecko.com/en/coins/usd-coin",
-      avalanche: "https://snowtrace.io/address/0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e",
-    },
-  },
   [BSC_TESTNET]: {
     GMX: {
       coingecko: "https://www.coingecko.com/en/coins/gmx",
@@ -305,7 +216,7 @@ export const ICONLINKS = {
       bsctestnet: "https://snowtrace.io/address/0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e",
     },
   },
-  [BSC]: {
+  [VELAS_TESTNET]: {
     GMX: {
       coingecko: "https://www.coingecko.com/en/coins/gmx",
       bsc: "https://snowtrace.io/address/0x62edc0692bd897d2295872a9ffcac5425011c661",
@@ -380,12 +291,8 @@ export const platformTokens = {
   },
 };
 
-const supportedChainIds = [BSC, BSC_TESTNET];
-// if (isDevelopment()) {
-//   supportedChainIds.push(ARBITRUM_TESTNET);
-//   supportedChainIds.push(BSC_TESTNET);
-//   supportedChainIds.push(BSC);
-// }
+const supportedChainIds = [BSC_TESTNET, VELAS_TESTNET];
+
 const injectedConnector = new InjectedConnector({
   supportedChainIds,
 });
@@ -394,7 +301,7 @@ const getWalletConnectConnector = () => {
   const chainId = localStorage.getItem(SELECTED_NETWORK_LOCAL_STORAGE_KEY) || DEFAULT_CHAIN_ID;
   return new WalletConnectConnector({
     rpc: {
-      [BSC_TESTNET]: TESTNET_RPC_PROVIDERS[0],
+      [BSC_TESTNET]: BSC_RPC_PROVIDERS[0],
       [BSC]: BSC_RPC_PROVIDERS[0],
       [ARBITRUM_TESTNET]: "https://rinkeby.arbitrum.io/rpc",
     },
@@ -537,9 +444,15 @@ export function getServerBaseUrl(chainId) {
       return fromLocalStorage;
     }
   }
-  if (chainId === BSC) {
-    return "https://gambit-server-staging.uc.r.appspot.com";
-  } else if (chainId === BSC_TESTNET) {
+
+  if (chainId === BSC_TESTNET) {
+    if (isLocal()) {
+      return "http://localhost:3020";
+    }
+    if (isDevelopment()) {
+      return "http://185.158.114.248:8080";
+    }
+  } else if (chainId === VELAS_TESTNET) {
     if (isLocal()) {
       return "http://localhost:3020";
     }
@@ -1324,35 +1237,44 @@ export function getSwapFeeBasisPoints(isStable) {
 }
 
 // BSC TESTNET
-const TESTNET_RPC_PROVIDERS = [getServerUrl(BSC_TESTNET, "/provider")];
+// const BSC_RPC_PROVIDERS = [getServerUrl(BSC_TESTNET, "/provider/" + BSC_TESTNET)];
+const VELAS_RPC_PROVIDERS = ["https://api.testnet.velas.com"];
+
+const BSC_RPC_PROVIDERS = [
+  "https://data-seed-prebsc-1-s1.binance.org:8545/",
+  "https://data-seed-prebsc-2-s1.binance.org:8545/",
+  "https://data-seed-prebsc-1-s2.binance.org:8545/",
+  "https://data-seed-prebsc-2-s2.binance.org:8545/",
+  "https://data-seed-prebsc-1-s3.binance.org:8545/",
+  "https://data-seed-prebsc-2-s3.binance.org:8545/"
+]
 
 // BSC MAINNET
-export const BSC_RPC_PROVIDERS = [
-  "https://bsc-dataseed.binance.org",
-  "https://bsc-dataseed1.defibit.io",
-  "https://bsc-dataseed1.ninicoin.io",
-  "https://bsc-dataseed2.defibit.io",
-  "https://bsc-dataseed3.defibit.io",
-  "https://bsc-dataseed4.defibit.io",
-  "https://bsc-dataseed2.ninicoin.io",
-  "https://bsc-dataseed3.ninicoin.io",
-  "https://bsc-dataseed4.ninicoin.io",
-  "https://bsc-dataseed1.binance.org",
-  "https://bsc-dataseed2.binance.org",
-  "https://bsc-dataseed3.binance.org",
-  "https://bsc-dataseed4.binance.org",
-];
+// export const BSC_RPC_PROVIDERS = [
+//   "https://bsc-dataseed.binance.org",
+//   "https://bsc-dataseed1.defibit.io",
+//   "https://bsc-dataseed1.ninicoin.io",
+//   "https://bsc-dataseed2.defibit.io",
+//   "https://bsc-dataseed3.defibit.io",
+//   "https://bsc-dataseed4.defibit.io",
+//   "https://bsc-dataseed2.ninicoin.io",
+//   "https://bsc-dataseed3.ninicoin.io",
+//   "https://bsc-dataseed4.ninicoin.io",
+//   "https://bsc-dataseed1.binance.org",
+//   "https://bsc-dataseed2.binance.org",
+//   "https://bsc-dataseed3.binance.org",
+//   "https://bsc-dataseed4.binance.org",
+// ];
 
 export const RPC_PROVIDERS = {
-  [BSC_TESTNET]: TESTNET_RPC_PROVIDERS,
-  [BSC]: BSC_RPC_PROVIDERS
+  [BSC_TESTNET]: BSC_RPC_PROVIDERS,
+  [VELAS_TESTNET]: VELAS_RPC_PROVIDERS
 };
 
 const FALLBACK_PROVIDERS = {
-  [ARBITRUM]: [getAlchemyHttpUrl()],
-  [AVALANCHE]: ["https://avax-mainnet.gateway.pokt.network/v1/lb/626f37766c499d003aada23b"],
-  [BSC_TESTNET]: ""
-};
+  [BSC_TESTNET]: ["https://bsc-testnet.gateway.pokt.network/v1/lb/626f37766c499d003aada23b"],
+  [VELAS_TESTNET]: ["https://velas-testnet.gateway.pokt.network/v1/lb/626f37766c499d003aada23b"]
+}
 
 export function shortenAddress(address, length) {
   if (!length) {
@@ -2181,17 +2103,6 @@ export const getTokenInfo = (infoTokens, tokenAddress, replaceNative, nativeToke
 };
 
 const NETWORK_METADATA = {
-  [BSC]: {
-    chainId: "0x" + BSC.toString(16),
-    chainName: "BSC",
-    nativeCurrency: {
-      name: "BNB",
-      symbol: "BNB",
-      decimals: 18,
-    },
-    rpcUrls: BSC_RPC_PROVIDERS,
-    blockExplorerUrls: ["https://bscscan.com"],
-  },
   [BSC_TESTNET]: {
     chainId: "0x" + BSC_TESTNET.toString(16),
     chainName: "BSC Testnet",
@@ -2200,7 +2111,7 @@ const NETWORK_METADATA = {
       symbol: "BNB",
       decimals: 18,
     },
-    rpcUrls: TESTNET_RPC_PROVIDERS,
+    rpcUrls: BSC_RPC_PROVIDERS,
     blockExplorerUrls: ["https://testnet.bscscan.com/"],
   }
 };
@@ -2231,10 +2142,10 @@ export const switchNetwork = async (chainId, active) => {
     helperToast.success("Connected to " + getChainName(chainId));
     return getChainName(chainId);
   } catch (ex) {
-    // https://docs.metamask.io/guide/rpc-api.html#other-rpc-methods
     // This error code indicates that the chain has not been added to MetaMask.
     // 4001 error means user has denied the request
     // If the error code is not 4001, then we need to add the network
+    // https://docs.metamask.io/guide/rpc-api.html#other-rpc-methods
     if (ex.code !== 4001) {
       return await addNetwork(NETWORK_METADATA[chainId]);
     }

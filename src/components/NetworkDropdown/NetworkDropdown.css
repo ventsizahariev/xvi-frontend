@@ -172,10 +172,13 @@
   background-color: #e84142;
 }
 .active-dot.BSCTestnet {
-   background-color: #e84142;
+   background-color: #E7B230;
 }
 .active-dot.BSC {
   background-color: #e84142;
+}
+.active-dot.VelasTestnet {
+  background-color: #0037C1;
 }
 .network-dropdown-label {
   font-size: 1.25rem;

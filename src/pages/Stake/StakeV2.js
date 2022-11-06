@@ -28,7 +28,6 @@ import {
   expandDecimals,
   parseValue,
   approveTokens,
-  getServerUrl,
   useLocalStorageSerializeKey,
   useChainId,
   GLP_DECIMALS,

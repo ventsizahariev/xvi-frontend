@@ -39,7 +39,7 @@ import {
   SWAP,
   INCREASE,
   DECREASE,
-  BSC_TESTNET
+  BSC_TESTNET, VELAS, VELAS_TESTNET
 } from "../lib/legacy";
 import { getTokens, getTokenBySymbol, getWhitelistedTokens } from "../config/Tokens";
 
@@ -444,6 +444,8 @@ export function useMinExecutionFee(library, active, chainId, infoTokens) {
   // case yet
   if (chainId === BSC_TESTNET) {
     multiplier = 700000;
+  } else if (chainId === VELAS_TESTNET) {
+    multiplier = 700000;
   }
 
   let finalExecutionFee = minExecutionFee;
@@ -484,7 +486,7 @@ export function useHasOutdatedUi() {
 }
 
 export function useLeveragePrice(chainId, libraries, active) {
-  const poolAddress = getContract(chainId, "LeverageBnbPool");
+  const poolAddress = getContract(chainId, chainId === BSC_TESTNET ? "LeverageBnbPool" : "LeverageVelasPool");
   const { data: uniPoolSlot0, mutate: updateUniPoolSlot0 } = useSWR(
     [`StakeV2:uniPoolSlot0:${active}`, chainId, poolAddress, "slot0"],
     {

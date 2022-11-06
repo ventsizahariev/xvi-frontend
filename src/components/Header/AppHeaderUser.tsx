@@ -6,7 +6,16 @@ import {HeaderLink} from "./HeaderLink";
 import connectWalletImg from "../../img/ic_wallet_24.svg";
 
 import "./Header.css";
-import {BSC, BSC_TESTNET, getAccountUrl, getChainName, isHomeSite, switchNetwork, useChainId} from "../../lib/legacy";
+import {
+  BSC,
+  BSC_TESTNET,
+  getAccountUrl,
+  getChainName,
+  isHomeSite,
+  switchNetwork,
+  useChainId,
+  VELAS_TESTNET
+} from "../../lib/legacy";
 import cx from "classnames";
 import {Trans} from "@lingui/macro";
 import NetworkDropdown from "../NetworkDropdown/NetworkDropdown";
@@ -35,26 +44,18 @@ export function AppHeaderUser({
 
   const networkOptions = [
     {
-      label: getChainName(BSC),
-      value: BSC,
-      icon: "ic_binance_logo.svg",
-      color: "#264f79",
-    },
-    {
       label: getChainName(BSC_TESTNET),
       value: BSC_TESTNET,
       icon: "ic_binance_logo.svg",
       color: "#264f79",
+    },
+    {
+      label: getChainName(VELAS_TESTNET),
+      value: VELAS_TESTNET,
+      icon: "ic_velas_logo.svg",
+      color: "#264f79",
     }
   ];
-  // if (isDevelopment()) {
-  //   networkOptions.push({
-  //     label: getChainName(ARBITRUM_TESTNET),
-  //     value: ARBITRUM_TESTNET,
-  //     icon: "ic_arbitrum_24.svg",
-  //     color: "#264f79",
-  //   });
-  // }
 
   useEffect(() => {
     if (active) {
