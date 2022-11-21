@@ -187,6 +187,7 @@ export default function ExchangeTVChart(props) {
     chainId,
     chartToken.symbol,
     chartToken.isStable,
+    chartToken.priceFeed,
     period,
     currentAveragePrice
   );

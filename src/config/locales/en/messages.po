@@ -18,8 +18,8 @@ msgstr ""
 #~ msgid ", and use GMX with its built-in browser"
 #~ msgstr ""
 
-#: src/App/App.js:195
-#: src/App/App.js:217
+#: src/App/App.js:197
+#: src/App/App.js:219
 msgid ", and use LeveragePro with its built-in browser"
 msgstr ", and use LeveragePro with its built-in browser"
 
@@ -125,7 +125,7 @@ msgstr "After you have BNB, set your network to <0>Binance</0> then click the bu
 msgid "After you have ETH, set your network to <0>Arbitrum</0> then click the button below:"
 msgstr ""
 
-#: src/App/App.js:574
+#: src/App/App.js:576
 msgid "Allowed Slippage"
 msgstr ""
 
@@ -499,11 +499,11 @@ msgstr "Closing..."
 msgid "Code already taken"
 msgstr "Code already taken"
 
-#: src/App/App.js:556
+#: src/App/App.js:558
 msgid "Coinbase Wallet"
 msgstr ""
 
-#: src/App/App.js:210
+#: src/App/App.js:212
 msgid "Coinbase Wallet not detected."
 msgstr ""
 
@@ -697,7 +697,7 @@ msgstr "Deposited!"
 msgid "Depositing..."
 msgstr "Depositing..."
 
-#: src/App/App.js:600
+#: src/App/App.js:602
 msgid "Disable order validations"
 msgstr "Disable order validations"
 
@@ -705,7 +705,7 @@ msgstr "Disable order validations"
 msgid "Disconnect"
 msgstr ""
 
-#: src/App/App.js:589
+#: src/App/App.js:591
 msgid "Display PnL after fees"
 msgstr ""
 
@@ -1038,7 +1038,7 @@ msgstr ""
 msgid "Hop"
 msgstr ""
 
-#: src/App/App.js:594
+#: src/App/App.js:596
 msgid "Include PnL in leverage display"
 msgstr ""
 
@@ -1058,11 +1058,11 @@ msgstr "Incorrect network"
 msgid "Initial Collateral: ${0}"
 msgstr "Initial Collateral: ${0}"
 
-#: src/App/App.js:214
+#: src/App/App.js:216
 msgid "Install Coinbase Wallet"
 msgstr ""
 
-#: src/App/App.js:192
+#: src/App/App.js:194
 msgid "Install MetaMask"
 msgstr ""
 
@@ -1116,7 +1116,7 @@ msgstr "Invalid liq. price"
 msgid "Invalid price, see warning"
 msgstr "Invalid price, see warning"
 
-#: src/App/App.js:285
+#: src/App/App.js:287
 msgid "Invalid slippage value"
 msgstr ""
 
@@ -1316,7 +1316,7 @@ msgstr ""
 msgid "Max pool capacity reached for {0}. Please mint GLP using another token"
 msgstr ""
 
-#: src/App/App.js:295
+#: src/App/App.js:297
 msgid "Max slippage precision is 0.01%"
 msgstr ""
 
@@ -1333,11 +1333,11 @@ msgstr "Max {0} short exceeded"
 msgid "Media Kit"
 msgstr "Media Kit"
 
-#: src/App/App.js:550
+#: src/App/App.js:552
 msgid "MetaMask"
 msgstr ""
 
-#: src/App/App.js:188
+#: src/App/App.js:190
 msgid "MetaMask not detected."
 msgstr ""
 
@@ -1714,7 +1714,7 @@ msgstr "Rewards"
 msgid "Same as current active code"
 msgstr "Same as current active code"
 
-#: src/App/App.js:606
+#: src/App/App.js:608
 msgid "Save"
 msgstr ""
 
@@ -1827,7 +1827,7 @@ msgstr ""
 msgid "Size"
 msgstr "Size"
 
-#: src/App/App.js:289
+#: src/App/App.js:291
 msgid "Slippage should be less than 5%"
 msgstr ""
 
@@ -2183,7 +2183,7 @@ msgstr "Tweet"
 msgid "Two tokens create our ecosystem"
 msgstr ""
 
-#: src/App/App.js:334
+#: src/App/App.js:336
 msgid "Txn failed."
 msgstr ""
 
@@ -2278,8 +2278,8 @@ msgstr ""
 msgid "Vesting Status"
 msgstr "Vesting Status"
 
-#: src/App/App.js:336
-#: src/App/App.js:348
+#: src/App/App.js:338
+#: src/App/App.js:350
 msgid "View"
 msgstr ""
 
@@ -2341,7 +2341,7 @@ msgstr ""
 msgid "Wallet not connected"
 msgstr "Wallet not connected"
 
-#: src/App/App.js:562
+#: src/App/App.js:564
 msgid "WalletConnect"
 msgstr ""
 
@@ -2484,8 +2484,8 @@ msgstr "orders"
 #~ msgid "to start using GMX"
 #~ msgstr ""
 
-#: src/App/App.js:197
-#: src/App/App.js:219
+#: src/App/App.js:199
+#: src/App/App.js:221
 msgid "to start using LeveragePro"
 msgstr "to start using LeveragePro"
 

@@ -18,8 +18,8 @@ msgstr ""
 #~ msgid ", and use GMX with its built-in browser"
 #~ msgstr ", そしてGMXをビルトインブラウザーで利用する"
 
-#: src/App/App.js:195
-#: src/App/App.js:217
+#: src/App/App.js:197
+#: src/App/App.js:219
 msgid ", and use LeveragePro with its built-in browser"
 msgstr ""
 
@@ -121,7 +121,7 @@ msgstr ""
 msgid "After you have ETH, set your network to <0>Arbitrum</0> then click the button below:"
 msgstr "ETH入手後、ネットワークを<0>Arbitrum</0>にセットし、以下のボタンをクリックしてください:"
 
-#: src/App/App.js:574
+#: src/App/App.js:576
 msgid "Allowed Slippage"
 msgstr "スリッページ許容量"
 
@@ -495,11 +495,11 @@ msgstr "クローズ中"
 msgid "Code already taken"
 msgstr "そのコードは既に使用されています"
 
-#: src/App/App.js:556
+#: src/App/App.js:558
 msgid "Coinbase Wallet"
 msgstr "コインベースウォレット"
 
-#: src/App/App.js:210
+#: src/App/App.js:212
 msgid "Coinbase Wallet not detected."
 msgstr "コインベースウォレットが検出できません。"
 
@@ -693,7 +693,7 @@ msgstr "入金完了!"
 msgid "Depositing..."
 msgstr "入金中"
 
-#: src/App/App.js:600
+#: src/App/App.js:602
 msgid "Disable order validations"
 msgstr "注文のバリデーションの無効化"
 
@@ -701,7 +701,7 @@ msgstr "注文のバリデーションの無効化"
 msgid "Disconnect"
 msgstr "接続停止"
 
-#: src/App/App.js:589
+#: src/App/App.js:591
 msgid "Display PnL after fees"
 msgstr "手数料込損益の表示"
 
@@ -1018,7 +1018,7 @@ msgstr "ホーム"
 msgid "Hop"
 msgstr "ホップ"
 
-#: src/App/App.js:594
+#: src/App/App.js:596
 msgid "Include PnL in leverage display"
 msgstr "レバレッジ表示に損益を含める"
 
@@ -1038,11 +1038,11 @@ msgstr "誤ったネットワーク"
 msgid "Initial Collateral: ${0}"
 msgstr "初期担保: ${0}"
 
-#: src/App/App.js:214
+#: src/App/App.js:216
 msgid "Install Coinbase Wallet"
 msgstr "コインベースウォレットをインストール"
 
-#: src/App/App.js:192
+#: src/App/App.js:194
 msgid "Install MetaMask"
 msgstr "メタマスクをインストール"
 
@@ -1096,7 +1096,7 @@ msgstr "無効な清算価格"
 msgid "Invalid price, see warning"
 msgstr "無効な価格。警告を確認してください"
 
-#: src/App/App.js:285
+#: src/App/App.js:287
 msgid "Invalid slippage value"
 msgstr "無効なスリッページ値"
 
@@ -1296,7 +1296,7 @@ msgstr "{0}の最大プールキャパシティ到達"
 msgid "Max pool capacity reached for {0}. Please mint GLP using another token"
 msgstr "{0}の最大プールキャパシティ到達。別のトークンを使用してGLPをミントしてください。"
 
-#: src/App/App.js:295
+#: src/App/App.js:297
 msgid "Max slippage precision is 0.01%"
 msgstr "スリッページの最大精度は0.01%です"
 
@@ -1313,11 +1313,11 @@ msgstr "{0}のショートの最大値超過"
 msgid "Media Kit"
 msgstr "メディアキット"
 
-#: src/App/App.js:550
+#: src/App/App.js:552
 msgid "MetaMask"
 msgstr "メタマスク"
 
-#: src/App/App.js:188
+#: src/App/App.js:190
 msgid "MetaMask not detected."
 msgstr "メタマスクが検出できません。"
 
@@ -1694,7 +1694,7 @@ msgstr "報酬"
 msgid "Same as current active code"
 msgstr "現状有効なコードと同じ"
 
-#: src/App/App.js:606
+#: src/App/App.js:608
 msgid "Save"
 msgstr "保存"
 
@@ -1807,7 +1807,7 @@ msgstr "シンプルなスワップ"
 msgid "Size"
 msgstr "サイズ"
 
-#: src/App/App.js:289
+#: src/App/App.js:291
 msgid "Slippage should be less than 5%"
 msgstr "スリッページは5%未満"
 
@@ -2155,7 +2155,7 @@ msgstr "ツイート"
 msgid "Two tokens create our ecosystem"
 msgstr "2つのトークンが私たちのエコシステムを作っています"
 
-#: src/App/App.js:334
+#: src/App/App.js:336
 msgid "Txn failed."
 msgstr "トランザクション失敗"
 
@@ -2250,8 +2250,8 @@ msgstr "べスティングされたGMXで引き出されていないもの"
 msgid "Vesting Status"
 msgstr "べスティング状況"
 
-#: src/App/App.js:336
-#: src/App/App.js:348
+#: src/App/App.js:338
+#: src/App/App.js:350
 msgid "View"
 msgstr "見る"
 
@@ -2313,7 +2313,7 @@ msgstr "ウォレットが接続されていません"
 msgid "Wallet not connected"
 msgstr "ウォレットが接続されていません"
 
-#: src/App/App.js:562
+#: src/App/App.js:564
 msgid "WalletConnect"
 msgstr "WalletConnect"
 
@@ -2456,8 +2456,8 @@ msgstr "注文"
 #~ msgid "to start using GMX"
 #~ msgstr "GMXを始めるには"
 
-#: src/App/App.js:197
-#: src/App/App.js:219
+#: src/App/App.js:199
+#: src/App/App.js:221
 msgid "to start using LeveragePro"
 msgstr ""
 

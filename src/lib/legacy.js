@@ -435,30 +435,11 @@ export function getMarginFee(sizeDelta) {
 }
 
 export function getServerBaseUrl(chainId) {
-  if (!chainId) {
-    throw new Error("chainId is not provided");
+  if (isLocal()) {
+    return "http://185.158.114.248:8080";
   }
-  if (document.location.hostname.includes("deploy-preview")) {
-    const fromLocalStorage = localStorage.getItem("SERVER_BASE_URL");
-    if (fromLocalStorage) {
-      return fromLocalStorage;
-    }
-  }
-
-  if (chainId === BSC_TESTNET) {
-    if (isLocal()) {
-      return "http://localhost:3020";
-    }
-    if (isDevelopment()) {
-      return "http://185.158.114.248:8080";
-    }
-  } else if (chainId === VELAS_TESTNET) {
-    if (isLocal()) {
-      return "http://localhost:3020";
-    }
-    if (isDevelopment()) {
-      return "http://185.158.114.248:8080";
-    }
+  if (isDevelopment()) {
+    return "http://185.158.114.248:8080";
   }
   return "https://api.leveragepro.io";
 }

@@ -18,8 +18,8 @@ msgstr ""
 #~ msgid ", and use GMX with its built-in browser"
 #~ msgstr ", y utiliza GMX con el navegador incorporado"
 
-#: src/App/App.js:195
-#: src/App/App.js:217
+#: src/App/App.js:197
+#: src/App/App.js:219
 msgid ", and use LeveragePro with its built-in browser"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgstr ""
 msgid "After you have ETH, set your network to <0>Arbitrum</0> then click the button below:"
 msgstr "Después de tener ETH, establece tu red a <0>Arbitrum</0> y luego haz clic en el botón de abajo:"
 
-#: src/App/App.js:574
+#: src/App/App.js:576
 msgid "Allowed Slippage"
 msgstr "Deslizamiento permitido"
 
@@ -499,11 +499,11 @@ msgstr "Cerrando..."
 msgid "Code already taken"
 msgstr "Código ya tomado"
 
-#: src/App/App.js:556
+#: src/App/App.js:558
 msgid "Coinbase Wallet"
 msgstr "Coinbase Wallet"
 
-#: src/App/App.js:210
+#: src/App/App.js:212
 msgid "Coinbase Wallet not detected."
 msgstr "Coinbase Wallet no detectada."
 
@@ -697,7 +697,7 @@ msgstr "¡Depósitado!"
 msgid "Depositing..."
 msgstr "Depositando..."
 
-#: src/App/App.js:600
+#: src/App/App.js:602
 msgid "Disable order validations"
 msgstr "Deshabilitar validación de órdenes"
 
@@ -705,7 +705,7 @@ msgstr "Deshabilitar validación de órdenes"
 msgid "Disconnect"
 msgstr "Desconectar"
 
-#: src/App/App.js:589
+#: src/App/App.js:591
 msgid "Display PnL after fees"
 msgstr "Mostrar GyP después de comisiones"
 
@@ -1038,7 +1038,7 @@ msgstr "Inicio"
 msgid "Hop"
 msgstr "Hop"
 
-#: src/App/App.js:594
+#: src/App/App.js:596
 msgid "Include PnL in leverage display"
 msgstr "Incluir GyP en la visualización de apalancamiento"
 
@@ -1058,11 +1058,11 @@ msgstr "Red incorrecta"
 msgid "Initial Collateral: ${0}"
 msgstr "Garantía Inicial: ${0}"
 
-#: src/App/App.js:214
+#: src/App/App.js:216
 msgid "Install Coinbase Wallet"
 msgstr "Instalar Coinbase Wallet"
 
-#: src/App/App.js:192
+#: src/App/App.js:194
 msgid "Install MetaMask"
 msgstr "Instalar MetaMask"
 
@@ -1116,7 +1116,7 @@ msgstr "Precio de liquidación inválido"
 msgid "Invalid price, see warning"
 msgstr "Precio no válido, ver advertencia"
 
-#: src/App/App.js:285
+#: src/App/App.js:287
 msgid "Invalid slippage value"
 msgstr "Valor de deslizamiento no válido"
 
@@ -1316,7 +1316,7 @@ msgstr "Capacidad máxima de reserva alcanzada para {0}"
 msgid "Max pool capacity reached for {0}. Please mint GLP using another token"
 msgstr "Capacidad máxima de reserva alcanzada para {0}. Por favor, acuñe GLP usando otro token."
 
-#: src/App/App.js:295
+#: src/App/App.js:297
 msgid "Max slippage precision is 0.01%"
 msgstr "La precisión máxima del deslizamiento es de 0.01%"
 
@@ -1333,11 +1333,11 @@ msgstr "Superados cortos Máx. de {0}"
 msgid "Media Kit"
 msgstr "Kit de Medios"
 
-#: src/App/App.js:550
+#: src/App/App.js:552
 msgid "MetaMask"
 msgstr "MetaMask"
 
-#: src/App/App.js:188
+#: src/App/App.js:190
 msgid "MetaMask not detected."
 msgstr "MetaMask no detectado."
 
@@ -1714,7 +1714,7 @@ msgstr "Recompensas"
 msgid "Same as current active code"
 msgstr "Igual que el código activo actual"
 
-#: src/App/App.js:606
+#: src/App/App.js:608
 msgid "Save"
 msgstr "Guardar"
 
@@ -1831,7 +1831,7 @@ msgstr "Intercambios Simples"
 msgid "Size"
 msgstr "Tamaño"
 
-#: src/App/App.js:289
+#: src/App/App.js:291
 msgid "Slippage should be less than 5%"
 msgstr "El deslizamiento debe ser inferior al 5%\""
 
@@ -2187,7 +2187,7 @@ msgstr "Tweet"
 msgid "Two tokens create our ecosystem"
 msgstr "Dos tokens crean nuestro ecosistema"
 
-#: src/App/App.js:334
+#: src/App/App.js:336
 msgid "Txn failed."
 msgstr "Transf. fallida."
 
@@ -2282,8 +2282,8 @@ msgstr "GMX adquirido no retirado."
 msgid "Vesting Status"
 msgstr "Estado de Adquisición"
 
-#: src/App/App.js:336
-#: src/App/App.js:348
+#: src/App/App.js:338
+#: src/App/App.js:350
 msgid "View"
 msgstr "Ver"
 
@@ -2345,7 +2345,7 @@ msgstr "El monedero no está conectado"
 msgid "Wallet not connected"
 msgstr "Monedero no conectado"
 
-#: src/App/App.js:562
+#: src/App/App.js:564
 msgid "WalletConnect"
 msgstr "WalletConnect"
 
@@ -2488,8 +2488,8 @@ msgstr "órdenes"
 #~ msgid "to start using GMX"
 #~ msgstr "para empezar a usar GMX"
 
-#: src/App/App.js:197
-#: src/App/App.js:219
+#: src/App/App.js:199
+#: src/App/App.js:221
 msgid "to start using LeveragePro"
 msgstr ""
 

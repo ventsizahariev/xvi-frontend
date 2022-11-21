@@ -3,8 +3,18 @@ import { gql } from "@apollo/client";
 import useSWR from "swr";
 import { ethers } from "ethers";
 
-import {USD_DECIMALS, CHART_PERIODS, formatAmount, sleep, getServerBaseUrl, BSC_TESTNET} from "../lib/legacy";
+import {
+  USD_DECIMALS,
+  CHART_PERIODS,
+  formatAmount,
+  sleep,
+  getServerBaseUrl,
+  BSC_TESTNET,
+  fetcher,
+  PLACEHOLDER_ACCOUNT
+} from "../lib/legacy";
 import { chainlinkClient } from "./common";
+import PriceFeed from "../abis/PriceFeed.json";
 
 const BigNumber = ethers.BigNumber;
 
@@ -53,67 +63,36 @@ function fillGaps(prices, periodSeconds) {
   return newPrices;
 }
 
-async function getChartPricesFromStats(chainId, symbol, period) {
+async function getChartPricesFromChainlink(chainId, symbol, period) {
   if (["WBTC", "WETH", "WAVAX"].includes(symbol)) {
     symbol = symbol.substr(1);
   } else if (symbol === "BTC.b") {
     symbol = "BTC";
   }
-  const hostname = getServerBaseUrl(BSC_TESTNET);
-  // const hostname = "https://stats.gmx.io/";
+  const hostname = getServerBaseUrl(chainId);
   const timeDiff = CHART_PERIODS[period] * 3000;
   const from = Math.floor(Date.now() / 1000 - timeDiff);
-  const url = `${hostname}api/candles/${symbol}?preferableChainId=${chainId}&period=${period}&from=${from}&preferableSource=fast`;
-  const TIMEOUT = 5000;
-  const res = await new Promise(async (resolve, reject) => {
-    let done = false;
-    setTimeout(() => {
-      done = true;
-      reject(new Error(`request timeout ${url}`));
-    }, TIMEOUT);
+  const url = `${hostname}/chart_prices/${symbol}?preferableChainId=${chainId}&period=${period}&from=${from}`;
 
-    let lastEx;
-    for (let i = 0; i < 3; i++) {
-      if (done) return;
-      try {
-        const res = await fetch(url);
-        resolve(res);
-        return;
-      } catch (ex) {
-        await sleep(300);
-        lastEx = ex;
-      }
-    }
-    reject(lastEx);
-  });
-  if (!res.ok) {
-    throw new Error(`request failed ${res.status} ${res.statusText}`);
-  }
-  const json = await res.json();
-  let prices = json?.prices;
-  if (!prices || prices.length < 10) {
-    throw new Error(`not enough prices data: ${prices?.length}`);
-  }
+  return await fetch(url)
+    .then((response) => response.json())
+    .then(json => {
+      let result = json?.prices;
+      let prices = [];
+      const uniqTs = new Set();
+      result.forEach((item) => {
+        if (uniqTs.has(item.timestamp)) {
+          return;
+        }
 
-  const OBSOLETE_THRESHOLD = Date.now() / 1000 - 60 * 30; // 30 min ago
-  const updatedAt = json?.updatedAt || 0;
-  if (updatedAt < OBSOLETE_THRESHOLD) {
-    throw new Error(
-      "chart data is obsolete, last price record at " +
-        new Date(updatedAt * 1000).toISOString() +
-        " now: " +
-        new Date().toISOString()
-    );
-  }
+        uniqTs.add(item.timestamp);
+        prices.push([item.timestamp, Number(item.value) / 1e8]);
+      });
 
-  prices = prices.map(({ t, o: open, c: close, h: high, l: low }) => ({
-    time: t + timezoneOffset,
-    open,
-    close,
-    high,
-    low,
-  }));
-  return prices;
+      prices.sort(([timeA], [timeB]) => timeA - timeB);
+      prices = getCandlesFromPrices(prices, period);
+      return prices;
+    });
 }
 
 function getCandlesFromPrices(prices, period) {
@@ -183,7 +162,6 @@ function getChainlinkChartPricesFromGraph(tokenSymbol, period) {
     }`);
     requests.push(chainlinkClient.query({ query }));
   }
-
   return Promise.all(requests)
     .then((chunks) => {
       let prices = [];
@@ -208,26 +186,21 @@ function getChainlinkChartPricesFromGraph(tokenSymbol, period) {
     });
 }
 
-export function useChartPrices(chainId, symbol, isStable, period, currentAveragePrice) {
+export function useChartPrices(chainId, symbol, isStable, priceFeedAddress, period, currentAveragePrice) {
   const swrKey = !isStable && symbol ? ["getChartCandles", chainId, symbol, period] : null;
   let { data: prices, mutate: updatePrices } = useSWR(swrKey, {
     fetcher: async (...args) => {
       try {
-        return await getChartPricesFromStats(chainId, symbol, period);
-      } catch (ex) {
-        console.warn(ex);
-        console.warn("Switching to graph chainlink data");
-        try {
-          return await getChainlinkChartPricesFromGraph(symbol, period);
-        } catch (ex2) {
-          console.warn("getChainlinkChartPricesFromGraph failed");
-          console.warn(ex2);
-          return [];
-        }
+        return await getChartPricesFromChainlink(chainId, symbol, period);
+        // return await getChainlinkChartPricesFromGraph(symbol, period);
+      } catch (ex2) {
+        console.warn("getChainlinkChartPricesFromGraph failed");
+        console.warn(ex2);
+        return [];
       }
     },
-    dedupingInterval: 60000,
-    focusThrottleInterval: 60000 * 10,
+    dedupingInterval: 600000,
+    focusThrottleInterval: 600000 * 10,
   });
 
   const currentAveragePriceString = currentAveragePrice && currentAveragePrice.toString();

@@ -18,8 +18,8 @@ msgstr ""
 #~ msgid ", and use GMX with its built-in browser"
 #~ msgstr ", 그 후 지갑이 내장된 브라우저로 GMX를 이용해주세요"
 
-#: src/App/App.js:195
-#: src/App/App.js:217
+#: src/App/App.js:197
+#: src/App/App.js:219
 msgid ", and use LeveragePro with its built-in browser"
 msgstr ""
 
@@ -121,7 +121,7 @@ msgstr ""
 msgid "After you have ETH, set your network to <0>Arbitrum</0> then click the button below:"
 msgstr "ETH를 소지한 후 네트워크를 <0>Arbitrum</0>으로 설정한 뒤 아래의 버튼을 클릭합니다."
 
-#: src/App/App.js:574
+#: src/App/App.js:576
 msgid "Allowed Slippage"
 msgstr "허용 가능한 슬리피지"
 
@@ -495,11 +495,11 @@ msgstr "닫는중..."
 msgid "Code already taken"
 msgstr "이미 사용된 코드입니다"
 
-#: src/App/App.js:556
+#: src/App/App.js:558
 msgid "Coinbase Wallet"
 msgstr "Coinbase 지갑"
 
-#: src/App/App.js:210
+#: src/App/App.js:212
 msgid "Coinbase Wallet not detected."
 msgstr "Coinbase 지갑이 존재하지 않습니다."
 
@@ -693,7 +693,7 @@ msgstr "예치되었습니다!"
 msgid "Depositing..."
 msgstr "예치중..."
 
-#: src/App/App.js:600
+#: src/App/App.js:602
 msgid "Disable order validations"
 msgstr "주문 밸리데이션 무효화"
 
@@ -701,7 +701,7 @@ msgstr "주문 밸리데이션 무효화"
 msgid "Disconnect"
 msgstr "연결 끊기"
 
-#: src/App/App.js:589
+#: src/App/App.js:591
 msgid "Display PnL after fees"
 msgstr "수수료포함 손익 표시"
 
@@ -1018,7 +1018,7 @@ msgstr "홈"
 msgid "Hop"
 msgstr "Hop"
 
-#: src/App/App.js:594
+#: src/App/App.js:596
 msgid "Include PnL in leverage display"
 msgstr "레버리지 표시창에 손익 포함하기"
 
@@ -1038,11 +1038,11 @@ msgstr "잘못된 네트워크입니다"
 msgid "Initial Collateral: ${0}"
 msgstr "초기 담보: ${0}"
 
-#: src/App/App.js:214
+#: src/App/App.js:216
 msgid "Install Coinbase Wallet"
 msgstr "코인베이스 지갑을 설치하세요"
 
-#: src/App/App.js:192
+#: src/App/App.js:194
 msgid "Install MetaMask"
 msgstr "메타마스크를 설치하세요"
 
@@ -1096,7 +1096,7 @@ msgstr "유효하지 않은 청산가"
 msgid "Invalid price, see warning"
 msgstr "유효하지 않은 가격, 경고문을 보세요"
 
-#: src/App/App.js:285
+#: src/App/App.js:287
 msgid "Invalid slippage value"
 msgstr "유효하지 않은 슬리피지 값"
 
@@ -1296,7 +1296,7 @@ msgstr "{0}의 최대 풀 수용량에 도달했습니다"
 msgid "Max pool capacity reached for {0}. Please mint GLP using another token"
 msgstr "{0}의 최대 풀 수용량에 도달했습니다"
 
-#: src/App/App.js:295
+#: src/App/App.js:297
 msgid "Max slippage precision is 0.01%"
 msgstr "허용 가능한 최대 슬리피지는 0.01%입니다"
 
@@ -1313,11 +1313,11 @@ msgstr "{0} 숏 최대치를 초과했습니다."
 msgid "Media Kit"
 msgstr "미디어 키트"
 
-#: src/App/App.js:550
+#: src/App/App.js:552
 msgid "MetaMask"
 msgstr "메타마스크"
 
-#: src/App/App.js:188
+#: src/App/App.js:190
 msgid "MetaMask not detected."
 msgstr "메타마스크가 탐지되지 않았습니다."
 
@@ -1694,7 +1694,7 @@ msgstr "보상"
 msgid "Same as current active code"
 msgstr "현재 유효한 코드와 같음"
 
-#: src/App/App.js:606
+#: src/App/App.js:608
 msgid "Save"
 msgstr "저장"
 
@@ -1807,7 +1807,7 @@ msgstr "간단한 스왑"
 msgid "Size"
 msgstr "사이즈"
 
-#: src/App/App.js:289
+#: src/App/App.js:291
 msgid "Slippage should be less than 5%"
 msgstr "슬리피지는 5%미만이어야 합니다."
 
@@ -2155,7 +2155,7 @@ msgstr "Tweet"
 msgid "Two tokens create our ecosystem"
 msgstr "두개의 토큰이 생태계를 형성하고 있습니다"
 
-#: src/App/App.js:334
+#: src/App/App.js:336
 msgid "Txn failed."
 msgstr "트랜잭션 실패."
 
@@ -2250,8 +2250,8 @@ msgstr "베스트팅된 GMX에서 인출되지 않은 양"
 msgid "Vesting Status"
 msgstr "베스팅 상황"
 
-#: src/App/App.js:336
-#: src/App/App.js:348
+#: src/App/App.js:338
+#: src/App/App.js:350
 msgid "View"
 msgstr "보기"
 
@@ -2313,7 +2313,7 @@ msgstr "지갑이 연결되지 않았습니다"
 msgid "Wallet not connected"
 msgstr "지갑이 연결되지 않음"
 
-#: src/App/App.js:562
+#: src/App/App.js:564
 msgid "WalletConnect"
 msgstr "지갑연결"
 
@@ -2456,8 +2456,8 @@ msgstr "주문"
 #~ msgid "to start using GMX"
 #~ msgstr "GMX를 시작하기 위해서는"
 
-#: src/App/App.js:197
-#: src/App/App.js:219
+#: src/App/App.js:199
+#: src/App/App.js:221
 msgid "to start using LeveragePro"
 msgstr ""
 
