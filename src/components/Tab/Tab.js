@@ -17,12 +17,12 @@ export default function Tab(props) {
 
   return (
     <div className={cx("Tab", type, className)}>
-      {options.map((opt) => {
+      {options.map((opt, index) => {
         const label = optionLabels && optionLabels[opt] ? optionLabels[opt] : opt;
         return (
-          <div className={cx("Tab-option", "muted", { active: opt === option })} onClick={() => onClick(opt)} key={opt}>
-            {icons && icons[opt] && <img className="Tab-option-icon" src={icons[opt]} alt={option} />}
-            {label}
+          <div className={cx("Tab-option", {disabled: index == options.length - 1 && props.isSwipe }, { active: opt === option })} onClick={() => (options.length - 1 == index && props.isSwipe) ? "":onClick(opt)} key={opt}>
+            {icons && icons[opt] && (opt === option ? <img className="Tab-option-icon" src={props.activeIcons[opt]} alt={option} /> :<img className="Tab-option-icon" src={icons[opt]} alt={option} />)}
+            <span>{label}</span>
           </div>
         );
       })}

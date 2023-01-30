@@ -1,22 +1,30 @@
-import React, {useState} from "react";
+import React, { useState, useRef } from "react";
 import Footer from "../../components/Footer/Footer";
 
 import cx from "classnames";
 
 import "./Home.css";
 
-import simpleSwapIcon from "../../img/ic_simpleswaps.svg";
-import costIcon from "../../img/ic_cost.svg";
-import liquidityIcon from "../../img/ic_liquidity.svg";
-import totaluserIcon from "../../img/ic_totaluser.svg";
-
-
-import bscIcon from "../../img/ic_bsc_96.svg";
+import totaluserIcon from "../../img/home_total_users.png";
+import { IoIosArrowBack, IoIosArrowForward, IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+import statsIcon from "../../img/home_open_interest.png";
+import tradingIcon from "../../img/home_total_trading.png";
+import HomeDocumentIcon from "../../img/home_document_icon.png";
+import RocketIcon from "../../img/home_rocket.png";
+import Slider from "react-slick";
 // import velasIcon from "../../img/ic_avalanche_96.svg";
 
-import statsIcon from "../../img/ic_stats.svg";
-import tradingIcon from "../../img/ic_trading.svg";
+// import statsIcon from "../../img/ic_stats.svg";
+// import tradingIcon from "../../img/ic_trading.svg";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider1 from '../../img/features/slider1.png';
+import Slider2 from '../../img/features/slider2.png';
+import Slider3 from '../../img/features/slider3.png';
+import Slider4 from '../../img/features/slider4.png';
+import Slider5 from '../../img/features/slider5.png';
+import Slider6 from '../../img/features/slider6.png';
 import useSWR from "swr";
 
 import {
@@ -34,9 +42,43 @@ import TokenCard from "../../components/TokenCard/TokenCard";
 
 import { Trans } from "@lingui/macro";
 import { HeaderLink } from "../../components/Header/HeaderLink";
+import SliderCard from "../../components/Common/SliderCard";
 
 export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
   const [openedFAQIndex, setOpenedFAQIndex] = useState(null)
+  const sliderContent = [
+    {
+      image: Slider1,
+      title:"Reduce Liquidition Risk",
+      content:"Lorem Ipsum is simply dummy text of the printing and transition typesetting industry."
+    },
+    {
+      image: Slider2,
+      title:"Save on Costs",
+      content:"Lorem Ipsum is simply dummy text of the printing and transition typesetting industry."
+    },
+    {
+      image: Slider3,
+      title:"Analytic",
+      content:"Lorem Ipsum is simply dummy text of the printing and transition typesetting industry."
+    },
+    {
+      image: Slider4,
+      title:"Preferred Network",
+      content:"Lorem Ipsum is simply dummy text of the printing and transition typesetting industry."
+    },
+    {
+      image: Slider5,
+      title:"Variety of Features",
+      content:"Lorem Ipsum is simply dummy text of the printing and transition typesetting industry."
+    },
+    {
+      image: Slider6,
+      title:"Simple Swaps",
+      content:"Lorem Ipsum is simply dummy text of the printing and transition typesetting industry."
+    },
+  ]
+  const SliderCountArray = [1,2,3,4,5,6];
   const faqContent = [{
     id: 1,
     question: "What is GMX?",
@@ -63,6 +105,28 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
     }
   }
 
+  const sliderRef = useRef();
+  const settings = {
+    infinite: true,
+    slidesToShow: 3,
+    lazyLoad: 'ondemand',
+    arrows:false,
+    
+    responsive: [
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 1
+        }
+      },
+    ]
+  };
   // BINANCE
 
   const bscPositionStatsUrl = getServerUrl(BSC_TESTNET, "/position_stats");
@@ -107,22 +171,36 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
   const LaunchExchangeButton = () => {
     return (
       <HeaderLink
-        className={cx("default-btn")}
+        className={cx("launch-exchange-btn")}
         to="/trade"
         redirectPopupTimestamp={redirectPopupTimestamp}
         showRedirectModal={showRedirectModal}
       >
-        <Trans>Launch Exchange</Trans>
+        <Trans><img src={RocketIcon} width={32}/>Launch Exchange</Trans>
       </HeaderLink>
     );
   };
 
+  const gotoNextSlider = () => {
+    sliderRef.current.slickNext();
+  }
+  const gotoPreviousSlider = () => {
+    sliderRef.current.slickPrev();
+  }
   return (
     <div className="Home">
       <div className="Home-top">
         {/* <div className="Home-top-image"></div> */}
         <div className="Home-title-section-container default-container">
           <div className="Home-title-section">
+            <div className="Home-doc">
+                <span>
+                  <Trans>Are you new? Read our documentation</Trans>
+                </span>
+                <HeaderLink className="home-document-btn" to="/document">
+                  <img src={HomeDocumentIcon} width={32} height={14}></img>
+                </HeaderLink>
+              </div>
             <div className="Home-title">
               <Trans>
                 Decentralized
@@ -138,7 +216,10 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
             <LaunchExchangeButton />
           </div>
         </div>
-        <div className="Home-latest-info-container default-container">
+        
+        
+      </div>
+      <div className="Home-latest-info-container default-container">
           <div className="Home-latest-info-block">
             <img src={tradingIcon} alt="trading" className="Home-latest-info__icon" />
             <div className="Home-latest-info-content">
@@ -167,9 +248,42 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
             </div>
           </div>
         </div>
-      </div>
       <div className="Home-benefits-section">
-        <div className="Home-benefits default-container">
+        <div className="Home-benefits-control">
+            <span className="Home-benfits-control-title">
+              <Trans>XVI FEATURES</Trans>
+            </span>
+            <div className="Home-benfits-description">
+              <Trans>We are not just a Decentralize we are most like</Trans>
+            </div>
+            <div className="Home-benefits-btn-control">
+              <span className="Home-benefits-left-btn" onClick = {gotoPreviousSlider}>
+                <IoIosArrowBack size={24} />
+              </span>
+              <span className="Home-benefits-right-btn" onClick = {gotoNextSlider}>
+                <Trans>
+                  Next <IoIosArrowForward size={24} />
+                </Trans>
+              </span>
+            </div>
+          
+          </div>
+          <div className="Home-benfits-control-progress">
+          <div className="Home-benefits-control-progress-bar"></div>
+          <div className="Home-benefits-control-progress-number">
+            <span className="Home-benefits-control-section-number-icon-name">
+              <Trans>Section</Trans>
+            </span>
+            <span className="Home-benefits-control-section-number-icon active">1</span>
+            <span className="Home-benefits-control-section-number-icon">6</span>
+          </div>
+        </div>
+        <div className="Home-benefits-slider-container">
+        <Slider {...settings} className="home-slider" ref={sliderRef}>
+            { sliderContent.map((item, index) => <SliderCard key={index} image={item.image} title={item.title} content={item.content}/>)}
+          </Slider>
+          </div>
+        {/* <div className="Home-benefits default-container">
           <div className="Home-benefit">
             <div className="Home-benefit-icon">
               <img src={liquidityIcon} alt="liquidity" className="Home-benefit-icon-symbol" />
@@ -212,10 +326,10 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
               </Trans>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="Home-cta-section">
-        <div className="Home-cta-container default-container">
+        <div className="Home-cta-container">
           <div className="Home-cta-info">
             <div className="Home-cta-info__title">
               <Trans>Available on your preferred network</Trans>
@@ -226,32 +340,25 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
           </div>
           <div className="Home-cta-options">
             <div className="Home-cta-option Home-cta-option-bsc">
-              <div className="Home-cta-option-icon">
-                <img src={bscIcon} alt="bsc" />
+              <div className="Home-cta-option-icon Home-cta-option-icon-binance">
               </div>
               <div className="Home-cta-option-info">
-                <div className="Home-cta-option-title">BSC</div>
-                <div className="Home-cta-option-action">
-                  <LaunchExchangeButton />
-                </div>
+                <div className="Home-cta-option-title"><Trans>Binance Smart Chain</Trans></div>
               </div>
             </div>
-            {/*<div className="Home-cta-option Home-cta-option-ava">*/}
-            {/*  <div className="Home-cta-option-icon">*/}
-            {/*    <img src={avaIcon} alt="ava" />*/}
-            {/*  </div>*/}
-            {/*  <div className="Home-cta-option-info">*/}
-            {/*    <div className="Home-cta-option-title">Avalanche</div>*/}
-            {/*    <div className="Home-cta-option-action">*/}
-            {/*      <LaunchExchangeButton />*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
+            <div className="Home-cta-option Home-cta-option-ava">
+            <div className="Home-cta-option-icon Home-cta-option-icon Home-cta-option-icon-velas">
+             </div>
+             <div className="Home-cta-option-info">
+               <div className="Home-cta-option-title"><Trans>Velas Blockchain</Trans></div>
+               
+             </div>
+            </div>
           </div>
         </div>
       </div>
       <div className="Home-token-card-section">
-        <div className="Home-token-card-container default-container">
+        <div className="Home-token-card-container">
           <div className="Home-token-card-info">
             <div className="Home-token-card-info__title">
               <Trans>Two tokens create our ecosystem</Trans>
@@ -269,36 +376,34 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
         </div>
       </div> */}
       <div className="Home-faqs-section">
-        <div className="Home-faqs-container default-container">
-          <div className="Home-faqs-introduction">
-            <div className="Home-faqs-introduction__title">FAQs</div>
-            <div className="Home-faqs-introduction__description">Most asked questions. If you wish to learn more, please head to our Documentation page.</div>
-            <a href="about:blank" target="_blank" className="default-btn Home-faqs-documentation">Documentation</a>
-          </div>
-          {/*<div className="Home-faqs-content-block">*/}
-          {/*  {*/}
-          {/*    faqContent.map((content, index) => (*/}
-          {/*      <div className="Home-faqs-content" key={index} onClick={() => toggleFAQContent(index)}>*/}
-          {/*        <div className="Home-faqs-content-header">*/}
-          {/*          <div className="Home-faqs-content-header__icon">*/}
-          {/*            {*/}
-          {/*              openedFAQIndex === index ? <FiMinus className="opened" /> : <FiPlus className="closed" />*/}
-          {/*            }*/}
-          {/*          </div>*/}
-          {/*          <div className="Home-faqs-content-header__text">*/}
-          {/*            { content.question }*/}
-          {/*          </div>*/}
-          {/*        </div>*/}
-          {/*        <div className={ openedFAQIndex === index ? "Home-faqs-content-main opened" : "Home-faqs-content-main" }>*/}
-          {/*          <div className="Home-faqs-content-main__text">*/}
-          {/*            <div dangerouslySetInnerHTML={{__html: content.answer}} >*/}
-          {/*            </div>*/}
-          {/*          </div>*/}
-          {/*        </div>*/}
-          {/*      </div>*/}
-          {/*    ))*/}
-          {/*  }*/}
-          {/*</div>*/}
+        <div className="Home-faqs-introduction">
+          <div className="Home-faqs-introduction__title">Frequently asked questions</div>
+          <div className="Home-faqs-introduction__description">Lorem Ipsum is simply Read Documentation</div>
+        </div>
+        <div className="Home-faqs-content-block">
+          {faqContent.map((content, index) => (
+            <div
+              className={openedFAQIndex === index ? "Home-faqs-content opened" : "Home-faqs-content"}
+              key={index}
+              onClick={() => toggleFAQContent(index)}
+            >
+              <div className="Home-faqs-content-header">
+                <div className="Home-faqs-content-header__text">{content.question}</div>
+                <div className="Home-faqs-content-header__icon">
+                  {openedFAQIndex === index ? (
+                    <IoIosArrowUp size={28} className="opened" />
+                  ) : (
+                    <IoIosArrowDown size={28} className="closed" />
+                  )}
+                </div>
+              </div>
+              <div className="Home-faqs-content-main">
+                <div className="Home-faqs-content-main__text">
+                  <div dangerouslySetInnerHTML={{ __html: content.answer }}></div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
       <Footer showRedirectModal={showRedirectModal} redirectPopupTimestamp={redirectPopupTimestamp} />

@@ -9,10 +9,9 @@ import { BiChevronDown } from "react-icons/bi";
 
 import Modal from "../Modal/Modal";
 
-import dropDownIcon from "../../img/DROP_DOWN.svg";
 import "./TokenSelector.css";
 import TooltipWithPortal from "../Tooltip/TooltipWithPortal";
-
+import dropDownIcon from "../../img/DROP_DOWN.svg";
 export default function TokenSelector(props) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [searchKeyword, setSearchKeyword] = useState("");
@@ -81,9 +80,13 @@ export default function TokenSelector(props) {
         isVisible={isModalVisible}
         setIsVisible={setIsModalVisible}
         label={props.label}
+        type="token-selector"
+        _handleKeyDown = {_handleKeyDown}
+        onSearchKeywordChange = {onSearchKeywordChange}
+        searchKeyword={searchKeyword}
       >
         <div className="TokenSelector-tokens">
-          <div className="TokenSelector-token-row TokenSelector-token-input-row">
+          {/* <div className="TokenSelector-token-row TokenSelector-token-input-row">
             <input
               type="text"
               placeholder="Search Token"
@@ -92,7 +95,7 @@ export default function TokenSelector(props) {
               onKeyDown={_handleKeyDown}
               autoFocus
             />
-          </div>
+          </div> */}
           {filteredTokens.map((token, tokenIndex) => {
             let tokenPopupImage;
             try {
@@ -140,11 +143,12 @@ export default function TokenSelector(props) {
                   )}
                   <div className="Token-symbol">
                     <div className="Token-text">{token.symbol}</div>
-                    <span className="text-accent">{token.name}</span>
+                    {/* <span className="text-accent">{token.name}</span> */}
                   </div>
                 </div>
                 <div className="Token-balance">
-                  {showBalances && balance && (
+                <span className="text-accent-description">{token.name}</span>
+                  {/* {showBalances && balance && (
                     <div className="Token-text">
                       {balance.gt(0) && formatAmount(balance, token.decimals, 4, true)}
                       {balance.eq(0) && "-"}
@@ -156,7 +160,7 @@ export default function TokenSelector(props) {
                     {!showMintingCap && showBalances && balanceUsd && balanceUsd.gt(0) && (
                       <div>${formatAmount(balanceUsd, 30, 2, true)}</div>
                     )}
-                  </span>
+                  </span> */}
                 </div>
               </div>
             );
@@ -170,10 +174,11 @@ export default function TokenSelector(props) {
         </div>
       ) : (
         <div className="TokenSelector-box" onClick={() => setIsModalVisible(true)}>
-          {tokenInfo.symbol}
+          
           {showSymbolImage && (
-            <img src={tokenImage && tokenImage.default} alt={tokenInfo.symbol} className="TokenSelector-box-symbol" />
+            <img src={tokenImage && tokenImage.default} alt={tokenInfo.symbol} className="TokenSelector-box-symbol" width={24} height={24} />
           )}
+          {tokenInfo.symbol}
           {showNewCaret && <img src={dropDownIcon} alt="dropDownIcon" className="TokenSelector-box-caret" />}
           {!showNewCaret && <BiChevronDown className="TokenSelector-caret" />}
         </div>

@@ -1,14 +1,13 @@
 import { Menu } from "@headlessui/react";
-import { FiChevronDown } from "react-icons/fi";
 import "./AssetDropdown.css";
 import coingeckoIcon from "../../img/ic_coingecko_16.svg";
 import metamaskIcon from "../../img/ic_metamask_16.svg";
 import { addTokenToMetamask, ICONLINKS, platformTokens, useChainId } from "../../lib/legacy";
 import { useWeb3React } from "@web3-react/core";
-
+import { FiChevronRight } from "react-icons/fi";
 import { Trans } from "@lingui/macro";
 
-function AssetDropdown({ assetSymbol, assetInfo }) {
+function AssetDropdown({ assetSymbol, assetInfo, method }) {
   const { active } = useWeb3React();
   const { chainId } = useChainId();
   let { coingecko } = ICONLINKS[chainId][assetSymbol] || {};
@@ -22,9 +21,21 @@ function AssetDropdown({ assetSymbol, assetInfo }) {
 
   return (
     <Menu>
-      <Menu.Button as="div" className="dropdown-arrow center-both">
-        <FiChevronDown size={20} />
-      </Menu.Button>
+      {method == "simple" ? (
+        <Menu.Button as="div" className="dropdown-arrow center-both asset-item-arrow ">
+          <FiChevronRight size={15} />
+        </Menu.Button>
+      ) : (
+        <Menu.Button as="div" className="dropdown-arrow center-both">
+          <div className="asset-item">
+            <img className="asset-item-icon" src={coingeckoIcon} alt="Open in Coingecko" />
+            <p>
+              <Trans>Open in Coingecko</Trans>
+            </p>
+            <FiChevronRight size={20} />
+          </div>
+        </Menu.Button>
+      )}
       <Menu.Items as="div" className="asset-menu-items">
         <Menu.Item>
           <>

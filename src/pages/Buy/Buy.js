@@ -6,7 +6,7 @@ import TokenCard from "../../components/TokenCard/TokenCard";
 import buyGMXIcon from "../../img/buy_gmx.svg";
 import SEO from "../../components/Common/SEO";
 import { getPageTitle } from "../../lib/legacy";
-
+import SpiderIcon from '../../img/spider_icon.png';
 export default function BuyGMXGLP() {
   return (
     <SEO title={getPageTitle("Buy GLP or GMX")}>
@@ -18,6 +18,7 @@ export default function BuyGMXGLP() {
             </div>
             <div className="section-title-content">
               <div className="Page-title">
+                <img src={SpiderIcon} width={52} height={52}/>
                 <Trans>Buy LeveragePro or GLP</Trans>
               </div>
             </div>

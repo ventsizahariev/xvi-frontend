@@ -1,12 +1,12 @@
-
+import React from "react";
 import { FiX } from "react-icons/fi";
 import { HeaderLink } from "./HeaderLink";
-import logoImg from "../../img/logo_GMX.svg";
-
+import logoImg from "../../img/Logo XVI.svg";
 import "./Header.css";
 import { isHomeSite } from "../../lib/legacy";
-import {Trans} from "@lingui/macro";
-import React from "react";
+import ExternalLink from "../ExternalLink/ExternalLink";
+import { Trans } from "@lingui/macro";
+import HeaderDropDown from "./HeaderDropDown";
 
 type Props = {
   small?: boolean;
@@ -17,11 +17,11 @@ type Props = {
 };
 
 export function AppHeaderLinks({
-   small,
-   openSettings,
-   clickCloseIcon,
-   redirectPopupTimestamp,
-   showRedirectModal
+  small,
+  openSettings,
+  clickCloseIcon,
+  redirectPopupTimestamp,
+  showRedirectModal,
 }: Props) {
   return (
     <div className="App-header-links">
@@ -36,12 +36,15 @@ export function AppHeaderLinks({
           >
             <img src={logoImg} alt="GMX Logo" />
           </HeaderLink>
-          <div className="App-header-menu-icon-block mobile-cross-menu" onClick={() => clickCloseIcon && clickCloseIcon()}>
+          <div
+            className="App-header-menu-icon-block mobile-cross-menu"
+            onClick={() => clickCloseIcon && clickCloseIcon()}
+          >
             <FiX className="App-header-menu-icon" />
           </div>
         </div>
       )}
-      <div className="App-header-link-container App-header-link-home">
+      {/* <div className="App-header-link-container App-header-link-home">
         <HeaderLink
           to="/"
           exact={true}
@@ -51,7 +54,7 @@ export function AppHeaderLinks({
         >
           <Trans>Home</Trans>
         </HeaderLink>
-      </div>
+      </div> */}
       <div className="App-header-link-container">
         <HeaderLink
           to="/dashboard"
@@ -62,30 +65,13 @@ export function AppHeaderLinks({
         </HeaderLink>
       </div>
       <div className="App-header-link-container">
-        <HeaderLink
-          to="/earn"
-          redirectPopupTimestamp={redirectPopupTimestamp}
-          showRedirectModal={showRedirectModal}
-        >
+        <HeaderLink to="/earn" redirectPopupTimestamp={redirectPopupTimestamp} showRedirectModal={showRedirectModal}>
           <Trans>Earn</Trans>
         </HeaderLink>
       </div>
       <div className="App-header-link-container">
-        <HeaderLink
-          to="/buy"
-          redirectPopupTimestamp={redirectPopupTimestamp}
-          showRedirectModal={showRedirectModal}
-        >
+        <HeaderLink to="/buy" redirectPopupTimestamp={redirectPopupTimestamp} showRedirectModal={showRedirectModal}>
           <Trans>Buy</Trans>
-        </HeaderLink>
-      </div>
-      <div className="App-header-link-container">
-        <HeaderLink
-          to="/referrals"
-          redirectPopupTimestamp={redirectPopupTimestamp}
-          showRedirectModal={showRedirectModal}
-        >
-          <Trans>Referrals</Trans>
         </HeaderLink>
       </div>
       <div className="App-header-link-container">
@@ -97,11 +83,50 @@ export function AppHeaderLinks({
           <Trans>Ecosystem</Trans>
         </HeaderLink>
       </div>
+      {!small && (
+        <HeaderDropDown
+          redirectPopupTimestamp={redirectPopupTimestamp}
+          showRedirectModal={showRedirectModal}
+        />
+      )}
+      {small && (
+        <>
+          <div className="App-header-link-container">
+            <HeaderLink
+              to="/referrals"
+              redirectPopupTimestamp={redirectPopupTimestamp}
+              showRedirectModal={showRedirectModal}
+            >
+              <Trans>Referrals</Trans>
+            </HeaderLink>
+          </div>
+          <div className="App-header-link-container">
+            <ExternalLink href="https://gmxio.gitbook.io/gmx/">
+              <Trans>Documents</Trans>
+            </ExternalLink>
+          </div>
+          <div className="App-header-link-container">
+            <ExternalLink href="about:blank">
+              <Trans>About Us</Trans>
+            </ExternalLink>
+          </div>
+        </>
+      )}
+      {/* <div className="App-header-link-container">
+        <HeaderLink
+          to="/referrals"
+          redirectPopupTimestamp={redirectPopupTimestamp}
+          showRedirectModal={showRedirectModal}
+        >
+          <Trans>Referrals</Trans>
+        </HeaderLink>
+      </div>
+      
       <div className="App-header-link-container">
         <a href="about:blank" target="_blank" rel="noopener noreferrer">
           <Trans>About</Trans>
         </a>
-      </div>
+      </div> */}
       {small && !isHomeSite() && (
         <div className="App-header-link-container">
           {/* eslint-disable-next-line */}

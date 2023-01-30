@@ -1,37 +1,35 @@
 import cx from "classnames";
 import "./Button.css";
+import {IoMdWallet} from 'react-icons/io';
 
-export default function Button({ href, imgSrc, children, onClick, className, size = "lg", align = "center", ...rest }) {
-  let classNames = cx("btn btn-primary", align === "left" ? "btn-left" : "btn-center", `btn-${size}`, className);
-  if (typeof children === "object") {
+export default function Button({ href, imgSrc, children, imgName, onClick, className, size = "lg", align = "center", disabled = false }) {
+  let classNames = cx("btn", className);
+  if (onClick) {
     return (
-      <a className={classNames} href={href} target="_blank" rel="noopener noreferrer" {...rest}>
-        {children}
-      </a>
-    );
-  }
-
-  if (href) {
-    return (
-      <a className={classNames} href={href} target="_blank" rel="noopener noreferrer" {...rest}>
-        {imgSrc && <img className="btn-image" src={imgSrc} alt={children} />}
-        <span className="btn-label">{children}</span>
-      </a>
+      <button className={classNames} onClick={onClick} disabled={disabled}>
+        {imgSrc ? (
+          <>
+            <img className="btn-image" src={imgSrc} alt={imgName} />
+            <span className="btn-label">{children}</span>
+          </>
+        ) : (
+          <>{children}</>
+        )}
+      </button>
     );
   }
   return (
-    <button className={classNames} onClick={onClick} {...rest}>
-      {imgSrc && <img className="btn-image" src={imgSrc} alt={children} />}
+    <a className={classNames} href={href} target="_blank" rel="noopener noreferrer">
+      {imgSrc && <img className="btn-image" src={imgSrc} alt={imgName} />}
       <span className="btn-label">{children}</span>
-    </button>
+    </a>
   );
 }
 
 export function ConnectWalletButton({ imgSrc, children, onClick, className = undefined }) {
-  let classNames = cx("btn btn-primary btn-sm connect-wallet", className);
   return (
-    <button className={classNames} onClick={onClick}>
-      {imgSrc && <img className="btn-image" src={imgSrc} alt={children} />}
+    <button className="connect-wallet-btn" onClick={onClick}>
+      {imgSrc && <IoMdWallet size={20}/>}
       <span className="btn-label">{children}</span>
     </button>
   );

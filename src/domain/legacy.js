@@ -495,7 +495,7 @@ export function useLeveragePrice(chainId, libraries, active) {
   );
 
   const vaultAddress = getContract(chainId, "Vault");
-  const nativeTokenAddress = getTokenBySymbol(chainId, "WBNB").address;
+  const nativeTokenAddress = getTokenBySymbol(chainId, getConstant(chainId, "wrappedTokenSymbol")).address;
   const { data: nativeTokenPrice, mutate: updateNativeTokenPrice } = useSWR(
     [`StakeV2:ethPrice:${active}`, chainId, vaultAddress, "getMinPrice", nativeTokenAddress],
     {

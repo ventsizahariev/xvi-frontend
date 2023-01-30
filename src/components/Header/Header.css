@@ -6,7 +6,14 @@
   left: 0;
   right: 0;
 }
-
+.App-header-user a.App-social-link {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .App-header.large {
   height: 6.2rem;
   backdrop-filter: blur(4px);
@@ -63,7 +70,7 @@
 
 .App-header-drawer .App-header-link-container .a,
 .App-header-drawer .App-header-link-container a {
-  font-size: 1.4rem;
+  font-size: var(--font-sm);
   line-height: 1.8rem;
   font-weight: normal;
   letter-spacing: 0.1px;
@@ -167,7 +174,7 @@
   padding: 1.8rem 1.7rem;
   display: block;
   color: #a0a3c4;
-  font-size: 1.5rem;
+  font-size: var(--font-base);
   line-height: 1.8rem;
   font-weight: normal;
 }
@@ -192,7 +199,7 @@
   cursor: pointer;
   border: none;
   border-radius: 1.5rem;
-  font-size: 1.5rem;
+  font-size: var(--font-base);
   background: none;
   color: white;
   padding: 0;
@@ -266,7 +273,6 @@
   }
 
   .App-header.small {
-    height: 6.2rem;
     backdrop-filter: blur(4px);
     display: flex;
     justify-content: space-between;
@@ -320,19 +326,100 @@
     margin: 0.4rem 0.5rem;
   }
 
+  .App-header-user > .connect-wallet-btn svg {
+    display: none;
+  }
+  .App-header-user > .connect-wallet-btn {
+    padding: 0.4rem 0.8rem;
+    background: none;
+    border: none;
+  }
   .App-header.small {
     padding-left: 0.6rem;
     padding-right: 0.6rem;
   }
 
   .App-header .App-header-link-main {
-    padding: 0.155rem !important;
-    margin-left: 0rem !important;
+    /* padding: 0.155rem !important;
+    margin-left: 0rem !important; */
   }
 }
 
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   .App-header-drawer {
     background: #0e0f1f;
+  }
+}
+
+.header-trade-btn {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(146.31deg, #ffdea8 20.31%, #f9bd5d 47.62%, #e58d05 96.67%);
+  border-radius: 8.9rem;
+  color: #222121;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.header-trade-btn img {
+  margin-right: 0.4rem;
+}
+.is-sticky {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.header-sticky-notification {
+  padding: 1rem 8rem;
+  background: linear-gradient(
+    90deg,
+    #e58d05 0%,
+    #f2ab37 15.62%,
+    #f9bd5d 18.23%,
+    #fcce83 22.92%,
+    #ffdea8 30.21%,
+    #f9bd5d 35.42%,
+    #f2ab37 42.71%,
+    #efb65a 59.9%,
+    #e58d05 100%
+  );
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.header-sticky-notification-hide {
+  display: none;
+}
+.header-sticky-noti-title {
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  text-align: center;
+  color: #222121;
+  width: 100%;
+}
+.header-sticky-noti-title-close-btn {
+  width: 2.4rem;
+  height: 2.4rem;
+  background: linear-gradient(146.31deg, #3d3c3d 20.31%, #313131 47.62%, #262626 96.67%);
+  border-radius: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cecece;
+}
+.App-header-user > .connect-wallet-btn {
+  margin-right: 1.2rem;
+}
+@media (max-width: 1033px) {
+  .header-sticky-notification {
+    padding: 1rem 3.2rem;
   }
 }

@@ -4,14 +4,15 @@ import cx from "classnames";
 import { AppHeaderUser } from "./AppHeaderUser";
 import { HeaderLink } from "./HeaderLink";
 import { AppHeaderLinks } from "./AppHeaderLinks";
-
-import logoImg from "../../img/ic_gmx_custom.svg";
-import logoSmallImg from "../../img/logo_GMX_small.svg";
+import {Trans} from "@lingui/macro";
+import logoImg from "../../img/Logo XVI.svg";
+import logoSmallImg from "../../img/logo_XVI_small.svg";
 import { RiMenuLine } from "react-icons/ri";
 import { FaTimes } from "react-icons/fa";
 import { AnimatePresence as FramerAnimatePresence, motion } from "framer-motion";
 
 import "./Header.css";
+import { isHomeSite } from "../../lib/legacy";
 
 // Fix framer-motion old React FC type (solved in react 18)
 const AnimatePresence = (props: React.ComponentProps<typeof FramerAnimatePresence> & { children: ReactNode }) => (
@@ -47,6 +48,12 @@ export function Header({
   const [isNativeSelectorModalVisible, setIsNativeSelectorModalVisible] = useState(false);
 
   useEffect(() => {
+    window.addEventListener('scroll', isSticky);
+    return () => {
+        window.removeEventListener('scroll', isSticky);
+    };
+  });
+  useEffect(() => {
     if (isDrawerVisible) {
       document.body.style.overflow = "hidden";
     } else {
@@ -57,7 +64,15 @@ export function Header({
       document.body.style.overflow = "unset";
     };
   }, [isDrawerVisible]);
-
+  const isSticky = (e) => {
+    const header = document.querySelector('.header-section');
+    const scrollTop = window.scrollY;
+    scrollTop >= 250 ? header?.classList.add('is-sticky') : header?.classList.remove('is-sticky');
+    if ( scrollTop >= 250 && showStickyNode == 0 ) {
+      setShowStickyNode(1);
+    }
+  };
+  const [showStickyNode, setShowStickyNode] = useState(0);
   return (
     <>
       {isDrawerVisible && (
@@ -90,7 +105,15 @@ export function Header({
           )}
         </AnimatePresence>
       )}
-      <header>
+      <header className="header-section">
+        <div className={showStickyNode == 1 ? "header-sticky-notification" :"header-sticky-notification-hide"}>
+          <div className="header-sticky-noti-title">
+            <Trans>The XVI Community is coming together. Get your tickets to breakpoint, Nov. 4-7 In Lisbon!</Trans>
+          </div>
+          <div className="header-sticky-noti-title-close-btn" onClick = { () => {setShowStickyNode(2)}}>
+            <FaTimes/>
+          </div>
+          </div>
         <div className="App-header large">
           <div className="App-header-container-left">
             <HeaderLink
@@ -101,13 +124,10 @@ export function Header({
               redirectPopupTimestamp={redirectPopupTimestamp}
               showRedirectModal={showRedirectModal}
             >
+              <img src={logoImg} className="big" alt="GMX Logo" />
               <img src={logoSmallImg} className="small" alt="GMX Logo" />
-              <span style={{ fontSize: 28, color: "white" }}>
-                <img src={logoImg} className="big" alt="GMX Logo" style={{ height: 24 }} />
-                &nbsp;LeveragePro
-              </span>
             </HeaderLink>
-            <AppHeaderLinks redirectPopupTimestamp={redirectPopupTimestamp} showRedirectModal={showRedirectModal} />
+              <AppHeaderLinks redirectPopupTimestamp={redirectPopupTimestamp} showRedirectModal={showRedirectModal} />
           </div>
           <div className="App-header-container-right">
             <AppHeaderUser
@@ -159,13 +179,13 @@ export function Header({
             variants={slideVariants}
             transition={{ duration: 0.2 }}
           >
-            <AppHeaderLinks
-              small
-              openSettings={openSettings}
-              clickCloseIcon={() => setIsDrawerVisible(false)}
-              redirectPopupTimestamp={redirectPopupTimestamp}
-              showRedirectModal={showRedirectModal}
-            />
+              <AppHeaderLinks
+                small
+                openSettings={openSettings}
+                clickCloseIcon={() => setIsDrawerVisible(false)}
+                redirectPopupTimestamp={redirectPopupTimestamp}
+                showRedirectModal={showRedirectModal}
+              />
           </motion.div>
         )}
       </AnimatePresence>

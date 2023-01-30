@@ -4,24 +4,39 @@ import { useWeb3React } from "@web3-react/core";
 import { setTraderReferralCodeByUser, validateReferralCodeExists } from "../../domain/referrals";
 import { REFERRAL_CODE_REGEX } from "./referralsHelper";
 import { useDebounce } from "../../lib/legacy";
-
+import TradeIcon from "../../img/referral_trade_icon.png";
+import WalletIcon from "../../img/wallet_icon.png";
 function JoinReferralCode({ setPendingTxns, pendingTxns, active, connectWallet }) {
   return (
-    <div className="referral-card section-center mt-medium">
-      <h2 className="title">
-        <Trans>Enter Referral Code</Trans>
-      </h2>
-      <p className="sub-title">
-        <Trans>Please input a referral code to benefit from fee discounts.</Trans>
-      </p>
-      <div className="card-action">
-        {active ? (
-          <ReferralCodeForm setPendingTxns={setPendingTxns} pendingTxns={pendingTxns} />
-        ) : (
-          <button className="App-cta Exchange-swap-button" type="submit" onClick={connectWallet}>
-            <Trans>Connect Wallet</Trans>
-          </button>
-        )}
+    <div className="referral-card">
+      <div className="referral-card-header">
+        <img src={TradeIcon} width={48} height={48} />
+        <div className="referral-card-title">
+          <div className="referral-card-main-title">
+            <Trans>Traders</Trans>
+          </div>
+          <div className="referral-card-sub-title">
+            <Trans>Lorem Ipsum is simply dummy text of the printing</Trans>
+          </div>
+        </div>
+      </div>
+      <div className="referral-card-body">
+        <h2 className="title">
+          <Trans>Enter Referral Code</Trans>
+        </h2>
+        <p className="sub-title">
+          <Trans>Please input a referral code to benefit from fee discounts.</Trans>
+        </p>
+        <div className="card-action">
+          {active ? (
+            <ReferralCodeForm setPendingTxns={setPendingTxns} pendingTxns={pendingTxns} />
+          ) : (
+            <button className="App-button-option-light Exchange-swap-button" type="submit" onClick={connectWallet}>
+              <img src={WalletIcon} />
+              <Trans>Connect Wallet</Trans>
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -147,7 +162,7 @@ export function ReferralCodeForm({
           setReferralCode(value);
         }}
       />
-      <button type="submit" className="App-cta Exchange-swap-button" disabled={!isPrimaryEnabled()}>
+      <button type="submit" className="App-button-option-light Exchange-swap-button" disabled={!isPrimaryEnabled()}>
         {getPrimaryText()}
       </button>
     </form>

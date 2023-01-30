@@ -1,14 +1,14 @@
 import React, { useRef, useEffect } from "react";
 import cx from "classnames";
 import { motion, AnimatePresence } from "framer-motion";
-
-import { MdClose } from "react-icons/md";
+import { t } from "@lingui/macro";
+import { MdClose, MdSearch } from "react-icons/md";
 
 import "./Modal.css";
 import useLockBodyScroll from "../../lib/useLockBodyScroll";
 
 export default function Modal(props) {
-  const { isVisible, setIsVisible, className, zIndex, onAfterOpen, disableBodyScrollLock } = props;
+  const { isVisible, setIsVisible, className, zIndex, onAfterOpen, disableBodyScrollLock, type } = props;
   const modalRef = useRef(null);
 
   useLockBodyScroll(modalRef, isVisible, disableBodyScrollLock);
@@ -55,12 +55,23 @@ export default function Modal(props) {
           ></div>
           <div className="Modal-content">
             <div className="Modal-title-bar">
-              <div className="Modal-title">{props.label}</div>
+              <div className="Modal-title">
+              {type == "token-selector" ? <>
+                  <MdSearch fontSize={20}/>
+                  <input
+                  type="text"
+                  placeholder={t`Search name or paste address`}
+                  value={props.searchKeyword}
+                  onChange={(e) => props.onSearchKeywordChange(e)}
+                  onKeyDown={props._handleKeyDown}
+                  className="token-selector-input"
+                />
+                  </> :<>{props.label}</>}
+              </div>
               <div className="Modal-close-button" onClick={() => setIsVisible(false)}>
                 <MdClose fontSize={20} className="Modal-close-icon" />
               </div>
             </div>
-            <div className="divider" />
             <div className="Modal-body" ref={modalRef}>
               {props.children}
             </div>

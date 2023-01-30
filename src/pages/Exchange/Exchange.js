@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo, useCallback, forwardRef, useImperativeHandle } from "react";
-import { Trans, t } from "@lingui/macro";
+import { Trans, t, Plural } from "@lingui/macro";
 import { useWeb3React } from "@web3-react/core";
 import useSWR from "swr";
 import { ethers } from "ethers";
@@ -52,6 +52,7 @@ import Tab from "../../components/Tab/Tab";
 import Footer from "../../components/Footer/Footer";
 
 import "./Exchange.css";
+import ExternalLink from "../../components/ExternalLink/ExternalLink";
 const { AddressZero } = ethers.constants;
 
 const PENDING_POSITION_VALID_DURATION = 600 * 1000;
@@ -73,7 +74,7 @@ function pushSuccessNotification(chainId, message, e) {
     <div>
       {message}{" "}
       <a href={txUrl} target="_blank" rel="noopener noreferrer">
-        View
+        <Trans>View</Trans>
       </a>
     </div>
   );
@@ -93,7 +94,7 @@ function pushErrorNotification(chainId, message, e) {
     <div>
       {message}{" "}
       <a href={txUrl} target="_blank" rel="noopener noreferrer">
-        View
+        <Trans>View</Trans>
       </a>
     </div>
   );
@@ -927,7 +928,8 @@ export const Exchange = forwardRef((props, ref) => {
   };
 
   return (
-    <div className="Exchange page-layout">
+    <>
+    <div className="Exchange page-layout default-container">
       {showBanner && <ExchangeBanner hideBanner={hideBanner} />}
       <div className="Exchange-content">
         <div className="Exchange-left">
@@ -990,7 +992,9 @@ export const Exchange = forwardRef((props, ref) => {
         </div>
         <div className="Exchange-lists small">{getListSection()}</div>
       </div>
-      <Footer />
+      
     </div>
+    <Footer />
+    </>
   );
 });

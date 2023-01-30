@@ -1,9 +1,12 @@
 .App-header-network {
   position: relative;
-  margin-left: 2.4rem;
-  border: 1px solid var(--dark-blue-border);
-  border-radius: var(--border-radius-sm);
-  height: 3.6rem;
+  margin-left: 1.2rem;
+  background: rgba(49, 49, 49, 0.6);
+  /* Tundora/60% */
+
+  border: 1px solid rgba(61, 60, 61, 0.6);
+  border-radius: 8.9rem;
+  height: 4rem;
   display: inline-flex;
   align-items: center;
   color: white;
@@ -15,6 +18,9 @@
 
 .network-dropdown {
   display: inline-flex;
+  padding: 0.8rem;
+  align-items: center;
+  justify-content: center;
 }
 .network-dropdown-items {
   min-width: 17rem;
@@ -26,28 +32,51 @@
 
 .network-dropdown-divider {
   margin-bottom: 0.8rem;
-  border-bottom: 1px solid #ffffff29;
+  border-bottom: 1px solid rgba(49, 49, 49, 0.6);
 }
 .network-dropdown:hover {
-  background: var(--dark-blue-hover);
   cursor: pointer;
 }
+.network-dropdown:active {
+}
 
-.network-dropdown > button {
-  height: 3.6rem;
+.network-dropdown > button.transparent {
   border-radius: 0.4rem;
+  border: none;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  margin-left: 1.2rem;
+}
+.network-dropdown > button.transparent-BSCTestnet {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
   border: none;
   pointer-events: none;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 0 0.8rem;
+  background: #e7b230;
+}
+.network-dropdown > button.transparent-VelasTestnet {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: none;
+  pointer-events: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #0d48dc;
 }
 
 .network-dropdown-icon {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  object-fit: contain;
 }
 
 .language-popup .Modal-content {
@@ -68,7 +97,7 @@
 .network-dropdown-menu-item {
   display: flex;
   align-items: center;
-  padding: 0.8rem;
+  padding: 0.8rem 1.2rem;
   justify-content: space-between;
 }
 .last-dropdown-menu {
@@ -81,8 +110,8 @@
 }
 .network-option {
   cursor: pointer;
-  background: var(--dark-blue);
-  border: 1px solid var(--dark-blue-border);
+  background: #272727;
+  border: 1px solid #313131;
   border-radius: 0.4rem;
   padding: 0.8rem 1.5rem;
   display: flex;
@@ -101,13 +130,13 @@
 }
 
 .network-option span {
-  font-size: 1.5rem;
+  font-size: var(--font-base);
   letter-spacing: 0.29px;
   color: #fff;
 }
 
 .network-option-img-label {
-  font-size: 1.6rem;
+  font-size: var(--font-md);
   line-height: 2rem;
   letter-spacing: 0.29px;
   color: #fff;
@@ -165,21 +194,28 @@
   height: 0.8rem;
   border-radius: 50%;
 }
-.active-dot.Arbitrum {
-  background-color: #4275a8;
+.network-dropdown-menu-item.menu-item .menu-item-icon {
+  border-radius: 0.8rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  background: rgba(49, 49, 49, 0.6);
 }
-.active-dot.Avalanche {
-  background-color: #e84142;
+
+.network-dropdown-menu-item.menu-item.BSCTestnet {
+  background: rgba(49, 49, 49, 0.4);
 }
-.active-dot.BSCTestnet {
-   background-color: #E7B230;
+.network-dropdown-menu-item.menu-item.BSCTestnet .menu-item-icon {
+  background-color: #e7b230;
+  border-radius: 0.8rem;
 }
-.active-dot.BSC {
-  background-color: #e84142;
+.network-dropdown-menu-item.menu-item.VelasTestnet {
+  background: rgba(49, 49, 49, 0.4);
 }
-.active-dot.VelasTestnet {
-  background-color: #0037C1;
+.network-dropdown-menu-item.menu-item.VelasTestnet .menu-item-icon {
+  background-color: #0d48dc;
+  border-radius: 0.8rem;
 }
+
 .network-dropdown-label {
   font-size: 1.25rem;
   margin-bottom: 0.8rem;
@@ -189,7 +225,18 @@
 .more-options {
   margin-top: 1rem;
 }
-
+.language-dropdown-menu {
+  width: 32px;
+  height: 18px;
+  opacity: 0.5;
+}
+.language-dropdown-menu.active {
+  opacity: 1;
+}
+.language-dropdown-menu img {
+  width: 100%;
+  height: 100%;
+}
 @media (max-width: 1033px) {
   .App-header-network {
     margin-left: 1.6rem;

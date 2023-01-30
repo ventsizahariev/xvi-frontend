@@ -23,7 +23,7 @@ export default function BuyInputSection(props) {
     <div className="Exchange-swap-section buy-input">
       <div className="Exchange-swap-section-top">
         <div className="muted">
-          {topLeftLabel}: {balance}
+          {topLeftLabel}
         </div>
         <div className={cx("align-right", { clickable: onClickTopRightLabel })} onClick={onClickTopRightLabel}>
           <span className="Exchange-swap-label muted">{topRightLabel}</span>&nbsp;
@@ -33,8 +33,10 @@ export default function BuyInputSection(props) {
         </div>
       </div>
       <div className="Exchange-swap-section-bottom">
+      <div className="PositionEditor-token-symbol">{props.children}</div>
         <div className="Exchange-swap-input-container">
           {!staticInput && (
+            <>
             <input
               type="number"
               min="0"
@@ -43,15 +45,17 @@ export default function BuyInputSection(props) {
               value={inputValue}
               onChange={onInputValueChange}
             />
+            <div className="input-exchange-usd">(-$18)</div>
+            </>
           )}
           {staticInput && <div className="InputSection-static-input">{inputValue}</div>}
-          {showMaxButton && (
+          {/* {showMaxButton && (
             <div className="Exchange-swap-max" onClick={onClickMax}>
               <Trans>MAX</Trans>
             </div>
-          )}
+          )} */}
         </div>
-        <div className="PositionEditor-token-symbol">{props.children}</div>
+        
       </div>
     </div>
   );

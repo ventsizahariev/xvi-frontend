@@ -1,35 +1,34 @@
 import React from "react";
 import cx from "classnames";
-import { t } from "@lingui/macro";
+import { Trans } from "@lingui/macro";
 import "./Footer.css";
-import logoImg from "../../img/ic_gmx_custom.svg";
-import twitterIcon from "../../img/ic_twitter.svg";
-import discordIcon from "../../img/ic_discord.svg";
-import telegramIcon from "../../img/ic_telegram.svg";
-import githubIcon from "../../img/ic_github.svg";
-import mediumIcon from "../../img/ic_medium.svg";
+import logoImg from "../../img/Logo XVI.svg";
+import BottomImage from '../../img/footer_bottom.png';
 import { NavLink } from "react-router-dom";
-import { isHomeSite, getAppBaseUrl, shouldShowRedirectModal } from "../../lib/legacy";
+import { isHomeSite } from "../../lib/legacy";
+import {FaFacebook, FaTwitter, FaMediumM, FaInstagramSquare, FaDiscord, FaTelegramPlane} from 'react-icons/fa';
+import ExternalLink from "../ExternalLink/ExternalLink";
 
-const footerLinks = {
-  home: [
-    { text: t`Terms and Conditions`, link: "about:blank", external: true },
-    { text: t`Referral Terms`, link: "about:blank", external: true },
-    { text: t`Media Kit`, link: "about:blank", external: true },
-    // { text: "Jobs", link: "/jobs", isAppLink: true },
-  ],
-  app: [
-    { text: t`Media Kit`, link: "about:blank", external: true },
-    // { text: "Jobs", link: "/jobs" },
-  ],
-};
-
-const socialLinks = [
-  { link: "about:blank", name: "Twitter", icon: twitterIcon },
-  { link: "about:blank", name: "Medium", icon: mediumIcon },
-  { link: "about:blank", name: "Github", icon: githubIcon },
-  { link: "about:blank", name: "Telegram", icon: telegramIcon },
-  { link: "about:blank", name: "Discord", icon: discordIcon },
+// const footerLinks = {
+//   home: [
+//     { text: t`Terms and Conditions`, link: "about:blank", external: true },
+//     { text: t`Referral Terms`, link: "about:blank", external: true },
+//     { text: t`Media Kit`, link: "about:blank", external: true },
+//     // { text: "Jobs", link: "/jobs", isAppLink: true },
+//   ],
+//   app: [
+//     { text: t`Media Kit`, link: "about:blank", external: true },
+//     // { text: "Jobs", link: "/jobs" },
+//   ],
+// };
+const SOCIAL_LINKS = [
+  { link: "https://twitter.com/GMX_IO", name: "Twitter", icon: <FaTwitter/> },
+  { link: "https://medium.com/@gmx.io", name: "Medium", icon: <FaMediumM/> },
+  { link: "https://t.me/GMX_IO", name: "Telegram", icon: <FaTelegramPlane/> },
+  // { link: "https://github.com/gmx-io", name: "Github", icon: githubIcon },
+  { link: "https://facebook.com/gmx-io", name: "FaceBook", icon: <FaFacebook/> },
+  { link: "https://instgram.com/gmx-io", name: "Instagram", icon: <FaInstagramSquare/> },
+  { link: "https://discord.com/invite/ymN38YefH9", name: "Discord", icon: <FaDiscord/> },
 ];
 
 export default function Footer({ showRedirectModal, redirectPopupTimestamp }) {
@@ -37,60 +36,90 @@ export default function Footer({ showRedirectModal, redirectPopupTimestamp }) {
 
   return (
     <div className="Footer">
-      <div className={cx("Footer-wrapper", { home: isHome })}>
-        <div className="Footer-logo">
-          <a style={{ fontSize: 28, color: "white" }}>
-            <img src={logoImg} className="big" alt="GMX Logo" style={{ height: 24 }} />
-            &nbsp;LeveragePro
-          </a>
-        </div>
-        <div className="Footer-social-link-block">
-          {socialLinks.map((platform) => {
-            return (
-              <a
-                key={platform.name}
-                className="App-social-link"
-                href={platform.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={platform.icon} alt={platform.name} />
-              </a>
-            );
-          })}
-        </div>
-        <div className="Footer-links">
-          {footerLinks[isHome ? "home" : "app"].map(({ external, text, link, isAppLink }) => {
-            if (external) {
-              return (
-                <a key={text} target="_blank" href={link} className="Footer-link" rel="noopener noreferrer">
-                  {text}
-                </a>
-              );
-            }
-            if (isAppLink) {
-              if (shouldShowRedirectModal(redirectPopupTimestamp)) {
-                return (
-                  <div key={text} className="Footer-link a" onClick={() => showRedirectModal(link)}>
-                    {text}
-                  </div>
-                );
-              } else {
-                const baseUrl = getAppBaseUrl();
-                return (
-                  <a key={text} href={baseUrl + link} className="Footer-link">
-                    {text}
-                  </a>
-                );
-              }
-            }
-            return (
-              <NavLink key={link} to={link} className="Footer-link" activeClassName="active">
-                {text}
+      <div className="Footer-wrapper">
+        <div className="Footer-top"/>
+        <div className="Footer-middle">
+          <div className="Footer-logo">
+            <img src={logoImg} alt="MetaMask" />
+            
+            <div className="copyright">
+              <Trans>&copy;Copyright XVI 2022. All rights reserves <br/></Trans>
+              <NavLink to="/terms-and-conditions" className="Footer-link" activeClassName="active">
+                <Trans>Terms and Conditions</Trans>
+              </NavLink> | &nbsp;
+              <NavLink to="/referral-terms" className="Footer-link" activeClassName="active">
+                <Trans>Privacy Policy</Trans>
               </NavLink>
-            );
-          })}
+            </div>
+          </div>
+          <div className="social-footer">
+            <div className="social-products">
+              <div className="social-products-tag">Products</div>
+              <NavLink to="/terms-copy" className="Footer-link" activeClassName="active">
+                <Trans>Updates</Trans>
+              </NavLink>
+              <NavLink to="/terms-copy" className="Footer-link" activeClassName="active">
+                <Trans>Community</Trans>
+              </NavLink>
+              <NavLink to="/terms-copy" className="Footer-link" activeClassName="active">
+                <Trans>Partnership</Trans>
+              </NavLink>
+              <NavLink to="/terms-copy" className="Footer-link" activeClassName="active">
+                <Trans>Security</Trans>
+              </NavLink>
+            </div>
+            <div className="social-products">
+              <div className="social-products-tag">Company</div>
+              <NavLink to="/terms-copy" className="Footer-link" activeClassName="active">
+                <Trans>About</Trans>
+              </NavLink>
+              <NavLink to="/terms-copy" className="Footer-link" activeClassName="active">
+                <Trans>Blog</Trans>
+              </NavLink>
+              <NavLink to="/terms-copy" className="Footer-link" activeClassName="active">
+                <Trans>Join Us</Trans>
+              </NavLink>
+            </div>
+            <div className="social-products">
+              <div className="social-products-tag">Developers</div>
+              <NavLink to="/terms-copy" className="Footer-link" activeClassName="active">
+                <Trans>Github</Trans>
+              </NavLink>
+              <NavLink to="/terms-copy" className="Footer-link" activeClassName="active">
+                <Trans>Documentation</Trans>
+              </NavLink>
+              <NavLink to="/terms-copy" className="Footer-link" activeClassName="active">
+                <Trans>Careers</Trans>
+              </NavLink>
+            </div>
+            <div className="social-products">
+              <div className="social-products-tag">Help</div>
+              <NavLink to="/terms-copy" className="Footer-link" activeClassName="active">
+                <Trans>Talk to Support</Trans>
+              </NavLink>
+              <NavLink to="/terms-copy" className="Footer-link" activeClassName="active">
+                <Trans>Support Docs</Trans>
+              </NavLink>
+              <NavLink to="/terms-copy" className="Footer-link" activeClassName="active">
+                <Trans>System Status</Trans>
+              </NavLink>
+            </div>
+            <div className="social-products-connected">
+              <div className="social-products-tag">Get Connected</div>
+                {SOCIAL_LINKS.map((platform) => {
+                  return (
+                    <ExternalLink key={platform.name} className="App-social-link" href={platform.link} >
+                      {platform.icon}
+                    </ExternalLink>
+                  );
+                })}
+            </div>
+          </div>
         </div>
+        
+
+        <img className="footer-bottom" src={BottomImage} />
+        
       </div>
     </div>
   );

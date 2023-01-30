@@ -18,48 +18,70 @@ msgstr ""
 #~ msgid ", and use GMX with its built-in browser"
 #~ msgstr ", 그 후 지갑이 내장된 브라우저로 GMX를 이용해주세요"
 
-#: src/App/App.js:197
-#: src/App/App.js:219
+#: src/App/App.js:198
+#: src/App/App.js:220
 msgid ", and use LeveragePro with its built-in browser"
 msgstr ""
 
-#: src/pages/Dashboard/DashboardV2.js:595
+#: src/components/Exchange/ExchangeTVChart.js:452
+msgid "24h Change"
+msgstr ""
+
+#: src/components/Exchange/ExchangeTVChart.js:459
+msgid "24h High"
+msgstr ""
+
+#: src/components/Exchange/ExchangeTVChart.js:466
+msgid "24h Low"
+msgstr ""
+
+#: src/pages/Dashboard/DashboardV2.js:604
 msgid "24h Volume"
 msgstr "24시간 거래량"
+
+#: src/pages/Home/Home.js:179
+msgid "<0/>Launch Exchange"
+msgstr ""
+
+#: src/components/Header/AppHeaderUser.tsx:95
+#: src/components/Header/AppHeaderUser.tsx:126
+msgid "<0/>Trade"
+msgstr ""
 
 #: src/components/Exchange/OrdersToa.js:52
 msgid "<0>Insufficient liquidity to execute the order</0><1>The mark price which is an aggregate of exchange prices did not reach the specified price</1><2>The specified price was reached but not long enough for it to be executed</2><3>No keeper picked up the order for execution</3>"
 msgstr "<0>주문을 체결하기 위한 유동성이 부족합니다</0><1>시장 평균가가 지정된 가격에 도달하지 않았습니다</1><2>지정된 가격에 도달했지만 실행하기에 충분한 시간이 지나지 않았습니다</2>주문을 체결할 수 있는 키퍼가 없습니다.<3>"
 
-#: src/pages/Stake/StakeV2.js:564
+#: src/pages/Stake/StakeV2.js:567
 msgid "<0>This will withdraw and unreserve all tokens as well as pause vesting.<1/><2/>esGMX tokens that have been converted to GMX will remain as GMX tokens.<3/><4/>To claim GMX tokens without withdrawing, use the \"Claim\" button under the Total Rewards section.<5/><6/></0>"
 msgstr "<0>모든 토큰이 인출되고 취소되며 베스팅이 중지됩니다.<1/><2/>GMX로 변환된 esGMX 토큰은 GMX 토큰으로 유지됩니다.<3/><4/>인출하지 않고 GMX 토큰을 수령하기 위해서는 총 보상 섹션 아래의 \"수령하기\" 버튼을 사용해주세요."
 
-#: src/components/Exchange/SwapBox.js:2105
+#: src/components/Exchange/SwapBox.js:2217
 msgid "A snapshot of the USD value of your collateral is taken when the position is opened."
 msgstr ""
 
-#: src/components/Glp/GlpSwap.js:748
+#: src/components/Glp/GlpSwap.js:756
 msgid "APR"
 msgstr "APR"
 
-#: src/pages/Stake/StakeV2.js:1545
-#: src/pages/Stake/StakeV2.js:1813
+#: src/pages/Stake/StakeV2.js:1549
+#: src/pages/Stake/StakeV2.js:1830
 msgid "APRs are updated weekly on Wednesday and will depend on the fees collected for the week."
 msgstr "APR은 매주 수요일에 업데이트되며 한 주 동안 쌓인 수수료에 따라 달라집니다."
 
-#: src/components/Glp/GlpSwap.js:980
-#: src/components/Glp/GlpSwap.js:987
+#: src/components/Glp/GlpSwap.js:1019
+#: src/components/Glp/GlpSwap.js:1026
 msgid "AVAILABLE"
 msgstr "사용가능"
 
-#: src/components/Header/AppHeaderLinks.tsx:102
-#: src/pages/Ecosystem/Ecosystem.js:418
-#: src/pages/Ecosystem/Ecosystem.js:462
-#: src/pages/Ecosystem/Ecosystem.js:517
-#: src/pages/Ecosystem/Ecosystem.js:618
+#: src/components/Footer/Footer.js:74
+#: src/pages/Ecosystem/Ecosystem.js:600
 msgid "About"
 msgstr "대하여"
+
+#: src/components/Header/AppHeaderLinks.tsx:110
+msgid "About Us"
+msgstr ""
 
 #: src/components/Exchange/OrdersToa.js:24
 msgid "Accept terms to enable orders"
@@ -73,6 +95,10 @@ msgstr "주문의 실행이 보장되지 않으며 트리거 주문이 트리거
 msgid "Account"
 msgstr "계정"
 
+#: src/components/Glp/GlpSwap.js:1063
+msgid "Action"
+msgstr ""
+
 #: src/pages/Actions/Actions.js:159
 msgid "Actions"
 msgstr "액션"
@@ -81,15 +107,15 @@ msgstr "액션"
 msgid "Active Referral Code"
 msgstr "활성화된 추천 코드"
 
-#: src/pages/Dashboard/AssetDropdown.js:55
+#: src/pages/Dashboard/AssetDropdown.js:66
 msgid "Add to Metamask"
 msgstr "메타마스크에 추가해주세요"
 
-#: src/components/Referrals/JoinReferralCode.js:91
+#: src/components/Referrals/JoinReferralCode.js:106
 msgid "Adding referral code failed."
 msgstr "추천 코드 추가 실패"
 
-#: src/components/Referrals/JoinReferralCode.js:55
+#: src/components/Referrals/JoinReferralCode.js:70
 msgid "Adding..."
 msgstr "추가중..."
 
@@ -101,7 +127,8 @@ msgstr "추가로, 트리거 주문은 시장가 주문이며 트리거 가격�
 #~ msgid "Address copied to your clipboard"
 #~ msgstr "주소가 클립보드에 복사되었습니다."
 
-#: src/pages/Referrals/Referrals.js:33
+#: src/components/Referrals/AddAffiliateCode.js:22
+#: src/pages/Referrals/Referrals.js:34
 msgid "Affiliates"
 msgstr "제휴"
 
@@ -114,14 +141,14 @@ msgid "After claiming, the esGMX tokens will be airdropped to your account on th
 msgstr "수령 후, esGMX 토큰은 7일 이내에 선택한 네트워크의 계정으로 에어드랍됩니다."
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:206
-msgid "After you have BNB, set your network to <0>Binance</0> then click the button below:"
-msgstr ""
+#~ msgid "After you have BNB, set your network to <0>Binance</0> then click the button below:"
+#~ msgstr ""
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:240
-msgid "After you have ETH, set your network to <0>Arbitrum</0> then click the button below:"
-msgstr "ETH를 소지한 후 네트워크를 <0>Arbitrum</0>으로 설정한 뒤 아래의 버튼을 클릭합니다."
+#~ msgid "After you have ETH, set your network to <0>Arbitrum</0> then click the button below:"
+#~ msgstr "ETH를 소지한 후 네트워크를 <0>Arbitrum</0>으로 설정한 뒤 아래의 버튼을 클릭합니다."
 
-#: src/App/App.js:576
+#: src/App/App.js:609
 msgid "Allowed Slippage"
 msgstr "허용 가능한 슬리피지"
 
@@ -139,39 +166,39 @@ msgid "Amount to claim"
 msgstr "수령할 양"
 
 #: src/pages/Home/Home.js:181
-msgid "An aggregate of high-quality price feeds determine when liquidations occur. This keeps positions safe from temporary wicks."
-msgstr "고품질의 여러 가격 피드를 통해 청산 발생 시기를 결정합니다. 이것은 일시적인 가격 변화로부터 포지션을 안전하게 유지합니다."
+#~ msgid "An aggregate of high-quality price feeds determine when liquidations occur. This keeps positions safe from temporary wicks."
+#~ msgstr "고품질의 여러 가격 피드를 통해 청산 발생 시기를 결정합니다. 이것은 일시적인 가격 변화로부터 포지션을 안전하게 유지합니다."
 
-#: src/pages/Ecosystem/Ecosystem.js:580
-#~ msgid "Announcement"
-#~ msgstr "공지"
+#: src/pages/Ecosystem/Ecosystem.js:558
+msgid "Announcement"
+msgstr "공지"
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js:174
-#: src/pages/Stake/StakeV2.js:652
+#: src/pages/Stake/StakeV2.js:655
 msgid "Approve GMX"
 msgstr "GMX 승인"
 
 #: src/components/Exchange/PositionEditor.js:256
-#: src/components/Exchange/SwapBox.js:1174
-#: src/components/Glp/GlpSwap.js:513
+#: src/components/Exchange/SwapBox.js:1252
+#: src/components/Glp/GlpSwap.js:525
 msgid "Approve {0}"
 msgstr "{0} 승인"
 
-#: src/pages/Stake/StakeV2.js:148
+#: src/pages/Stake/StakeV2.js:151
 msgid "Approve {stakingTokenSymbol}"
 msgstr "{stakingTokenSymbol} 승인"
 
-#: src/pages/Stake/StakeV2.js:649
+#: src/pages/Stake/StakeV2.js:652
 msgid "Approving GMX..."
 msgstr "GMX 승인중..."
 
 #: src/components/Exchange/PositionEditor.js:253
-#: src/components/Exchange/SwapBox.js:1171
-#: src/components/Glp/GlpSwap.js:510
+#: src/components/Exchange/SwapBox.js:1249
+#: src/components/Glp/GlpSwap.js:522
 msgid "Approving {0}..."
 msgstr "{0} 승인중..."
 
-#: src/pages/Stake/StakeV2.js:145
+#: src/pages/Stake/StakeV2.js:148
 msgid "Approving {stakingTokenSymbol}..."
 msgstr "{stakingTokenSymbol} 승인중..."
 
@@ -189,45 +216,49 @@ msgstr "승인중..."
 #~ msgid "Arbitrum APR:"
 #~ msgstr "Arbitrum APR:"
 
+#: src/pages/Home/Home.js:198
+msgid "Are you new? Read our documentation"
+msgstr ""
+
 #: src/pages/Dashboard/DashboardV2.js:564
 #~ msgid "Assets Under Management: GMX staked (All chains) + GLP pool ({chainName})"
 #~ msgstr "자산운용규모: 스테이킹된 GMX + GLP 풀 ({chainName})"
 
-#: src/pages/Dashboard/DashboardV2.js:576
+#: src/pages/Dashboard/DashboardV2.js:585
 msgid "Assets Under Management: LeveragePro staked (All chains) + GLP pool ({chainName})"
 msgstr ""
 
-#: src/components/Glp/GlpSwap.js:1311
+#: src/components/Glp/GlpSwap.js:1351
 msgid "Available"
 msgstr "사용가능"
 
-#: src/components/Exchange/SwapBox.js:344
-#: src/components/Exchange/SwapBox.js:2242
-#: src/components/Exchange/SwapBox.js:2389
+#: src/components/Exchange/SwapBox.js:422
+#: src/components/Exchange/SwapBox.js:2369
+#: src/components/Exchange/SwapBox.js:2519
 msgid "Available Liquidity"
 msgstr "사용가능 유동성"
 
-#: src/components/Glp/GlpSwap.js:983
-#: src/components/Glp/GlpSwap.js:1286
+#: src/components/Glp/GlpSwap.js:1022
+#: src/components/Glp/GlpSwap.js:1326
 msgid "Available amount to deposit into GLP."
 msgstr "GLP에 예치할 수 있는 양"
 
-#: src/components/Glp/GlpSwap.js:994
-#: src/components/Glp/GlpSwap.js:1317
+#: src/components/Glp/GlpSwap.js:1033
+#: src/components/Glp/GlpSwap.js:1357
 msgid "Available amount to withdraw from GLP."
 msgstr "GLP에서 인출할 수 있는 양"
 
-#: src/pages/Home/Home.js:221
+#: src/pages/Home/Home.js:335
 msgid "Available on your preferred network"
 msgstr "선택한 네트워크에서 이용가능"
 
-#: src/components/Glp/GlpSwap.js:827
+#: src/components/Glp/GlpSwap.js:836
 msgid "Available:"
 msgstr "사용가능"
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:179
-msgid "Avalanche"
-msgstr "Avalanche"
+#~ msgid "Avalanche"
+#~ msgstr "Avalanche"
 
 #: src/components/TokenCard/TokenCard.js:65
 #: src/components/TokenCard/TokenCard.js:97
@@ -235,30 +266,34 @@ msgstr "Avalanche"
 #~ msgstr "Avalanche APR:"
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:125
-msgid "Avax is needed on Avalanche to purchase GMX."
-msgstr "Avalanche에서 GMX를 구입하기 위해서는 Avax가 필요합니다."
+#~ msgid "Avax is needed on Avalanche to purchase GMX."
+#~ msgstr "Avalanche에서 GMX를 구입하기 위해서는 Avax가 필요합니다."
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:46
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:66
 msgid "BNB is needed on Binance to purchase LeveragePro."
 msgstr ""
 
 #: src/components/TokenCard/TokenCard.js:66
 #: src/components/TokenCard/TokenCard.js:96
-msgid "BSC APR:"
+#~ msgid "BSC APR:"
+#~ msgstr ""
+
+#: src/components/TokenCard/TokenCard.js:63
+#: src/components/TokenCard/TokenCard.js:94
+msgid "BSC ARP:"
 msgstr ""
 
-#: src/components/Exchange/SwapBox.js:1920
+#: src/components/Exchange/SwapBox.js:2019
 msgid "Balance"
 msgstr "잔고"
 
-#: src/components/Glp/GlpSwap.js:800
-#: src/components/Glp/GlpSwap.js:859
-#: src/components/Glp/GlpSwap.js:875
+#: src/components/Glp/GlpSwap.js:809
+#: src/components/Glp/GlpSwap.js:884
+#: src/components/Glp/GlpSwap.js:909
 msgid "Balance:"
 msgstr "잔고:"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:78
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:158
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:139
 msgid "Banxa"
 msgstr "Banxa"
 
@@ -266,20 +301,27 @@ msgstr "Banxa"
 msgid "Begin Transfer"
 msgstr "전송시작"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:111
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:188
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:100
 msgid "Binance"
 msgstr "Binance"
 
-#: src/pages/Stake/StakeV2.js:1594
+#: src/pages/Home/Home.js:346
+msgid "Binance Smart Chain"
+msgstr ""
+
+#: src/components/Footer/Footer.js:77
+msgid "Blog"
+msgstr ""
+
+#: src/pages/Stake/StakeV2.js:1605
 msgid "Boost Percentage"
 msgstr "증가된 비율"
 
-#: src/pages/Stake/StakeV2.js:1294
+#: src/pages/Stake/StakeV2.js:1293
 msgid "Boost your rewards with Multiplier Points. <0>More info</0>."
 msgstr "멀티플라이어 포인트를 사용해서 보상을 증가시키세요. <0>더 자세한 정보</0>."
 
-#: src/components/Exchange/SwapBox.js:2346
+#: src/components/Exchange/SwapBox.js:2476
 msgid "Borrow Fee"
 msgstr "차용 수수료"
 
@@ -291,19 +333,19 @@ msgstr "차용 수수료 / 일: ${0}"
 msgid "Borrow Fee: ${0}"
 msgstr "차용 수수료: ${0}"
 
-#: src/components/Header/AppHeaderLinks.tsx:79
+#: src/components/Header/AppHeaderLinks.tsx:74
 msgid "Buy"
 msgstr "구매"
 
-#: src/pages/BuyGlp/BuyGlp.js:34
+#: src/pages/BuyGlp/BuyGlp.js:35
 msgid "Buy / Sell GLP"
 msgstr "GLP 구매 / 판매"
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:122
-msgid "Buy / Transfer AVAX"
-msgstr ""
+#~ msgid "Buy / Transfer AVAX"
+#~ msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:43
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:59
 msgid "Buy / Transfer BNB"
 msgstr ""
 
@@ -312,10 +354,10 @@ msgstr ""
 #~ msgstr "ETH 구매 / 전송"
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:140
-msgid "Buy AVAX"
-msgstr "AVAX 구매 "
+#~ msgid "Buy AVAX"
+#~ msgstr "AVAX 구매 "
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:60
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:63
 msgid "Buy BNB"
 msgstr ""
 
@@ -323,34 +365,42 @@ msgstr ""
 #~ msgid "Buy ETH"
 #~ msgstr "ETH 구매 "
 
-#: src/components/Glp/GlpSwap.js:97
-#: src/components/Glp/GlpSwap.js:520
-#: src/components/Glp/GlpSwap.js:792
-#: src/pages/Stake/StakeV2.js:1878
+#: src/components/Glp/GlpSwap.js:532
+#: src/pages/Stake/StakeV2.js:1895
 msgid "Buy GLP"
 msgstr "GLP 구매"
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:234
-msgid "Buy GMX"
-msgstr "GMX 구매"
+#~ msgid "Buy GMX"
+#~ msgstr "GMX 구매"
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:263
-msgid "Buy GMX Bonds"
-msgstr "GMX 채권 구매"
+#~ msgid "Buy GMX Bonds"
+#~ msgstr "GMX 채권 구매"
 
 #: src/pages/Buy/Buy.js:21
 #~ msgid "Buy GMX or GLP"
 #~ msgstr "GMX 혹은 GLP 구매"
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:200
-msgid "Buy LeveragePro"
-msgstr ""
+#~ msgid "Buy LeveragePro"
+#~ msgstr ""
 
-#: src/pages/Buy/Buy.js:21
+#: src/pages/Buy/Buy.js:22
 msgid "Buy LeveragePro or GLP"
 msgstr ""
 
-#: src/components/Glp/GlpSwap.js:551
+#: src/components/Glp/GlpSwap.js:100
+#: src/components/Glp/GlpSwap.js:800
+msgid "Buy XVI"
+msgstr ""
+
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:125
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:377
+msgid "Buy XVI Token"
+msgstr ""
+
+#: src/components/Glp/GlpSwap.js:563
 msgid "Buy failed."
 msgstr "구매 실패"
 
@@ -364,21 +414,22 @@ msgstr "구매 실패"
 #~ msgid "Buy on Avalanche"
 #~ msgstr "Avalanche에서 구매"
 
-#: src/components/TokenCard/TokenCard.js:73
-#: src/components/TokenCard/TokenCard.js:103
+#: src/components/TokenCard/TokenCard.js:107
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:45
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:375
 msgid "Buy on Binance"
 msgstr ""
 
-#: src/components/Glp/GlpSwap.js:550
+#: src/components/Glp/GlpSwap.js:562
 msgid "Buy submitted."
 msgstr "구매 제출 완료"
 
-#: src/components/Glp/GlpSwap.js:1188
-#: src/components/Glp/GlpSwap.js:1377
+#: src/components/Glp/GlpSwap.js:1227
+#: src/components/Glp/GlpSwap.js:1417
 msgid "Buy with {0}"
 msgstr "{0}로 구매"
 
-#: src/components/Glp/GlpSwap.js:517
+#: src/components/Glp/GlpSwap.js:529
 msgid "Buying..."
 msgstr "구매중..."
 
@@ -388,46 +439,50 @@ msgstr "구매중..."
 msgid "Cancel"
 msgstr "취소"
 
-#: src/pages/Exchange/Exchange.js:722
+#: src/pages/Exchange/Exchange.js:723
 msgid "Cancel failed."
 msgstr "취소 실패"
 
-#: src/pages/Exchange/Exchange.js:723
+#: src/pages/Exchange/Exchange.js:724
 msgid "Cancel submitted."
 msgstr "취소 제출 완료"
 
-#: src/pages/Exchange/Exchange.js:806
+#: src/pages/Exchange/Exchange.js:807
 msgid "Cancel {0} {orderText}"
 msgstr "{0} {orderText} 취소"
 
-#: src/pages/Exchange/Exchange.js:833
+#: src/components/Footer/Footer.js:92
+msgid "Careers"
+msgstr ""
+
+#: src/pages/Exchange/Exchange.js:834
 msgid "Chart positions"
 msgstr "차트 포지션"
 
-#: src/components/Glp/GlpSwap.js:911
-#: src/components/Glp/GlpSwap.js:929
+#: src/components/Glp/GlpSwap.js:945
+#: src/components/Glp/GlpSwap.js:963
 msgid "Check the \"Save on Fees\" section below to get the lowest fee percentages."
 msgstr "최저 수수료로 이용하려면 \"수수료 절약\" 섹션 아래를 선택하세요."
 
-#: src/components/Referrals/AddAffiliateCode.js:92
-#: src/components/Referrals/JoinReferralCode.js:61
+#: src/components/Referrals/AddAffiliateCode.js:104
+#: src/components/Referrals/JoinReferralCode.js:76
 msgid "Checking code..."
 msgstr "코드 확인중..."
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js:296
-#: src/pages/Stake/StakeV2.js:815
-#: src/pages/Stake/StakeV2.js:1728
-#: src/pages/Stake/StakeV2.js:1751
+#: src/pages/Stake/StakeV2.js:818
+#: src/pages/Stake/StakeV2.js:1738
+#: src/pages/Stake/StakeV2.js:1763
 msgid "Claim"
 msgstr "수령하기"
 
-#: src/pages/Stake/StakeV2.js:739
-#: src/pages/Stake/StakeV2.js:863
+#: src/pages/Stake/StakeV2.js:742
+#: src/pages/Stake/StakeV2.js:866
 msgid "Claim GMX Rewards"
 msgstr "GMX 보상 수령하기"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js:328
-#: src/pages/Stake/StakeV2.js:838
+#: src/pages/Stake/StakeV2.js:841
 msgid "Claim completed!"
 msgstr "수령 완료!"
 
@@ -435,13 +490,13 @@ msgstr "수령 완료!"
 msgid "Claim esGMX"
 msgstr "esGMX 수령하기"
 
-#: src/pages/Stake/StakeV2.js:749
-#: src/pages/Stake/StakeV2.js:868
+#: src/pages/Stake/StakeV2.js:752
+#: src/pages/Stake/StakeV2.js:871
 msgid "Claim esGMX Rewards"
 msgstr "esGMX 보상 수령하기"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js:327
-#: src/pages/Stake/StakeV2.js:837
+#: src/pages/Stake/StakeV2.js:840
 msgid "Claim failed."
 msgstr "수령 실패"
 
@@ -449,25 +504,28 @@ msgstr "수령 실패"
 msgid "Claim submitted!"
 msgstr "수령 제출 완료!"
 
-#: src/pages/Stake/StakeV2.js:836
+#: src/pages/Stake/StakeV2.js:839
 msgid "Claim submitted."
 msgstr "수령 제출 완료."
 
-#: src/pages/Stake/StakeV2.js:759
-#: src/pages/Stake/StakeV2.js:873
+#: src/pages/Stake/StakeV2.js:762
+#: src/pages/Stake/StakeV2.js:876
 msgid "Claim {wrappedTokenSymbol} Rewards"
 msgstr "{wrappedTokenSymbol} 보상 수령하기"
 
-#: src/pages/Stake/StakeV2.js:2087
+#: src/pages/Stake/StakeV2.js:2115
 msgid "Claimable"
 msgstr "수령가능"
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js:293
-#: src/pages/Stake/StakeV2.js:813
+#: src/pages/Stake/StakeV2.js:816
 msgid "Claiming..."
 msgstr "수령중..."
 
+#: src/App/App.js:595
+#: src/App/App.js:645
 #: src/components/Exchange/PositionSeller.js:644
+#: src/components/ModalViews/RedirectModal.js:51
 msgid "Close"
 msgstr "포지션 종료"
 
@@ -491,15 +549,15 @@ msgstr "수익없이 포지션 종료"
 msgid "Closing..."
 msgstr "닫는중..."
 
-#: src/components/Referrals/AddAffiliateCode.js:89
+#: src/components/Referrals/AddAffiliateCode.js:101
 msgid "Code already taken"
 msgstr "이미 사용된 코드입니다"
 
-#: src/App/App.js:558
+#: src/App/App.js:574
 msgid "Coinbase Wallet"
 msgstr "Coinbase 지갑"
 
-#: src/App/App.js:212
+#: src/App/App.js:213
 msgid "Coinbase Wallet not detected."
 msgstr "Coinbase 지갑이 존재하지 않습니다."
 
@@ -514,16 +572,21 @@ msgstr "담보"
 msgid "Collateral ({0})"
 msgstr ""
 
-#: src/components/Exchange/SwapBox.js:2079
-#: src/components/Exchange/SwapBox.js:2097
+#: src/components/Exchange/SwapBox.js:2191
+#: src/components/Exchange/SwapBox.js:2209
+#: src/components/Glp/GlpSwap.js:931
 msgid "Collateral In"
+msgstr ""
+
+#: src/components/Footer/Footer.js:62
+msgid "Community"
 msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js:429
 msgid "Community Projects"
 msgstr "커뮤니티 프로젝트"
 
-#: src/pages/Ecosystem/Ecosystem.js:595
+#: src/pages/Ecosystem/Ecosystem.js:576
 msgid "Community-led Telegram groups."
 msgstr "커뮤니티 주도 텔레그램 그룹"
 
@@ -535,41 +598,41 @@ msgstr "계정 전송 완료"
 msgid "Complete Transfer"
 msgstr "전송 완료"
 
-#: src/pages/Stake/StakeV2.js:657
-#: src/pages/Stake/StakeV2.js:1723
-#: src/pages/Stake/StakeV2.js:1746
+#: src/pages/Stake/StakeV2.js:660
+#: src/pages/Stake/StakeV2.js:1733
+#: src/pages/Stake/StakeV2.js:1755
 msgid "Compound"
 msgstr "수령후 스테이킹"
 
-#: src/pages/Stake/StakeV2.js:691
+#: src/pages/Stake/StakeV2.js:694
 msgid "Compound completed!"
 msgstr "수령 후 스테이킹 완료!"
 
-#: src/pages/Stake/StakeV2.js:690
+#: src/pages/Stake/StakeV2.js:693
 msgid "Compound failed."
 msgstr "수령 후 스테이킹 실패."
 
-#: src/pages/Stake/StakeV2.js:689
+#: src/pages/Stake/StakeV2.js:692
 msgid "Compound submitted!"
 msgstr "수령 후 스테이킹 제출 완료!"
 
-#: src/pages/Stake/StakeV2.js:655
+#: src/pages/Stake/StakeV2.js:658
 msgid "Compounding..."
 msgstr "수령 및 스테이킹중..."
 
-#: src/components/Header/AppHeaderUser.tsx:95
+#: src/components/Header/AppHeaderUser.tsx:86
 msgid "Connect"
 msgstr "연동"
 
-#: src/components/Exchange/SwapBox.js:1147
-#: src/components/Glp/GlpSwap.js:496
-#: src/components/Header/AppHeaderUser.tsx:95
-#: src/components/Referrals/AddAffiliateCode.js:34
-#: src/components/Referrals/JoinReferralCode.js:22
-#: src/pages/Stake/StakeV2.js:1756
-#: src/pages/Stake/StakeV2.js:1997
-#: src/pages/Stake/StakeV2.js:2109
-#: src/pages/Stake/StakeV2.js:2193
+#: src/components/Exchange/SwapBox.js:1225
+#: src/components/Glp/GlpSwap.js:508
+#: src/components/Header/AppHeaderUser.tsx:86
+#: src/components/Referrals/AddAffiliateCode.js:45
+#: src/components/Referrals/JoinReferralCode.js:36
+#: src/pages/Stake/StakeV2.js:1769
+#: src/pages/Stake/StakeV2.js:2017
+#: src/pages/Stake/StakeV2.js:2138
+#: src/pages/Stake/StakeV2.js:2233
 msgid "Connect Wallet"
 msgstr "지갑 연동"
 
@@ -582,11 +645,11 @@ msgstr "계속하기"
 #~ msgid "Convert esGMX tokens to GMX tokens.<0/>Please read the <1>vesting details</1> before using the vaults."
 #~ msgstr "esGMX 토큰을 GMX 토큰으로 변환합니다.<0/>볼트를 사용하기 전 <1>베스팅 세부정보</1>를 읽어주세요."
 
-#: src/pages/Stake/StakeV2.js:2010
+#: src/pages/Stake/StakeV2.js:2033
 msgid "Convert esLeveragePro tokens to LeveragePro tokens.<0/>Please read the <1>vesting details</1> before using the vaults."
 msgstr ""
 
-#: src/pages/Stake/StakeV2.js:878
+#: src/pages/Stake/StakeV2.js:881
 msgid "Convert {wrappedTokenSymbol} to {nativeTokenSymbol}"
 msgstr "{wrappedTokenSymbol}를 {nativeTokenSymbol}로 변환"
 
@@ -598,7 +661,7 @@ msgstr "복사"
 msgid "Copy Address"
 msgstr "주소 복사"
 
-#: src/components/Referrals/AddAffiliateCode.js:109
+#: src/components/Referrals/AddAffiliateCode.js:121
 msgid "Create"
 msgstr "생성"
 
@@ -610,7 +673,7 @@ msgstr "주문 생성"
 msgid "Create Referral Code"
 msgstr "추천 코드 생성"
 
-#: src/components/Exchange/SwapBox.js:1435
+#: src/components/Exchange/SwapBox.js:1513
 msgid "Created limit order for {0} {1}: {2} USD!"
 msgstr "{0} {1}: {2} USD의 지정가 주문을 생성하였습니다!"
 
@@ -618,29 +681,29 @@ msgstr "{0} {1}: {2} USD의 지정가 주문을 생성하였습니다!"
 msgid "Creating Order..."
 msgstr "주문 생성중..."
 
-#: src/components/Referrals/AddAffiliateCode.js:106
+#: src/components/Referrals/AddAffiliateCode.js:118
 msgid "Creating..."
 msgstr "생성중..."
 
-#: src/pages/Ecosystem/Ecosystem.js:468
-#: src/pages/Ecosystem/Ecosystem.js:523
+#: src/pages/Ecosystem/Ecosystem.js:465
+#: src/pages/Ecosystem/Ecosystem.js:512
 msgid "Creator"
 msgstr "제작자"
 
-#: src/components/Glp/GlpSwap.js:1142
-#: src/components/Glp/GlpSwap.js:1296
+#: src/components/Glp/GlpSwap.js:1181
+#: src/components/Glp/GlpSwap.js:1336
 msgid "Current Pool Amount"
 msgstr "현재 풀 양"
 
-#: src/pages/Stake/StakeV2.js:509
+#: src/pages/Stake/StakeV2.js:512
 msgid "Current Reserved: {0}<0/>Additional reserve required: {1}<1/>{2}"
 msgstr "현재 리저브: {0}<0/>추가 리저브 필요: {1}><1/>{2}"
 
-#: src/components/Header/AppHeaderLinks.tsx:61
+#: src/components/Header/AppHeaderLinks.tsx:64
 msgid "Dashboard"
 msgstr "대시보드"
 
-#: src/pages/Ecosystem/Ecosystem.js:483
+#: src/pages/Ecosystem/Ecosystem.js:479
 msgid "Dashboards"
 msgstr "대시보드"
 
@@ -649,7 +712,7 @@ msgstr "대시보드"
 msgid "Date"
 msgstr "날짜"
 
-#: src/pages/Home/Home.js:127
+#: src/pages/Home/Home.js:205
 msgid "Decentralized<0/>Perpetual Exchange"
 msgstr "탈중화<0/>퍼페추얼 거래소"
 
@@ -657,10 +720,10 @@ msgstr "탈중화<0/>퍼페추얼 거래소"
 #: src/components/Exchange/PositionEditor.js:272
 #: src/components/Exchange/PositionEditor.js:460
 #: src/components/Exchange/PositionEditor.js:464
-#: src/pages/Stake/StakeV2.js:424
-#: src/pages/Stake/StakeV2.js:435
-#: src/pages/Stake/StakeV2.js:2114
-#: src/pages/Stake/StakeV2.js:2198
+#: src/pages/Stake/StakeV2.js:427
+#: src/pages/Stake/StakeV2.js:438
+#: src/pages/Stake/StakeV2.js:2146
+#: src/pages/Stake/StakeV2.js:2241
 msgid "Deposit"
 msgstr "예치"
 
@@ -668,7 +731,7 @@ msgstr "예치"
 msgid "Deposit disabled, pending {0} upgrade"
 msgstr ""
 
-#: src/pages/Stake/StakeV2.js:393
+#: src/pages/Stake/StakeV2.js:396
 msgid "Deposit failed!"
 msgstr "예치 실패!"
 
@@ -676,7 +739,7 @@ msgstr "예치 실패!"
 msgid "Deposit failed."
 msgstr "예치 실패."
 
-#: src/pages/Stake/StakeV2.js:392
+#: src/pages/Stake/StakeV2.js:395
 msgid "Deposit submitted!"
 msgstr "예치 제출 완료!"
 
@@ -684,16 +747,16 @@ msgstr "예치 제출 완료!"
 msgid "Deposit submitted."
 msgstr "예치 제출 완료."
 
-#: src/pages/Stake/StakeV2.js:394
+#: src/pages/Stake/StakeV2.js:397
 msgid "Deposited!"
 msgstr "예치되었습니다!"
 
 #: src/components/Exchange/PositionEditor.js:247
-#: src/pages/Stake/StakeV2.js:422
+#: src/pages/Stake/StakeV2.js:425
 msgid "Depositing..."
 msgstr "예치중..."
 
-#: src/App/App.js:602
+#: src/App/App.js:635
 msgid "Disable order validations"
 msgstr "주문 밸리데이션 무효화"
 
@@ -701,13 +764,26 @@ msgstr "주문 밸리데이션 무효화"
 msgid "Disconnect"
 msgstr "연결 끊기"
 
-#: src/App/App.js:591
+#: src/App/App.js:624
 msgid "Display PnL after fees"
 msgstr "수수료포함 손익 표시"
 
-#: src/pages/Dashboard/DashboardV2.js:860
+#: src/pages/Dashboard/DashboardV2.js:882
+#: src/pages/Dashboard/DashboardV2.js:989
 msgid "Distribution"
 msgstr "배분"
+
+#: src/components/Footer/Footer.js:89
+msgid "Documentation"
+msgstr ""
+
+#: src/components/Header/AppHeaderLinks.tsx:105
+msgid "Documents"
+msgstr ""
+
+#: src/components/ModalViews/RedirectModal.js:43
+msgid "Don't show this message again for 30 days."
+msgstr ""
 
 #: src/components/Exchange/PositionShare.js:112
 msgid "Download"
@@ -717,12 +793,12 @@ msgstr "다운로드"
 #~ msgid "ETH is needed on Arbitrum to purchase GMX."
 #~ msgstr "Arbitrum에서 GMX를 구매하기 위해서는 ETH가 필요합니다."
 
-#: src/components/Header/AppHeaderLinks.tsx:70
-#: src/pages/Stake/StakeV2.js:1436
+#: src/components/Header/AppHeaderLinks.tsx:69
+#: src/pages/Stake/StakeV2.js:1437
 msgid "Earn"
 msgstr "보상"
 
-#: src/components/Header/AppHeaderLinks.tsx:97
+#: src/components/Header/AppHeaderLinks.tsx:83
 msgid "Ecosystem"
 msgstr "이코시스템"
 
@@ -743,14 +819,14 @@ msgstr "추천 코드 수정"
 
 #: src/components/Exchange/PositionEditor.js:268
 #: src/components/Exchange/PositionSeller.js:638
-#: src/components/Exchange/SwapBox.js:1164
+#: src/components/Exchange/SwapBox.js:1242
 msgid "Enable Leverage"
 msgstr "레버리지 유효화"
 
 #: src/components/Exchange/OrdersToa.js:26
 #: src/components/Exchange/OrdersToa.js:40
 #: src/components/Exchange/PositionSeller.js:623
-#: src/components/Exchange/SwapBox.js:1184
+#: src/components/Exchange/SwapBox.js:1262
 msgid "Enable Orders"
 msgstr "주문 유효화"
 
@@ -763,20 +839,20 @@ msgid "Enable deposit sent."
 msgstr "예치 유효화 제출 완료."
 
 #: src/components/Exchange/PositionSeller.js:667
-#: src/components/Exchange/SwapBox.js:1691
+#: src/components/Exchange/SwapBox.js:1769
 msgid "Enable leverage failed."
 msgstr "레버리지 유효화 실패."
 
 #: src/components/Exchange/PositionSeller.js:666
-#: src/components/Exchange/SwapBox.js:1690
+#: src/components/Exchange/SwapBox.js:1768
 msgid "Enable leverage sent."
 msgstr "레버리지 유효화 제출 완료"
 
-#: src/pages/Exchange/Exchange.js:755
+#: src/pages/Exchange/Exchange.js:756
 msgid "Enable orders failed."
 msgstr "주문 유효화 실패"
 
-#: src/pages/Exchange/Exchange.js:754
+#: src/pages/Exchange/Exchange.js:755
 msgid "Enable orders sent."
 msgstr "주문 유효화 제출 완료"
 
@@ -795,16 +871,16 @@ msgstr "레버리지 유효화"
 #: src/components/Exchange/PositionEditor.js:264
 #: src/components/Exchange/PositionSeller.js:630
 #: src/components/Exchange/PositionSeller.js:634
-#: src/components/Exchange/SwapBox.js:1158
-#: src/components/Exchange/SwapBox.js:1161
+#: src/components/Exchange/SwapBox.js:1236
+#: src/components/Exchange/SwapBox.js:1239
 msgid "Enabling Leverage..."
 msgstr "레버리지 유효화중"
 
 #: src/components/Exchange/OrdersToa.js:21
 #: src/components/Exchange/PositionSeller.js:617
 #: src/components/Exchange/PositionSeller.js:620
-#: src/components/Exchange/SwapBox.js:1178
-#: src/components/Exchange/SwapBox.js:1181
+#: src/components/Exchange/SwapBox.js:1256
+#: src/components/Exchange/SwapBox.js:1259
 msgid "Enabling Orders..."
 msgstr "주문 유효화중.."
 
@@ -820,17 +896,17 @@ msgstr "가격 입력"
 msgid "Enter Receiver Address"
 msgstr "수령 주소 입력"
 
-#: src/components/Referrals/JoinReferralCode.js:12
-#: src/components/Referrals/JoinReferralCode.js:58
+#: src/components/Referrals/JoinReferralCode.js:25
+#: src/components/Referrals/JoinReferralCode.js:73
 msgid "Enter Referral Code"
 msgstr "추천 코드 입력"
 
-#: src/components/Referrals/AddAffiliateCode.js:86
+#: src/components/Referrals/AddAffiliateCode.js:98
 msgid "Enter a code"
 msgstr "코드 입력"
 
-#: src/components/Exchange/SwapBox.js:801
-#: src/components/Exchange/SwapBox.js:874
+#: src/components/Exchange/SwapBox.js:879
+#: src/components/Exchange/SwapBox.js:952
 msgid "Enter a price"
 msgstr "가격 입력"
 
@@ -838,36 +914,36 @@ msgstr "가격 입력"
 #: src/components/Exchange/PositionEditor.js:192
 #: src/components/Exchange/PositionSeller.js:526
 #: src/components/Exchange/PositionSeller.js:529
-#: src/components/Exchange/SwapBox.js:782
-#: src/components/Exchange/SwapBox.js:785
-#: src/components/Exchange/SwapBox.js:857
-#: src/components/Exchange/SwapBox.js:871
-#: src/components/Glp/GlpSwap.js:427
-#: src/components/Glp/GlpSwap.js:430
+#: src/components/Exchange/SwapBox.js:860
+#: src/components/Exchange/SwapBox.js:863
+#: src/components/Exchange/SwapBox.js:935
+#: src/components/Exchange/SwapBox.js:949
+#: src/components/Glp/GlpSwap.js:439
+#: src/components/Glp/GlpSwap.js:442
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js:275
-#: src/pages/Stake/StakeV2.js:90
-#: src/pages/Stake/StakeV2.js:235
-#: src/pages/Stake/StakeV2.js:377
+#: src/pages/Stake/StakeV2.js:93
+#: src/pages/Stake/StakeV2.js:238
+#: src/pages/Stake/StakeV2.js:380
 msgid "Enter an amount"
 msgstr "수량 입력"
 
 #: src/pages/Home/Home.js:195
-msgid "Enter and exit positions with minimal spread and zero price impact. Get the optimal price without incurring additional costs."
-msgstr "최소한의 스프레드 및 가격 영향 없이 포지션을 열고 닫을 수 있습니다. 추가 비용 없이 최적의 가격에서 시작하세요."
+#~ msgid "Enter and exit positions with minimal spread and zero price impact. Get the optimal price without incurring additional costs."
+#~ msgstr "최소한의 스프레드 및 가격 영향 없이 포지션을 열고 닫을 수 있습니다. 추가 비용 없이 최적의 가격에서 시작하세요."
 
-#: src/components/Glp/GlpSwap.js:951
+#: src/components/Glp/GlpSwap.js:990
 msgid "Enter the amount of GLP you want to purchase in the order form, then check here to compare fees."
 msgstr "구매하고자 하는 GLP 양을 입력한 후 수수료를 비교하려면 여기를 확인하세요."
 
-#: src/components/Glp/GlpSwap.js:960
+#: src/components/Glp/GlpSwap.js:999
 msgid "Enter the amount of GLP you want to redeem in the order form, then check here to compare fees."
 msgstr "판매하고자 하는 GLP 양을 입력한 후 수수료를 비교하려면 여기를 확인하세요."
 
 #: src/components/Exchange/PositionSeller.js:1007
 #: src/components/Exchange/PositionsList.js:398
 #: src/components/Exchange/PositionsList.js:461
-#: src/components/Exchange/SwapBox.js:2135
-#: src/components/Exchange/SwapBox.js:2283
+#: src/components/Exchange/SwapBox.js:2249
+#: src/components/Exchange/SwapBox.js:2411
 msgid "Entry Price"
 msgstr "진입 가격"
 
@@ -875,7 +951,11 @@ msgstr "진입 가격"
 #~ msgid "Escrowed GMX APR"
 #~ msgstr "esGMX APR"
 
-#: src/components/Glp/GlpSwap.js:767
+#: src/pages/Stake/StakeV2.js:1916
+msgid "Escrowed LeveragePro"
+msgstr ""
+
+#: src/components/Glp/GlpSwap.js:775
 msgid "Escrowed LeveragePro APR"
 msgstr ""
 
@@ -883,43 +963,42 @@ msgstr ""
 msgid "Execution Fee"
 msgstr "실행 수수료"
 
-#: src/components/Exchange/SwapBox.js:2315
+#: src/components/Exchange/SwapBox.js:2445
 msgid "Exit Price"
 msgstr "매도 가격"
 
-#: src/components/Glp/GlpSwap.js:1010
+#: src/components/Glp/GlpSwap.js:1049
 msgid "FEES"
 msgstr "수수료"
 
 #: src/components/Exchange/PositionSeller.js:1107
-#: src/components/Glp/GlpSwap.js:897
-#: src/components/Glp/GlpSwap.js:1363
-#: src/components/Glp/GlpSwap.js:1366
-#: src/pages/Dashboard/DashboardV2.js:673
+#: src/components/Glp/GlpSwap.js:1403
+#: src/components/Glp/GlpSwap.js:1406
+#: src/pages/Dashboard/DashboardV2.js:682
 msgid "Fees"
 msgstr "수수료"
 
-#: src/components/Glp/GlpSwap.js:958
+#: src/components/Glp/GlpSwap.js:997
 msgid "Fees may vary depending on which asset you sell GLP for."
 msgstr "수수료는 GLP를 판매하는 자산에 따라 달라질 수 있습니다."
 
-#: src/components/Glp/GlpSwap.js:949
+#: src/components/Glp/GlpSwap.js:988
 msgid "Fees may vary depending on which asset you use to buy GLP."
 msgstr "수수료는 GLP를 구입하는 자산에 따라 달라질 수 있습니다."
 
-#: src/pages/Dashboard/DashboardV2.js:664
+#: src/pages/Dashboard/DashboardV2.js:673
 msgid "Fees since"
 msgstr "이후 수수료"
 
-#: src/components/Glp/GlpSwap.js:1017
+#: src/components/Glp/GlpSwap.js:1056
 msgid "Fees will be shown once you have entered an amount in the order form."
 msgstr "입력란에 수량을 입력하면 수수료가 표시됩니다."
 
-#: src/components/Exchange/SwapBox.js:1009
+#: src/components/Exchange/SwapBox.js:1087
 msgid "Fetching token info..."
 msgstr "토큰 정보 가져오는 중..."
 
-#: src/pages/Dashboard/DashboardV2.js:731
+#: src/pages/Dashboard/DashboardV2.js:741
 msgid "Floor Price Fund"
 msgstr "하한 가격 펀드"
 
@@ -931,24 +1010,24 @@ msgstr "상실 이익이 확인되지 않았습니다."
 #~ msgid "French"
 #~ msgstr "불어"
 
-#: src/components/Glp/GlpSwap.js:997
-#: src/components/Glp/GlpSwap.js:1320
+#: src/components/Glp/GlpSwap.js:1036
+#: src/components/Glp/GlpSwap.js:1360
 msgid "Funds not utilized by current open positions."
 msgstr "현재 열린 포지션에서 사용되지 않는 자금입니다."
 
-#: src/pages/Dashboard/DashboardV2.js:964
+#: src/pages/Dashboard/DashboardV2.js:1005
 msgid "GLP Index Composition"
 msgstr "GLP 인덱스 구성"
 
-#: src/components/Glp/GlpSwap.js:418
+#: src/components/Glp/GlpSwap.js:430
 msgid "GLP buy disabled, pending {0} upgrade"
 msgstr ""
 
-#: src/components/TokenCard/TokenCard.js:93
+#: src/components/TokenCard/TokenCard.js:102
 msgid "GLP is the liquidity provider token. Accrues 70% of the platform's generated fees."
 msgstr "GLP는 유동성 공급 토큰입니다. 플랫폼에서 생성되는 수수료의 70%를 축적하세요."
 
-#: src/components/Glp/GlpSwap.js:419
+#: src/components/Glp/GlpSwap.js:431
 msgid "GLP sell disabled, pending {0} upgrade"
 msgstr ""
 
@@ -957,12 +1036,12 @@ msgstr ""
 #~ msgstr "GMX 페이지"
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:269
-msgid "GMX bonds can be bought on Olympus Pro with a discount and a small vesting period:"
-msgstr "GMX 채권은 Olympus Pro에서 약간의 베스팅 기간과 함께 할인된 가격으로 구매할 수 있습니다."
+#~ msgid "GMX bonds can be bought on Olympus Pro with a discount and a small vesting period:"
+#~ msgstr "GMX 채권은 Olympus Pro에서 약간의 베스팅 기간과 함께 할인된 가격으로 구매할 수 있습니다."
 
-#: src/pages/Ecosystem/Ecosystem.js:489
-#~ msgid "GMX dashboards and analytics."
-#~ msgstr "GMX 대시보드 및 통계"
+#: src/pages/Ecosystem/Ecosystem.js:482
+msgid "GMX dashboards and analytics."
+msgstr "GMX 대시보드 및 통계"
 
 #: src/pages/Ecosystem/Ecosystem.js:390
 #~ msgid "GMX ecosystem pages."
@@ -981,8 +1060,8 @@ msgstr "GMX 채권은 Olympus Pro에서 약간의 베스팅 기간과 함께 할
 #~ msgid "GMX tokens can be claimed, use the options under the Total Rewards section to claim them."
 #~ msgstr "GMX를 수령할 수 있습니다. 총 보상 섹션 아래의 옵션을 사용해 수령하세요."
 
-#: src/pages/Stake/StakeV2.js:1150
-#: src/pages/Stake/StakeV2.js:1241
+#: src/pages/Stake/StakeV2.js:1149
+#: src/pages/Stake/StakeV2.js:1240
 msgid "GMX transfers not yet enabled"
 msgstr "GMX 전송이 아직 불가능합니다."
 
@@ -990,7 +1069,7 @@ msgstr "GMX 전송이 아직 불가능합니다."
 #~ msgid "GMX | Decentralized Perpetual Exchange"
 #~ msgstr "GMX | 탈중화 퍼페추얼 거래소"
 
-#: src/components/Referrals/AddAffiliateCode.js:18
+#: src/components/Referrals/AddAffiliateCode.js:28
 msgid "Generate Referral Code"
 msgstr "추천 코드 생성"
 
@@ -998,27 +1077,31 @@ msgstr "추천 코드 생성"
 #~ msgid "Get fee discounts and earn rebates through the GMX referral program.<0/>For more information, please read the <1>referral program details</1>."
 #~ msgstr "GMX 추천 프로그램을 통해 수수료 할인 및 리베이트를 받으세요.<0/>자세한 내용은 <1>추천 프로그램 세부 정보를 참조하세요."
 
-#: src/pages/Referrals/Referrals.js:124
+#: src/pages/Referrals/Referrals.js:126
 msgid "Get fee discounts and earn rebates through the LeveragePro referral program.<0/>For more information, please read the <1>referral program details</1>."
 msgstr ""
 
-#: src/components/Exchange/SwapBox.js:1191
+#: src/components/Footer/Footer.js:86
+msgid "Github"
+msgstr ""
+
+#: src/components/Exchange/SwapBox.js:1269
 msgid "High Slippage, Swap Anyway"
 msgstr "높은 슬리피지 상관 없이 스왑"
 
-#: src/components/Exchange/SwapBox.js:1215
+#: src/components/Exchange/SwapBox.js:1293
 msgid "High USDG Slippage, Long Anyway"
 msgstr "높은 USDG 슬리피지 상관 없이 롱 포지션 체결"
 
 #: src/components/Header/AppHeaderLinks.tsx:52
-msgid "Home"
-msgstr "홈"
+#~ msgid "Home"
+#~ msgstr "홈"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:108
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:97
 msgid "Hop"
 msgstr "Hop"
 
-#: src/App/App.js:596
+#: src/App/App.js:629
 msgid "Include PnL in leverage display"
 msgstr "레버리지 표시창에 손익 포함하기"
 
@@ -1026,11 +1109,11 @@ msgstr "레버리지 표시창에 손익 포함하기"
 msgid "Incorrect Account"
 msgstr "잘못된 계정입니다"
 
-#: src/components/Exchange/SwapBox.js:1150
+#: src/components/Exchange/SwapBox.js:1228
 msgid "Incorrect Network"
 msgstr "잘못된 네트워크입니다"
 
-#: src/components/Exchange/SwapBox.js:790
+#: src/components/Exchange/SwapBox.js:868
 msgid "Incorrect network"
 msgstr "잘못된 네트워크입니다"
 
@@ -1038,24 +1121,24 @@ msgstr "잘못된 네트워크입니다"
 msgid "Initial Collateral: ${0}"
 msgstr "초기 담보: ${0}"
 
-#: src/App/App.js:216
+#: src/App/App.js:217
 msgid "Install Coinbase Wallet"
 msgstr "코인베이스 지갑을 설치하세요"
 
-#: src/App/App.js:194
+#: src/App/App.js:195
 msgid "Install MetaMask"
 msgstr "메타마스크를 설치하세요"
 
-#: src/components/Glp/GlpSwap.js:450
+#: src/components/Glp/GlpSwap.js:462
 msgid "Insufficient GLP balance"
 msgstr "GLP 잔고 부족"
 
-#: src/components/Exchange/SwapBox.js:818
-#: src/components/Exchange/SwapBox.js:827
-#: src/components/Exchange/SwapBox.js:920
-#: src/components/Exchange/SwapBox.js:929
-#: src/components/Exchange/SwapBox.js:1520
-#: src/components/Glp/GlpSwap.js:460
+#: src/components/Exchange/SwapBox.js:896
+#: src/components/Exchange/SwapBox.js:905
+#: src/components/Exchange/SwapBox.js:998
+#: src/components/Exchange/SwapBox.js:1007
+#: src/components/Exchange/SwapBox.js:1598
+#: src/components/Glp/GlpSwap.js:472
 msgid "Insufficient liquidity"
 msgstr "유동성 부족"
 
@@ -1063,19 +1146,19 @@ msgstr "유동성 부족"
 #~ msgid "Insufficient liquidity\", true, \"BUFFER\""
 #~ msgstr "유동성 부족\", true, \"버퍼\""
 
-#: src/components/Exchange/SwapBox.js:977
-#: src/components/Exchange/SwapBox.js:986
-#: src/components/Exchange/SwapBox.js:1032
+#: src/components/Exchange/SwapBox.js:1055
+#: src/components/Exchange/SwapBox.js:1064
+#: src/components/Exchange/SwapBox.js:1110
 msgid "Insufficient liquidity, change \"Profits In\""
 msgstr "유동성 부족, \"손익\"을 변경하세요"
 
-#: src/pages/Stake/StakeV2.js:383
+#: src/pages/Stake/StakeV2.js:386
 msgid "Insufficient staked tokens"
 msgstr "스테이킹된 토큰 부족"
 
-#: src/components/Exchange/SwapBox.js:793
-#: src/components/Exchange/SwapBox.js:867
-#: src/components/Glp/GlpSwap.js:436
+#: src/components/Exchange/SwapBox.js:871
+#: src/components/Exchange/SwapBox.js:945
+#: src/components/Glp/GlpSwap.js:448
 msgid "Insufficient {0} balance"
 msgstr "{0} 잔고 부족"
 
@@ -1096,28 +1179,40 @@ msgstr "유효하지 않은 청산가"
 msgid "Invalid price, see warning"
 msgstr "유효하지 않은 가격, 경고문을 보세요"
 
-#: src/App/App.js:287
+#: src/App/App.js:290
 msgid "Invalid slippage value"
 msgstr "유효하지 않은 슬리피지 값"
+
+#: src/components/ModalViews/RedirectModal.js:55
+msgid "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has normal distribution of letters, as opposed to using"
+msgstr ""
 
 #: src/Footer.js:19
 #: src/Footer.js:23
 #~ msgid "Jobs"
 #~ msgstr "직업"
 
+#: src/components/Footer/Footer.js:80
+msgid "Join Us"
+msgstr ""
+
 #: src/components/SettingDropdown/SettingDropdown.js:66
 #~ msgid "Language"
 #~ msgstr "언어"
 
-#: src/pages/Home/Home.js:115
-msgid "Launch Exchange"
-msgstr "트레이드 시작하기"
+#: src/components/ModalViews/RedirectModal.js:31
+msgid "Launch App"
+msgstr ""
 
-#: src/components/Exchange/SwapBox.js:2429
+#: src/pages/Home/Home.js:115
+#~ msgid "Launch Exchange"
+#~ msgstr "트레이드 시작하기"
+
+#: src/components/Exchange/SwapBox.js:2562
 msgid "Leaderboard"
 msgstr "리더보드"
 
-#: src/components/Exchange/SwapBox.js:1563
+#: src/components/Exchange/SwapBox.js:1641
 msgid "Leave at least {0} {1} for gas"
 msgstr "가스를 위해 최소 {0} {1}을(를) 남겨주세요"
 
@@ -1132,28 +1227,34 @@ msgstr "남은 포지션이 10 USD 미만입니다."
 #: src/components/Exchange/PositionEditor.js:527
 #: src/components/Exchange/PositionSeller.js:1075
 #: src/components/Exchange/PositionsList.js:251
-#: src/components/Exchange/SwapBox.js:1925
-#: src/components/Exchange/SwapBox.js:2119
+#: src/components/Exchange/SwapBox.js:2024
+#: src/components/Exchange/SwapBox.js:2233
 msgid "Leverage"
 msgstr "레버리지"
 
-#: src/components/Exchange/SwapBox.js:850
+#: src/components/Exchange/SwapBox.js:928
 msgid "Leverage disabled, pending {0} upgrade"
 msgstr ""
 
-#: src/pages/Ecosystem/Ecosystem.js:384
-msgid "LeveragePro Pages"
+#: src/components/TokenCard/TokenCard.js:60
+#: src/pages/Dashboard/DashboardV2.js:768
+#: src/pages/Dashboard/DashboardV2.js:771
+msgid "LeveragePro"
 msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js:384
+#~ msgid "LeveragePro Pages"
+#~ msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js:486
-msgid "LeveragePro dashboards and analytics."
-msgstr ""
+#~ msgid "LeveragePro dashboards and analytics."
+#~ msgstr ""
 
 #: src/pages/Ecosystem/Ecosystem.js:387
-msgid "LeveragePro ecosystem pages."
-msgstr ""
+#~ msgid "LeveragePro ecosystem pages."
+#~ msgstr ""
 
-#: src/pages/Home/Home.js:224
+#: src/pages/Home/Home.js:338
 msgid "LeveragePro is currently live on Velas and BSC."
 msgstr ""
 
@@ -1161,12 +1262,12 @@ msgstr ""
 #~ msgid "LeveragePro is currently live on Velas and Belas."
 #~ msgstr ""
 
-#: src/components/TokenCard/TokenCard.js:61
+#: src/components/TokenCard/TokenCard.js:71
 msgid "LeveragePro is the utility and governance token. Accrues 30% of the platform's generated fees."
 msgstr ""
 
-#: src/pages/Stake/StakeV2.js:2100
-#: src/pages/Stake/StakeV2.js:2184
+#: src/pages/Stake/StakeV2.js:2128
+#: src/pages/Stake/StakeV2.js:2223
 msgid "LeveragePro tokens can be claimed, use the options under the Total Rewards section to claim them."
 msgstr ""
 
@@ -1174,18 +1275,15 @@ msgstr ""
 msgid "LeveragePro | Decentralized Perpetual Exchange"
 msgstr ""
 
-#: src/components/Exchange/SwapBox.js:1459
+#: src/components/Exchange/SwapBox.js:1537
 msgid "Limit order creation failed."
 msgstr "지정가 주문 생성 실패."
 
-#: src/components/Exchange/SwapBox.js:1457
+#: src/components/Exchange/SwapBox.js:1535
 msgid "Limit order submitted!"
 msgstr "지정가 주문 제출 완료!"
 
-#: src/pages/Ecosystem/Ecosystem.js:408
-#: src/pages/Ecosystem/Ecosystem.js:452
-#: src/pages/Ecosystem/Ecosystem.js:507
-#: src/pages/Ecosystem/Ecosystem.js:608
+#: src/pages/Ecosystem/Ecosystem.js:592
 msgid "Link"
 msgstr "링크"
 
@@ -1193,12 +1291,12 @@ msgstr "링크"
 #: src/components/Exchange/PositionSeller.js:1013
 #: src/components/Exchange/PositionsList.js:404
 #: src/components/Exchange/PositionsList.js:464
-#: src/components/Exchange/SwapBox.js:2150
+#: src/components/Exchange/SwapBox.js:2264
 msgid "Liq. Price"
 msgstr "청산가"
 
-#: src/components/Exchange/SwapBox.js:917
-#: src/components/Exchange/SwapBox.js:1018
+#: src/components/Exchange/SwapBox.js:995
+#: src/components/Exchange/SwapBox.js:1096
 msgid "Liquidity data not loaded"
 msgstr "유동성 데이터를 불러오지 못하였습니다."
 
@@ -1207,31 +1305,54 @@ msgid "Loading..."
 msgstr "로딩중..."
 
 #: src/components/Exchange/PositionsList.js:261
-#: src/components/Exchange/SwapBox.js:214
-#: src/components/Exchange/SwapBox.js:1044
+#: src/components/Exchange/SwapBox.js:227
+#: src/components/Exchange/SwapBox.js:1122
 #: src/pages/Actions/Actions.js:108
 #: src/pages/Actions/Actions.js:112
 msgid "Long"
 msgstr "롱"
 
-#: src/pages/Dashboard/DashboardV2.js:614
-#: src/pages/Dashboard/DashboardV2.js:628
+#: src/pages/Dashboard/DashboardV2.js:623
+#: src/pages/Dashboard/DashboardV2.js:637
 msgid "Long Positions"
 msgstr "롱 포지션"
 
-#: src/components/Exchange/SwapBox.js:1218
+#: src/components/Exchange/SwapBox.js:1296
 msgid "Long {0}"
 msgstr "롱 {0}"
 
-#: src/components/Referrals/AddAffiliateCode.js:21
+#: src/components/Referrals/AddAffiliateCode.js:31
 msgid "Looks like you don't have a referral code to share. <0/> Create one now and start earning rebates!"
 msgstr "공유할 수 있는 추천 코드가 없는 것 같습니다. <0/> 코드를 바로 생성해서 리베이트를 획득하세요!"
+
+#: src/components/Referrals/AddAffiliateCode.js:23
+#: src/components/Referrals/JoinReferralCode.js:19
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:59
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:125
+msgid "Lorem Ipsum is simply dummy text of the printing"
+msgstr ""
+
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:132
+#: src/pages/Ecosystem/Ecosystem.js:420
+msgid "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+msgstr ""
+
+#: src/components/ModalViews/RedirectModal.js:36
+msgid "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry."
+msgstr ""
+
+#: src/App/App.js:587
+msgid "Lorem Ipsum is simply dummy text of the printing and typesetting."
+msgstr ""
+
+#: src/components/ModalViews/RedirectModal.js:32
+msgid "Lorem ipsum is simply dummy text"
+msgstr ""
 
 #: src/pages/Actions/Actions.js:112
 msgid "Loss"
 msgstr "손실"
 
-#: src/components/BuyInputSection/BuyInputSection.js:50
 #: src/components/InputSection/InputSection.js:43
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js:461
 msgid "MAX"
@@ -1247,28 +1368,28 @@ msgstr "최대"
 msgid "Mark Price"
 msgstr "시장 평균가"
 
-#: src/pages/Dashboard/DashboardV2.js:819
-#: src/pages/Dashboard/DashboardV2.js:907
+#: src/pages/Dashboard/DashboardV2.js:834
+#: src/pages/Dashboard/DashboardV2.js:934
 msgid "Market Cap"
 msgstr "시가총액"
 
-#: src/pages/Stake/StakeV2.js:293
-#: src/pages/Stake/StakeV2.js:442
+#: src/pages/Stake/StakeV2.js:296
+#: src/pages/Stake/StakeV2.js:445
 msgid "Max"
 msgstr "최대"
 
-#: src/components/Glp/GlpSwap.js:503
+#: src/components/Glp/GlpSwap.js:515
 msgid "Max Capacity for {0} Reached"
 msgstr "{0}의 최대치에 도달했습니다."
 
-#: src/components/Glp/GlpSwap.js:1146
-#: src/components/Glp/GlpSwap.js:1300
+#: src/components/Glp/GlpSwap.js:1185
+#: src/components/Glp/GlpSwap.js:1340
 msgid "Max Pool Capacity"
 msgstr "풀 최대 수용량"
 
-#: src/pages/Stake/StakeV2.js:93
-#: src/pages/Stake/StakeV2.js:238
-#: src/pages/Stake/StakeV2.js:380
+#: src/pages/Stake/StakeV2.js:96
+#: src/pages/Stake/StakeV2.js:241
+#: src/pages/Stake/StakeV2.js:383
 msgid "Max amount exceeded"
 msgstr "최대 수량을 초과했습니다"
 
@@ -1276,7 +1397,7 @@ msgstr "최대 수량을 초과했습니다"
 msgid "Max close amount exceeded"
 msgstr "닫을 수 있는 최댜 수량을 초과했습니다"
 
-#: src/components/Exchange/SwapBox.js:886
+#: src/components/Exchange/SwapBox.js:964
 msgid "Max leverage: 30.5x"
 msgstr "최대 레버리지: 30.5x"
 
@@ -1288,57 +1409,60 @@ msgstr "최대 레버리지: 30.5xt"
 msgid "Max leverage: 30x"
 msgstr "최대 레버리지: 30x"
 
-#: src/components/Glp/GlpSwap.js:1088
+#: src/components/Glp/GlpSwap.js:1127
 msgid "Max pool capacity reached for {0}"
 msgstr "{0}의 최대 풀 수용량에 도달했습니다"
 
-#: src/components/Glp/GlpSwap.js:1252
+#: src/components/Glp/GlpSwap.js:1292
 msgid "Max pool capacity reached for {0}. Please mint GLP using another token"
 msgstr "{0}의 최대 풀 수용량에 도달했습니다"
 
-#: src/App/App.js:297
+#: src/App/App.js:300
 msgid "Max slippage precision is 0.01%"
 msgstr "허용 가능한 최대 슬리피지는 0.01%입니다"
 
-#: src/components/Exchange/SwapBox.js:955
+#: src/components/Exchange/SwapBox.js:1033
 msgid "Max {0} long exceeded"
 msgstr "{0} 롱 최대치를 초과했습니다"
 
-#: src/components/Exchange/SwapBox.js:1027
+#: src/components/Exchange/SwapBox.js:1105
 msgid "Max {0} short exceeded"
 msgstr "{0} 숏 최대치를 초과했습니다."
 
 #: src/components/Footer/Footer.js:18
 #: src/components/Footer/Footer.js:22
-msgid "Media Kit"
-msgstr "미디어 키트"
+#~ msgid "Media Kit"
+#~ msgstr "미디어 키트"
 
-#: src/App/App.js:552
+#: src/App/App.js:568
 msgid "MetaMask"
 msgstr "메타마스크"
 
-#: src/App/App.js:190
+#: src/App/App.js:191
 msgid "MetaMask not detected."
 msgstr "메타마스크가 탐지되지 않았습니다."
 
 #: src/components/Exchange/PositionEditor.js:214
 #: src/components/Exchange/PositionSeller.js:569
-#: src/components/Exchange/SwapBox.js:882
+#: src/components/Exchange/SwapBox.js:960
 msgid "Min leverage: 1.1x"
 msgstr "최소 레버리지: 1.1x"
 
 #: src/components/Exchange/PositionEditor.js:197
 #: src/components/Exchange/PositionEditor.js:200
-#: src/components/Exchange/SwapBox.js:878
+#: src/components/Exchange/SwapBox.js:956
 msgid "Min order: 10 USD"
 msgstr "최소 주문: 10 USD"
 
-#: src/pages/Stake/StakeV2.js:1284
+#: src/components/Header/HeaderDropDown.tsx:44
+msgid "More"
+msgstr ""
+
+#: src/pages/Stake/StakeV2.js:1283
 msgid "Multiplier Points APR"
 msgstr "멀티플라이어 포인트 APR"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:101
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:185
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:90
 msgid "Multiswap"
 msgstr "멀티스왑"
 
@@ -1351,8 +1475,12 @@ msgstr "순이익"
 #~ msgid "Networks"
 #~ msgstr "네트워크"
 
-#: src/components/NetworkDropdown/NetworkDropdown.js:56
+#: src/components/NetworkDropdown/NetworkDropdown.js:59
 msgid "Networks and Settings"
+msgstr ""
+
+#: src/pages/Home/Home.js:264
+msgid "Next <0/>"
 msgstr ""
 
 #: src/pages/Actions/Actions.js:98
@@ -1380,23 +1508,24 @@ msgstr "리베이트 분배 내역이 없습니다."
 msgid "Note that orders are not guaranteed to be executed.<0/><1/>This can occur in a few situations including but not exclusive to:"
 msgstr "주문 실행은 보장되지 않습니다.<0/><1/>이것은 다음과 같은 상황에 일어날 수 있습니다:"
 
-#: src/pages/BuyGlp/BuyGlp.js:45
+#: src/pages/BuyGlp/BuyGlp.js:46
 msgid "Note that there is a minimum holding time of 15 minutes after a purchase."
 msgstr "구매 후 최소 15분의 락업 시간이 있습니다."
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:273
-msgid "Olympus Pro"
-msgstr "Olympus Pro"
+#~ msgid "Olympus Pro"
+#~ msgstr "Olympus Pro"
 
-#: src/pages/Home/Home.js:155
+#: src/pages/Home/Home.js:236
 msgid "Open Interest"
 msgstr "미결제 약정"
 
-#: src/components/Exchange/SwapBox.js:1144
+#: src/components/Exchange/SwapBox.js:1222
 msgid "Open a position"
 msgstr "포지션 열기"
 
-#: src/pages/Dashboard/AssetDropdown.js:35
+#: src/pages/Dashboard/AssetDropdown.js:33
+#: src/pages/Dashboard/AssetDropdown.js:46
 msgid "Open in Coingecko"
 msgstr "Coingecko에서 보기"
 
@@ -1406,8 +1535,8 @@ msgstr "Coingecko에서 보기"
 #~ msgstr "Explorer에서 보기"
 
 #: src/pages/Home/Home.js:209
-msgid "Open positions through a simple swap interface. Conveniently swap from any supported asset into the position of your choice."
-msgstr "간단한 스왑 인터페이스를 통해 포지션을 열어보세요. 지원되는 자산내에서 원하는 포지션으로 편리하게 스왑할 수 있습니다."
+#~ msgid "Open positions through a simple swap interface. Conveniently swap from any supported asset into the position of your choice."
+#~ msgstr "간단한 스왑 인터페이스를 통해 포지션을 열어보세요. 지원되는 자산내에서 원하는 포지션으로 편리하게 스왑할 수 있습니다."
 
 #: src/components/Exchange/OrdersList.js:91
 msgid "Order"
@@ -1430,50 +1559,56 @@ msgstr "주문 제출 완료!"
 msgid "Orders"
 msgstr "주문"
 
-#: src/pages/Exchange/Exchange.js:721
+#: src/pages/Exchange/Exchange.js:722
 msgid "Orders cancelled."
 msgstr "주문 취소"
 
-#: src/pages/Dashboard/DashboardV2.js:564
+#: src/pages/Dashboard/DashboardV2.js:574
 msgid "Overview"
 msgstr "개요"
 
-#: src/pages/Dashboard/DashboardV2.js:979
+#: src/pages/Dashboard/DashboardV2.js:1018
 msgid "POOL"
 msgstr "풀"
 
-#: src/components/Glp/GlpSwap.js:975
-#: src/pages/Dashboard/DashboardV2.js:976
+#: src/components/Glp/GlpSwap.js:1014
+#: src/pages/Dashboard/DashboardV2.js:1015
 msgid "PRICE"
 msgstr "가격"
 
 #: src/components/Exchange/PositionSeller.js:523
-#: src/components/Exchange/SwapBox.js:853
+#: src/components/Exchange/SwapBox.js:931
 msgid "Page outdated, please refresh"
 msgstr "페이지가 오래되었습니다. 새로고침해주세요."
 
-#: src/pages/Ecosystem/Ecosystem.js:541
-#~ msgid "Partnerships and Integrations"
-#~ msgstr "파트너쉽 및 합병"
+#: src/components/Footer/Footer.js:65
+msgid "Partnership"
+msgstr ""
 
-#: src/components/Glp/GlpSwap.js:617
-#: src/components/Glp/GlpSwap.js:811
+#: src/pages/Ecosystem/Ecosystem.js:526
+msgid "Partnerships and Integrations"
+msgstr "파트너쉽 및 합병"
+
+#: src/components/Exchange/SwapBox.js:1959
+#: src/components/Glp/GlpSwap.js:629
+#: src/components/Glp/GlpSwap.js:820
+#: src/components/Glp/GlpSwap.js:917
 msgid "Pay"
 msgstr "지불액"
 
-#: src/pages/Dashboard/DashboardV2.js:745
+#: src/pages/Dashboard/DashboardV2.js:755
 msgid "Platform and GLP index tokens."
 msgstr "플랫폼과 GLP 지수 토큰."
 
-#: src/components/Glp/GlpSwap.js:1367
+#: src/components/Glp/GlpSwap.js:1407
 msgid "Please enter an amount to see fee percentages"
 msgstr "수수료 비율을 보려면 수량을 입력해주세요."
 
-#: src/components/Referrals/JoinReferralCode.js:15
+#: src/components/Referrals/JoinReferralCode.js:28
 msgid "Please input a referral code to benefit from fee discounts."
 msgstr "수수료 할인의 혜택을 받으려면 추천 코드를 입력해주세요."
 
-#: src/components/Glp/GlpSwap.js:1091
+#: src/components/Glp/GlpSwap.js:1130
 msgid "Please mint GLP using another token"
 msgstr "다른 토큰을 사용하여 GLP를 발행해주세요."
 
@@ -1506,13 +1641,13 @@ msgstr "포지션"
 #: src/components/Exchange/OrdersList.js:96
 #: src/components/Exchange/OrdersList.js:404
 #: src/components/Exchange/PositionSeller.js:916
-#: src/components/Exchange/SwapBox.js:1960
-#: src/components/Exchange/SwapBox.js:2009
-#: src/components/Glp/GlpSwap.js:702
-#: src/pages/Dashboard/DashboardV2.js:889
-#: src/pages/Stake/StakeV2.js:1462
-#: src/pages/Stake/StakeV2.js:1769
-#: src/pages/Stake/StakeV2.js:1902
+#: src/components/Exchange/SwapBox.js:2070
+#: src/components/Exchange/SwapBox.js:2119
+#: src/components/Glp/GlpSwap.js:710
+#: src/pages/Dashboard/DashboardV2.js:916
+#: src/pages/Stake/StakeV2.js:1466
+#: src/pages/Stake/StakeV2.js:1784
+#: src/pages/Stake/StakeV2.js:1923
 msgid "Price"
 msgstr "가격"
 
@@ -1520,7 +1655,7 @@ msgstr "가격"
 msgid "Price above Liq. Price"
 msgstr "청산가 초과 가격"
 
-#: src/components/Exchange/SwapBox.js:891
+#: src/components/Exchange/SwapBox.js:969
 msgid "Price above Mark Price"
 msgstr "시장 평균가 초과 가격"
 
@@ -1528,13 +1663,17 @@ msgstr "시장 평균가 초과 가격"
 msgid "Price below Liq. Price"
 msgstr "청산가 미만 가격"
 
-#: src/components/Exchange/SwapBox.js:894
+#: src/components/Exchange/SwapBox.js:972
 msgid "Price below Mark Price"
 msgstr "시장 평균가 미만 가격"
 
-#: src/components/Exchange/SwapBox.js:806
+#: src/components/Exchange/SwapBox.js:884
 msgid "Price {0} Mark Price"
 msgstr "가격 {0} 시장 평균가"
+
+#: src/components/Footer/Footer.js:51
+msgid "Privacy Policy"
+msgstr ""
 
 #: src/pages/Actions/Actions.js:108
 msgid "Profit"
@@ -1550,31 +1689,39 @@ msgstr "수익"
 #~ msgstr "GMX 커뮤니티가 개발한 프로젝트"
 
 #: src/pages/Ecosystem/Ecosystem.js:432
-msgid "Projects developed by the LeveragePro community."
+#~ msgid "Projects developed by the LeveragePro community."
+#~ msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js:432
+msgid "Projects developed by the XVI community. <0/>Please exercise caution when interacting with any app, apps are fully maintained by community developers."
 msgstr ""
 
-#: src/pages/Ecosystem/Ecosystem.js:544
-#~ msgid "Projects integrated with GMX."
-#~ msgstr "GMX와 통합된 프로젝트"
+#: src/pages/Ecosystem/Ecosystem.js:529
+msgid "Projects integrated with GMX."
+msgstr "GMX와 통합된 프로젝트"
 
-#: src/pages/BuyGlp/BuyGlp.js:37
+#: src/pages/BuyGlp/BuyGlp.js:38
 msgid "Purchase <0>GLP tokens</0> to earn {nativeTokenSymbol} fees from swaps and leverages trading."
 msgstr "<0>GLP 토큰<0/>을 구입해서, 스왑 및 레버리지 트레이딩을 통해 생성되는 {nativeTokenSymbol} 수수료를 획득하세요."
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:254
-msgid "Purchase GMX"
-msgstr "GMX 구입"
+#~ msgid "Purchase GMX"
+#~ msgstr "GMX 구입"
 
-#: src/pages/Stake/StakeV2.js:1890
+#: src/pages/Stake/StakeV2.js:1907
 msgid "Purchase Insurance"
 msgstr "보험 구입"
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:220
-msgid "Purchase LeveragePro"
+#~ msgid "Purchase LeveragePro"
+#~ msgstr ""
+
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:129
+msgid "Purchase XVI Token"
 msgstr ""
 
-#: src/components/TokenCard/TokenCard.js:82
-#: src/components/TokenCard/TokenCard.js:115
+#: src/components/TokenCard/TokenCard.js:83
+#: src/components/TokenCard/TokenCard.js:110
 msgid "Read more"
 msgstr "더 알아보기"
 
@@ -1592,10 +1739,11 @@ msgid "Rebates earned by this account as an affiliate."
 msgstr "어필리에이트로서 이 계정이 획득한 리베이트."
 
 #: src/components/Exchange/PositionSeller.js:1159
-#: src/components/Exchange/SwapBox.js:218
-#: src/components/Exchange/SwapBox.js:1041
-#: src/components/Glp/GlpSwap.js:618
-#: src/components/Glp/GlpSwap.js:883
+#: src/components/Exchange/SwapBox.js:231
+#: src/components/Exchange/SwapBox.js:1119
+#: src/components/Glp/GlpSwap.js:630
+#: src/components/Glp/GlpSwap.js:850
+#: src/components/Glp/GlpSwap.js:893
 msgid "Receive"
 msgstr "수령하기"
 
@@ -1611,48 +1759,48 @@ msgstr "수취인은 지금까지 GLP 토큰을 스테이킹한 적이 없습니
 msgid "Receiver has not staked GMX tokens before"
 msgstr "수취인은 지금까지 GMX 토큰을 스테이킹한 적이 없습니다."
 
-#: src/components/Glp/GlpSwap.js:423
+#: src/components/Glp/GlpSwap.js:435
 msgid "Redemption time not yet reached"
 msgstr "아직 판매할 수 있는 시간이 아닙니다"
 
 #: src/pages/Home/Home.js:177
-msgid "Reduce Liquidation Risks"
-msgstr "청산 위험 감소하기"
+#~ msgid "Reduce Liquidation Risks"
+#~ msgstr "청산 위험 감소하기"
 
 #: src/components/Referrals/AffiliatesStats.js:121
 msgid "Referral Code"
 msgstr "추천 코드"
 
-#: src/components/Referrals/JoinReferralCode.js:64
+#: src/components/Referrals/JoinReferralCode.js:79
 msgid "Referral Code does not exist"
 msgstr "추천 코드가 존재하지 않습니다"
 
 #: src/components/Footer/Footer.js:17
-msgid "Referral Terms"
-msgstr "추천 약관"
+#~ msgid "Referral Terms"
+#~ msgstr "추천 약관"
 
-#: src/components/Referrals/JoinReferralCode.js:90
+#: src/components/Referrals/JoinReferralCode.js:105
 msgid "Referral code added!"
 msgstr "추천 코드가 추가되었습니다!"
 
-#: src/pages/Referrals/Referrals.js:58
+#: src/pages/Referrals/Referrals.js:59
 msgid "Referral code creation failed."
 msgstr "추천 코드 생성 실패."
 
-#: src/pages/Referrals/Referrals.js:57
+#: src/pages/Referrals/Referrals.js:58
 msgid "Referral code submitted!"
 msgstr "추천 코드 제출 완료!"
 
-#: src/components/Referrals/JoinReferralCode.js:91
+#: src/components/Referrals/JoinReferralCode.js:106
 msgid "Referral code updated failed."
 msgstr "추천 코드 업데이트 실패."
 
-#: src/components/Referrals/JoinReferralCode.js:90
+#: src/components/Referrals/JoinReferralCode.js:105
 msgid "Referral code updated!"
 msgstr "추천 코드 업데이트 완료!"
 
-#: src/components/Header/AppHeaderLinks.tsx:88
-#: src/pages/Referrals/Referrals.js:121
+#: src/components/Header/AppHeaderLinks.tsx:100
+#: src/pages/Referrals/Referrals.js:123
 msgid "Referrals"
 msgstr "추천"
 
@@ -1664,7 +1812,7 @@ msgstr "{0} {1} 의 {2} USD 디크리즈를 요청하였습니다."
 msgid "Requested deposit of {0} {1} into {2} {3}."
 msgstr "{0} {1}의 {2} {3}로 예치를 요청하였습니다."
 
-#: src/components/Exchange/SwapBox.js:1572
+#: src/components/Exchange/SwapBox.js:1650
 msgid "Requested increase of {tokenSymbol} {0} by {1} USD."
 msgstr "{0}의 {2} USD 인크리즈를 요청하였습니다."
 
@@ -1672,38 +1820,59 @@ msgstr "{0}의 {2} USD 인크리즈를 요청하였습니다."
 msgid "Requested withdrawal of {0} USD from {1} {2}."
 msgstr "{0}의 {2} {3}로 인출을 요청하였습니다."
 
-#: src/pages/Stake/StakeV2.js:494
+#: src/pages/Stake/StakeV2.js:497
 msgid "Reserve Amount"
 msgstr "리저브 수량"
 
-#: src/components/Glp/GlpSwap.js:728
+#: src/components/Glp/GlpSwap.js:736
 msgid "Reserved"
 msgstr "리저브 완료"
 
-#: src/pages/Stake/StakeV2.js:2051
-#: src/pages/Stake/StakeV2.js:2137
+#: src/pages/Stake/StakeV2.js:2079
+#: src/pages/Stake/StakeV2.js:2176
 msgid "Reserved for Vesting"
 msgstr "베스팅을 위해 리저브됨"
 
-#: src/pages/Stake/StakeV2.js:1557
-#: src/pages/Stake/StakeV2.js:1825
+#: src/pages/Stake/StakeV2.js:1561
+#: src/pages/Stake/StakeV2.js:1842
 msgid "Rewards"
 msgstr "보상"
 
-#: src/components/Referrals/JoinReferralCode.js:48
+#: src/components/Referrals/JoinReferralCode.js:63
 msgid "Same as current active code"
 msgstr "현재 유효한 코드와 같음"
 
 #: src/App/App.js:608
-msgid "Save"
-msgstr "저장"
+#~ msgid "Save"
+#~ msgstr "저장"
+
+#: src/App/App.js:592
+#: src/App/App.js:642
+msgid "Save Changes"
+msgstr ""
 
 #: src/pages/Home/Home.js:191
-msgid "Save on Costs"
-msgstr "비용 절감"
+#~ msgid "Save on Costs"
+#~ msgstr "비용 절감"
+
+#: src/components/Glp/GlpSwap.js:984
+msgid "Save on Fees"
+msgstr ""
+
+#: src/components/Modal/Modal.js:63
+msgid "Search name or paste address"
+msgstr ""
+
+#: src/pages/Home/Home.js:275
+msgid "Section"
+msgstr ""
+
+#: src/components/Footer/Footer.js:68
+msgid "Security"
+msgstr ""
 
 #: src/components/NetworkDropdown/LanguagePopupHome.js:29
-#: src/components/NetworkDropdown/NetworkDropdown.js:49
+#: src/components/NetworkDropdown/NetworkDropdown.js:52
 msgid "Select Language"
 msgstr "언어 선택"
 
@@ -1719,10 +1888,10 @@ msgstr "마켓 선택"
 msgid "Select an option"
 msgstr "옵션 선택"
 
-#: src/components/Exchange/SwapBox.js:764
-#: src/components/Exchange/SwapBox.js:769
-#: src/components/Exchange/SwapBox.js:773
-#: src/components/Exchange/SwapBox.js:777
+#: src/components/Exchange/SwapBox.js:842
+#: src/components/Exchange/SwapBox.js:847
+#: src/components/Exchange/SwapBox.js:851
+#: src/components/Exchange/SwapBox.js:855
 msgid "Select different tokens"
 msgstr "다른 토큰 선택"
 
@@ -1734,28 +1903,31 @@ msgstr "베스팅 옵션을 선택한 후 \"수령하기\" 버튼을 클릭해�
 msgid "Self-transfer not supported"
 msgstr "자신에게 전송하는 것은 지원되지 않습니다"
 
-#: src/components/Glp/GlpSwap.js:97
-#: src/components/Glp/GlpSwap.js:520
-#: src/components/Glp/GlpSwap.js:652
-#: src/components/Glp/GlpSwap.js:792
-#: src/pages/Stake/StakeV2.js:1881
+#: src/components/Glp/GlpSwap.js:532
+#: src/pages/Stake/StakeV2.js:1898
 msgid "Sell GLP"
 msgstr "GLP 판매"
 
-#: src/components/Glp/GlpSwap.js:578
+#: src/components/Glp/GlpSwap.js:100
+#: src/components/Glp/GlpSwap.js:664
+#: src/components/Glp/GlpSwap.js:800
+msgid "Sell XVI"
+msgstr ""
+
+#: src/components/Glp/GlpSwap.js:590
 msgid "Sell failed."
 msgstr "판매 실패"
 
-#: src/components/Glp/GlpSwap.js:1188
-#: src/components/Glp/GlpSwap.js:1382
+#: src/components/Glp/GlpSwap.js:1227
+#: src/components/Glp/GlpSwap.js:1423
 msgid "Sell for {0}"
 msgstr "{0}로 판매"
 
-#: src/components/Glp/GlpSwap.js:577
+#: src/components/Glp/GlpSwap.js:589
 msgid "Sell submitted!"
 msgstr "판매 제출 완료!"
 
-#: src/components/Glp/GlpSwap.js:517
+#: src/components/Glp/GlpSwap.js:529
 msgid "Selling..."
 msgstr "판매중..."
 
@@ -1767,7 +1939,8 @@ msgstr "GLP의 베스팅 볼트에서 모든 토큰을 인출했습니다."
 msgid "Sender has withdrawn all tokens from GMX Vesting Vault"
 msgstr "GMX의 베스팅 볼트에서 모든 토큰을 인출했습니다."
 
-#: src/components/Header/AppHeaderLinks.tsx:109
+#: src/components/Header/AppHeaderLinks.tsx:134
+#: src/components/NetworkDropdown/NetworkDropdown.js:146
 msgid "Settings"
 msgstr "설정"
 
@@ -1780,25 +1953,25 @@ msgid "Share Position"
 msgstr "포지션 공유"
 
 #: src/components/Exchange/PositionsList.js:261
-#: src/components/Exchange/SwapBox.js:216
-#: src/components/Exchange/SwapBox.js:1046
+#: src/components/Exchange/SwapBox.js:229
+#: src/components/Exchange/SwapBox.js:1124
 #: src/pages/Actions/Actions.js:108
 #: src/pages/Actions/Actions.js:112
 msgid "Short"
 msgstr "숏"
 
-#: src/pages/Dashboard/DashboardV2.js:639
-#: src/pages/Dashboard/DashboardV2.js:653
+#: src/pages/Dashboard/DashboardV2.js:648
+#: src/pages/Dashboard/DashboardV2.js:662
 msgid "Short Positions"
 msgstr "숏 포지션"
 
-#: src/components/Exchange/SwapBox.js:1221
+#: src/components/Exchange/SwapBox.js:1299
 msgid "Short {0}"
 msgstr "{0} 숏"
 
 #: src/pages/Home/Home.js:205
-msgid "Simple Swaps"
-msgstr "간단한 스왑"
+#~ msgid "Simple Swaps"
+#~ msgstr "간단한 스왑"
 
 #: src/components/Exchange/PositionEditor.js:504
 #: src/components/Exchange/PositionSeller.js:1037
@@ -1807,7 +1980,7 @@ msgstr "간단한 스왑"
 msgid "Size"
 msgstr "사이즈"
 
-#: src/App/App.js:291
+#: src/App/App.js:294
 msgid "Slippage should be less than 5%"
 msgstr "슬리피지는 5%미만이어야 합니다."
 
@@ -1815,17 +1988,17 @@ msgstr "슬리피지는 5%미만이어야 합니다."
 #~ msgid "Spanish"
 #~ msgstr "스페인어"
 
-#: src/components/Exchange/SwapBox.js:2436
+#: src/components/Exchange/SwapBox.js:2570
 msgid "Speed up page loading"
 msgstr "페이지 로드 속도 향상"
 
-#: src/pages/Dashboard/DashboardV2.js:913
+#: src/pages/Dashboard/DashboardV2.js:940
 msgid "Stablecoin Percentage"
 msgstr "스테이블코인 비율"
 
-#: src/pages/Stake/StakeV2.js:153
-#: src/pages/Stake/StakeV2.js:163
-#: src/pages/Stake/StakeV2.js:1987
+#: src/pages/Stake/StakeV2.js:156
+#: src/pages/Stake/StakeV2.js:166
+#: src/pages/Stake/StakeV2.js:2006
 msgid "Stake"
 msgstr "스테이킹"
 
@@ -1833,89 +2006,100 @@ msgstr "스테이킹"
 #~ msgid "Stake <0>GMX</0> and <1>GLP</1> to earn rewards."
 #~ msgstr "<0>GMX</0>과 <1>GLP</1>를 스테이킹하여 보상을 획득하세요."
 
-#: src/pages/Stake/StakeV2.js:1439
+#: src/pages/Stake/StakeV2.js:1440
 msgid "Stake <0>LeveragePro</0> and <1>GLP</1> to earn rewards."
 msgstr ""
 
-#: src/pages/Stake/StakeV2.js:744
+#: src/pages/Stake/StakeV2.js:747
 msgid "Stake GMX Rewards"
 msgstr "GMX 보상 스테이킹"
 
-#: src/pages/Stake/StakeV2.js:734
+#: src/pages/Stake/StakeV2.js:737
 msgid "Stake Multiplier Points"
 msgstr "멀티플라이어 포인트 스테이킹"
 
-#: src/pages/Stake/StakeV2.js:754
+#: src/pages/Stake/StakeV2.js:757
 msgid "Stake esGMX Rewards"
 msgstr "esGMX 보상 스테이킹"
 
-#: src/pages/Stake/StakeV2.js:114
+#: src/pages/Stake/StakeV2.js:117
 msgid "Stake failed."
 msgstr "스테이킹 실패."
 
-#: src/pages/Stake/StakeV2.js:113
+#: src/pages/Stake/StakeV2.js:116
 msgid "Stake submitted!"
 msgstr "스테이킹 제출 완료!"
 
-#: src/pages/Dashboard/DashboardV2.js:807
-#: src/pages/Stake/StakeV2.js:1491
-#: src/pages/Stake/StakeV2.js:1784
-#: src/pages/Stake/StakeV2.js:1917
+#: src/pages/Dashboard/DashboardV2.js:822
+#: src/pages/Dashboard/DashboardV2.js:843
+#: src/pages/Dashboard/DashboardV2.js:950
+#: src/pages/Stake/StakeV2.js:1493
+#: src/pages/Stake/StakeV2.js:1801
+#: src/pages/Stake/StakeV2.js:1938
 msgid "Staked"
 msgstr "스테이킹 완료"
 
-#: src/pages/Stake/StakeV2.js:2029
-#: src/pages/Stake/StakeV2.js:2131
+#: src/pages/Stake/StakeV2.js:2057
+#: src/pages/Stake/StakeV2.js:2170
 msgid "Staked Tokens"
 msgstr "스테이킹된 토큰"
 
-#: src/pages/Stake/StakeV2.js:151
+#: src/pages/Stake/StakeV2.js:154
 msgid "Staking..."
 msgstr "스테이킹중..."
 
-#: src/pages/Dashboard/DashboardV2.js:549
-msgid "Stats"
-msgstr "통계"
+#: src/pages/Dashboard/DashboardV2.js:560
+msgid "Statistics"
+msgstr ""
 
-#: src/components/Referrals/JoinReferralCode.js:67
+#: src/pages/Dashboard/DashboardV2.js:549
+#~ msgid "Stats"
+#~ msgstr "통계"
+
+#: src/components/ModalViews/RedirectModal.js:48
+#: src/components/Referrals/JoinReferralCode.js:82
 msgid "Submit"
 msgstr "제출"
 
-#: src/pages/Dashboard/DashboardV2.js:792
-#: src/pages/Dashboard/DashboardV2.js:895
+#: src/pages/Dashboard/DashboardV2.js:805
+#: src/pages/Dashboard/DashboardV2.js:922
 msgid "Supply"
 msgstr "공급량"
 
-#: src/components/Exchange/SwapBox.js:2225
+#: src/components/Footer/Footer.js:101
+msgid "Support Docs"
+msgstr ""
+
+#: src/components/Exchange/SwapBox.js:2352
 msgid "Swap"
 msgstr "스왑"
 
-#: src/components/Exchange/SwapBox.js:1372
+#: src/components/Exchange/SwapBox.js:1450
 msgid "Swap Order created!"
 msgstr "스완 주문 생성!"
 
-#: src/components/Exchange/SwapBox.js:1373
+#: src/components/Exchange/SwapBox.js:1451
 msgid "Swap Order creation failed."
 msgstr "스왑 주문 생성 실패."
 
-#: src/components/Exchange/SwapBox.js:1371
+#: src/components/Exchange/SwapBox.js:1449
 msgid "Swap Order submitted!"
 msgstr "스왑 주문 제출 완료!"
 
-#: src/components/Exchange/SwapBox.js:1295
-#: src/components/Exchange/SwapBox.js:1409
+#: src/components/Exchange/SwapBox.js:1373
+#: src/components/Exchange/SwapBox.js:1487
 msgid "Swap failed."
 msgstr "스왑 실패."
 
-#: src/components/Glp/GlpSwap.js:1095
+#: src/components/Glp/GlpSwap.js:1134
 msgid "Swap on {0}"
 msgstr "{0}로 스왑"
 
-#: src/components/Exchange/SwapBox.js:1294
+#: src/components/Exchange/SwapBox.js:1372
 msgid "Swap submitted!"
 msgstr "스왑 제출완료"
 
-#: src/components/Exchange/SwapBox.js:760
+#: src/components/Exchange/SwapBox.js:838
 msgid "Swaps disabled, pending {0} upgrade"
 msgstr ""
 
@@ -1923,27 +2107,50 @@ msgstr ""
 #~ msgid "Switch Network"
 #~ msgstr "네트워크 변경"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:98
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:182
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:87
 msgid "Synapse"
 msgstr "Synapse"
 
-#: src/components/Glp/GlpSwap.js:972
-#: src/pages/Dashboard/DashboardV2.js:973
+#: src/components/Footer/Footer.js:104
+msgid "System Status"
+msgstr ""
+
+#: src/pages/Dashboard/DashboardV2.js:903
+msgid "TKN"
+msgstr ""
+
+#: src/components/Glp/GlpSwap.js:1011
+#: src/pages/Dashboard/DashboardV2.js:1012
 msgid "TOKEN"
 msgstr "토큰"
 
-#: src/pages/Ecosystem/Ecosystem.js:592
+#: src/pages/Dashboard/DashboardV2.js:900
+msgid "TOKEN COIN"
+msgstr ""
+
+#: src/components/Exchange/SwapBox.js:2318
+msgid "Take-profit and stop-loss orders can be set after opening a position. <0/><1/>There will be a \"Close\" button on each position row, clicking this will display the option to set trigger orders. <2/><3/>For screenshots and more information, please see the <4>docs</4>."
+msgstr ""
+
+#: src/components/Footer/Footer.js:98
+msgid "Talk to Support"
+msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js:573
 msgid "Telegram Groups"
 msgstr "텔레그램 그룹"
 
-#: src/components/Footer/Footer.js:16
+#: src/components/Footer/Footer.js:48
 msgid "Terms and Conditions"
 msgstr "약관"
 
-#: src/pages/Stake/StakeV2.js:1539
+#: src/pages/Stake/StakeV2.js:1543
 msgid "The Boosted APR is from your staked Multiplier Points."
 msgstr "\"APR 부스트는 스테이킹된 멀티플라이어 포인트로부터 적용됩니다."
+
+#: src/components/Header/Header.tsx:111
+msgid "The XVI Community is coming together. Get your tickets to breakpoint, Nov. 4-7 In Lisbon!"
+msgstr ""
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js:356
 msgid "The address of the esGMX (IOU) token is {esGmxIouAddress}."
@@ -1956,6 +2163,10 @@ msgstr "\"esGMX (IOU) 토큰의 주소는 {esGmxIouAddress} 입니다."
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js:371
 msgid "The esGMX tokens can be staked or vested at any time."
 msgstr "esGMX는 언제든지 스테이킹하거나 베스팅 할 수 있습니다."
+
+#: src/components/Exchange/SwapBox.js:2420
+msgid "The position will be opened at {0} USD with a max slippage of {1}%.<0/><1/>The slippage amount can be configured under Settings, found by clicking on your address at the top right of the page after connecting your wallet.<2/><3/><4>More Info</4>"
+msgstr ""
 
 #: src/components/Exchange/OrdersList.js:288
 msgid "The price that orders can be executed at may differ slightly from the chart price, as market orders update oracle prices, while limit/trigger orders do not."
@@ -1978,27 +2189,27 @@ msgid "To complete the transfer, you must switch your connected account to {rece
 msgstr "전송을 완료하려면 {receiver} 계정에 다시 연결해야 합니다."
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:127
-msgid "To purchase GMX on <0>Arbitrum</0>, please change your network."
-msgstr "<0>Arbitrum</0>에서 GMX를 구입하려면 네트워크를 변경해주세요."
+#~ msgid "To purchase GMX on <0>Arbitrum</0>, please change your network."
+#~ msgstr "<0>Arbitrum</0>에서 GMX를 구입하려면 네트워크를 변경해주세요."
 
 #: src/pages/BuyGMX/BuyGMX.js:48
 #~ msgid "To purchase GMX on <0>Avalanche</0>, please change your network."
 #~ msgstr "<0>Avalanche</0>에서 GMX를 구입하려면 네트워크를 변경해주세요."
 
-#: src/components/Glp/GlpSwap.js:908
+#: src/components/Glp/GlpSwap.js:942
 msgid "To reduce fees, select a different asset to pay with."
 msgstr "수수료를 줄이기 위해서는 다른 자산으로 지불해주세요."
 
-#: src/components/Glp/GlpSwap.js:926
+#: src/components/Glp/GlpSwap.js:960
 msgid "To reduce fees, select a different asset to receive."
 msgstr "수수료를 줄이기 위해서는 다른 자산으로 수령해주세요."
 
-#: src/pages/Stake/StakeV2.js:1714
+#: src/pages/Stake/StakeV2.js:1723
 msgid "Total"
 msgstr "총계"
 
-#: src/pages/Dashboard/DashboardV2.js:692
-#: src/pages/Dashboard/DashboardV2.js:701
+#: src/pages/Dashboard/DashboardV2.js:702
+#: src/pages/Dashboard/DashboardV2.js:711
 msgid "Total Fees"
 msgstr "총 수수료"
 
@@ -2008,26 +2219,30 @@ msgstr "총 수수료"
 msgid "Total Rebates"
 msgstr "총 리베이트"
 
-#: src/pages/Stake/StakeV2.js:1677
+#: src/pages/Stake/StakeV2.js:1684
 msgid "Total Rewards"
 msgstr "총 보상"
 
-#: src/pages/Dashboard/DashboardV2.js:798
-#: src/pages/Dashboard/DashboardV2.js:901
-#: src/pages/Stake/StakeV2.js:1618
-#: src/pages/Stake/StakeV2.js:1859
-#: src/pages/Stake/StakeV2.js:1967
+#: src/pages/Dashboard/DashboardV2.js:813
+#: src/pages/Dashboard/DashboardV2.js:928
+#: src/pages/Stake/StakeV2.js:1629
+#: src/pages/Stake/StakeV2.js:1876
+#: src/pages/Stake/StakeV2.js:1986
 msgid "Total Staked"
 msgstr "총 스테이킹"
 
-#: src/pages/Dashboard/DashboardV2.js:686
-msgid "Total Stats"
-msgstr "전체 통계"
+#: src/pages/Dashboard/DashboardV2.js:696
+msgid "Total Statistics"
+msgstr ""
 
-#: src/components/Glp/GlpSwap.js:779
-#: src/pages/Stake/StakeV2.js:1642
-#: src/pages/Stake/StakeV2.js:1868
-#: src/pages/Stake/StakeV2.js:1976
+#: src/pages/Dashboard/DashboardV2.js:686
+#~ msgid "Total Stats"
+#~ msgstr "전체 통계"
+
+#: src/components/Glp/GlpSwap.js:787
+#: src/pages/Stake/StakeV2.js:1649
+#: src/pages/Stake/StakeV2.js:1885
+#: src/pages/Stake/StakeV2.js:1995
 msgid "Total Supply"
 msgstr "총 공급량"
 
@@ -2037,26 +2252,25 @@ msgstr "추천한 총 트레이더"
 
 #: src/components/Referrals/AffiliatesStats.js:74
 #: src/components/Referrals/TradersStats.js:24
-#: src/pages/Home/Home.js:146
+#: src/pages/Home/Home.js:227
 msgid "Total Trading Volume"
 msgstr "총 트레이딩 거래량"
 
-#: src/pages/Home/Home.js:164
+#: src/pages/Home/Home.js:245
 msgid "Total Users"
 msgstr "총 유저"
 
 #: src/components/Referrals/AffiliatesStats.js:124
-#: src/pages/Dashboard/DashboardV2.js:712
-#: src/pages/Dashboard/DashboardV2.js:721
+#: src/pages/Dashboard/DashboardV2.js:722
+#: src/pages/Dashboard/DashboardV2.js:731
 msgid "Total Volume"
 msgstr "총 거래량"
 
-#: src/pages/Dashboard/DashboardV2.js:588
+#: src/pages/Dashboard/DashboardV2.js:597
 msgid "Total value of tokens in GLP pool ({chainName})"
 msgstr "GLP 풀 ({chainName})의 토큰 총액"
 
-#: src/components/Header/AppHeaderUser.tsx:88
-#: src/components/Header/AppHeaderUser.tsx:123
+#: src/components/Header/AppHeaderUser.tsx:148
 msgid "Trade"
 msgstr "트레이드"
 
@@ -2068,7 +2282,7 @@ msgstr "트레이드"
 #~ msgid "Trade BTC, ETH, AVAX and other top cryptocurrencies with up to 30x leverage directly from your wallet"
 #~ msgstr "지갑에서 직접 최대 30배의 레버리지로 BTC, ETH, AVAX 및 기타 주요 암호화폐 거래"
 
-#: src/pages/Home/Home.js:134
+#: src/pages/Home/Home.js:212
 msgid "Trade BTC, ETH, BNB, BUSD and other top cryptocurrencies with up to 30x leverage directly from your wallet"
 msgstr ""
 
@@ -2084,7 +2298,8 @@ msgstr ""
 msgid "Trade spot or perpetual BTC, ETH, AVAX and other top cryptocurrencies with up to 30x leverage directly from your wallet on Arbitrum and Avalanche."
 msgstr "Arbitrum과 Avalanche에서 BTC, ETH, AVAX 등 주요 암호화폐의 스팟 및 퍼페추얼 최대 30배 레버리지까지, 직접 자신의 지갑에서 거래 가능합니다."
 
-#: src/pages/Referrals/Referrals.js:32
+#: src/components/Referrals/JoinReferralCode.js:16
+#: src/pages/Referrals/Referrals.js:33
 msgid "Traders"
 msgstr "트레이더"
 
@@ -2092,7 +2307,7 @@ msgstr "트레이더"
 msgid "Traders Referred"
 msgstr "추천한 트레이더"
 
-#: src/components/Exchange/SwapBox.js:2422
+#: src/components/Exchange/SwapBox.js:2554
 msgid "Trading guide"
 msgstr "트레이딩 가이드"
 
@@ -2102,14 +2317,14 @@ msgid "Transaction"
 msgstr "거래"
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:165
-msgid "Transfer AVAX"
-msgstr "AVAX 전송"
+#~ msgid "Transfer AVAX"
+#~ msgstr "AVAX 전송"
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js:233
 msgid "Transfer Account"
 msgstr "계정 이전"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:85
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:76
 msgid "Transfer ETH"
 msgstr "ETH 전송"
 
@@ -2151,11 +2366,11 @@ msgstr ""
 msgid "Tweet"
 msgstr "Tweet"
 
-#: src/pages/Home/Home.js:257
+#: src/pages/Home/Home.js:364
 msgid "Two tokens create our ecosystem"
 msgstr "두개의 토큰이 생태계를 형성하고 있습니다"
 
-#: src/App/App.js:336
+#: src/App/App.js:340
 msgid "Txn failed."
 msgstr "트랜잭션 실패."
 
@@ -2163,41 +2378,45 @@ msgstr "트랜잭션 실패."
 msgid "Type"
 msgstr "타입"
 
-#: src/pages/Dashboard/DashboardV2.js:985
+#: src/pages/Dashboard/DashboardV2.js:1024
 msgid "UTILIZATION"
 msgstr "사용률"
 
-#: src/pages/Stake/StakeV2.js:278
-#: src/pages/Stake/StakeV2.js:289
-#: src/pages/Stake/StakeV2.js:1992
+#: src/pages/Stake/StakeV2.js:281
+#: src/pages/Stake/StakeV2.js:292
+#: src/pages/Stake/StakeV2.js:2011
 msgid "Unstake"
 msgstr "언스테이킹"
 
-#: src/pages/Stake/StakeV2.js:1245
+#: src/pages/Stake/StakeV2.js:1244
 msgid "Unstake GMX"
 msgstr "GMX 언스테이킹"
 
-#: src/pages/Stake/StakeV2.js:248
+#: src/pages/Stake/StakeV2.js:251
 msgid "Unstake completed!"
 msgstr "언스테이킹 완료!"
 
-#: src/pages/Stake/StakeV2.js:247
+#: src/pages/Stake/StakeV2.js:250
 msgid "Unstake failed."
 msgstr "언스테이킹 실패."
 
-#: src/pages/Stake/StakeV2.js:246
+#: src/pages/Stake/StakeV2.js:249
 msgid "Unstake submitted!"
 msgstr "언스테이킹 제출 완료!"
 
-#: src/pages/Stake/StakeV2.js:276
+#: src/pages/Stake/StakeV2.js:279
 msgid "Unstaking..."
 msgstr "언스테이킹중..."
 
-#: src/components/Referrals/JoinReferralCode.js:67
+#: src/components/Referrals/JoinReferralCode.js:82
 msgid "Update"
 msgstr "업데이트"
 
-#: src/components/Referrals/JoinReferralCode.js:51
+#: src/components/Footer/Footer.js:59
+msgid "Updates"
+msgstr ""
+
+#: src/components/Referrals/JoinReferralCode.js:66
 msgid "Updating..."
 msgstr "업데이트중..."
 
@@ -2205,21 +2424,25 @@ msgstr "업데이트중..."
 msgid "Use the \"Edit\" button to deposit or withdraw collateral."
 msgstr "담보를 예치 또는 인출하시려면 \"편집\" 버튼을 사용해주세요."
 
-#: src/components/Exchange/SwapBox.js:2416
+#: src/components/Exchange/SwapBox.js:2548
 msgid "Useful Links"
 msgstr "유용한 링크"
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:172
-msgid "Using the Avalanche or Synapse bridges, you can also transfer any other supported cryptocurrency, and receive free AVAX to pay for the network's fees."
-msgstr "Avalanche나 Synapse 브리지를 사용하면 지원되는 어떤 암호화폐든 이전할 수 있으며 네트워크 수수료 지불을 위한 AVAX를 무료로 받을 수 있습니다."
+#~ msgid "Using the Avalanche or Synapse bridges, you can also transfer any other supported cryptocurrency, and receive free AVAX to pay for the network's fees."
+#~ msgstr "Avalanche나 Synapse 브리지를 사용하면 지원되는 어떤 암호화폐든 이전할 수 있으며 네트워크 수수료 지불을 위한 AVAX를 무료로 받을 수 있습니다."
 
-#: src/pages/Stake/StakeV2.js:465
+#: src/pages/Stake/StakeV2.js:468
 msgid "Vault Capacity"
 msgstr "볼트 수용량"
 
-#: src/pages/Stake/StakeV2.js:478
+#: src/pages/Stake/StakeV2.js:481
 msgid "Vault Capacity for your Account<0/><1/>Deposited: {0} esGMX<2/>Max Capacity: {1} esGMX<3/>"
 msgstr "귀하의 계정의 볼트 수용량<0/><1/>예치량: {0} esGMX<2/>최대 수용량: {1} esGMX<3/>"
+
+#: src/pages/Home/Home.js:353
+msgid "Velas Blockchain"
+msgstr ""
 
 #: src/pages/ClaimEsGmx/ClaimEsGmx.js:407
 msgid "Vest with GLP on Arbitrum"
@@ -2245,17 +2468,23 @@ msgstr "베스트팅된 GLP에서 인출되지 않은 양"
 msgid "Vested GMX not withdrawn"
 msgstr "베스트팅된 GMX에서 인출되지 않은 양"
 
-#: src/pages/Stake/StakeV2.js:2060
-#: src/pages/Stake/StakeV2.js:2146
+#: src/pages/Stake/StakeV2.js:2030
+msgid "Vesting"
+msgstr ""
+
+#: src/pages/Stake/StakeV2.js:2088
+#: src/pages/Stake/StakeV2.js:2185
 msgid "Vesting Status"
 msgstr "베스팅 상황"
 
-#: src/App/App.js:338
-#: src/App/App.js:350
+#: src/App/App.js:342
+#: src/App/App.js:354
+#: src/pages/Exchange/Exchange.js:77
+#: src/pages/Exchange/Exchange.js:97
 msgid "View"
 msgstr "보기"
 
-#: src/pages/BuyGlp/BuyGlp.js:47
+#: src/pages/BuyGlp/BuyGlp.js:48
 msgid "View <0>staking</0> page."
 msgstr "<0>스테이킹</0> 페이지 보기."
 
@@ -2263,7 +2492,7 @@ msgstr "<0>스테이킹</0> 페이지 보기."
 msgid "View in Explorer"
 msgstr "Explorer에서 보기"
 
-#: src/pages/Dashboard/DashboardV2.js:604
+#: src/pages/Dashboard/DashboardV2.js:613
 msgid "Volume"
 msgstr "거래량"
 
@@ -2275,11 +2504,11 @@ msgstr "유효한 추천 코드를 사용하여 이 계정으로 트레이드된
 msgid "Volume traded by your referred traders."
 msgstr "귀하가 추천한 트레이더들의 거래량"
 
-#: src/components/Glp/GlpSwap.js:1006
+#: src/components/Glp/GlpSwap.js:1045
 msgid "WALLET"
 msgstr "지갑이"
 
-#: src/components/Glp/GlpSwap.js:897
+#: src/components/Glp/GlpSwap.js:931
 msgid "WARNING: High Fees"
 msgstr "경고: 높은 수수료"
 
@@ -2287,22 +2516,26 @@ msgstr "경고: 높은 수수료"
 msgid "WARNING: This position has a low amount of collateral after deducting borrowing fees, deposit more collateral to reduce the position's liquidation risk."
 msgstr "경고: 이 포지션은 차용수수료를 차감하면 담보액이 낮습니다. 포지션 청산 위험을 줄이기 위해 담보액을 늘려주세요."
 
-#: src/pages/Dashboard/DashboardV2.js:982
+#: src/pages/Dashboard/DashboardV2.js:1021
 msgid "WEIGHT"
 msgstr "비중"
 
-#: src/components/Exchange/SwapBox.js:1168
-#: src/components/Glp/GlpSwap.js:507
+#: src/components/Exchange/SwapBox.js:1246
+#: src/components/Glp/GlpSwap.js:519
 msgid "Waiting for Approval"
 msgstr "승인 대기중"
 
-#: src/components/Glp/GlpSwap.js:708
-#: src/components/Glp/GlpSwap.js:1353
-#: src/pages/Stake/StakeV2.js:1482
-#: src/pages/Stake/StakeV2.js:1775
-#: src/pages/Stake/StakeV2.js:1908
+#: src/components/Glp/GlpSwap.js:716
+#: src/components/Glp/GlpSwap.js:1393
+#: src/pages/Stake/StakeV2.js:1484
+#: src/pages/Stake/StakeV2.js:1792
+#: src/pages/Stake/StakeV2.js:1929
 msgid "Wallet"
 msgstr "지갑"
+
+#: src/App/App.js:580
+msgid "Wallet Connect"
+msgstr ""
 
 #: src/pages/BeginAccountTransfer/BeginAccountTransfer.js:125
 #: src/pages/CompleteAccountTransfer/CompleteAccountTransfer.js:36
@@ -2314,10 +2547,14 @@ msgid "Wallet not connected"
 msgstr "지갑이 연결되지 않음"
 
 #: src/App/App.js:564
-msgid "WalletConnect"
-msgstr "지갑연결"
+#~ msgid "WalletConnect"
+#~ msgstr "지갑연결"
 
-#: src/components/Exchange/SwapBox.js:2110
+#: src/pages/Home/Home.js:257
+msgid "We are not just a Decentralize we are most like"
+msgstr ""
+
+#: src/components/Exchange/SwapBox.js:2222
 msgid "When closing the position, you can select which token you would like to receive."
 msgstr ""
 
@@ -2325,8 +2562,8 @@ msgstr ""
 #: src/components/Exchange/PositionEditor.js:275
 #: src/components/Exchange/PositionEditor.js:460
 #: src/components/Exchange/PositionEditor.js:464
-#: src/pages/Stake/StakeV2.js:2119
-#: src/pages/Stake/StakeV2.js:2203
+#: src/pages/Stake/StakeV2.js:2154
+#: src/pages/Stake/StakeV2.js:2249
 msgid "Withdraw"
 msgstr "인출"
 
@@ -2334,19 +2571,19 @@ msgstr "인출"
 msgid "Withdraw disabled, pending {0} upgrade"
 msgstr ""
 
-#: src/pages/Stake/StakeV2.js:549
+#: src/pages/Stake/StakeV2.js:552
 msgid "Withdraw failed."
 msgstr "인출 실패."
 
-#: src/pages/Stake/StakeV2.js:1235
+#: src/pages/Stake/StakeV2.js:1234
 msgid "Withdraw from GLP Vault"
 msgstr "GLP 볼트에서 인출"
 
-#: src/pages/Stake/StakeV2.js:1224
+#: src/pages/Stake/StakeV2.js:1223
 msgid "Withdraw from GMX Vault"
 msgstr "GMX 볼트에서 인출"
 
-#: src/pages/Stake/StakeV2.js:548
+#: src/pages/Stake/StakeV2.js:551
 msgid "Withdraw submitted."
 msgstr "인출 제출 완료."
 
@@ -2362,21 +2599,38 @@ msgstr "인출 제출 완료."
 msgid "Withdrawing..."
 msgstr "인출중..."
 
-#: src/pages/Stake/StakeV2.js:550
+#: src/pages/Stake/StakeV2.js:553
 msgid "Withdrawn!"
 msgstr "인출 완료!"
 
-#: src/pages/Stake/StakeV2.js:1328
+#: src/pages/Home/Home.js:254
+msgid "XVI FEATURES"
+msgstr ""
+
+#: src/pages/Ecosystem/Ecosystem.js:417
+msgid "XVI Pages"
+msgstr ""
+
+#: src/pages/Stake/StakeV2.js:1460
+msgid "XVI Pro"
+msgstr ""
+
+#: src/pages/Stake/StakeV2.js:2050
+#: src/pages/Stake/StakeV2.js:2163
+msgid "XVIPro Vault"
+msgstr ""
+
+#: src/pages/Stake/StakeV2.js:1327
 msgid "You are earning {nativeTokenSymbol} rewards with {0} tokens.<0/>Tokens: {amountStr}."
 msgstr "귀하는 {nativeTokenSymbol} 보상을 {0} 토큰으로 얻고 있습니다.<0/> 토큰: {amountStr}"
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:145
-msgid "You can buy AVAX directly on <0>Avalanche</0> using Banxa:"
-msgstr "Banxa를 사용하여 <0>Avalanche</0>상에서 직접 AVAX를 구입:"
+#~ msgid "You can buy AVAX directly on <0>Avalanche</0> using Banxa:"
+#~ msgstr "Banxa를 사용하여 <0>Avalanche</0>상에서 직접 AVAX를 구입:"
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:65
-msgid "You can buy BNB directly on <0>Binance</0> using Banxa:"
-msgstr ""
+#~ msgid "You can buy BNB directly on <0>Binance</0> using Banxa:"
+#~ msgstr ""
 
 #: src/pages/BuyGMX/BuyGMX.js:65
 #~ msgid "You can buy ETH directly on <0>Arbitrum</0> using Banxa:"
@@ -2391,14 +2645,14 @@ msgid "You can currently vest a maximum of {0} esGMX tokens at a ratio of {1} {s
 msgstr "{1} {stakingToken} 대 1 esGMX 비율로 최대 {0} esGMX 토큰을 현재 베스팅 할 수 있습니다."
 
 #: src/pages/BuyLeveragePro/BuyLeveragePro.js:170
-msgid "You can transfer AVAX to Avalanche using any of the below options."
-msgstr "아래의 옵션중 하나를 사용해, AVAX를 Avalanche에 보낼 수 있습니다."
+#~ msgid "You can transfer AVAX to Avalanche using any of the below options."
+#~ msgstr "아래의 옵션중 하나를 사용해, AVAX를 Avalanche에 보낼 수 있습니다."
 
 #: src/pages/BuyGMX/BuyGMX.js:90
 #~ msgid "You can transfer ETH from other networks to Arbitrum using any of the below options:"
 #~ msgstr "아래의 옵션중 하나를 사용해, ETH를 Arbitrum에 보낼 수 있습니다."
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:90
+#: src/pages/BuyLeveragePro/BuyLeveragePro.js:79
 msgid "You can transfer ETH from other networks to Binance using any of the below options:"
 msgstr ""
 
@@ -2410,8 +2664,8 @@ msgstr "{pendingReceiver}로 <0>전송 보류중</0>"
 msgid "You have a pending transfer from {sender}."
 msgstr "{sender}로부터 보류중인 전송이 있습니다."
 
-#: src/pages/Stake/StakeV2.js:1219
-#: src/pages/Stake/StakeV2.js:1230
+#: src/pages/Stake/StakeV2.js:1218
+#: src/pages/Stake/StakeV2.js:1229
 msgid "You have not deposited any tokens for vesting."
 msgstr "베스트팅을 위한 토큰이 예치되지 않았습니다."
 
@@ -2443,11 +2697,11 @@ msgstr "이전이 시작되었습니다."
 #~ msgid "lolipopi"
 #~ msgstr "lolipopi"
 
-#: src/pages/Exchange/Exchange.js:797
+#: src/pages/Exchange/Exchange.js:798
 msgid "order"
 msgstr "주문"
 
-#: src/pages/Exchange/Exchange.js:797
+#: src/pages/Exchange/Exchange.js:798
 msgid "orders"
 msgstr "주문"
 
@@ -2456,52 +2710,64 @@ msgstr "주문"
 #~ msgid "to start using GMX"
 #~ msgstr "GMX를 시작하기 위해서는"
 
-#: src/App/App.js:199
-#: src/App/App.js:221
+#: src/App/App.js:200
+#: src/App/App.js:222
 msgid "to start using LeveragePro"
 msgstr ""
 
-#: src/components/SettingDropdown/SettingDropdown.js:102
-#~ msgid "{0}"
-#~ msgstr "{0}"
+#: src/components/Header/HeaderDropDown.tsx:58
+#: src/components/Header/HeaderDropDown.tsx:62
+#: src/components/Header/HeaderDropDown.tsx:78
+#: src/components/Header/HeaderDropDown.tsx:82
+msgid "{0}"
+msgstr "{0}"
 
-#: src/components/Glp/GlpSwap.js:782
+#: src/components/Glp/GlpSwap.js:790
 msgid "{0} GLP (${1})"
 msgstr "{0} GLP (${1})"
 
-#: src/components/Glp/GlpSwap.js:552
+#: src/components/Glp/GlpSwap.js:564
 msgid "{0} GLP bought with {1} {2}!"
 msgstr "{1} {2}로 GLP를 구매하였습니다!"
 
-#: src/components/Glp/GlpSwap.js:740
+#: src/components/Glp/GlpSwap.js:748
 msgid "{0} GLP have been reserved for vesting."
 msgstr "{0} GLP가 베스팅을 위해 리저브되었습니다."
 
-#: src/components/Glp/GlpSwap.js:579
+#: src/components/Glp/GlpSwap.js:591
 msgid "{0} GLP sold for {1} {2}!"
 msgstr "{0} GLP를 {1} {2}로 판매하였습니다!"
 
-#: src/components/Exchange/SwapBox.js:942
-#: src/components/Exchange/SwapBox.js:998
-#: src/components/Glp/GlpSwap.js:443
+#: src/components/Exchange/SwapBox.js:1020
+#: src/components/Exchange/SwapBox.js:1076
+#: src/components/Glp/GlpSwap.js:455
 msgid "{0} pool exceeded, try different token"
 msgstr "{0} 풀이 초과되었습니다. 다른 자산으로 시도해보세요"
 
-#: src/components/Glp/GlpSwap.js:640
+#: src/components/Glp/GlpSwap.js:652
 msgid "{0} selected in order form"
 msgstr "{0}이(가) 주문 폼에서 선택되었습니다."
 
-#: src/components/Exchange/SwapBox.js:862
+#: src/components/Exchange/SwapBox.js:940
 msgid "{0} {1} not supported"
 msgstr "{0} {1}은(는) 지원되지 않습니다"
 
-#: src/pages/Dashboard/DashboardV2.js:554
+#: src/pages/Dashboard/DashboardV2.js:563
 msgid "{chainName} Total Stats start from {totalStatsStartDate}.<0/> For detailed stats:"
 msgstr "{chainName}의 전체 통계는 {totalStatsStartDate}부터 시작됩니다.<0/> 더 자세한 통계:"
 
-#: src/components/Glp/GlpSwap.js:759
+#: src/components/Common/SliderCard.tsx:17
+msgid "{content}"
+msgstr ""
+
+#: src/components/Glp/GlpSwap.js:767
 msgid "{nativeTokenSymbol} ({wrappedTokenSymbol}) APR"
 msgstr "{nativeTokenSymbol} ({wrappedTokenSymbol}) APR"
+
+#: src/pages/Dashboard/DashboardV2.js:885
+#: src/pages/Dashboard/DashboardV2.js:992
+msgid "{stakedPercent}%"
+msgstr ""
 
 #: src/Footer.js:64
 #: src/Footer.js:73
@@ -2509,3 +2775,11 @@ msgstr "{nativeTokenSymbol} ({wrappedTokenSymbol}) APR"
 #: src/Footer.js:87
 #~ msgid "{text}"
 #~ msgstr "{text}"
+
+#: src/components/Common/SliderCard.tsx:16
+msgid "{title}"
+msgstr ""
+
+#: src/components/Footer/Footer.js:46
+msgid "©Copyright XVI 2022. All rights reserves <0/>"
+msgstr ""

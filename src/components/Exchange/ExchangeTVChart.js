@@ -18,9 +18,9 @@ import {
 } from "../../lib/legacy";
 import { useChartPrices } from "../../domain/legacy";
 import Tab from "../Tab/Tab";
-
 import { getTokens, getToken } from "../../config/Tokens";
 import ChartTokenSelector from "./ChartTokenSelector";
+import { Trans } from "@lingui/macro";
 
 const PRICE_LINE_TEXT_WIDTH = 15;
 
@@ -91,13 +91,13 @@ const getChartOptions = (width, height) => ({
   grid: {
     vertLines: {
       visible: true,
-      color: "rgba(35, 38, 59, 1)",
-      style: 2,
+      color: "#3d3c3d",
+      style: 1,
     },
     horzLines: {
       visible: true,
-      color: "rgba(35, 38, 59, 1)",
-      style: 2,
+      color: "#3d3c3d",
+      style: 1,
     },
   },
   // https://github.com/tradingview/lightweight-charts/blob/master/docs/time-scale.md#time-scale
@@ -439,30 +439,31 @@ export default function ExchangeTVChart(props) {
               />
             </div>
           </div>
-          <div>
+          {/* <div>
             <div className="ExchangeChart-main-price">
               {chartToken.maxPrice && formatAmount(chartToken.maxPrice, USD_DECIMALS, 2, true)}
             </div>
             <div className="ExchangeChart-info-label">
               ${chartToken.minPrice && formatAmount(chartToken.minPrice, USD_DECIMALS, 2, true)}
             </div>
-          </div>
-          <div>
-            <div className="ExchangeChart-info-label">24h Change</div>
+          </div> */}
+          <div className="ExchangeChart-addtional-group">
+          <div className="ExchangeChart-additional-info-change">
+            <div className="ExchangeChart-info-label"><Trans>24h Change</Trans></div>
             <div className={cx({ positive: deltaPercentage > 0, negative: deltaPercentage < 0 })}>
               {!deltaPercentageStr && "-"}
               {deltaPercentageStr && deltaPercentageStr}
             </div>
           </div>
           <div className="ExchangeChart-additional-info">
-            <div className="ExchangeChart-info-label">24h High</div>
+            <div className="ExchangeChart-info-label"><Trans>24h High</Trans></div>
             <div>
               {!high && "-"}
               {high && numberWithCommas(high.toFixed(2))}
             </div>
           </div>
           <div className="ExchangeChart-additional-info">
-            <div className="ExchangeChart-info-label">24h Low</div>
+            <div className="ExchangeChart-info-label"><Trans>24h Low</Trans></div>
             <div>
               {!low && "-"}
               {low && numberWithCommas(low.toFixed(2))}
@@ -470,10 +471,11 @@ export default function ExchangeTVChart(props) {
           </div>
         </div>
       </div>
+      </div>
       <div className="ExchangeChart-bottom App-box App-box-border">
         <div className="ExchangeChart-bottom-header">
           <div className="ExchangeChart-bottom-controls">
-            <Tab options={Object.keys(CHART_PERIODS)} option={period} setOption={setPeriod} />
+              <Tab options={Object.keys(CHART_PERIODS)} option={period} setOption={setPeriod} type="trade"/>
           </div>
           {candleStatsHtml}
         </div>

@@ -29,7 +29,10 @@
   width: 100%;
   font-size: 1.7rem;
 }
-
+.stake-layout {
+  padding: 14.4rem 8rem 10rem 8rem;
+  background: #222121;
+}
 .StakeV2-boost-bar {
   overflow: hidden;
   vertical-align: middle;

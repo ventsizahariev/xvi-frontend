@@ -1,7 +1,7 @@
 import cx from "classnames";
 import { useCallback, useState, useRef } from "react";
 import { IS_TOUCH } from "../../config/ui";
-
+import {IoIosInformationCircleOutline} from 'react-icons/io';
 const OPEN_DELAY = 0;
 const CLOSE_DELAY = 100;
 
@@ -60,7 +60,7 @@ export default function Tooltip(props) {
       <span
         className={cx({ "Tooltip-handle": !props.disableHandleStyle }, [props.handleClassName], { active: visible })}
       >
-        {props.handle}
+        {props.isHandlerDisabled ? <div className="Tooltip-disabled-wrapper"><IoIosInformationCircleOutline size={14} className="Tooltip-icon"/>{props.handle}</div> : <><IoIosInformationCircleOutline size={14} className="Tooltip-icon"/>{props.handle}</>}
       </span>
       {visible && <div className={cx(["Tooltip-popup", position])}>{props.renderContent()}</div>}
     </span>

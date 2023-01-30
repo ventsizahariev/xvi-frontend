@@ -61,9 +61,10 @@ import Checkbox from "../components/Checkbox/Checkbox";
 
 import "../styles/Shared.css";
 import "../styles/Font.css";
-import "./App.css";
+import "./App.scss";
 import "../styles/Input.css";
 
+import settingWaveIcon from '../img/setting_wave_icon.png';
 import metamaskImg from "../img/metamask.png";
 import coinbaseImg from "../img/coinbaseWallet.png";
 import walletConnectImg from "../img/walletconnect-circle-blue.svg";
@@ -236,6 +237,8 @@ function FullApp() {
   };
 
   const [walletModalVisible, setWalletModalVisible] = useState(false);
+  const [selectedWallet, setSelectedWallet] = useState(-1);
+  const [walletSelectOption, setWalletSelectOption] = useState(false);
   const [redirectModalVisible, setRedirectModalVisible] = useState(false);
   const [shouldHideRedirectModal, setShouldHideRedirectModal] = useState(false);
   const [redirectPopupTimestamp, setRedirectPopupTimestamp, removeRedirectPopupTimestamp] =
@@ -322,6 +325,7 @@ function FullApp() {
     setSelectedToPage(to);
   };
 
+  
   useEffect(() => {
     const checkPendingTxns = async () => {
       const updatedPendingTxns = [];
@@ -371,6 +375,18 @@ function FullApp() {
 
   const vaultAddress = getContract(chainId, "Vault");
   const positionRouterAddress = getContract(chainId, "PositionRouter");
+
+  const chooseWallet = () => {
+    if(selectedWallet == 0) {
+      activateMetaMask();
+    }
+    if(selectedWallet == 1) {
+      activateCoinBase();
+    }
+    if(selectedWallet == 2) {
+      activateWalletConnect();
+    }
+  }
 
   useEffect(() => {
     const wsVaultAbi = Vault.abi;
@@ -515,8 +531,6 @@ function FullApp() {
               <PageNotFound/>
             </Route>
           </Switch>
-          )
-          )
         </div>
       </div>
       <ToastContainer
@@ -546,44 +560,63 @@ function FullApp() {
         setIsVisible={setWalletModalVisible}
         label="Connect Wallet"
       >
-        <button className="Wallet-btn MetaMask-btn" onClick={activateMetaMask}>
+        <div className="connect-wallet-total-container">
+        <div className="connect-wallet-container">
+        <button className={selectedWallet == 0 ? "Wallet-btn MetaMask-btn active":"Wallet-btn MetaMask-btn"} onClick={() => {setSelectedWallet(0)}}>
           <img src={metamaskImg} alt="MetaMask"/>
           <div>
             <Trans>MetaMask</Trans>
           </div>
         </button>
-        <button className="Wallet-btn CoinbaseWallet-btn" onClick={activateCoinBase}>
+        <button className={selectedWallet == 1 ?"Wallet-btn CoinbaseWallet-btn active":"Wallet-btn CoinbaseWallet-btn"} onClick={() => {setSelectedWallet(1)}}>
           <img src={coinbaseImg} alt="Coinbase Wallet"/>
           <div>
             <Trans>Coinbase Wallet</Trans>
           </div>
         </button>
-        <button className="Wallet-btn WalletConnect-btn" onClick={activateWalletConnect}>
+        <button className={selectedWallet == 2 ?"Wallet-btn WalletConnect-btn active":"Wallet-btn WalletConnect-btn"} onClick={() => {setSelectedWallet(2)}}>
           <img src={walletConnectImg} alt="WalletConnect"/>
           <div>
-            <Trans>WalletConnect</Trans>
+            <Trans>Wallet Connect</Trans>
           </div>
         </button>
+
+        </div>
+        <div className="connect-wallet-options">
+            <Checkbox isChecked={walletSelectOption} setIsChecked={setWalletSelectOption}>
+              <Trans>Lorem Ipsum is simply dummy text of the printing and typesetting.</Trans>
+            </Checkbox>
+          </div>
+          <div className="Exchange-settings-button-group wallet-btn-group">
+            <button className={ walletSelectOption ? "App-cta wallet-connect-button active":"App-cta wallet-connect-button inactive"} onClick={chooseWallet}>
+            <Trans>Save Changes</Trans>
+            </button>
+            <button className="App-cta-close-btn wallet-connect-button" onClick={() => {setWalletModalVisible(false)}}>
+              <Trans>Close</Trans>
+            </button>
+        </div>
+        </div>
       </Modal>
       <Modal
         className="App-settings"
         isVisible={isSettingsVisible}
         setIsVisible={setIsSettingsVisible}
-        label="Settings"
+        label="More Setting"
       >
         <div className="App-settings-row">
-          <div>
+        <div className="App-slippage-tolerance-icon">
+            <img src = {settingWaveIcon} width={36} height={36}/>
             <Trans>Allowed Slippage</Trans>
           </div>
           <div className="App-slippage-tolerance-input-container">
             <input
-              type="number"
+              type="text"
               className="App-slippage-tolerance-input"
               min="0"
-              value={slippageAmount}
-              onChange={(e) => setSlippageAmount(e.target.value)}
+              value={slippageAmount + '%'}
+              onChange={(e) => setSlippageAmount(e.target.value.replace('%', ''))}
             />
-            <div className="App-slippage-tolerance-input-percent">%</div>
+            {/* <div className="App-slippage-tolerance-input-percent">%</div> */}
           </div>
         </div>
         <div className="Exchange-settings-row">
@@ -604,9 +637,14 @@ function FullApp() {
         </div>
         {/*)}*/}
 
-        <button className="App-cta Exchange-swap-button" onClick={saveAndCloseSettings}>
-          <Trans>Save</Trans>
-        </button>
+        <div className="Exchange-settings-button-group">
+          <button className={ showPnlAfterFees || isPnlInLeverage ||shouldDisableOrderValidation ? "App-cta Exchange-swap-button active":"App-cta Exchange-swap-button inactive"} onClick={saveAndCloseSettings}>
+          <Trans>Save Changes</Trans>
+          </button>
+          <button className="App-cta-close-btn Exchange-swap-button" onClick={() => {setIsSettingsVisible(false)}}>
+            <Trans>Close</Trans>
+          </button>
+        </div>
       </Modal>
     </>
   );

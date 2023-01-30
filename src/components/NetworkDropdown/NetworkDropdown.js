@@ -1,18 +1,21 @@
 import React, { useRef, useState } from "react";
 import { Menu } from "@headlessui/react";
 import ModalWithPortal from "../Modal/ModalWithPortal";
-import { t } from "@lingui/macro";
+import { t, Trans } from "@lingui/macro";
 import cx from "classnames";
-import { HiDotsVertical } from "react-icons/hi";
+import { IoMdSettings } from "react-icons/io";
 import "./NetworkDropdown.css";
 import language24Icon from "../../img/ic_language24.svg";
 import settingsIcon from "../../img/ic_settings_16.svg";
-import bscIcon from "../../img/ic_binance_logo.svg";
-import velasIcon from "../../img/ic_velas_logo.svg";
+import bscIcon from "../../img/binance_icon_hover.png";
+import velasIcon from "../../img/velas_icon.png";
 import checkedIcon from "../../img/ic_checked.svg";
 import { importImage, LANGUAGE_LOCALSTORAGE_KEY } from "../../lib/legacy";
 import { defaultLocale, dynamicActivate, locales } from "../../lib/i18n";
-
+import enFlag from '../../img/flag_en.png';
+import esFlag from '../../img/flag_es.png';
+import jaFlag from '../../img/flag_ja.png';
+import koFlag from '../../img/flag_ko.png';
 const LANGUAGE_MODAL_KEY = "LANGUAGE";
 const NETWORK_MODAL_KEY = "NETWORK";
 
@@ -83,19 +86,21 @@ export default function NetworkDropdown(props) {
 function NavIcons({ selectorLabel }) {
   return (
     <>
-      <button className={cx("btn-primary small transparent")}>
+      <button className={ selectorLabel == "BSCTestnet" ? "btn-primary small transparent-BSCTestnet" :"btn-primary small transparent-VelasTestnet"}>
         {selectorLabel == "BSCTestnet" && <img className="network-dropdown-icon" src={bscIcon} alt={selectorLabel} />}
         {selectorLabel == "VelasTestnet" && <img className="network-dropdown-icon" src={velasIcon} alt={selectorLabel} />}
       </button>
-      <div className="network-dropdown-seperator" />
       <button className={cx("btn-primary small transparent")}>
-        <HiDotsVertical color="white" size={20} />
+        <IoMdSettings color="white" size={20} />
       </button>
     </>
   );
 }
 
-function DesktopDropdown({ setActiveModal, selectorLabel, networkOptions, onNetworkSelect, openSettings }) {
+function DesktopDropdown({ setActiveModal, selectorLabel, networkOptions, onNetworkSelect, openSettings,currentLanguage }) {
+  const onLanguageChooser = (item) => {
+    dynamicActivate(item);
+  }
   return (
     <div className="App-header-network">
       <Menu>
@@ -113,25 +118,33 @@ function DesktopDropdown({ setActiveModal, selectorLabel, networkOptions, onNetw
           </div>
           <div className="network-dropdown-divider" />
           <Menu.Item>
-            <div className="network-dropdown-menu-item menu-item" onClick={openSettings}>
-              <div className="menu-item-group">
-                <div className="menu-item-icon">
-                  <img className="network-dropdown-icon" src={settingsIcon} alt="" />
-                </div>
-                <span className="network-dropdown-item-label">Settings</span>
+          <div
+              className="network-dropdown-menu-item menu-item "
+              //onClick={() => setActiveModal(LANGUAGE_MODAL_KEY)}
+            >
+              <div className={cx("language-dropdown-menu", {active: currentLanguage.current === "en",})} onClick={() => onLanguageChooser("en")}>
+                <img src={enFlag} />
+              </div>
+              <div className={cx("language-dropdown-menu", {active: currentLanguage.current === "es",})} onClick={() => onLanguageChooser("es")}>
+                <img src={esFlag}/>
+              </div>
+              <div className={cx("language-dropdown-menu", {active: currentLanguage.current === "ja",})} onClick={() => onLanguageChooser("ja")}>
+                <img src={jaFlag}/>
+              </div>
+              <div className={cx("language-dropdown-menu", {active: currentLanguage.current === "ko",})} onClick={() => onLanguageChooser("ko")}>
+                <img src={koFlag}/>
               </div>
             </div>
           </Menu.Item>
           <Menu.Item>
-            <div
-              className="network-dropdown-menu-item menu-item last-dropdown-menu"
-              onClick={() => setActiveModal(LANGUAGE_MODAL_KEY)}
-            >
+            <div className="network-dropdown-menu-item menu-item last-dropdown-menu" onClick={openSettings}>
               <div className="menu-item-group">
                 <div className="menu-item-icon">
-                  <img className="network-dropdown-icon" src={language24Icon} alt="" />
+                  <img className="network-dropdown-icon" src={settingsIcon} alt="" />
                 </div>
-                <span className="network-dropdown-item-label">Language</span>
+                <span className="network-dropdown-item-label">
+                  <Trans>Settings</Trans>
+                </span>
               </div>
             </div>
           </Menu.Item>
@@ -150,7 +163,7 @@ function NetworkMenuItems({ networkOptions, selectorLabel, onNetworkSelect }) {
     return (
       <Menu.Item key={network.value}>
         <div
-          className="network-dropdown-menu-item menu-item"
+          className={cx("network-dropdown-menu-item menu-item", { [selectorLabel]: selectorLabel === network.label })}
           onClick={() => handleNetworkSelect({ value: network.value })}
         >
           <div className="menu-item-group">
@@ -159,9 +172,9 @@ function NetworkMenuItems({ networkOptions, selectorLabel, onNetworkSelect }) {
             </div>
             <span className="network-dropdown-item-label">{network.label}</span>
           </div>
-          <div className="network-dropdown-menu-item-img">
+          {/* <div className="network-dropdown-menu-item-img">
             <div className={cx("active-dot", { [selectorLabel]: selectorLabel === network.label })} />
-          </div>
+          </div> */}
         </div>
       </Menu.Item>
     );

@@ -28,7 +28,8 @@ import TradersStats from "../../components/Referrals/TradersStats";
 import AddAffiliateCode from "../../components/Referrals/AddAffiliateCode";
 import { deserializeSampleStats, isRecentReferralCodeNotExpired } from "../../components/Referrals/referralsHelper";
 import { ethers } from "ethers";
-
+import ExternalLink from "../../components/ExternalLink/ExternalLink";
+import ReferralIcon from '../../img/referral_icon.png';
 const TRADERS = t`Traders`;
 const AFFILIATES = t`Affiliates`;
 const TAB_OPTIONS = [TRADERS, AFFILIATES];
@@ -118,6 +119,7 @@ function Referrals({ connectWallet, setPendingTxns, pendingTxns }) {
           <div className="section-title-icon"></div>
           <div className="section-title-content">
             <div className="Page-title">
+            <img width="52" height="52" src={ReferralIcon} alt="Referral Icon" />
               <Trans>Referrals</Trans>
             </div>
             <div className="Page-description">
@@ -134,9 +136,11 @@ function Referrals({ connectWallet, setPendingTxns, pendingTxns }) {
           </div>
         </div>
         <div className="referral-tab-container">
-          <Tab options={TAB_OPTIONS} option={activeTab} setOption={setActiveTab} onChange={setActiveTab} />
+          {renderTradersTab()}
+          { renderAffiliatesTab()}
+          {/* <Tab options={TAB_OPTIONS} option={activeTab} setOption={setActiveTab} onChange={setActiveTab} /> */}
         </div>
-        {activeTab === AFFILIATES ? renderAffiliatesTab() : renderTradersTab()}
+        {/* {activeTab === AFFILIATES ? renderAffiliatesTab() : renderTradersTab()} */}
       </div>
       <Footer />
     </SEO>

@@ -1,23 +1,31 @@
 .DashboardV2 {
-  padding-top: 4.65rem;
+  padding: 6.4rem 8rem;
+  background: #222121;
 }
-
+@media (max-width: 1033px) {
+  .DashboardV2 {
+    padding: 6.4rem 3.2rem;
+  }
+}
 .DashboardV2-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 1.5rem;
-  margin-top: 0.8rem;
+  grid-gap: 1.6rem;
+  background: #272727;
+  border-radius: 12px;
+  padding: 1.6rem;
 }
 
 .DashboardV2-token-cards {
-  margin-top: 0.8rem;
+  padding: 3.2rem;
+  background: #272727;
+  border-radius: 1.2rem;
 }
 
 .token-table-wrapper {
   border: 1px solid #1e2136;
   border-radius: 0.4rem;
   background: #17182c;
-  padding: 0 1.5rem;
   text-align: left;
 }
 
@@ -26,9 +34,7 @@
 }
 
 .token-table-wrapper .App-card-title img {
-  margin-top: 0.3rem;
-  display: inline-flex;
-  margin-left: 0.8rem;
+  margin-right: 0.4rem;
 }
 
 .App-card-title-icon {
@@ -43,22 +49,34 @@
 .stats-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  grid-column-gap: 3.2rem;
+  margin-bottom: 3.2rem;
 }
-
+.stats-wrapper .stats-card-title {
+  padding: 1.6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 .stats-wrapper .App-card {
   width: 100%;
-  display: flex;
 }
 
 .stats-block {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
-
+@media (max-width: 490px) {
+  .stats-block {
+    flex-wrap: wrap;
+  }
+}
 .stats-piechart {
-  margin: -1rem;
-  margin-left: 1.5rem;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .stats-block--glp .stats-label {
@@ -66,7 +84,7 @@
 }
 
 .stats-label {
-  font-size: 1.4rem;
+  font-size: var(--font-sm);
   line-height: 1.6rem;
   border-radius: 0.4rem;
   padding: 1.05rem;
@@ -76,7 +94,32 @@
   background: linear-gradient(90deg, #0b0b0f 0%, rgba(10, 13, 28, 1) 100%);
   cursor: pointer;
 }
+.stats-piechart-distribution {
+  margin: 1.2rem 0;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
 
+  color: #989898;
+}
+.stats-piechart-title {
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+
+  color: #cecece;
+}
+.stats-piechart-sub-title {
+  margin-bottom: 0.8rem;
+}
+.price-list-item {
+  font-size: 2rem;
+}
+.stats-piechart-distribution-percentage {
+  padding: 0.4rem 1.6rem;
+  border: 1px solid #3d3c3d;
+  border-radius: 1.6rem;
+}
 .stats-label-color {
   width: 0.4rem;
   height: 100%;
@@ -123,8 +166,13 @@
 .mobile-token-card {
   display: flex;
   align-items: center;
+  padding: 1.2rem;
 }
-
+@media (max-width: 378px) {
+  .mobile-token-card {
+    flex-wrap: wrap;
+  }
+}
 .token-symbol-text {
   line-height: 1;
 }
@@ -172,6 +220,11 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 0;
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 380px) {
+  .DashboardV2-token-cards {
+    padding: 3.2rem 0.8rem;
   }
 }

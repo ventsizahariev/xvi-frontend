@@ -4,6 +4,8 @@ import cx from "classnames";
 import { ARBITRUM, helperToast, useDebounce } from "../../lib/legacy";
 import { getCodeError, getReferralCodeTakenStatus, getSampleReferrarStat } from "./referralsHelper";
 import { useWeb3React } from "@web3-react/core";
+import KeyIcon from '../../img/referral_key_icon.png';
+import WalletIcon from '../../img/wallet_icon.png';
 
 function AddAffiliateCode({
   handleCreateReferralCode,
@@ -13,7 +15,15 @@ function AddAffiliateCode({
   recentlyAddedCodes,
 }) {
   return (
-    <div className="referral-card section-center mt-medium">
+    <div className="referral-card">
+      <div className="referral-card-header">
+        <img src={KeyIcon} width={48} height={48}/>
+        <div className="referral-card-title">
+          <div className="referral-card-main-title"><Trans>Affiliates</Trans></div>
+          <div className="referral-card-sub-title"><Trans>Lorem Ipsum is simply dummy text of the printing</Trans></div>
+        </div>
+      </div>
+      <div className="referral-card-body">
       <h2 className="title">
         <Trans>Generate Referral Code</Trans>
       </h2>
@@ -30,10 +40,12 @@ function AddAffiliateCode({
             setRecentlyAddedCodes={setRecentlyAddedCodes}
           />
         ) : (
-          <button className="App-cta Exchange-swap-button" type="submit" onClick={connectWallet}>
+          <button className="App-button-option-light Exchange-swap-button" type="submit" onClick={connectWallet}>
+            <img src={WalletIcon}/>
             <Trans>Connect Wallet</Trans>
           </button>
         )}
+        </div>
       </div>
     </div>
   );
@@ -165,7 +177,7 @@ export function AffiliateCodeForm({
         }}
       />
       {error && <p className="error">{error}</p>}
-      <button className="App-cta Exchange-swap-button" type="submit" disabled={!isPrimaryEnabled()}>
+      <button className="App-button-option-light Exchange-swap-button" type="submit" disabled={!isPrimaryEnabled()}>
         {getPrimaryText()}
       </button>
     </form>

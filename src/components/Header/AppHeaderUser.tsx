@@ -4,7 +4,9 @@ import {ConnectWalletButton} from "../Common/Button";
 import React, {useCallback, useEffect} from "react";
 import {HeaderLink} from "./HeaderLink";
 import connectWalletImg from "../../img/ic_wallet_24.svg";
-
+import UnionIcon from "../../img/header_union.svg";
+import ExternalLink from "../ExternalLink/ExternalLink";
+import { FaTwitter, FaDiscord, FaTelegramPlane} from 'react-icons/fa';
 import "./Header.css";
 import {
   BSC,
@@ -17,9 +19,9 @@ import {
   VELAS_TESTNET
 } from "../../lib/legacy";
 import cx from "classnames";
-import {Trans} from "@lingui/macro";
 import NetworkDropdown from "../NetworkDropdown/NetworkDropdown";
 import LanguagePopupHome from "../NetworkDropdown/LanguagePopupHome";
+import {Trans} from "@lingui/macro";
 
 type Props = {
   openSettings: () => void;
@@ -46,13 +48,13 @@ export function AppHeaderUser({
     {
       label: getChainName(BSC_TESTNET),
       value: BSC_TESTNET,
-      icon: "ic_binance_logo.svg",
-      color: "#264f79",
+      icon: "binance_icon_hover.png",
+      color: "#ff0000",
     },
     {
       label: getChainName(VELAS_TESTNET),
       value: VELAS_TESTNET,
-      icon: "ic_velas_logo.svg",
+      icon: "velas_icon.png",
       color: "#264f79",
     }
   ];
@@ -78,22 +80,23 @@ export function AppHeaderUser({
   if (!active) {
     return (
       <div className="App-header-user">
-        <div className={cx("App-header-trade-link", { "homepage-header": isHomeSite() })}>
-          <HeaderLink
-              className="default-btn"
-              to="/trade"
-              redirectPopupTimestamp={redirectPopupTimestamp}
-              showRedirectModal={showRedirectModal}
-          >
-            <Trans>Trade</Trans>
-          </HeaderLink>
-        </div>
-
         {showConnectionOptions ? (
           <>
             <ConnectWalletButton onClick={() => setWalletModalVisible(true)} imgSrc={connectWalletImg}>
               {small ? <Trans>Connect</Trans> : <Trans>Connect Wallet</Trans>}
             </ConnectWalletButton>
+            <div className={cx("App-header-trade-link", { "homepage-header": isHomeSite() })}>
+              <HeaderLink
+                className="header-trade-btn"
+                to="/trade"
+                redirectPopupTimestamp={redirectPopupTimestamp}
+                showRedirectModal={showRedirectModal}
+              >
+                <Trans>
+                  <img src={UnionIcon} width={16}></img>Trade
+                </Trans>
+              </HeaderLink>
+            </div>
             <NetworkDropdown
               small={small}
               networkOptions={networkOptions}
@@ -103,7 +106,29 @@ export function AppHeaderUser({
             />
           </>
         ) : (
-          <LanguagePopupHome />
+          <>
+          <ExternalLink className="App-social-link" href="https://twitter.com/GMX_IO" >
+            <FaTwitter/>
+          </ExternalLink>
+          <ExternalLink className="App-social-link" href="https://discord.com/invite/ymN38YefH9" >
+            <FaDiscord/>
+          </ExternalLink>
+          <ExternalLink className="App-social-link" href="https://t.me/GMX_IO" >
+            <FaTelegramPlane/>
+          </ExternalLink>
+          <div className={cx("App-header-trade-link", { "homepage-header": isHomeSite() })}>
+            <HeaderLink
+              className="header-trade-btn"
+              to="/trade"
+              redirectPopupTimestamp={redirectPopupTimestamp}
+              showRedirectModal={showRedirectModal}
+            >
+              <Trans>
+                <img src={UnionIcon} width={20}></img>Trade
+              </Trans>
+            </HeaderLink>
+          </div>
+          </>
         )}
       </div>
     );

@@ -10,6 +10,8 @@ import { useChainId } from "../../lib/legacy";
 import { getNativeToken } from "../../config/Tokens";
 
 import { Trans } from "@lingui/macro";
+import SpiderIcon from "../../img/spider_icon.png";
+import ExternalLink from "../../components/ExternalLink/ExternalLink";
 
 export default function BuyGlp(props) {
   const { chainId } = useChainId();
@@ -24,13 +26,12 @@ export default function BuyGlp(props) {
   }, [history.location.hash]);
 
   return (
-    <div className="default-container page-layout">
+    <>
+    <div className="default-container buy-glp-container page-layout">
       <div className="section-title-block">
-        <div className="section-title-icon">
-          <img src={buyGLPIcon} alt="buyGLPIcon" />
-        </div>
         <div className="section-title-content">
           <div className="Page-title">
+            <img src={SpiderIcon} width={52} height={52} />
             <Trans>Buy / Sell GLP</Trans>
           </div>
           <div className="Page-description">
@@ -51,7 +52,9 @@ export default function BuyGlp(props) {
         </div>
       </div>
       <GlpSwap {...props} isBuying={isBuying} setIsBuying={setIsBuying} />
-      <Footer />
+      
     </div>
+    <Footer />
+    </>
   );
 }

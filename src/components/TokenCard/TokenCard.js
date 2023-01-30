@@ -7,17 +7,19 @@ import cx from "classnames";
 import gmxBigIcon from "../../img/ic_gmx_custom.svg";
 import glpBigIcon from "../../img/ic_glp_custom.svg";
 
-import {switchNetwork, useChainId, isHomeSite, BSC_TESTNET} from "../../lib/legacy";
+import { switchNetwork, useChainId, isHomeSite, BSC_TESTNET } from "../../lib/legacy";
 
 import { useWeb3React } from "@web3-react/core";
 
 import APRLabel from "../APRLabel/APRLabel";
+import XVIIcon from "../../img/xvi_black.png";
+import ExternalLink from "../ExternalLink/ExternalLink";
+import BuyLeveragePro from "../../pages/BuyLeveragePro/BuyLeveragePro";
 
 export default function TokenCard({ showRedirectModal }) {
   const isHome = isHomeSite();
   const { chainId } = useChainId();
   const { active } = useWeb3React();
-
   const changeNetwork = useCallback(
     (network) => {
       if (network === chainId) {
@@ -54,7 +56,15 @@ export default function TokenCard({ showRedirectModal }) {
     <div className="Home-token-card-options">
       <div className="Home-token-card-option">
         <div className="Home-token-card-option-icon">
-          <img src={gmxBigIcon} alt="gmxBigIcon" /> LeveragePro
+          <div className="Home-token-card-option-icon-left">
+            <img src={XVIIcon} alt="gmxBigIcon" width="40" /> <Trans>LeveragePro</Trans>
+          </div>
+          <div className="Home-token-card-option-icon-right">
+            <Trans>BSC ARP:</Trans>
+            <span className="arp-value">
+              {/* <APRLabel chainId={BSC_TESTNET} label="gmxAprTotal" key="AVALANCHE" /> */}
+            </span>
+          </div>
         </div>
         <div className="Home-token-card-option-info">
           <div className="Home-token-card-option-title">
@@ -62,58 +72,43 @@ export default function TokenCard({ showRedirectModal }) {
               LeveragePro is the utility and governance token. Accrues 30% of the platform's generated fees.
             </Trans>
           </div>
-          <div className="Home-token-card-option-apr">
-            <Trans>BSC APR:</Trans>
-            {/*<APRLabel chainId={BSC_TESTNET} label="gmxAprTotal" />,{" "}*/}
-            {/*<Trans>Avalanche APR:</Trans> <APRLabel chainId={AVALANCHE} label="gmxAprTotal" key="AVALANCHE" />*/}
-          </div>
           <div className="Home-token-card-option-action">
-            <div className="buy">
+            {/* <div className="buy">
               <BuyLink to="/buy_leveragepro" className="default-btn" network={BSC_TESTNET}>
                 <Trans>Buy on Binance</Trans>
               </BuyLink>
-            </div>
-            <a
-              href="about:blank"
-              target="_blank"
-              rel="noreferrer"
-              className="default-btn read-more"
-            >
+            </div> */}
+            <BuyLeveragePro />
+            <ExternalLink href="https://gmxio.gitbook.io/gmx/tokenomics" className="buy-btn-read-more">
               <Trans>Read more</Trans>
-            </a>
+            </ExternalLink>
           </div>
         </div>
       </div>
       <div className="Home-token-card-option">
         <div className="Home-token-card-option-icon">
-          <img src={glpBigIcon} alt="glpBigIcon" /> GLP
+          <div className="Home-token-card-option-icon-left">
+            <img src={XVIIcon} alt="glpBigIcon" width="40" /> GLP
+          </div>
+          <div className="Home-token-card-option-icon-right">
+            <Trans>BSC ARP:</Trans>
+            <span className="arp-value">
+              {/* <APRLabel chainId={ARBITRUM} label="glpAprTotal" key="ARBITRUM" /> */}
+            </span>
+          </div>
         </div>
         <div className="Home-token-card-option-info">
           <div className="Home-token-card-option-title">
             <Trans>GLP is the liquidity provider token. Accrues 70% of the platform's generated fees.</Trans>
           </div>
-          <div className="Home-token-card-option-apr">
-            <Trans>BSC APR:</Trans>
-            {/*<APRLabel chainId={BSC_TESTNET} label="glpAprTotal" key="BSC_TESTNET" />,{" "}*/}
-            {/*<Trans>Avalanche APR:</Trans> <APRLabel chainId={AVALANCHE} label="glpAprTotal" key="AVALANCHE" />*/}
-          </div>
+
           <div className="Home-token-card-option-action">
-            <div className="buy">
-              <BuyLink to="/buy_glp" className="default-btn" network={BSC_TESTNET}>
-                <Trans>Buy on Binance</Trans>
-              </BuyLink>
-              {/*<BuyLink to="/buy_glp" className="default-btn" network={AVALANCHE}>*/}
-              {/*  <Trans>Buy on Avalanche</Trans>*/}
-              {/*</BuyLink>*/}
-            </div>
-            <a
-              href="about:blank"
-              target="_blank"
-              rel="noreferrer"
-              className="default-btn read-more"
-            >
+            <BuyLink to="/buy_glp" className="buy-btn" network={BSC_TESTNET}>
+              <Trans>Buy on Binance</Trans>
+            </BuyLink>
+            <ExternalLink href="https://gmxio.gitbook.io/gmx/tokenomics" className="buy-btn-read-more">
               <Trans>Read more</Trans>
-            </a>
+            </ExternalLink>
           </div>
         </div>
       </div>
