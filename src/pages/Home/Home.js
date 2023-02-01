@@ -111,7 +111,7 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
     slidesToShow: 3,
     lazyLoad: 'ondemand',
     arrows:false,
-    
+
     responsive: [
       {
         breakpoint: 1000,
@@ -197,7 +197,7 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
                 <span>
                   <Trans>Are you new? Read our documentation</Trans>
                 </span>
-                <HeaderLink className="home-document-btn" to="/document">
+                <HeaderLink className="home-document-btn" to="/document" showRedirectModal={showRedirectModal}>
                   <img src={HomeDocumentIcon} width={32} height={14}></img>
                 </HeaderLink>
               </div>
@@ -216,8 +216,8 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
             <LaunchExchangeButton />
           </div>
         </div>
-        
-        
+
+
       </div>
       <div className="Home-latest-info-container default-container">
           <div className="Home-latest-info-block">
@@ -266,7 +266,7 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
                 </Trans>
               </span>
             </div>
-          
+
           </div>
           <div className="Home-benfits-control-progress">
           <div className="Home-benefits-control-progress-bar"></div>
@@ -351,7 +351,7 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
              </div>
              <div className="Home-cta-option-info">
                <div className="Home-cta-option-title"><Trans>Velas Blockchain</Trans></div>
-               
+
              </div>
             </div>
           </div>
