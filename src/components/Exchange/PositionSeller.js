@@ -821,7 +821,7 @@ export default function PositionSeller(props) {
           <div className="Confirmation-box-warning">
             Reducing the position at the current price will forfeit a&nbsp;
             <a
-              href="https://gmxio.gitbook.io/gmx/trading#minimum-price-change"
+              href="about:blank"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -837,7 +837,7 @@ export default function PositionSeller(props) {
       return (
         <div className="Confirmation-box-warning">
           This order will forfeit a&nbsp;
-          <a href="https://gmxio.gitbook.io/gmx/trading#minimum-price-change" target="_blank" rel="noopener noreferrer">
+          <a href="about:blank" target="_blank" rel="noopener noreferrer">
             profit
           </a>{" "}
           of {deltaStr}. <br />
@@ -1144,7 +1144,7 @@ export default function PositionSeller(props) {
                       <br />
 
                       <div className="PositionSeller-fee-item">
-                        <a href="https://gmxio.gitbook.io/gmx/trading#fees" target="_blank" rel="noopener noreferrer">
+                        <a href="about:blank" target="_blank" rel="noopener noreferrer">
                           More Info
                         </a>{" "}
                         about fees.

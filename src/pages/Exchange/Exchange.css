@@ -682,6 +682,23 @@ table.Exchange-list th {
   width: 48rem;
   height: 38rem;
   scrollbar-color: #f9bd5d #313131;
+  scrollbar-width: thin;
+}
+.Exchange-swap-box .TokenSelector .Modal-content::-webkit-scrollbar,
+.Selector .Modal-content::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.Exchange-swap-box .TokenSelector .Modal-content::-webkit-scrollbar-track-piece,
+.Selector .Modal-content::-webkit-scrollbar {
+  background-color: #313131;
+}
+
+.Exchange-swap-box .TokenSelector .Modal-content::-webkit-scrollbar-thumb:vertical,
+.Selector .Modal-content::-webkit-scrollbar {
+  height: 1.5rem;
+  background-color: #f9bd5d;
 }
 .Exchange-swap-box .TokenSelector .Modal-content .Modal-body {
   overflow-y: auto;

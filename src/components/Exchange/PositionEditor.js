@@ -585,7 +585,7 @@ export default function PositionEditor(props) {
                                 ? "deposit"
                                 : "withdrawal"}.{" "}
                               <a
-                                href="https://gmxio.gitbook.io/gmx/trading#execution-fee"
+                                href="about:blank"
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >

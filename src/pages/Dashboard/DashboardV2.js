@@ -423,7 +423,7 @@ export default function DashboardV2() {
     );
   };
 
-  let stakedPercent = 0;
+  let stakedPercent = 25;
 
   let liquidityPercent = 0;
 
@@ -582,7 +582,7 @@ export default function DashboardV2() {
                       handle={`$${formatAmount(tvl, USD_DECIMALS, 0, true)}`}
                       position="right-bottom"
                       renderContent={() => (
-                        <span className="label">{t`Assets Under Management: LeveragePro staked (All chains) + GLP pool (${chainName})`}</span>
+                        <span className="label">{t`Assets Under Management: XVI staked (All chains) + GLP pool (${chainName})`}</span>
                       )}
                     />
                   </div>
@@ -721,7 +721,7 @@ export default function DashboardV2() {
                   <div className="label">
                     <Trans>Total Volume</Trans>
                   </div>
-                  <div>
+                  <div className="App-card-value">
                     <TooltipComponent
                       position="right-bottom"
                       className="nowrap"
@@ -738,9 +738,21 @@ export default function DashboardV2() {
                 </div>
                 <div className="App-card-row">
                   <div className="label">
-                    <Trans>Floor Price Fund</Trans>
+                    <Trans>Claimable</Trans>
                   </div>
-                  <div className="App-card-value">${formatAmount(totalFloorPriceFundUsd, 30, 0, true)}</div>
+                  <div className="App-card-value">
+                  <TooltipComponent
+                      position="right-bottom"
+                      className="nowrap"
+                      handle={`$${formatAmount(totalFloorPriceFundUsd, 30, 0, true)}`}
+                      renderContent={() => (
+                        <TooltipCard
+                          title={t`Claimable`}
+                          bsc={totalFloorPriceFundUsd?.[BSC_TESTNET]}
+                          velas={totalFloorPriceFundUsd?.[VELAS_TESTNET]}
+                        />
+                      )}
+                    /></div>
                 </div>
               </div>
             </div>
@@ -765,10 +777,10 @@ export default function DashboardV2() {
                     </div>
                     <div className="App-card-title-mark-info">
                       <div className="App-card-title-mark-title">
-                        <Trans>LeveragePro</Trans>
+                        <Trans>XVI</Trans>
                       </div>
                       <div className="App-card-title-mark-subtitle">
-                        <Trans>LeveragePro</Trans>
+                        <Trans>XVI</Trans>
                       </div>
                     </div>
                   </div>
@@ -781,8 +793,7 @@ export default function DashboardV2() {
                     <div className="App-card-row">
                       <div className="label">Price</div>
                       <div className="App-card-value">
-                        {!leveragePrice && "$0"}
-                        {leveragePrice && (
+                        
                           <TooltipComponent
                             position="right-bottom"
                             className="nowrap"
@@ -797,7 +808,6 @@ export default function DashboardV2() {
                               </>
                             )}
                           />
-                        )}
                       </div>
                     </div>
                     <div className="App-card-row">
@@ -805,7 +815,18 @@ export default function DashboardV2() {
                         <Trans>Supply</Trans>
                       </div>
                       <div className="App-card-value">
-                        {formatArrayAmount(totalSupplies, 1, LEVERAGE_DECIMALS, 0, true)} LeveragePro
+                      <TooltipComponent
+                          position="right-bottom"
+                          className="nowrap"
+                          handle={`${formatArrayAmount(totalSupplies, 1, LEVERAGE_DECIMALS, 0, true)} XVI`}
+                          renderContent={() => (
+                            <TooltipCard
+                              label="Supply on Binance"
+                              amount={formatArrayAmount(totalSupplies, 1, LEVERAGE_DECIMALS, 0, true)}
+                              showDollar={false}
+                            />
+                          )}
+                        />
                       </div>
                     </div>
                     <div className="App-card-row">
@@ -833,7 +854,22 @@ export default function DashboardV2() {
                       <div className="label">
                         <Trans>Market Cap</Trans>
                       </div>
-                      <div className="App-card-value">${formatAmount(leverageMarketCap, USD_DECIMALS, 0, true)}</div>
+                      <div className="App-card-value">
+                      <TooltipComponent
+                          position="right-bottom"
+                          className="nowrap"
+                          handle={`$${formatAmount(leverageMarketCap, USD_DECIMALS, 0, true)}`}
+                          renderContent={() => (
+                            <TooltipCard
+                              title={t`Staked`}
+                              testnet={leverageMarketCap}
+                              total={leverageMarketCap}
+                              decimalsForConversion={USD_DECIMALS}
+                              showDollar={false}
+                            />
+                          )}
+                        />
+                        </div>
                     </div>
                   </div>
                   {gmxDistributionData.length > 0 && (
@@ -905,7 +941,7 @@ export default function DashboardV2() {
                     </div>
                   </div>
                   <div>
-                    <AssetDropdown assetSymbol="GLP" />
+                    <AssetDropdown assetSymbol="GMX" />
                   </div>
                 </div>
                 <div className="stats-block">
@@ -915,31 +951,102 @@ export default function DashboardV2() {
                       <div className="label">
                         <Trans>Price</Trans>
                       </div>
-                      <div className="App-card-value">${formatAmount(glpPrice, USD_DECIMALS, 3, true)}</div>
+                      <div className="App-card-value">
+                      <TooltipComponent
+                            position="right-bottom"
+                            className="nowrap"
+                            handle={"$" + formatAmount(glpPrice, USD_DECIMALS, 3, true)}
+                            renderContent={() => (
+                              <>
+                                <TooltipCardRow
+                                  label="Pice on GLP"
+                                  amount={formatAmount(glpPrice, USD_DECIMALS, 3, true)}
+                                  showDollar={true}
+                                />
+                              </>
+                            )}
+                          />
+                        
+                        </div>
                     </div>
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Supply</Trans>
                       </div>
-                      <div className="App-card-value"> {formatAmount(glpSupply, GLP_DECIMALS, 0, true)} GLP</div>
+                      <div className="App-card-value"> 
+                      <TooltipComponent
+                          position="right-bottom"
+                          className="nowrap"
+                          handle={`${formatAmount(glpSupply, GLP_DECIMALS,  0, true)} GLP`}
+                          renderContent={() => (
+                            <TooltipCard
+                              label="Supply on GLP"
+                              amount={formatAmount(glpSupply, GLP_DECIMALS, 0, true)}
+                              showDollar={false}
+                            />
+                          )}
+                        /></div>
                     </div>
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Total Staked</Trans>
                       </div>
-                      <div className="App-card-value">${formatAmount(glpMarketCap, USD_DECIMALS, 0, true)}</div>
+                      <div className="App-card-value">
+                      <TooltipComponent
+                          position="right-bottom"
+                          className="nowrap"
+                          handle={`$${formatAmount(glpMarketCap, USD_DECIMALS, 0, true)}`}
+                          renderContent={() => (
+                            <TooltipCard
+                              title={t`Staked`}
+                              testnet={glpMarketCap}
+                              total={glpMarketCap}
+                              decimalsForConversion={GLP_DECIMALS}
+                              showDollar={false}
+                            />
+                          )}
+                        />
+                        </div>
                     </div>
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Market Cap</Trans>
                       </div>
-                      <div className="App-card-value">${formatAmount(glpMarketCap, USD_DECIMALS, 0, true)}</div>
+                      <div className="App-card-value">
+                      <TooltipComponent
+                          position="right-bottom"
+                          className="nowrap"
+                          handle={`$${formatAmount(glpMarketCap, USD_DECIMALS, 0, true)}`}
+                          renderContent={() => (
+                            <TooltipCard
+                              title={t`Market Cap`}
+                              testnet={glpMarketCap}
+                              total={glpMarketCap}
+                              decimalsForConversion={GLP_DECIMALS}
+                              showDollar={false}
+                            />
+                          )}
+                        /></div>
                     </div>
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Stablecoin Percentage</Trans>
                       </div>
-                      <div className="App-card-value">{stablePercentage}%</div>
+                      <div className="App-card-value">
+                      <TooltipComponent
+                            position="right-bottom"
+                            className="nowrap"
+                            handle={"" + stablePercentage + "%"}
+                            renderContent={() => (
+                              <>
+                                <TooltipCardRow
+                                  label="Stablecoin Percentage"
+                                  amount={stablePercentage}
+                                  showDollar={false}
+                                />
+                              </>
+                            )}
+                          /></div>
                     </div>
                   </div>
                 </div>
@@ -1058,7 +1165,8 @@ export default function DashboardV2() {
                         </td>
                         <td>${formatKeyAmount(tokenInfo, "minPrice", USD_DECIMALS, 2, true)}</td>
                         <td>
-                          <TooltipComponent
+                        ${formatKeyAmount(tokenInfo, "managedUsd", USD_DECIMALS, 0, true)}
+                          {/* <TooltipComponent
                             handle={`$${formatKeyAmount(tokenInfo, "managedUsd", USD_DECIMALS, 0, true)}`}
                             position="right-bottom"
                             renderContent={() => {
@@ -1086,7 +1194,7 @@ export default function DashboardV2() {
                                 </>
                               );
                             }}
-                          />
+                          /> */}
                         </td>
                         <td>{getWeightText(tokenInfo)}</td>
                         <td>{formatAmount(utilization, 2, 2, false)}%</td>
@@ -1129,7 +1237,8 @@ export default function DashboardV2() {
                       <div className="App-card-row">
                         <div className="label">Pool</div>
                         <div>
-                          <TooltipComponent
+                          ${formatKeyAmount(tokenInfo, "managedUsd", USD_DECIMALS, 0, true)}
+                          {/* <TooltipComponent
                             handle={`$${formatKeyAmount(tokenInfo, "managedUsd", USD_DECIMALS, 0, true)}`}
                             position="right-bottom"
                             renderContent={() => {
@@ -1147,7 +1256,7 @@ export default function DashboardV2() {
                                 </>
                               );
                             }}
-                          />
+                          /> */}
                         </div>
                       </div>
                       <div className="App-card-row">

@@ -195,9 +195,9 @@ function FullApp() {
             <Trans>Install MetaMask</Trans>
           </a>
           {userOnMobileDevice ? (
-            <Trans>, and use LeveragePro with its built-in browser</Trans>
+            <Trans>, and use XVI with its built-in browser</Trans>
           ) : (
-            <Trans> to start using LeveragePro</Trans>
+            <Trans> to start using XVI</Trans>
           )}
           .
         </div>
@@ -217,9 +217,9 @@ function FullApp() {
             <Trans>Install Coinbase Wallet</Trans>
           </a>
           {userOnMobileDevice ? (
-            <Trans>, and use LeveragePro with its built-in browser</Trans>
+            <Trans>, and use XVI with its built-in browser</Trans>
           ) : (
-            <Trans> to start using LeveragePro</Trans>
+            <Trans> to start using XVI</Trans>
           )}
           .
         </div>

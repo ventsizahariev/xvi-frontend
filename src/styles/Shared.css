@@ -33,23 +33,6 @@ input {
   font-family: "RelativeNumber";
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #1c1c1c;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #383838;
-  border-radius: 1.5rem;
-  border: 1px solid #212121;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #4a4a4a;
-}
-
 :root {
   --dark-blue: #17182c;
   --dark-blue-bg: #16182e;
@@ -68,6 +51,8 @@ input {
   --font-md: 1.6rem;
   --font-lg: 2.4rem;
   --font-xl: 3.4rem;
+  scrollbar-color: #1c1c1c #949393;
+  scrollbar-width: thin;
 }
 
 a {
@@ -76,6 +61,33 @@ a {
 
 .Card-title {
   font-size: 3.1rem;
+}
+/* ::-webkit-scrollbar-track {
+  background: red;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #383838;
+  border-radius: 1.5rem;
+  border: 1px solid #212121;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
+} */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #949393;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 30px;
+  background-color: #1c1c1c;
 }
 
 input::-webkit-outer-spin-button,
@@ -433,6 +445,10 @@ button.btn-link:hover .logout-icon {
   color: #222121;
   font-weight: 700;
   text-decoration: none;
+}
+.launch-exchange-btn:hover {
+  transition: 0.2s all;
+  opacity: 0.8;
 }
 @media (max-width: 480px) {
   .launch-exchange-btn {

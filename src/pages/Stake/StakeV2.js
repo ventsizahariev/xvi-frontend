@@ -1440,7 +1440,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
               <Trans>
                 Stake{" "}
                 <a href="about:blank" target="_blank" rel="noopener noreferrer">
-                  LeveragePro
+                  XVI
                 </a>{" "}
                 and{" "}
                 <a href="about:blank" target="_blank" rel="noopener noreferrer">
@@ -1484,7 +1484,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                     <Trans>Wallet</Trans>
                   </div>
                   <div className="App-card-value">
-                    {formatKeyAmount(processedData, "gmxBalance", 18, 2, true)} LeveragePro ($
+                    {formatKeyAmount(processedData, "gmxBalance", 18, 2, true)} XVI ($
                     {formatKeyAmount(processedData, "gmxBalanceUsd", USD_DECIMALS, 2, true)})
                   </div>
                 </div>
@@ -1493,7 +1493,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                     <Trans>Staked</Trans>
                   </div>
                   <div className="App-card-value">
-                    {formatKeyAmount(processedData, "gmxInStakedGmx", 18, 2, true)} LeveragePro ($
+                    {formatKeyAmount(processedData, "gmxInStakedGmx", 18, 2, true)} XVI ($
                     {formatKeyAmount(processedData, "gmxInStakedGmxUsd", USD_DECIMALS, 2, true)})
                   </div>
                 </div>
@@ -1508,7 +1508,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                         return (
                           <>
                             <div className="Tooltip-row">
-                              <span className="label">Escrowed LeveragePro APR</span>
+                              <span className="label">Escrowed XVI APR</span>
                               <span>{formatKeyAmount(processedData, "gmxAprForEsGmx", 2, 2, true)}%</span>
                             </div>
                             {(!processedData.gmxBoostAprForNativeToken ||
@@ -1577,7 +1577,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                               </span>
                             </div>
                             <div className="Tooltip-row">
-                              <span className="label">Escrowed LeveragePro</span>
+                              <span className="label">Escrowed XVI</span>
                               <span>
                                 {formatKeyAmount(processedData, "stakedLeverageTrackerRewards", 18, 4)} ($
                                 {formatKeyAmount(
@@ -1636,10 +1636,10 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                         className="nowrap"
                         handle={
                           formatAmount(totalGmxStaked, 18, 0, true) +
-                          " LeveragePro" +
+                          " XVI" +
                           ` ($${formatAmount(stakedGmxSupplyUsd, USD_DECIMALS, 0, true)})`
                         }
-                        renderContent={() => <>Binance: {formatAmount(bscGmxStaked, 18, 0, true)} LeveragePro</>}
+                        renderContent={() => <>Binance: {formatAmount(bscGmxStaked, 18, 0, true)} XVI</>}
                       />
                     )}
                   </div>
@@ -1652,7 +1652,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                     {!totalGmxSupply && "0"}
                     {totalGmxSupply && (
                       <div>
-                        {formatAmount(totalGmxSupply, 18, 0, true)} LeveragePro ($
+                        {formatAmount(totalGmxSupply, 18, 0, true)} XVI ($
                         {formatAmount(totalSupplyUsd, USD_DECIMALS, 0, true)})
                       </div>
                     )}
@@ -1695,14 +1695,14 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                   </div>
                 </div>
                 <div className="App-card-row">
-                  <div className="label">LeveragePro</div>
+                  <div className="label">XVI</div>
                   <div className="App-card-value">
                     {formatKeyAmount(processedData, "totalVesterRewards", 18, 4, true)} ($
                     {formatKeyAmount(processedData, "totalVesterRewardsUsd", USD_DECIMALS, 2, true)})
                   </div>
                 </div>
                 <div className="App-card-row">
-                  <div className="label">Escrowed LeveragePro</div>
+                  <div className="label">Escrowed XVI</div>
                   <div className="App-card-value">
                     {formatKeyAmount(processedData, "totalEsGmxRewards", 18, 4, true)} ($
                     {formatKeyAmount(processedData, "totalEsGmxRewardsUsd", USD_DECIMALS, 2, true)})
@@ -1822,7 +1822,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                               <span>{formatKeyAmount(processedData, "glpAprForNativeToken", 2, 2, true)}%</span>
                             </div>
                             <div className="Tooltip-row">
-                              <span className="label">Escrowed LeveragePro APR</span>
+                              <span className="label">Escrowed XVI APR</span>
                               <span>{formatKeyAmount(processedData, "glpAprForEsGmx", 2, 2, true)}%</span>
                             </div>
                             <br />
@@ -1858,7 +1858,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                               </span>
                             </div>
                             <div className="Tooltip-row">
-                              <span className="label">Escrowed LeveragePro</span>
+                              <span className="label">Escrowed XVI</span>
                               <span>
                                 {formatKeyAmount(processedData, "stakedGlpTrackerRewards", 18, 4)} ($
                                 {formatKeyAmount(processedData, "stakedGlpTrackerRewardsUsd", USD_DECIMALS, 2, true)})
@@ -1892,10 +1892,10 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                 <div className="App-card-divider"></div>
                 <div className="App-card-options">
                   <Link className="App-button-option-dark App-card-option" to="/buy_glp">
-                    <Trans>Buy GLP</Trans>
+                    <span><Trans>Buy GLP</Trans></span>
                   </Link>
                   <Link className="App-button-option-dark App-card-option" to="/buy_glp#redeem">
-                    <Trans>Sell GLP</Trans>
+                  <span><Trans>Sell GLP</Trans></span>
                   </Link>
                   {hasInsurance && (
                     <a
@@ -1904,7 +1904,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Trans>Purchase Insurance</Trans>
+                      <span><Trans>Purchase Insurance</Trans></span>
                     </a>
                   )}
                 </div>
@@ -1913,7 +1913,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
             <div className="App-card">
               <div className="App-card-title">
                 <span className="App-card-title-content">
-                  <Trans>Escrowed LeveragePro</Trans>
+                  <Trans>Escrowed XVI</Trans>
                 </span>
               </div>
 
@@ -1929,7 +1929,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                     <Trans>Wallet</Trans>
                   </div>
                   <div className="App-card-value">
-                    {formatKeyAmount(processedData, "esGmxBalance", 18, 2, true)} esLeveragePro ($
+                    {formatKeyAmount(processedData, "esGmxBalance", 18, 2, true)} esXVI ($
                     {formatKeyAmount(processedData, "esGmxBalanceUsd", USD_DECIMALS, 2, true)})
                   </div>
                 </div>
@@ -1938,7 +1938,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                     <Trans>Staked</Trans>
                   </div>
                   <div className="App-card-value">
-                    {formatKeyAmount(processedData, "esGmxInStakedGmx", 18, 2, true)} esLeveragePro ($
+                    {formatKeyAmount(processedData, "esGmxInStakedGmx", 18, 2, true)} esXVI ($
                     {formatKeyAmount(processedData, "esGmxInStakedGmxUsd", USD_DECIMALS, 2, true)})
                   </div>
                 </div>
@@ -1967,7 +1967,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                               </div>
                             )}
                             <div className="Tooltip-row">
-                              <span className="label">Escrowed LeveragePro APR</span>
+                              <span className="label">Escrowed XVI APR</span>
                               <span>{formatKeyAmount(processedData, "gmxAprForEsGmx", 2, 2, true)}%</span>
                             </div>
                           </>
@@ -1986,7 +1986,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                     <Trans>Total Staked</Trans>
                   </div>
                   <div className="App-card-value">
-                    {formatKeyAmount(processedData, "stakedEsGmxSupply", 18, 0, true)} esLeveragePro ($
+                    {formatKeyAmount(processedData, "stakedEsGmxSupply", 18, 0, true)} esXVI ($
                     {formatKeyAmount(processedData, "stakedEsGmxSupplyUsd", USD_DECIMALS, 0, true)})
                   </div>
                 </div>
@@ -1995,7 +1995,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                     <Trans>Total Supply</Trans>
                   </div>
                   <div className="App-card-value">
-                    {formatAmount(esGmxSupply, 18, 0, true)} esLeveragePro ($
+                    {formatAmount(esGmxSupply, 18, 0, true)} esXVI ($
                     {formatAmount(esGmxSupplyUsd, USD_DECIMALS, 0, true)})
                   </div>
                 </div>
@@ -2031,7 +2031,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
             </div>
             <div className="Page-description">
               <Trans>
-                Convert esLeveragePro tokens to LeveragePro tokens.
+                Convert esXVI tokens to XVI tokens.
                 <br />
                 Please read the{" "}
                 <a href="about:blank" target="_blank" rel="noopener noreferrer">
@@ -2057,21 +2057,22 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                       <Trans>Staked Tokens</Trans>
                     </div>
                     <div className="App-card-value">
-                      <Tooltip
+                     {formatAmount(totalRewardTokens, 18, 2, true)}(${formatAmount(totalRewardTokens, 18, 2, true)})
+                      {/* <Tooltip
                         handle={formatAmount(totalRewardTokens, 18, 2, true)}
                         position="right-bottom"
                         renderContent={() => {
                           return (
                             <>
-                              {formatAmount(processedData.gmxInStakedGmx, 18, 2, true)} LeveragePro
+                              {formatAmount(processedData.gmxInStakedGmx, 18, 2, true)} XVI
                               <br />
-                              {formatAmount(processedData.esGmxInStakedGmx, 18, 2, true)} esLeveragePro
+                              {formatAmount(processedData.esGmxInStakedGmx, 18, 2, true)} esXVI
                               <br />
                               {formatAmount(processedData.bnGmxInFeeGmx, 18, 2, true)} Multiplier Points
                             </>
                           );
                         }}
-                      />
+                      /> */}
                     </div>
                   </div>
                   <div className="App-card-row">
@@ -2079,8 +2080,19 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                       <Trans>Reserved for Vesting</Trans>
                     </div>
                     <div className="App-card-value">
-                      {formatKeyAmount(vestingData, "gmxVesterPairAmount", 18, 2, true)} /{" "}
-                      {formatAmount(totalRewardTokens, 18, 2, true)}
+                    <Tooltip
+                        handle={`${formatAmount(totalRewardTokens, 18, 2, true)}($0)`}
+                        position="right-bottom"
+                        renderContent={() => {
+                          return (
+                            <>
+                              {formatKeyAmount(vestingData, "gmxVesterPairAmount", 18, 2, true)} XVI
+                            </>
+                          );
+                        }}
+                      /> 
+                      {/* {formatKeyAmount(vestingData, "gmxVesterPairAmount", 18, 2, true)} /{" "}
+                      {formatAmount(totalRewardTokens, 18, 2, true)} */}
                     </div>
                   </div>
                   <div className="App-card-row">
@@ -2089,20 +2101,20 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                     </div>
                     <div className="App-card-value">
                       <Tooltip
-                        handle={`${formatKeyAmount(vestingData, "gmxVesterClaimSum", 18, 4, true)} / ${formatKeyAmount(
+                        handle={`${formatKeyAmount(vestingData, "gmxVesterClaimSum", 18, 4, true)}($${formatKeyAmount(
                           vestingData,
                           "gmxVesterVestedAmount",
                           18,
                           4,
                           true
-                        )}`}
+                        )})`}
                         position="right-bottom"
                         renderContent={() => {
                           return (
                             <>
                               {formatKeyAmount(vestingData, "gmxVesterClaimSum", 18, 4, true)} tokens have been
-                              converted to LeveragePro from the&nbsp;
-                              {formatKeyAmount(vestingData, "gmxVesterVestedAmount", 18, 4, true)} esLeveragePro
+                              converted to XVI from the&nbsp;
+                              {formatKeyAmount(vestingData, "gmxVesterVestedAmount", 18, 4, true)} esXVI
                               deposited for vesting.
                             </>
                           );
@@ -2116,7 +2128,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                     </div>
                     <div className="App-card-value">
                       <Tooltip
-                        handle={`${formatKeyAmount(vestingData, "gmxVesterClaimable", 18, 4, true)} LeveragePro`}
+                        handle={`${formatKeyAmount(vestingData, "gmxVesterClaimable", 18, 4, true)}($${formatKeyAmount(vestingData, "gmxVesterClaimable", 18, 4, true)})`}
                         position="right-bottom"
                         renderContent={() =>
                           `${formatKeyAmount(
@@ -2125,7 +2137,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                             18,
                             4,
                             true
-                          )} ${t`LeveragePro tokens can be claimed, use the options under the Total Rewards section to claim them.`}`
+                          )} ${t`XVI tokens can be claimed, use the options under the Total Rewards section to claim them.`}`
                         }
                       />
                     </div>
@@ -2169,15 +2181,26 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                     <div className="label">
                       <Trans>Staked Tokens</Trans>
                     </div>
-                    <div className="App-card-value">{formatAmount(processedData.glpBalance, 18, 2, true)} GLP</div>
+                    <div className="App-card-value">{formatAmount(processedData.glpBalance, 18, 2, true)}(${formatAmount(processedData.glpBalance, 18, 2, true)})</div>
                   </div>
                   <div className="App-card-row">
                     <div className="label">
                       <Trans>Reserved for Vesting</Trans>
                     </div>
                     <div className="App-card-value">
-                      {formatKeyAmount(vestingData, "glpVesterPairAmount", 18, 2, true)} /{" "}
-                      {formatAmount(processedData.glpBalance, 18, 2, true)}
+                    <Tooltip
+                        handle={`${formatAmount(processedData.glpBalance, 18, 2, true)}($0)`}
+                        position="right-bottom"
+                        renderContent={() => {
+                          return (
+                            <>
+                              {formatKeyAmount(vestingData, "gmxVesterPairAmount", 18, 2, true)} XVI
+                            </>
+                          );
+                        }}
+                      /> 
+                      {/* {formatKeyAmount(vestingData, "glpVesterPairAmount", 18, 2, true)} /{" "}
+                      {formatAmount(processedData.glpBalance, 18, 2, true)} */}
                     </div>
                   </div>
                   <div className="App-card-row">
@@ -2186,20 +2209,20 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                     </div>
                     <div className="App-card-value">
                       <Tooltip
-                        handle={`${formatKeyAmount(vestingData, "glpVesterClaimSum", 18, 4, true)} / ${formatKeyAmount(
+                        handle={`${formatKeyAmount(vestingData, "glpVesterClaimSum", 18, 4, true)}($${formatKeyAmount(
                           vestingData,
                           "glpVesterVestedAmount",
                           18,
                           4,
                           true
-                        )}`}
+                        )})`}
                         position="right-bottom"
                         renderContent={() => {
                           return (
                             <>
                               {formatKeyAmount(vestingData, "glpVesterClaimSum", 18, 4, true)} tokens have been
-                              converted to LeveragePro from the&nbsp;
-                              {formatKeyAmount(vestingData, "glpVesterVestedAmount", 18, 4, true)} esLeveragePro
+                              converted to XVI from the&nbsp;
+                              {formatKeyAmount(vestingData, "glpVesterVestedAmount", 18, 4, true)} esXVI
                               deposited for vesting.
                             </>
                           );
@@ -2211,7 +2234,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                     <div className="label">Claimable</div>
                     <div className="App-card-value">
                       <Tooltip
-                        handle={`${formatKeyAmount(vestingData, "glpVesterClaimable", 18, 4, true)} LeveragePro`}
+                        handle={`${formatKeyAmount(vestingData, "glpVesterClaimable", 18, 4, true)}($${formatKeyAmount(vestingData, "glpVesterClaimable", 18, 4, true)})`}
                         position="right-bottom"
                         renderContent={() =>
                           `${formatKeyAmount(
@@ -2220,7 +2243,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                             18,
                             4,
                             true
-                          )} ${t`LeveragePro tokens can be claimed, use the options under the Total Rewards section to claim them.`}`
+                          )} ${t`XVI tokens can be claimed, use the options under the Total Rewards section to claim them.`}`
                         }
                       ></Tooltip>
                     </div>

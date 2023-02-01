@@ -169,7 +169,7 @@ function PositionShareCard({
                 <p className="code">{code}</p>
               </>
             ) : (
-              <p className="code">https://gmx.io</p>
+              <p className="code">about:blank</p>
             )}
           </div>
         </div>

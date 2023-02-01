@@ -213,12 +213,12 @@ export default function SwapBox(props) {
 
   const getLeaderboardLink = () => {
     if (chainId === ARBITRUM) {
-      return "https://www.gmx.house/arbitrum/leaderboard";
+      return "about:blank";
     }
     if (chainId === AVALANCHE) {
-      return "https://www.gmx.house/avalanche/leaderboard";
+      return "about:blank";
     }
-    return "https://www.gmx.house";
+    return "about:blank";
   };
 
   function getTokenLabel() {
@@ -2323,7 +2323,7 @@ const draw = () => {
                   <br />
                   For screenshots and more information, please see the{" "}
                   <a
-                    href="https://gmxio.gitbook.io/gmx/trading#stop-loss-take-profit-orders"
+                    href="about:blank"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -2427,7 +2427,7 @@ const draw = () => {
                           <br />
                           <br />
                           <a
-                            href="https://gmxio.gitbook.io/gmx/trading#opening-a-position"
+                            href="about:blank"
                             target="_blank"
                             rel="noopener noreferrer"
                           >
@@ -2459,7 +2459,7 @@ const draw = () => {
                         <br />
                         <br />
                         <a
-                          href="https://gmxio.gitbook.io/gmx/trading#opening-a-position"
+                          href="about:blank"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -2498,7 +2498,7 @@ const draw = () => {
                         )}
                         <br />
                         <a
-                          href="https://gmxio.gitbook.io/gmx/trading#opening-a-position"
+                          href="about:blank"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -2550,7 +2550,7 @@ const draw = () => {
           <div className="swap-box-divider" />
           <div className="Exchange-info-row">
             <div className="Exchange-info-label-button">
-              <a href="https://gmxio.gitbook.io/gmx/trading" target="_blank" rel="noopener noreferrer">
+              <a href="about:blank" target="_blank" rel="noopener noreferrer">
                 <Trans>Trading guide</Trans>
               </a>
               <AiOutlineRight size={12} />
@@ -2566,7 +2566,7 @@ const draw = () => {
           </div>
           <div className="Exchange-info-row">
             <div className="Exchange-info-label-button">
-              <a href="https://gmxio.gitbook.io/gmx/trading#backup-rpc-urls" target="_blank" rel="noopener noreferrer">
+              <a href="about:blank" target="_blank" rel="noopener noreferrer">
                 <Trans>Speed up page loading</Trans>
               </a>
               <AiOutlineRight size={12} />

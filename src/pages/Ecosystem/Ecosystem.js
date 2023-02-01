@@ -25,61 +25,61 @@ const NETWORK_ICON_ALTS = {
 };
 
 export default function Ecosystem() {
-  const gmxPages = [
+  const XVIPages = [
     {
-      title: "LeveragePro Governance",
+      title: "XVI Governance",
       link: "about:blank",
-      linkLabel: "gov.leveragepro.io",
-      about: "LeveragePro Governance Page",
+      linkLabel: "gov.XVI.io",
+      about: "XVI Governance Page",
       chainIds: [BSC_TESTNET],
     },
     {
-      title: "LeveragePro Stats",
+      title: "XVI Stats",
       link: "about:blank",
-      linkLabel: "stats.leveragepro.io",
-      about: "LeveragePro Stats Page",
+      linkLabel: "stats.XVI.io",
+      about: "XVI Stats Page",
       chainIds: [BSC_TESTNET],
     },
     {
-      title: "LeveragePro Proposals",
+      title: "XVI Proposals",
       link: "about:blank",
       linkLabel: "snapshot.org",
-      about: "LeveragePro Proposals Voting page",
+      about: "XVI Proposals Voting page",
       chainIds: [BSC_TESTNET],
     },
     {
-      title: "LeveragePro Announcements",
+      title: "XVI Announcements",
       link: "about:blank",
       linkLabel: "t.me",
-      about: "LeveragePro Announcements and Updates",
+      about: "XVI Announcements and Updates",
       chainIds: [BSC_TESTNET],
     },
   ];
 
   const communityProjects = [
     {
-      title: "LeveragePro Blueberry Club",
+      title: "XVI Blueberry Club",
       link: "about:blank",
       linkLabel: "blueberry.club",
-      about: "LeveragePro Blueberry NFTs",
+      about: "XVI Blueberry NFTs",
       creatorLabel: "@xm92boi",
       creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
-      title: "LeveragePro Leaderboard",
+      title: "XVI Leaderboard",
       link: "about:blank",
-      linkLabel: "leveragepro.house",
-      about: "Leaderboard for LeveragePro traders",
+      linkLabel: "XVI.house",
+      about: "Leaderboard for XVI traders",
       creatorLabel: "@Itburnz",
       creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
-      title: "LeveragePro Positions Bot",
+      title: "XVI Positions Bot",
       link: "about:blank",
       linkLabel: "t.me",
-      about: "Telegram bot for LeveragePro position updates",
+      about: "Telegram bot for XVI position updates",
       creatorLabel: "@zhongfu",
       creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
@@ -88,7 +88,7 @@ export default function Ecosystem() {
       title: "Blueberry Pulse",
       link: "about:blank",
       linkLabel: "substack.com",
-      about: "LeveragePro Weekly Updates",
+      about: "XVI Weekly Updates",
       creatorLabel: "@puroscohiba",
       creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
@@ -103,25 +103,25 @@ export default function Ecosystem() {
       chainIds: [BSC_TESTNET],
     },
     {
-      title: "LeveragePro Yield Simulator",
+      title: "XVI Yield Simulator",
       link: "about:blank",
       linkLabel: "defisims.com",
-      about: "Yield simulator for LeveragePro",
+      about: "Yield simulator for XVI",
       creatorLabel: "@kyzoeth",
       creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
-      title: "LeveragePro Returns Calculator",
+      title: "XVI Returns Calculator",
       link: "about:blank",
       linkLabel: "docs.google.com",
-      about: "Returns calculator for LeveragePro and GLP",
+      about: "Returns calculator for XVI and GLP",
       creatorLabel: "@AStoicTrader1",
       creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
-      title: "LeveragePro Compound Calculator",
+      title: "XVI Compound Calculator",
       link: "about:blank",
       linkLabel: "docs.google.com",
       about: "Optimal compound interval calculator",
@@ -130,28 +130,28 @@ export default function Ecosystem() {
       chainIds: [BSC_TESTNET],
     },
     {
-      title: "LeveragePro Trading Stats",
+      title: "XVI Trading Stats",
       link: "about:blank",
       linkLabel: "t.me",
-      about: "Telegram bot for Open Interest on LeveragePro",
+      about: "Telegram bot for Open Interest on XVI",
       creatorLabel: "@SniperMonke2",
       creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
-      title: "LeveragePro Staking Bot",
+      title: "XVI Staking Bot",
       link: "about:blank",
       linkLabel: "t.me",
-      about: "LeveragePro staking rewards updates and insights",
-      creatorLabel: "@LeveragePro_Staking_bot",
+      about: "XVI staking rewards updates and insights",
+      creatorLabel: "@XVI_Staking_bot",
       creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
-      title: "LeveragePro Staking Calculator",
+      title: "XVI Staking Calculator",
       link: "about:blank",
-      linkLabel: "leverageprostaking.com",
-      about: "LeveragePro staking calculator",
+      linkLabel: "XVIstaking.com",
+      about: "XVI staking calculator",
       creatorLabel: "@n1njawtf",
       creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
@@ -160,27 +160,27 @@ export default function Ecosystem() {
 
   const dashboardProjects = [
     {
-      title: "LeveragePro Referrals Dashboard",
+      title: "XVI Referrals Dashboard",
       link: "about:blank",
-      linkLabel: "LeverageProReferrals.com",
-      about: "Dashboard for LeveragePro referral stats",
+      linkLabel: "XVIReferrals.com",
+      about: "Dashboard for XVI referral stats",
       creatorLabel: "@kyzoeth",
       creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
-      title: "LeveragePro Terminal",
+      title: "XVI Terminal",
       link: "about:blank",
-      linkLabel: "LeverageProTerminal.com",
-      about: "LeveragePro explorer for stats and traders",
+      linkLabel: "XVITerminal.com",
+      about: "XVI explorer for stats and traders",
       creatorLabel: "@vipineth",
       creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
-      title: "LeveragePro Analytics",
+      title: "XVI Analytics",
       link: "about:blank",
-      linkLabel: "LeverageProStats.com",
+      linkLabel: "XVIStats.com",
       about: "Financial reports and protocol analytics",
       creatorLabel: "@CryptoMessiah",
       creatorLink: "about:blank",
@@ -190,7 +190,7 @@ export default function Ecosystem() {
       title: "TokenTerminal",
       link: "about:blank",
       linkLabel: "tokenterminal.com",
-      about: "LeveragePro fundamentals",
+      about: "XVI fundamentals",
       creatorLabel: "@tokenterminal",
       creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
@@ -199,7 +199,7 @@ export default function Ecosystem() {
       title: "CryptoFees",
       link: "about:blank",
       linkLabel: "cryptofees.info",
-      about: "Fees generated by LeveragePro",
+      about: "Fees generated by XVI",
       creatorLabel: "@CryptoFeesInfo",
       creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
@@ -223,10 +223,10 @@ export default function Ecosystem() {
       chainIds: [BSC_TESTNET],
     },
     {
-      title: "LeveragePro Perpetuals Data",
+      title: "XVI Perpetuals Data",
       link: "about:blank",
       linkLabel: "laevitas.ch",
-      about: "LeveragePro Perpetuals Data",
+      about: "XVI Perpetuals Data",
       creatorLabel: "@laevitas1",
       creatorLink: "about:blank",
       chainIds: [BSC_TESTNET],
@@ -240,7 +240,7 @@ export default function Ecosystem() {
       linkLabe: "debank.com",
       about: "DeFi Portfolio Tracker",
       announcementLabel: "twitter.com",
-      announcementLink: "https://twitter.com/GMX_IO/status/1439711532884152324",
+      announcementLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
@@ -249,7 +249,7 @@ export default function Ecosystem() {
       linkLabel: "defillama.com",
       about: "Decentralized Finance Dashboard",
       announcementLabel: "twitter.com",
-      announcementLink: "https://twitter.com/GMX_IO/status/1438124768033660938",
+      announcementLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
@@ -258,7 +258,7 @@ export default function Ecosystem() {
       linkLabel: "dopex.io",
       about: "Decentralized Options Protocol",
       announcementLabel: "twitter.com",
-      announcementLink: "https://twitter.com/GMX_IO/status/1482445801523716099",
+      announcementLink: "about:blank",
       chainIds: [BSC_TESTNET],
     },
     {
@@ -276,7 +276,7 @@ export default function Ecosystem() {
       linkLabel: "jonesdao.io",
       about: "Decentralized Options Strategies",
       announcementLabel: "twitter.com",
-      announcementLink: "https://twitter.com/GMX_IO/status/1482788805635678212",
+      announcementLink: "https://twitter.com/XVI_IO/status/1482788805635678212",
       chainIds: [BSC_TESTNET],
     },
     {
@@ -285,7 +285,7 @@ export default function Ecosystem() {
       linkLabel: "yieldyak.com",
       about: "Yield Optimizer on Avalanche",
       announcementLabel: "twitter.com",
-      announcementLink: "https://twitter.com/GMX_IO/status/1484601407378378754",
+      announcementLink: "https://twitter.com/XVI_IO/status/1484601407378378754",
       chainIds: [BSC_TESTNET],
     },
     {
@@ -312,7 +312,7 @@ export default function Ecosystem() {
       linkLabel: "dodoex.io",
       about: "Decentralized Trading Protocol",
       announcementLabel: "twitter.com",
-      announcementLink: "https://twitter.com/GMX_IO/status/1438899138549145605",
+      announcementLink: "https://twitter.com/XVI_IO/status/1438899138549145605",
       chainIds: [BSC_TESTNET],
     },
     {
@@ -321,7 +321,7 @@ export default function Ecosystem() {
       linkLabel: "openocean.finance",
       about: "DEX Aggregator",
       announcementLabel: "twitter.com",
-      announcementLink: "https://twitter.com/GMX_IO/status/1495780826016989191",
+      announcementLink: "https://twitter.com/XVI_IO/status/1495780826016989191",
       chainIds: [BSC_TESTNET],
     },
     {
@@ -339,7 +339,7 @@ export default function Ecosystem() {
       linkLabel: "1inch.io",
       about: "DEX Aggregator",
       announcementLabel: "twitter.com",
-      announcementLink: "https://twitter.com/GMX_IO/status/1522247451410845696",
+      announcementLink: "https://twitter.com/XVI_IO/status/1522247451410845696",
       chainIds: [BSC_TESTNET],
     },
     {
@@ -355,28 +355,28 @@ export default function Ecosystem() {
 
   const telegramGroups = [
     {
-      title: "LeveragePro",
+      title: "XVI",
       link: "about:blank",
       linkLabel: "t.me",
       about: "Telegram Group",
     },
     {
-      title: "LeveragePro (Chinese)",
+      title: "XVI (Chinese)",
       link: "about:blank",
       linkLabel: "t.me",
       about: "Telegram Group (Chinese)",
     },
     {
-      title: "LeveragePro (Portuguese)",
+      title: "XVI (Portuguese)",
       link: "about:blank",
       linkLabel: "t.me",
       about: "Telegram Group (Portuguese)",
     },
     {
-      title: "LeveragePro Trading Chat",
+      title: "XVI Trading Chat",
       link: "about:blank",
       linkLabel: "t.me",
-      about: "LeveragePro community discussion",
+      about: "XVI community discussion",
     },
   ];
 
@@ -386,7 +386,7 @@ export default function Ecosystem() {
         <div>
           <div className="xvi-ecosystem-pages">
             <div className="DashboardV2-projects">
-              {gmxPages.map((item) => {
+              {XVIPages.map((item) => {
                 const linkLabel = item.linkLabel ? item.linkLabel : item.link;
                 return (
                   <div className="App-card" key={item.title}>
@@ -479,7 +479,7 @@ export default function Ecosystem() {
               <Trans>Dashboards</Trans>
             </div>
             <div className="Page-description">
-              <Trans>GMX dashboards and analytics.</Trans>
+              <Trans>XVI dashboards and analytics.</Trans>
             </div>
           </div>
           <div className="DashboardV2-projects">
@@ -526,7 +526,7 @@ export default function Ecosystem() {
               <Trans>Partnerships and Integrations</Trans>
             </div>
             <div className="Page-description">
-              <Trans>Projects integrated with GMX.</Trans>
+              <Trans>Projects integrated with XVI.</Trans>
             </div>
           </div>
           <div className="DashboardV2-projects">

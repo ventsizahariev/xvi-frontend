@@ -30,8 +30,21 @@
   height: 38rem;
   top: 25%;
   scrollbar-color: #f9bd5d #313131;
+  scrollbar-width: thin;
+}
+.GlpSwap-from-token .Modal .Modal-content::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
 }
 
+.GlpSwap-from-token .Modal .Modal-content::-webkit-scrollbar-track-piece {
+  background-color: #313131;
+}
+
+.GlpSwap-from-token .Modal .Modal-content::-webkit-scrollbar-thumb:vertical {
+  height: 3rem;
+  background-color: #f9bd5d;
+}
 .GlpSwap-from-token .Modal-content {
   position: absolute;
   width: 38.75rem;

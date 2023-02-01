@@ -679,13 +679,13 @@ button.App-connect-wallet:hover {
 .App-header a.active {
   pointer-events: none;
   opacity: 1;
-  color: #eee;
+  color: #222121;
 }
 
 .App-header .a:hover,
 .App-header a:hover {
-  opacity: 1;
-  color: #eee;
+  transition: all 0.2s;
+  opacity: 0.8;
 }
 
 .App-header-container-left .a,
@@ -1534,7 +1534,6 @@ button.App-button {
     margin-left: 0;
     margin-right: 0.4rem;
   }
-
   .mobile-cross-menu {
     margin-right: 1.2rem;
   }
@@ -1611,4 +1610,24 @@ button.App-button {
   .App-card-row {
     grid-template-columns: 1fr;
   }
+}
+
+.icon-24 {
+  width: 5.2rem;
+  height: 5.2rem;
+}
+a.App-button-option-light:hover,
+button.App-button-option-light:hover {
+  transition: all 0.2s;
+  opacity: 0.8;
+}
+.Exchange-settings-button-group .App-cta.active:hover {
+  transition: all 0.2s;
+  opacity: 0.8;
+}
+
+a.App-button-option-dark:hover,
+button.App-button-option-dark:hover {
+  background-color: #272727;
+  transition: 0.2s all;
 }

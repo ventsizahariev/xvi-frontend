@@ -57,7 +57,7 @@ export default function TokenCard({ showRedirectModal }) {
       <div className="Home-token-card-option">
         <div className="Home-token-card-option-icon">
           <div className="Home-token-card-option-icon-left">
-            <img src={XVIIcon} alt="gmxBigIcon" width="40" /> <Trans>LeveragePro</Trans>
+            <img src={XVIIcon} alt="gmxBigIcon" width="40" /> <Trans>XVI</Trans>
           </div>
           <div className="Home-token-card-option-icon-right">
             <Trans>BSC ARP:</Trans>
@@ -69,7 +69,7 @@ export default function TokenCard({ showRedirectModal }) {
         <div className="Home-token-card-option-info">
           <div className="Home-token-card-option-title">
             <Trans>
-              LeveragePro is the utility and governance token. Accrues 30% of the platform's generated fees.
+              XVI is the utility and governance token. Accrues 30% of the platform's generated fees.
             </Trans>
           </div>
           <div className="Home-token-card-option-action">
@@ -79,7 +79,7 @@ export default function TokenCard({ showRedirectModal }) {
               </BuyLink>
             </div> */}
             <BuyLeveragePro />
-            <ExternalLink href="https://gmxio.gitbook.io/gmx/tokenomics" className="buy-btn-read-more">
+            <ExternalLink href="about:blank" className="buy-btn-read-more">
               <Trans>Read more</Trans>
             </ExternalLink>
           </div>

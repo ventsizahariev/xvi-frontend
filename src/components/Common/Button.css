@@ -24,9 +24,9 @@ a.btn {
 .btn .btn-label {
   margin-left: 1.1625rem;
   font-weight: normal;
-  line-height: 2.325rem;
+  line-height: 2rem;
   letter-spacing: 0;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 .btn .btn-image {
   display: inline-flex;
@@ -131,6 +131,10 @@ a.btn {
   cursor: pointer;
   border: 1px solid rgba(61, 60, 61, 0.6);
   border-radius: 8.9rem;
+}
+.connect-wallet-btn:hover {
+  background: #272727;
+  transition: 0.2s all;
 }
 .connect-wallet-btn .btn-icon {
   display: inline-flex;

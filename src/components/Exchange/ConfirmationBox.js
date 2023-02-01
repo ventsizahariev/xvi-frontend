@@ -319,7 +319,7 @@ export default function ConfirmationBox(props) {
             <div className="Confirmation-box-warning">
               Increasing this position at the current price will forfeit a&nbsp;
               <a
-                href="https://gmxio.gitbook.io/gmx/trading#minimum-price-change"
+                href="about:blank"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -341,7 +341,7 @@ export default function ConfirmationBox(props) {
               <div className="Confirmation-box-warning">
                 This order will forfeit a&nbsp;
                 <a
-                  href="https://gmxio.gitbook.io/gmx/trading#minimum-price-change"
+                  href="about:blank"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -360,7 +360,7 @@ export default function ConfirmationBox(props) {
       return (
         <div className="Confirmation-box-warning">
           A minimum price change of&nbsp;
-          <a href="https://gmxio.gitbook.io/gmx/trading#minimum-price-change" target="_blank" rel="noopener noreferrer">
+          <a href="about:blank" target="_blank" rel="noopener noreferrer">
             1.5%
           </a>{" "}
           is required for a position to be in profit. This only applies for the first {MIN_PROFIT_TIME / 60 / 60} hours
@@ -707,7 +707,7 @@ export default function ConfirmationBox(props) {
                         <br />
                         This is the network cost required to execute the postion.{" "}
                         <a
-                          href="https://gmxio.gitbook.io/gmx/trading#execution-fee"
+                          href="about:blank"
                           target="_blank"
                           rel="noopener noreferrer"
                         >

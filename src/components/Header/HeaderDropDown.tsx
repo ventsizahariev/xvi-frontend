@@ -24,7 +24,7 @@ function HeaderDropDown({ redirectPopupTimestamp, showRedirectModal }: Props) {
       subContent: "Lorem Ipsum is simply dummy text",
     },
     {
-      link: "https://gmxio.gitbook.io/gmx/",
+      link: "about:blank",
       img: DocumentIcon,
       alt: "Documents",
       method: "external",

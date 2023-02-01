@@ -107,13 +107,13 @@ export function AppHeaderUser({
           </>
         ) : (
           <>
-          <ExternalLink className="App-social-link" href="https://twitter.com/GMX_IO" >
+          <ExternalLink className="App-social-link" href="about:blank" >
             <FaTwitter/>
           </ExternalLink>
-          <ExternalLink className="App-social-link" href="https://discord.com/invite/ymN38YefH9" >
+          <ExternalLink className="App-social-link" href="about:blank" >
             <FaDiscord/>
           </ExternalLink>
-          <ExternalLink className="App-social-link" href="https://t.me/GMX_IO" >
+          <ExternalLink className="App-social-link" href="about:blank" >
             <FaTelegramPlane/>
           </ExternalLink>
           <div className={cx("App-header-trade-link", { "homepage-header": isHomeSite() })}>

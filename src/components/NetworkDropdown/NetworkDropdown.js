@@ -91,7 +91,7 @@ function NavIcons({ selectorLabel }) {
         {selectorLabel == "VelasTestnet" && <img className="network-dropdown-icon" src={velasIcon} alt={selectorLabel} />}
       </button>
       <button className={cx("btn-primary small transparent")}>
-        <IoMdSettings color="white" size={20} />
+        <IoMdSettings color="white" size={24} />
       </button>
     </>
   );

@@ -62,8 +62,8 @@
   background: #e7b230;
 }
 .network-dropdown > button.transparent-VelasTestnet {
-  height: 2rem;
-  width: 2rem;
+  height: 2.4rem;
+  width: 2.4rem;
   border-radius: 50%;
   border: none;
   pointer-events: none;
@@ -76,6 +76,7 @@
 .network-dropdown-icon {
   width: 1.6rem;
   height: 1.6rem;
+  padding-top: 0.2rem;
   object-fit: contain;
 }
 

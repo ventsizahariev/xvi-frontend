@@ -22,13 +22,13 @@ import ExternalLink from "../ExternalLink/ExternalLink";
 //   ],
 // };
 const SOCIAL_LINKS = [
-  { link: "https://twitter.com/GMX_IO", name: "Twitter", icon: <FaTwitter/> },
-  { link: "https://medium.com/@gmx.io", name: "Medium", icon: <FaMediumM/> },
-  { link: "https://t.me/GMX_IO", name: "Telegram", icon: <FaTelegramPlane/> },
+  { link: "about:blank", name: "Twitter", icon: <FaTwitter/> },
+  { link: "about:blank", name: "Medium", icon: <FaMediumM/> },
+  { link: "about:blank", name: "Telegram", icon: <FaTelegramPlane/> },
   // { link: "https://github.com/gmx-io", name: "Github", icon: githubIcon },
-  { link: "https://facebook.com/gmx-io", name: "FaceBook", icon: <FaFacebook/> },
-  { link: "https://instgram.com/gmx-io", name: "Instagram", icon: <FaInstagramSquare/> },
-  { link: "https://discord.com/invite/ymN38YefH9", name: "Discord", icon: <FaDiscord/> },
+  { link: "about:blank", name: "FaceBook", icon: <FaFacebook/> },
+  { link: "about:blank", name: "Instagram", icon: <FaInstagramSquare/> },
+  { link: "about:blank", name: "Discord", icon: <FaDiscord/> },
 ];
 
 export default function Footer({ showRedirectModal, redirectPopupTimestamp }) {

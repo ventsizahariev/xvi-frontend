@@ -215,6 +215,14 @@ export const ICONLINKS = {
       coingecko: "https://www.coingecko.com/en/coins/usd-coin",
       bsctestnet: "https://snowtrace.io/address/0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e",
     },
+    BUSD: {
+      coingecko: "https://www.coingecko.com/en/coins/busd-coin",
+      bsctestnet: "https://snowtrace.io/address/0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e",
+    },
+    BNB:{
+      coingecko: "https://www.coingecko.com/en/coins/wrapped-bitcoin",
+      bsctestnet: "https://snowtrace.io/address/0x50b7545627a5162f82a992c33b87adc75187b218",
+    }
   },
   [VELAS_TESTNET]: {
     GMX: {
@@ -251,6 +259,14 @@ export const ICONLINKS = {
       coingecko: "https://www.coingecko.com/en/coins/usd-coin",
       bsc: "https://snowtrace.io/address/0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e",
     },
+    BUSD: {
+      coingecko: "https://www.coingecko.com/en/coins/busd-coin",
+      bsctestnet: "https://snowtrace.io/address/0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e",
+    },
+    BNB:{
+      coingecko: "https://www.coingecko.com/en/coins/wrapped-bitcoin",
+      bsctestnet: "https://snowtrace.io/address/0x50b7545627a5162f82a992c33b87adc75187b218",
+    }
   },
 };
 
