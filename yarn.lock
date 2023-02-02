@@ -15,6 +15,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ant-design/react-slick@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@ant-design/react-slick@npm:1.0.0"
+  dependencies:
+    "@babel/runtime": ^7.10.4
+    classnames: ^2.2.5
+    json2mq: ^0.2.0
+    resize-observer-polyfill: ^1.5.1
+    throttle-debounce: ^5.0.0
+  peerDependencies:
+    react: ">=16.9.0"
+  checksum: ec9fe42bdcbca7091c156b256b723567621540ff0ad188a672123437d452e1949a4e3f63ed9fa19067a211af5110d8cea8cadba85df9fef264f8785514bac06a
+  languageName: node
+  linkType: hard
+
 "@apollo/client@npm:3.5.6":
   version: 3.5.6
   resolution: "@apollo/client@npm:3.5.6"
@@ -1498,7 +1513,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.1, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.1, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.1, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.4, @babel/runtime@npm:^7.11.1, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
   dependencies:
@@ -8315,13 +8330,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enquire.js@npm:^2.1.6":
-  version: 2.1.6
-  resolution: "enquire.js@npm:2.1.6"
-  checksum: bb094054ee2768edafc3b80fb2b65b79d63160d625085162e9c9016843b6eaa13d7430201bf593c2e31e1725b3208f47f57aa27e03b19729e7590d1ca2241451
-  languageName: node
-  linkType: hard
-
 "enquirer@npm:^2.3.5":
   version: 2.3.6
   resolution: "enquirer@npm:2.3.6"
@@ -9743,6 +9751,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gambit-interface@workspace:."
   dependencies:
+    "@ant-design/react-slick": ^1.0.0
     "@apollo/client": 3.5.6
     "@davatar/react": 1.8.1
     "@ethersproject/providers": 5.5.1
@@ -9790,7 +9799,6 @@ __metadata:
     react-router-dom: 5.3.0
     react-scripts: 4.0.3
     react-select: 5.2.1
-    react-slick: ^0.29.0
     react-tabs: 3.2.3
     react-toastify: 6.0.9
     react-use: 17.3.1
@@ -15988,22 +15996,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-slick@npm:^0.29.0":
-  version: 0.29.0
-  resolution: "react-slick@npm:0.29.0"
-  dependencies:
-    classnames: ^2.2.5
-    enquire.js: ^2.1.6
-    json2mq: ^0.2.0
-    lodash.debounce: ^4.0.8
-    resize-observer-polyfill: ^1.5.0
-  peerDependencies:
-    react: ^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 67ce4981914da8a76c6efb4bc8ee7ab69e04c33bd4b3517419ab2165679a3c701dae781556149713fe2c542f84188b7ca101ea58883537be5c05756408f48c8b
-  languageName: node
-  linkType: hard
-
 "react-smooth@npm:^2.0.0":
   version: 2.0.1
   resolution: "react-smooth@npm:2.0.1"
@@ -16434,7 +16426,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resize-observer-polyfill@npm:^1.5.0, resize-observer-polyfill@npm:^1.5.1":
+"resize-observer-polyfill@npm:^1.5.1":
   version: 1.5.1
   resolution: "resize-observer-polyfill@npm:1.5.1"
   checksum: 57e7f79489867b00ba43c9c051524a5c8f162a61d5547e99333549afc23e15c44fd43f2f318ea0261ea98c0eb3158cca261e6f48d66e1ed1cd1f340a43977094
@@ -18271,6 +18263,13 @@ __metadata:
   version: 3.0.1
   resolution: "throttle-debounce@npm:3.0.1"
   checksum: e34ef638e8df3a9154249101b68afcbf2652a139c803415ef8a2f6a8bc577bcd4d79e4bb914ad3cd206523ac78b9fb7e80885bfa049f64fbb1927f99d98b5736
+  languageName: node
+  linkType: hard
+
+"throttle-debounce@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "throttle-debounce@npm:5.0.0"
+  checksum: aa8bf25828b4f8645ce863589de05d6807ea3debc147ce7d89624638ff8a16792d6d0baa0f8a32a260f0b163444d74020c6087b713ae561fde594b97b6e51f28
   languageName: node
   linkType: hard
 

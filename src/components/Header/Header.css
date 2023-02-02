@@ -437,12 +437,21 @@
 .header-sticky-noti-title-close-btn {
   width: 1.9rem;
   height: 1.9rem;
-  background: linear-gradient(#3d3c3d 20.31%, #313131 47.62%, #262626 96.67%);
+
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #cecece;
+  background: linear-gradient(#ffdea8 20.31%, #f9bd5d 47.62%, #ff9b00 96.67%);
+  color: #222121;
+
+  /* color: #cecece;
+  background: linear-gradient(#3d3c3d 20.31%, #313131 47.62%, #262626 96.67%); */
+}
+.header-sticky-noti-title-close-btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s all;
 }
 .App-header-user > .connect-wallet-btn {
   margin-right: 1.2rem;

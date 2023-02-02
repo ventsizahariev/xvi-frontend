@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useWeb3React } from "@web3-react/core";
 import { t, Trans } from "@lingui/macro";
 import useSWR from "swr";
-import { Cell, Pie, PieChart, Tooltip } from "recharts";
+import { Cell, Pie, PieChart, Tooltip, ResponsiveContainer } from "recharts";
 import TooltipComponent from "../../components/Tooltip/Tooltip";
 
 import hexToRgba from "hex-to-rgba";
@@ -741,7 +741,7 @@ export default function DashboardV2() {
                     <Trans>Claimable</Trans>
                   </div>
                   <div className="App-card-value">
-                  <TooltipComponent
+                    <TooltipComponent
                       position="right-bottom"
                       className="nowrap"
                       handle={`$${formatAmount(totalFloorPriceFundUsd, 30, 0, true)}`}
@@ -752,7 +752,8 @@ export default function DashboardV2() {
                           velas={totalFloorPriceFundUsd?.[VELAS_TESTNET]}
                         />
                       )}
-                    /></div>
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -793,21 +794,20 @@ export default function DashboardV2() {
                     <div className="App-card-row">
                       <div className="label">Price</div>
                       <div className="App-card-value">
-                        
-                          <TooltipComponent
-                            position="right-bottom"
-                            className="nowrap"
-                            handle={"$" + formatAmount(leveragePrice, USD_DECIMALS, 2, true)}
-                            renderContent={() => (
-                              <>
-                                <TooltipCardRow
-                                  label="Price on Binance"
-                                  amount={formatAmount(leveragePrice, USD_DECIMALS, 2, true)}
-                                  showDollar={true}
-                                />
-                              </>
-                            )}
-                          />
+                        <TooltipComponent
+                          position="right-bottom"
+                          className="nowrap"
+                          handle={"$" + formatAmount(leveragePrice, USD_DECIMALS, 2, true)}
+                          renderContent={() => (
+                            <>
+                              <TooltipCardRow
+                                label="Price on Binance"
+                                amount={formatAmount(leveragePrice, USD_DECIMALS, 2, true)}
+                                showDollar={true}
+                              />
+                            </>
+                          )}
+                        />
                       </div>
                     </div>
                     <div className="App-card-row">
@@ -815,7 +815,7 @@ export default function DashboardV2() {
                         <Trans>Supply</Trans>
                       </div>
                       <div className="App-card-value">
-                      <TooltipComponent
+                        <TooltipComponent
                           position="right-bottom"
                           className="nowrap"
                           handle={`${formatArrayAmount(totalSupplies, 1, LEVERAGE_DECIMALS, 0, true)} XVI`}
@@ -855,7 +855,7 @@ export default function DashboardV2() {
                         <Trans>Market Cap</Trans>
                       </div>
                       <div className="App-card-value">
-                      <TooltipComponent
+                        <TooltipComponent
                           position="right-bottom"
                           className="nowrap"
                           handle={`$${formatAmount(leverageMarketCap, USD_DECIMALS, 0, true)}`}
@@ -869,7 +869,7 @@ export default function DashboardV2() {
                             />
                           )}
                         />
-                        </div>
+                      </div>
                     </div>
                   </div>
                   {gmxDistributionData.length > 0 && (
@@ -878,47 +878,52 @@ export default function DashboardV2() {
                         <div className="stats-piechart-sub-title">
                           <Trans>Staked</Trans>
                         </div>
-                        <PieChart width={100} height={100}>
-                          <Pie
-                            data={gmxDistributionData}
-                            cx={45}
-                            cy={45}
-                            innerRadius={40}
-                            outerRadius={45}
-                            fill="#3D3C3D"
-                            dataKey="value"
-                            startAngle={90}
-                            endAngle={-270}
-                            paddingAngle={2}
-                            onMouseEnter={onGMXDistributionChartEnter}
-                            onMouseOut={onGMXDistributionChartLeave}
-                            onMouseLeave={onGMXDistributionChartLeave}
-                          >
-                            {gmxDistributionData.map((entry, index) => (
-                              <Cell
-                                key={`cell-${index}`}
-                                fill={entry.color}
-                                style={{
-                                  filter:
-                                    gmxActiveIndex === index
-                                      ? `drop-shadow(0px 0px 6px ${hexToRgba(entry.color, 0.7)})`
-                                      : "none",
-                                  cursor: "pointer",
-                                }}
-                                stroke={entry.color}
-                                strokeWidth={gmxActiveIndex === index ? 1 : 1}
-                              />
-                            ))}
-                          </Pie>
-                          <image href={spiderIcon} x={"18"} y={"18"} width={64} height={64}></image>
-                          <Tooltip content={<CustomTooltip />} />
-                        </PieChart>
+                        <div className="stats-container">
+                        <ResponsiveContainer >
+                          <PieChart width={100} height={100}>
+                            <Pie
+                              data={gmxDistributionData}
+                              cx={45}
+                              cy={45}
+                              innerRadius={40}
+                              outerRadius={45}
+                              fill="#3D3C3D"
+                              dataKey="value"
+                              startAngle={90}
+                              endAngle={-270}
+                              paddingAngle={2}
+                              onMouseEnter={onGMXDistributionChartEnter}
+                              onMouseOut={onGMXDistributionChartLeave}
+                              onMouseLeave={onGMXDistributionChartLeave}
+                            >
+                              {gmxDistributionData.map((entry, index) => (
+                                <Cell
+                                  key={`cell-${index}`}
+                                  fill={entry.color}
+                                  style={{
+                                    filter:
+                                      gmxActiveIndex === index
+                                        ? `drop-shadow(0px 0px 6px ${hexToRgba(entry.color, 0.7)})`
+                                        : "none",
+                                    cursor: "pointer",
+                                  }}
+                                  stroke={entry.color}
+                                  strokeWidth={gmxActiveIndex === index ? 1 : 1}
+                                />
+                              ))}
+                            </Pie>
+                            <image href={spiderIcon} x={"18"} y={"18"} width={64} height={64}></image>
+                            <Tooltip content={<CustomTooltip />} />
+                          </PieChart>
+                        </ResponsiveContainer>
+                          </div>
+                        
 
                         <div className="stats-piechart-distribution">
                           <Trans>Distribution</Trans>
                         </div>
                         <div className="stats-piechart-distribution-percentage">
-                          <Trans>{stakedPercent}%</Trans>
+                          {`${stakedPercent}%`}
                         </div>
                       </div>
                     </div>
@@ -952,32 +957,31 @@ export default function DashboardV2() {
                         <Trans>Price</Trans>
                       </div>
                       <div className="App-card-value">
-                      <TooltipComponent
-                            position="right-bottom"
-                            className="nowrap"
-                            handle={"$" + formatAmount(glpPrice, USD_DECIMALS, 3, true)}
-                            renderContent={() => (
-                              <>
-                                <TooltipCardRow
-                                  label="Pice on GLP"
-                                  amount={formatAmount(glpPrice, USD_DECIMALS, 3, true)}
-                                  showDollar={true}
-                                />
-                              </>
-                            )}
-                          />
-                        
-                        </div>
+                        <TooltipComponent
+                          position="right-bottom"
+                          className="nowrap"
+                          handle={"$" + formatAmount(glpPrice, USD_DECIMALS, 3, true)}
+                          renderContent={() => (
+                            <>
+                              <TooltipCardRow
+                                label="Pice on GLP"
+                                amount={formatAmount(glpPrice, USD_DECIMALS, 3, true)}
+                                showDollar={true}
+                              />
+                            </>
+                          )}
+                        />
+                      </div>
                     </div>
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Supply</Trans>
                       </div>
-                      <div className="App-card-value"> 
-                      <TooltipComponent
+                      <div className="App-card-value">
+                        <TooltipComponent
                           position="right-bottom"
                           className="nowrap"
-                          handle={`${formatAmount(glpSupply, GLP_DECIMALS,  0, true)} GLP`}
+                          handle={`${formatAmount(glpSupply, GLP_DECIMALS, 0, true)} GLP`}
                           renderContent={() => (
                             <TooltipCard
                               label="Supply on GLP"
@@ -985,14 +989,15 @@ export default function DashboardV2() {
                               showDollar={false}
                             />
                           )}
-                        /></div>
+                        />
+                      </div>
                     </div>
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Total Staked</Trans>
                       </div>
                       <div className="App-card-value">
-                      <TooltipComponent
+                        <TooltipComponent
                           position="right-bottom"
                           className="nowrap"
                           handle={`$${formatAmount(glpMarketCap, USD_DECIMALS, 0, true)}`}
@@ -1006,14 +1011,14 @@ export default function DashboardV2() {
                             />
                           )}
                         />
-                        </div>
+                      </div>
                     </div>
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Market Cap</Trans>
                       </div>
                       <div className="App-card-value">
-                      <TooltipComponent
+                        <TooltipComponent
                           position="right-bottom"
                           className="nowrap"
                           handle={`$${formatAmount(glpMarketCap, USD_DECIMALS, 0, true)}`}
@@ -1026,27 +1031,29 @@ export default function DashboardV2() {
                               showDollar={false}
                             />
                           )}
-                        /></div>
+                        />
+                      </div>
                     </div>
                     <div className="App-card-row">
                       <div className="label">
                         <Trans>Stablecoin Percentage</Trans>
                       </div>
                       <div className="App-card-value">
-                      <TooltipComponent
-                            position="right-bottom"
-                            className="nowrap"
-                            handle={"" + stablePercentage + "%"}
-                            renderContent={() => (
-                              <>
-                                <TooltipCardRow
-                                  label="Stablecoin Percentage"
-                                  amount={stablePercentage}
-                                  showDollar={false}
-                                />
-                              </>
-                            )}
-                          /></div>
+                        <TooltipComponent
+                          position="right-bottom"
+                          className="nowrap"
+                          handle={"" + stablePercentage + "%"}
+                          renderContent={() => (
+                            <>
+                              <TooltipCardRow
+                                label="Stablecoin Percentage"
+                                amount={stablePercentage}
+                                showDollar={false}
+                              />
+                            </>
+                          )}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1158,14 +1165,14 @@ export default function DashboardV2() {
                                 <div className="App-card-info-subtitle">{token.symbol}</div>
                               </div>
                               <div>
-                              <AssetDropdown assetSymbol={token.symbol} assetInfo={token} method="simple"/>
+                                <AssetDropdown assetSymbol={token.symbol} assetInfo={token} method="simple" />
                               </div>
                             </div>
                           </div>
                         </td>
                         <td>${formatKeyAmount(tokenInfo, "minPrice", USD_DECIMALS, 2, true)}</td>
                         <td>
-                        ${formatKeyAmount(tokenInfo, "managedUsd", USD_DECIMALS, 0, true)}
+                          ${formatKeyAmount(tokenInfo, "managedUsd", USD_DECIMALS, 0, true)}
                           {/* <TooltipComponent
                             handle={`$${formatKeyAmount(tokenInfo, "managedUsd", USD_DECIMALS, 0, true)}`}
                             position="right-bottom"
@@ -1224,7 +1231,7 @@ export default function DashboardV2() {
                         <img src={tokenImage} alt={token.symbol} width="20px" />
                         <div className="token-symbol-text">{token.symbol}</div>
                         <div>
-                        <AssetDropdown assetSymbol={token.symbol} assetInfo={token} method="simple"/>
+                          <AssetDropdown assetSymbol={token.symbol} assetInfo={token} method="simple" />
                         </div>
                       </div>
                     </div>

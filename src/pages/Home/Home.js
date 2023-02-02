@@ -11,7 +11,7 @@ import statsIcon from "../../img/home_open_interest.png";
 import tradingIcon from "../../img/home_total_trading.png";
 import HomeDocumentIcon from "../../img/home_document_icon.png";
 import RocketIcon from "../../img/home_rocket.png";
-import Slider from "react-slick";
+import Slider from "@ant-design/react-slick";
 // import velasIcon from "../../img/ic_avalanche_96.svg";
 
 // import statsIcon from "../../img/ic_stats.svg";

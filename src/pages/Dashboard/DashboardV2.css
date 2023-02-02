@@ -229,3 +229,7 @@
     padding: 3.2rem 0.8rem;
   }
 }
+.stats-container {
+  width: 10rem;
+  height: 10rem;
+}
