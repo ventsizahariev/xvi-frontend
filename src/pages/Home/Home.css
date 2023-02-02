@@ -129,11 +129,20 @@
   margin-top: 3.2rem;
 }
 .Home-benefits-control-progress-bar {
+  /* background: #313131; */
+
+  width: 40.8rem;
+}
+.Home-benefits-control-progress-bar-container {
   background: #313131;
   border-radius: 8px;
-  width: 40.8rem;
   height: 0.6rem;
 }
+/* .Home-benefits-control-progress-bar-barCompleted {
+  background: #989898;
+  border-radius: 8px;
+  height: 0.6rem;
+} */
 .Home-benefits-control-progress-number {
   color: #989898;
   margin-top: 1.6rem;

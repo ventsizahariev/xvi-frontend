@@ -12,6 +12,8 @@ import tradingIcon from "../../img/home_total_trading.png";
 import HomeDocumentIcon from "../../img/home_document_icon.png";
 import RocketIcon from "../../img/home_rocket.png";
 import Slider from "@ant-design/react-slick";
+import ProgressBar from "@ramonak/react-progress-bar";
+
 // import velasIcon from "../../img/ic_avalanche_96.svg";
 
 // import statsIcon from "../../img/ic_stats.svg";
@@ -43,6 +45,7 @@ import TokenCard from "../../components/TokenCard/TokenCard";
 import { Trans } from "@lingui/macro";
 import { HeaderLink } from "../../components/Header/HeaderLink";
 import SliderCard from "../../components/Common/SliderCard";
+
 
 export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
   const [openedFAQIndex, setOpenedFAQIndex] = useState(null)
@@ -97,6 +100,7 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
     answer: "On XVI you can swap or margin trade any of the following assets: ETH, BTC, LINK, UNI, USDC, USDT, MIM, FRAX, with others to be added. "
   }]
 
+
   const toggleFAQContent = function(index) {
     if (openedFAQIndex === index) {
       setOpenedFAQIndex(null)
@@ -105,12 +109,13 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
     }
   }
 
+  const [currentSlider, setCurrentSlider] = useState(0);
   const sliderRef = useRef();
   const settings = {
     infinite: true,
     slidesToShow: 3,
     arrows:false,
-  
+    afterChange: current => setCurrentSlider(current),
     responsive: [
       {
         breakpoint: 1000,
@@ -179,6 +184,7 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
       </HeaderLink>
     );
   };
+
 
   const gotoNextSlider = () => {
     sliderRef.current.slickNext();
@@ -268,7 +274,15 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
           
           </div>
           <div className="Home-benfits-control-progress">
-          <div className="Home-benefits-control-progress-bar"></div>
+          <ProgressBar 
+              completed={ (currentSlider + 1) / 6 * 100} 
+              className="Home-benefits-control-progress-bar"
+              barContainerClassName="Home-benefits-control-progress-bar-container"
+              isLabelVisible = {false}
+              height="6px"
+              bgColor="#989898"
+/>
+          
           <div className="Home-benefits-control-progress-number">
             <span className="Home-benefits-control-section-number-icon-name">
               <Trans>Section</Trans>
