@@ -34,6 +34,9 @@
   font-size: var(--font-sm);
   padding: 0.8rem 1.6rem;
 }
+.token-grid .asset-item-arrow {
+  margin-top: 0;
+}
 @media (max-width: 380px) {
   .asset-item {
     padding-left: 0;
@@ -44,6 +47,7 @@
   background: #272727;
   color: white;
   border-radius: 0.4rem;
+  transition: 0.3s all;
 }
 .asset-item p {
   margin: 0;

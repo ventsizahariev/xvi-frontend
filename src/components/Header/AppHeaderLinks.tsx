@@ -34,7 +34,7 @@ export function AppHeaderLinks({
             redirectPopupTimestamp={redirectPopupTimestamp}
             showRedirectModal={showRedirectModal}
           >
-            <img src={logoImg} alt="GMX Logo" />
+            <img src={logoImg} alt="XVI Logo" />
           </HeaderLink>
           <div
             className="App-header-menu-icon-block mobile-cross-menu"

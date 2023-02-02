@@ -16,7 +16,7 @@ function Jobs() {
           <div className="section-title-icon"></div>
           <div className="section-title-content">
             <div className="Page-title">Jobs</div>
-            <div className="Page-description">Job openings at GMX.</div>
+            <div className="Page-description">Job openings at XVI.</div>
           </div>
         </div>
         <div className="jobs-page-body">
@@ -30,13 +30,13 @@ function Jobs() {
 
 function NoJob() {
   return (
-    <Card title="No open positions at GMX currently">
+    <Card title="No open positions at XVI currently">
       <div className="body-para">
         <p className="subheading">
-          GMX is not actively looking for new hires at the moment. However, if you think you can contribute to the
+          XVI is not actively looking for new hires at the moment. However, if you think you can contribute to the
           project, please email{" "}
-          <a target="_blank" href="mailto:jobs@gmx.io" rel="noopener noreferrer">
-            jobs@gmx.io
+          <a target="_blank" href="mailto:jobs@XVI.io" rel="noopener noreferrer">
+            jobs@XVI.io
           </a>
           .
         </p>
@@ -51,7 +51,7 @@ function NoJob() {
 //       <div className="body-para">
 //         <p className="subheading">What you will do:</p>
 //         <ul>
-//           <li>Work closely with the GMX team on the GMX front-end website.</li>
+//           <li>Work closely with the XVI team on the XVI front-end website.</li>
 //           <li>Collaborate and discuss features to be worked on.</li>
 //           <li>Remote full-time position, flexible working hours.</li>
 //         </ul>
@@ -65,11 +65,11 @@ function NoJob() {
 //             <li>Must speak fluent English and available to start right away.</li>
 //             <li>Comfortable making changes to the interface following our current design guidelines.</li>
 //           </ul>
-//           <p>The salary is 60,000 to 120,000 USD + 1,000 to 3,000 GMX a year.</p>
+//           <p>The salary is 60,000 to 120,000 USD + 1,000 to 3,000 XVI a year.</p>
 //           <p className="jobs-contact">
 //             If the job suits you, please get in touch with{" "}
-//             <a target="_blank" href="mailto:jobs@gmx.io" rel="noopener noreferrer">
-//               jobs@gmx.io
+//             <a target="_blank" href="mailto:jobs@XVI.io" rel="noopener noreferrer">
+//               jobs@XVI.io
 //             </a>{" "}
 //             using the following email subject: Application for Senior front-end developer: [Your name]
 //           </p>

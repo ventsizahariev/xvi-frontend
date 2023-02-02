@@ -649,10 +649,10 @@ function CompoundModal(props) {
 
   const getPrimaryText = () => {
     if (isApproving) {
-      return t`Approving GMX...`;
+      return t`Approving XVI...`;
     }
     if (needApproval) {
-      return t`Approve GMX`;
+      return t`Approve XVI`;
     }
     if (isCompounding) {
       return t`Compounding...`;
@@ -739,22 +739,22 @@ function CompoundModal(props) {
           </div>
           <div>
             <Checkbox isChecked={shouldClaimGmx} setIsChecked={setShouldClaimGmx} disabled={shouldStakeGmx}>
-              <Trans>Claim GMX Rewards</Trans>
+              <Trans>Claim XVI Rewards</Trans>
             </Checkbox>
           </div>
           <div>
             <Checkbox isChecked={shouldStakeGmx} setIsChecked={toggleShouldStakeGmx}>
-              <Trans>Stake GMX Rewards</Trans>
+              <Trans>Stake XVI Rewards</Trans>
             </Checkbox>
           </div>
           <div>
             <Checkbox isChecked={shouldClaimEsGmx} setIsChecked={setShouldClaimEsGmx} disabled={shouldStakeEsGmx}>
-              <Trans>Claim esGMX Rewards</Trans>
+              <Trans>Claim esXVI Rewards</Trans>
             </Checkbox>
           </div>
           <div>
             <Checkbox isChecked={shouldStakeEsGmx} setIsChecked={toggleShouldStakeEsGmx}>
-              <Trans>Stake esGMX Rewards</Trans>
+              <Trans>Stake esXVI Rewards</Trans>
             </Checkbox>
           </div>
           <div>
@@ -1220,7 +1220,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
     }
 
     setIsVesterWithdrawModalVisible(true);
-    setVesterWithdrawTitle(t`Withdraw from GMX Vault`);
+    setVesterWithdrawTitle(t`Withdraw from XVI Vault`);
     setVesterWithdrawAddress(gmxVesterAddress);
   };
 
@@ -1237,11 +1237,11 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
 
   const showUnstakeGmxModal = () => {
     if (!isGmxTransferEnabled) {
-      helperToast.error(t`GMX transfers not yet enabled`);
+      helperToast.error(t`XVI transfers not yet enabled`);
       return;
     }
     setIsUnstakeModalVisible(true);
-    setUnstakeModalTitle(t`Unstake GMX`);
+    setUnstakeModalTitle(t`Unstake XVI`);
     let maxAmount = processedData.gmxInStakedGmx;
     if (
       processedData.gmxInStakedGmx &&
@@ -1307,11 +1307,11 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
   if (totalRewardTokensAndGlp && totalRewardTokensAndGlp.gt(0)) {
     let gmxAmountStr;
     if (processedData.gmxInStakedGmx && processedData.gmxInStakedGmx.gt(0)) {
-      gmxAmountStr = formatAmount(processedData.gmxInStakedGmx, 18, 2, true) + " GMX";
+      gmxAmountStr = formatAmount(processedData.gmxInStakedGmx, 18, 2, true) + " XVI";
     }
     let esGmxAmountStr;
     if (processedData.esGmxInStakedGmx && processedData.esGmxInStakedGmx.gt(0)) {
-      esGmxAmountStr = formatAmount(processedData.esGmxInStakedGmx, 18, 2, true) + " esGMX";
+      esGmxAmountStr = formatAmount(processedData.esGmxInStakedGmx, 18, 2, true) + " esXVI";
     }
     let mpAmountStr;
     if (processedData.bonusGmxInFeeGmx && processedData.bnGmxInFeeGmx.gt(0)) {

@@ -4,14 +4,11 @@ import { Trans } from "@lingui/macro";
 
 import cx from "classnames";
 
-import gmxBigIcon from "../../img/ic_gmx_custom.svg";
-import glpBigIcon from "../../img/ic_glp_custom.svg";
 
 import { switchNetwork, useChainId, isHomeSite, BSC_TESTNET } from "../../lib/legacy";
 
 import { useWeb3React } from "@web3-react/core";
 
-import APRLabel from "../APRLabel/APRLabel";
 import XVIIcon from "../../img/xvi_black.png";
 import ExternalLink from "../ExternalLink/ExternalLink";
 import BuyLeveragePro from "../../pages/BuyLeveragePro/BuyLeveragePro";
@@ -106,7 +103,7 @@ export default function TokenCard({ showRedirectModal }) {
             <BuyLink to="/buy_glp" className="buy-btn" network={BSC_TESTNET}>
               <Trans>Buy on Binance</Trans>
             </BuyLink>
-            <ExternalLink href="https://gmxio.gitbook.io/gmx/tokenomics" className="buy-btn-read-more">
+            <ExternalLink href="https://about:blank" className="buy-btn-read-more">
               <Trans>Read more</Trans>
             </ExternalLink>
           </div>

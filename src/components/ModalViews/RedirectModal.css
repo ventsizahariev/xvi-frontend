@@ -12,11 +12,7 @@
   display: block;
 }
 
-@media (max-width: 700px) {
-  .RedirectModal .Modal-content {
-    width: 90vw;
-  }
-}
+
 .RedirectModal .launch-app {
   display: flex;
 }
@@ -49,6 +45,10 @@
   color: #3d3c3d;
   font-weight: 700;
 }
+.RedirectModal .redirect-model-submit-btn:hover {
+  opacity: 0.8;
+  transition: 0.3s all;
+}
 .RedirectModal .redirect-model-submit-btn.active {
   background: linear-gradient(#ffdea8 20.31%, #f9bd5d 47.62%, #e58d05 96.67%);
   border-radius: 8.9rem;
@@ -64,6 +64,30 @@
   text-decoration: none;
   color: #ffffff;
   font-weight: 700;
+}
+@media (max-width: 400px) {
+  .RedirectModal .Modal-content {
+    width:90vw;
+  }
+  .RedirectModal .submit-buttons {
+    margin-top: 2.4rem;
+    display: block;
+  }
+  .RedirectModal .redirect-model-submit-btn {
+    display: inline-block;
+    width:100%;
+    text-align: center;
+  }
+  .RedirectModal .redirect-model-close-btn {
+      display: inline-block;
+      width:100%;
+      text-align: center;
+      margin-top:1.2rem;
+  }
+}
+.RedirectModal .redirect-model-close-btn:hover {
+  transition: 0.2s all;
+  background-color: #313131;
 }
 .RedirectModal .launch-app-desc1 {
   margin-top: 2.4rem;

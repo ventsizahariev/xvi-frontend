@@ -2,6 +2,7 @@ a.btn {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  justify-content: flex-start;
 }
 .btn-center {
   justify-content: center;
@@ -36,6 +37,7 @@ a.btn {
   max-width: 2.3rem;
 }
 .btn:hover {
+  transition: 0.3s all;
   background: #272727;
 }
 .btn-sm {
@@ -96,12 +98,12 @@ a.btn {
   border-radius: var(--border-radius-sm);
 }
 
-.btn-primary:hover {
+/* .btn-primary:hover {
   background: var(--dark-blue-hover);
 }
 .btn-primary:active {
   background: var(--dark-blue-active);
-}
+} */
 
 @media (max-width: 450px) {
   .connect-wallet {
@@ -142,8 +144,8 @@ a.btn {
   justify-content: center;
 }
 .connect-wallet-btn .btn-label {
-  font-weight: 400;
-  font-size: var(--font-sm);
+  font-weight: 500;
+  font-size: 1.6rem;
   margin-left: 0.4rem;
   letter-spacing: 0;
 }

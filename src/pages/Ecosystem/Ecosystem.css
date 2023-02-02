@@ -30,6 +30,11 @@
   align-items: center;
   display: flex;
   justify-content: center;
+  cursor: pointer;
+}
+.eco-btn:hover {
+  background: linear-gradient(#444 20.31%, #313131 47.62%, #171717 96.67%) !important;
+  transition: 0.3s all;
 }
 .eco-btn a {
   text-decoration: none;

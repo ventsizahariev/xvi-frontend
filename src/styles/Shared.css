@@ -51,7 +51,7 @@ input {
   --font-md: 1.6rem;
   --font-lg: 2.4rem;
   --font-xl: 3.4rem;
-  scrollbar-color: #1c1c1c #949393;
+  scrollbar-color: #989898 #cecece;
   scrollbar-width: thin;
 }
 
@@ -82,12 +82,12 @@ a {
 }
 
 ::-webkit-scrollbar-track-piece {
-  background-color: #949393;
+  background-color: #cecece;
 }
 
 ::-webkit-scrollbar-thumb:vertical {
   height: 30px;
-  background-color: #1c1c1c;
+  background-color: #989898;
 }
 
 input::-webkit-outer-spin-button,

@@ -682,7 +682,7 @@ table.Exchange-list th {
   width: 48rem;
   height: 38rem;
   scrollbar-color: #f9bd5d #313131;
-  scrollbar-width: thin;
+  scrollbar-width: 1.5rem;
 }
 .Exchange-swap-box .TokenSelector .Modal-content::-webkit-scrollbar,
 .Selector .Modal-content::-webkit-scrollbar {
@@ -1045,9 +1045,9 @@ table.Exchange-list-small td {
     grid-template-columns: 1fr;
   }
 
-  .Exchange-lists.large {
+  /* .Exchange-lists.large {
     display: none;
-  }
+  } */
 
   /* .Exchange-lists.small {
     display: block;
@@ -1102,10 +1102,20 @@ table.Exchange-list-small td {
     font-size: 1.25rem;
   }
 }
+
 @media (max-width: 430px) {
   .ExchangeChart-title img {
     width: 2.4rem;
     height: 2.4rem;
+  }
+}
+@media (max-width: 480px) {
+  .Exchange-list-tab-container {
+    grid-template-columns: 1fr;
+  }
+  .Exchange-should-show-position-lines {
+    justify-content: flex-start !important;
+    margin-top: 1.2rem;
   }
 }
 @media (max-width: 700px) {
@@ -1147,4 +1157,7 @@ table.Exchange-list-small td {
   background: rgba(39, 39, 39, 0.6);
   border-radius: 8px;
   padding: 0.4rem 0.8rem;
+}
+.Exchange-empty-positions-list-note {
+  padding: 1.2rem;
 }

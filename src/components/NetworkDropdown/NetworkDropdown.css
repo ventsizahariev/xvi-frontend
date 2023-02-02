@@ -246,9 +246,20 @@
     margin-left: 0;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 520px) {
   .App-header-network {
-    margin-left: 0.6rem;
+    margin-left: 0.4rem;
+  }
+}
+@media (max-width: 480px) {
+  .App-header-network {
+    margin-left: 0.2rem;
+  }
+  .network-dropdown {
+    padding: 0.4rem 0 0.4rem 0.6rem;
+  }
+  .network-dropdown > button.transparent {
+    margin-left: 0.4rem;
   }
   .App-header-language {
     margin-left: 0;

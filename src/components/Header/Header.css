@@ -302,7 +302,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
   .App-header-user-link {
     margin-right: 0.6rem;
   }
@@ -319,20 +319,27 @@
   .App-header-menu-icon {
     margin: 0.4rem 0.5rem;
   }
-
   .App-header-user > .connect-wallet-btn svg {
     display: none;
   }
   .App-header-user > .connect-wallet-btn {
     padding: 0.4rem 0.8rem;
-    background: none;
-    border: none;
+    margin-right: 0.4rem !important;
+    background: linear-gradient(#ffdea8 20.31%, #f9bd5d 47.62%, #e58d05 96.67%);
+    color: #222121;
+  }
+  .App-header-user > .connect-wallet-btn:hover {
+    opacity: 0.8;
+    transition: 0.2s all;
   }
   .App-header.small {
     padding-left: 0.6rem;
     padding-right: 0.6rem;
   }
-
+  .App-header a.App-header-link-main,
+  .App-header .App-header-link-main {
+    margin-right: 0 !important;
+  }
   .App-header .App-header-link-main {
     /* padding: 0.155rem !important;
     margin-left: 0rem !important; */
@@ -359,6 +366,34 @@
 }
 .header-trade-btn img {
   margin-right: 0.4rem;
+}
+.header-trade-btn-home {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(#ffdea8 20.31%, #f9bd5d 47.62%, #e58d05 96.67%);
+  border-radius: 8.9rem;
+  color: #222121;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.header-trade-btn-home img {
+  margin-right: 0.4rem;
+}
+@media (max-width: 360px) {
+  .header-trade-btn-home {
+    background: none;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    font-weight: 500;
+    background: linear-gradient(#ffdea8 20.31%, #f9bd5d 47.62%, #e58d05 96.67%);
+    color: #222121;
+  }
+  .header-trade-btn-home img {
+    display: none;
+  }
 }
 .is-sticky {
   position: fixed !important;
@@ -400,10 +435,10 @@
   width: 100%;
 }
 .header-sticky-noti-title-close-btn {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 1.9rem;
+  height: 1.9rem;
   background: linear-gradient(#3d3c3d 20.31%, #313131 47.62%, #262626 96.67%);
-  border-radius: 2.8rem;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;

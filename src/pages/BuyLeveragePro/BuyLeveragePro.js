@@ -89,7 +89,7 @@ export default function BuyLeveragePro(props) {
   ];
   return (
     <>
-      <Modal isVisible={isModalVisible} setIsVisible={setIsModalVisible} label={modalHeader()}>
+      <Modal isVisible={isModalVisible} setIsVisible={setIsModalVisible} label={modalHeader()} className="leveragePro-modal">
         <div className="BuyGMXGLP  page-layout">
           <div className="BuyGMXGLP-container">
             <div className="cards-row">

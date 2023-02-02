@@ -111,7 +111,7 @@ export function Header({
             <Trans>The XVI Community is coming together. Get your tickets to breakpoint, Nov. 4-7 In Lisbon!</Trans>
           </div>
           <div className="header-sticky-noti-title-close-btn" onClick = { () => {setShowStickyNode(2)}}>
-            <FaTimes/>
+            <FaTimes size={12}/>
           </div>
           </div>
         <div className="App-header large">
@@ -124,8 +124,8 @@ export function Header({
               redirectPopupTimestamp={redirectPopupTimestamp}
               showRedirectModal={showRedirectModal}
             >
-              <img src={logoImg} className="big" alt="GMX Logo" />
-              <img src={logoSmallImg} className="small" alt="GMX Logo" />
+              <img src={logoImg} className="big" alt="XVI Logo" />
+              <img src={logoSmallImg} className="small" alt="XVI Logo" />
             </HeaderLink>
               <AppHeaderLinks redirectPopupTimestamp={redirectPopupTimestamp} showRedirectModal={showRedirectModal} />
           </div>
@@ -151,8 +151,8 @@ export function Header({
                 {isDrawerVisible && <FaTimes className="App-header-menu-icon" />}
               </div>
               <div className="App-header-link-main clickable" onClick={() => setIsDrawerVisible(!isDrawerVisible)}>
-                <img src={logoImg} className="big" alt="GMX Logo" />
-                <img src={logoSmallImg} className="small" alt="GMX Logo" />
+                <img src={logoImg} className="big" alt="XVI Logo" />
+                <img src={logoSmallImg} className="small" alt="XVI Logo" />
               </div>
             </div>
             <div className="App-header-container-right">

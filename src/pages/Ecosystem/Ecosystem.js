@@ -3,8 +3,7 @@ import { Trans } from "@lingui/macro";
 import SEO from "../../components/Common/SEO";
 
 import Footer from "../../components/Footer/Footer";
-import { getPageTitle, BSC_TESTNET } from "../../lib/legacy";
-
+import { getPageTitle, BSC_TESTNET, VELAS_TESTNET, useChainId } from "../../lib/legacy";
 
 import "./Ecosystem.css";
 import BinanceIcon from "../../img/ic_bsc_52.svg";
@@ -16,15 +15,19 @@ import EcosystemTelegramImg from "../../img/ecosystem_telegram.png";
 import ExternalLink from "../../components/ExternalLink/ExternalLink";
 import { FiChevronRight } from "react-icons/fi";
 import EcosystemImg from "../../img/ecosystem.png";
-const NETWORK_ICONS = {
-  [BSC_TESTNET]: BinanceIcon,
-};
+import VelasImg from "../../img/velas_blue.png";
+// const NETWORK_ICONS = {
+//   [BSC_TESTNET]: BinanceIcon,
+//   [VELAS_TESTNET]:VelasImg,
+// };
 
-const NETWORK_ICON_ALTS = {
-  [BSC_TESTNET]: "bsc16Icon",
-};
+// const NETWORK_ICON_ALTS = {
+//   [BSC_TESTNET]: "bsc16Icon",
+//   [VELAS_TESTNET]:"velasIcon"
+// };
 
 export default function Ecosystem() {
+  const { chainId } = useChainId();
   const XVIPages = [
     {
       title: "XVI Governance",
@@ -396,7 +399,12 @@ export default function Ecosystem() {
                         <div className="App-card-title-desc">{item.about}</div>
                       </div>
                       <div className="App-card-title-icon">
-                        <img width="16" src={BinanceIcon} />
+                        {chainId == BSC_TESTNET ? (
+                          <img width="16" src={BinanceIcon} alt="Binance Icon" />
+                        ) : (
+                          <img width="16" src={VelasImg} alt="Velas Icon" />
+                        )}
+
                         <img width="16" src={BTCIcon} />
                       </div>
                     </div>
@@ -447,9 +455,12 @@ export default function Ecosystem() {
                       <div className="App-card-title-desc">{item.about}</div>
                     </div>
                     <div className="App-card-title-icon">
-                      {item.chainIds.map((network) => (
-                        <img width="16" key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
-                      ))}
+                      {chainId == BSC_TESTNET ? (
+                        <img width="16" src={BinanceIcon} alt="Binance Icon" />
+                      ) : (
+                        <img width="16" src={VelasImg} alt="Velas Icon" />
+                      )}
+
                       <img width="16" src={BTCIcon} />
                     </div>
                   </div>
@@ -493,9 +504,12 @@ export default function Ecosystem() {
                       <div className="App-card-title-desc">{item.about}</div>
                     </div>
                     <div className="App-card-title-icon">
-                      {item.chainIds.map((network) => (
-                        <img width="16" key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
-                      ))}
+                      {chainId == BSC_TESTNET ? (
+                        <img width="16" src={BinanceIcon} alt="Binance Icon" />
+                      ) : (
+                        <img width="16" src={VelasImg} alt="Velas Icon" />
+                      )}
+
                       <img width="16" src={BTCIcon} />
                     </div>
                   </div>
@@ -540,9 +554,12 @@ export default function Ecosystem() {
                       <div className="App-card-title-desc">{item.about}</div>
                     </div>
                     <div className="App-card-title-icon">
-                      {item.chainIds.map((network) => (
-                        <img width="16" key={network} src={NETWORK_ICONS[network]} alt={NETWORK_ICON_ALTS[network]} />
-                      ))}
+                      {chainId == BSC_TESTNET ? (
+                        <img width="16" src={BinanceIcon} alt="Binance Icon" />
+                      ) : (
+                        <img width="16" src={VelasImg} alt="Velas Icon" />
+                      )}
+
                       <img width="16" src={BTCIcon} />
                     </div>
                   </div>
@@ -584,23 +601,27 @@ export default function Ecosystem() {
                 const linkLabel = item.linkLabel ? item.linkLabel : item.link;
                 return (
                   <div className="App-card" key={item.title}>
-                    <div className="App-card-title">{item.title}</div>
+                    <div className="App-card-title">
+                      <div className="App-card-title-group">
+                        <span className="App-card-title-content">{item.title}</span>
+                        <div className="App-card-title-desc">{item.about}</div>
+                      </div>
+                      <div className="App-card-title-icon">
+                        {chainId == BSC_TESTNET ? (
+                          <img width="16" src={BinanceIcon} alt="Binance Icon" />
+                        ) : (
+                          <img width="16" src={VelasImg} alt="Velas Icon" />
+                        )}
+
+                        <img width="16" src={BTCIcon} />
+                      </div>
+                    </div>
                     <div className="App-card-divider"></div>
                     <div className="App-card-content">
-                      <div className="App-card-row">
-                        <div className="label">
-                          <Trans>Link</Trans>
-                        </div>
-                        <div>
+                        <div className="eco-btn">
                           <ExternalLink href={item.link}>{linkLabel}</ExternalLink>
+                          <FiChevronRight />
                         </div>
-                      </div>
-                      <div className="App-card-row">
-                        <div className="label">
-                          <Trans>About</Trans>
-                        </div>
-                        <div>{item.about}</div>
-                      </div>
                     </div>
                   </div>
                 );

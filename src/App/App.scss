@@ -103,6 +103,7 @@
 .App-header-drawer .App-header-link-container a.active {
   background: rgba(49, 49, 49, 0.4);
   color: white;
+  transition: 0.3s all;
 }
 
 .App-header-links-header {
@@ -144,6 +145,7 @@
 
 .App-header-menu-icon:hover {
   opacity: 0.9;
+  transition: 0.3s all;
 }
 
 .App-highlight-box {
@@ -414,6 +416,7 @@ button.App-connect-wallet {
 
 button.App-connect-wallet:hover {
   opacity: 1;
+  transition: 0.3s all;
 }
 
 .App-header-user-address {
@@ -541,6 +544,7 @@ button.App-connect-wallet:hover {
 .Page-description span:hover {
   color: #fff;
   opacity: 0.9;
+  transition: 0.3s all;
 }
 
 .Page-description span img,
@@ -684,7 +688,7 @@ button.App-connect-wallet:hover {
 
 .App-header .a:hover,
 .App-header a:hover {
-  transition: all 0.2s;
+  transition: all 0.3s;
   opacity: 0.8;
 }
 
@@ -701,6 +705,7 @@ button.App-connect-wallet:hover {
 .App-header-container-left .a.active,
 .App-header-container-left a.active {
   color: white;
+  transition: 0.3s all;
 }
 
 .Toastify {
@@ -872,6 +877,7 @@ button.App-cta.transparent:hover:enabled {
   color: white;
   box-shadow: none;
   background: none;
+  transition: 0.3s all;
 }
 
 button.App-cta.option,
@@ -1080,6 +1086,7 @@ a.App-social-link img {
 a.App-social-link:hover {
   background: linear-gradient(#3d3c3d 20.31%, #313131 47.62%, #262626 96.67%);
   color: #fbcd81;
+  transition: 0.3s all;
 }
 
 .App-input {
@@ -1114,6 +1121,7 @@ a.App-social-link:hover {
 
 .App-input-max:hover {
   opacity: 1;
+  transition: 0.3s all;
 }
 
 .App-input-container {
@@ -1163,6 +1171,7 @@ button.App-button {
 }
 .Toastify__close-button:hover {
   background: #ffffff47 0% 0% no-repeat padding-box;
+  transition: 0.3s all;
 }
 .Toastify__toast-body {
   font: normal normal normal 1.4rem/1.6rem Relative;
@@ -1293,6 +1302,7 @@ button.App-button {
 .App-slider .rc-slider-mark-text:hover,
 .App-slider .rc-slider-mark-text-active:hover {
   opacity: 1;
+  transition: 0.3s all;
 }
 
 .rc-slider-tooltip {
@@ -1315,6 +1325,7 @@ button.App-button {
 
 .header-connect-btn:hover {
   background: #6a70ea;
+  transition: 0.3s all;
 }
 
 .header-connect-btn:focus {
@@ -1500,23 +1511,28 @@ button.App-button {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 520px) {
   .header-connect-btn {
+    margin-right: 0.4rem;
+  }
+  .App-header-trade-link {
     margin-right: 0.4rem;
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
   .App-header-trade-link {
     margin-right: 0.6rem;
   }
-  .App-header-trade-link > .header-trade-btn {
+  .App-header-user .App-header-trade-link > .header-trade-btn {
     background: none;
     color: white;
     padding: 0.4rem 0.8rem;
     font-weight: 500;
+    background: linear-gradient(#ffdea8 20.31%, #f9bd5d 47.62%, #e58d05 96.67%);
+    color: #222121;
   }
-  .App-header-trade-link > .header-trade-btn img {
+  .App-header-user .App-header-trade-link > .header-trade-btn img {
     display: none;
   }
   .Page-title {
@@ -1618,16 +1634,30 @@ button.App-button {
 }
 a.App-button-option-light:hover,
 button.App-button-option-light:hover {
-  transition: all 0.2s;
+  transition: all 0.3s;
   opacity: 0.8;
 }
 .Exchange-settings-button-group .App-cta.active:hover {
-  transition: all 0.2s;
+  transition: all 0.3s;
   opacity: 0.8;
 }
 
 a.App-button-option-dark:hover,
 button.App-button-option-dark:hover {
   background-color: #272727;
-  transition: 0.2s all;
+  transition: 0.3s all;
+}
+@media (max-width: 400px) {
+  .Wallet-btn {
+    padding: 0.8rem;
+  }
+  .Connect-wallet-modal .Modal-content {
+    width: 90vw;
+  }
+  .Connect-wallet-modal .Modal-content .Modal-body {
+    margin: 0.8rem;
+  }
+  .Exchange-settings-button-group {
+    grid-template-columns: 1fr;
+  }
 }

@@ -51,6 +51,7 @@
 .Tab.block .Tab-option:hover {
   color: rgba(255, 255, 255, 1);
   background: linear-gradient(#3d3c3d 20.31%, #313131 47.62%, #262626 96.67%);
+  transition: 0.3s all;
 }
 
 .Tab.block .Tab-option.active {
@@ -58,6 +59,7 @@
   color: rgba(255, 255, 255, 1);
   background: linear-gradient(#3d3c3d 20.31%, #313131 47.62%, #262626 96.67%);
   border-radius: 0.8rem;
+  transition: 0.3s all;
 }
 .Tab.block .Tab-option.active span {
   background-image: linear-gradient(#ffdea8 20.31%, #f9bd5d 47.62%, #e58d05 96.67%);
@@ -83,9 +85,11 @@
 .Tab.inline .Tab-option:hover {
   background: #3d3c3d;
   opacity: 1;
+  transition: 0.3s all;
 }
 
 .Tab.inline .Tab-option.active {
   opacity: 1;
   background: #3d3c3d;
+  transition: 0.3s all;
 }
