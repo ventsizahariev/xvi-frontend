@@ -49,33 +49,33 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
   const sliderContent = [
     {
       image: Slider1,
-      title:"Reduce Liquidition Risk",
-      content:"Lorem Ipsum is simply dummy text of the printing and transition typesetting industry."
+      title:<Trans>Reduce Liquidition Risk</Trans>,
+      content:<Trans>Lorem Ipsum is simply dummy text of the printing and transition typesetting industry.</Trans>
     },
     {
       image: Slider2,
-      title:"Save on Costs",
-      content:"Lorem Ipsum is simply dummy text of the printing and transition typesetting industry."
+      title:<Trans>Save on Costs</Trans>,
+      content:<Trans>Lorem Ipsum is simply dummy text of the printing and transition typesetting industry.</Trans>
     },
     {
       image: Slider3,
-      title:"Analytic",
-      content:"Lorem Ipsum is simply dummy text of the printing and transition typesetting industry."
+      title:<Trans>Analytic</Trans>,
+      content:<Trans>Lorem Ipsum is simply dummy text of the printing and transition typesetting industry.</Trans>
     },
     {
       image: Slider4,
-      title:"Preferred Network",
-      content:"Lorem Ipsum is simply dummy text of the printing and transition typesetting industry."
+      title:<Trans>Preferred Network</Trans>,
+      content:<Trans>Lorem Ipsum is simply dummy text of the printing and transition typesetting industry.</Trans>
     },
     {
       image: Slider5,
-      title:"Variety of Features",
-      content:"Lorem Ipsum is simply dummy text of the printing and transition typesetting industry."
+      title:<Trans>Variety of Features</Trans>,
+      content:<Trans>Lorem Ipsum is simply dummy text of the printing and transition typesetting industry.</Trans>
     },
     {
       image: Slider6,
-      title:"Simple Swaps",
-      content:"Lorem Ipsum is simply dummy text of the printing and transition typesetting industry."
+      title:<Trans>Simple Swaps</Trans>,
+      content:<Trans>Lorem Ipsum is simply dummy text of the printing and transition typesetting industry.</Trans>
     },
   ]
   const SliderCountArray = [1,2,3,4,5,6];

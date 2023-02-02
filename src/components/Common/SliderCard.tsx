@@ -13,8 +13,8 @@ function SliderCard({ title, content, className, image }: Props) {
   return (
     <div className={`slider-card ${className ? className : ""}`}>
       <img  src={image} className="slider-card-img"/>
-      <div className="slider-card-header"><Trans>{title}</Trans></div>
-      <div className="slider-card-body"><Trans>{content}</Trans></div>
+      <div className="slider-card-header">{title}</div>
+      <div className="slider-card-body">{content}</div>
     </div>
   );
 }
