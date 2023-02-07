@@ -6,12 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `yarn`
+### `yarn install`
 
 Installs dependencies
-
-At first installation, you might have to run `yarn husky install`,
-to setup pre-commit hooks
 
 ### `yarn start`
 
@@ -20,10 +17,6 @@ Open [http://localhost:3010](http://localhost:3010) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-### `yarn start`
-
-Start in development mode and show the home page.
 
 ### `yarn build`
 
