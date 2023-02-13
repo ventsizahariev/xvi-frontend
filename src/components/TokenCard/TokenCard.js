@@ -5,7 +5,7 @@ import { Trans } from "@lingui/macro";
 import cx from "classnames";
 
 
-import { switchNetwork, useChainId, isHomeSite, BSC_TESTNET } from "../../lib/legacy";
+import {switchNetwork, useChainId, isHomeSite, BSC_TESTNET, VELAS_TESTNET} from "../../lib/legacy";
 
 import { useWeb3React } from "@web3-react/core";
 
@@ -101,7 +101,12 @@ export default function TokenCard({ showRedirectModal }) {
 
           <div className="Home-token-card-option-action">
             <BuyLink to="/buy_glp" className="buy-btn" network={chainId}>
-              <Trans>Buy on {chainId === BSC_TESTNET ? 'Binance' : 'Velas'}</Trans>
+              {chainId === BSC_TESTNET &&
+                (<Trans>Buy on Binance</Trans>)
+              }
+              {chainId === VELAS_TESTNET &&
+                (<Trans>Buy on Velas</Trans>)
+              }
             </BuyLink>
             <ExternalLink href="https://about:blank" className="buy-btn-read-more">
               <Trans>Read more</Trans>

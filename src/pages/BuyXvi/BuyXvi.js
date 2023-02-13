@@ -50,7 +50,12 @@ export default function BuyXvi(props) {
       <>
         <img src={chainId === BSC_TESTNET ? BinanceTitleIcon : VelasTitleIcon} width={52} height={52} />
         <span className="buy-gmx-modal-title">
-          <Trans>Buy on {chainId === BSC_TESTNET ? 'Binance' : 'Velas'}</Trans>
+          {chainId === BSC_TESTNET &&
+            (<Trans>Buy on Binance</Trans>)
+          }
+          {chainId === VELAS_TESTNET &&
+            (<Trans>Buy on Velas</Trans>)
+          }
         </span>
       </>
     );
@@ -232,7 +237,12 @@ export default function BuyXvi(props) {
       <>
         {!props.isModal ? (
           <NavLink onClick={() => setIsModalVisible(true)} className="buy-btn" to="#">
-            <Trans>Buy on {chainId === BSC_TESTNET ? 'Binance' : 'Velas'}</Trans>
+            {chainId === BSC_TESTNET &&
+              (<Trans>Buy on Binance</Trans>)
+            }
+            {chainId === VELAS_TESTNET &&
+              (<Trans>Buy on Velas</Trans>)
+            }
           </NavLink>
         ) : (
           <NavLink onClick={() => setIsModalVisible(true)} className="App-button-option-dark App-card-option" to="#">
