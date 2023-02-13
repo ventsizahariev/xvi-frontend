@@ -113,11 +113,11 @@ msgstr "수령 후 {1} {stake} 대 1 esGMX 비율로 최대 {0}개의 esGMX를 �
 msgid "After claiming, the esGMX tokens will be airdropped to your account on the selected network within 7 days."
 msgstr "수령 후, esGMX 토큰은 7일 이내에 선택한 네트워크의 계정으로 에어드랍됩니다."
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:206
+#: src/pages/BuyXvi/BuyXvi.js:206
 msgid "After you have BNB, set your network to <0>Binance</0> then click the button below:"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:240
+#: src/pages/BuyXvi/BuyXvi.js:240
 msgid "After you have ETH, set your network to <0>Arbitrum</0> then click the button below:"
 msgstr "ETH를 소지한 후 네트워크를 <0>Arbitrum</0>으로 설정한 뒤 아래의 버튼을 클릭합니다."
 
@@ -225,7 +225,7 @@ msgstr "선택한 네트워크에서 이용가능"
 msgid "Available:"
 msgstr "사용가능"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:179
+#: src/pages/BuyXvi/BuyXvi.js:179
 msgid "Avalanche"
 msgstr "Avalanche"
 
@@ -234,11 +234,11 @@ msgstr "Avalanche"
 #~ msgid "Avalanche APR:"
 #~ msgstr "Avalanche APR:"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:125
+#: src/pages/BuyXvi/BuyXvi.js:125
 msgid "Avax is needed on Avalanche to purchase GMX."
 msgstr "Avalanche에서 GMX를 구입하기 위해서는 Avax가 필요합니다."
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:46
+#: src/pages/BuyXvi/BuyXvi.js:46
 msgid "BNB is needed on Binance to purchase LeveragePro."
 msgstr ""
 
@@ -257,8 +257,8 @@ msgstr "잔고"
 msgid "Balance:"
 msgstr "잔고:"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:78
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:158
+#: src/pages/BuyXvi/BuyXvi.js:78
+#: src/pages/BuyXvi/BuyXvi.js:158
 msgid "Banxa"
 msgstr "Banxa"
 
@@ -266,8 +266,8 @@ msgstr "Banxa"
 msgid "Begin Transfer"
 msgstr "전송시작"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:111
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:188
+#: src/pages/BuyXvi/BuyXvi.js:111
+#: src/pages/BuyXvi/BuyXvi.js:188
 msgid "Binance"
 msgstr "Binance"
 
@@ -299,11 +299,11 @@ msgstr "구매"
 msgid "Buy / Sell GLP"
 msgstr "GLP 구매 / 판매"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:122
+#: src/pages/BuyXvi/BuyXvi.js:122
 msgid "Buy / Transfer AVAX"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:43
+#: src/pages/BuyXvi/BuyXvi.js:43
 msgid "Buy / Transfer BNB"
 msgstr ""
 
@@ -311,11 +311,11 @@ msgstr ""
 #~ msgid "Buy / Transfer ETH"
 #~ msgstr "ETH 구매 / 전송"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:140
+#: src/pages/BuyXvi/BuyXvi.js:140
 msgid "Buy AVAX"
 msgstr "AVAX 구매 "
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:60
+#: src/pages/BuyXvi/BuyXvi.js:60
 msgid "Buy BNB"
 msgstr ""
 
@@ -330,11 +330,11 @@ msgstr ""
 msgid "Buy GLP"
 msgstr "GLP 구매"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:234
+#: src/pages/BuyXvi/BuyXvi.js:234
 msgid "Buy GMX"
 msgstr "GMX 구매"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:263
+#: src/pages/BuyXvi/BuyXvi.js:263
 msgid "Buy GMX Bonds"
 msgstr "GMX 채권 구매"
 
@@ -342,7 +342,7 @@ msgstr "GMX 채권 구매"
 #~ msgid "Buy GMX or GLP"
 #~ msgstr "GMX 혹은 GLP 구매"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:200
+#: src/pages/BuyXvi/BuyXvi.js:200
 msgid "Buy LeveragePro"
 msgstr ""
 
@@ -956,7 +956,7 @@ msgstr ""
 #~ msgid "GMX Pages"
 #~ msgstr "GMX 페이지"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:269
+#: src/pages/BuyXvi/BuyXvi.js:269
 msgid "GMX bonds can be bought on Olympus Pro with a discount and a small vesting period:"
 msgstr "GMX 채권은 Olympus Pro에서 약간의 베스팅 기간과 함께 할인된 가격으로 구매할 수 있습니다."
 
@@ -1014,7 +1014,7 @@ msgstr "높은 USDG 슬리피지 상관 없이 롱 포지션 체결"
 msgid "Home"
 msgstr "홈"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:108
+#: src/pages/BuyXvi/BuyXvi.js:108
 msgid "Hop"
 msgstr "Hop"
 
@@ -1337,8 +1337,8 @@ msgstr "최소 주문: 10 USD"
 msgid "Multiplier Points APR"
 msgstr "멀티플라이어 포인트 APR"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:101
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:185
+#: src/pages/BuyXvi/BuyXvi.js:101
+#: src/pages/BuyXvi/BuyXvi.js:185
 msgid "Multiswap"
 msgstr "멀티스왑"
 
@@ -1384,7 +1384,7 @@ msgstr "주문 실행은 보장되지 않습니다.<0/><1/>이것은 다음과 �
 msgid "Note that there is a minimum holding time of 15 minutes after a purchase."
 msgstr "구매 후 최소 15분의 락업 시간이 있습니다."
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:273
+#: src/pages/BuyXvi/BuyXvi.js:273
 msgid "Olympus Pro"
 msgstr "Olympus Pro"
 
@@ -1561,7 +1561,7 @@ msgstr ""
 msgid "Purchase <0>GLP tokens</0> to earn {nativeTokenSymbol} fees from swaps and leverages trading."
 msgstr "<0>GLP 토큰<0/>을 구입해서, 스왑 및 레버리지 트레이딩을 통해 생성되는 {nativeTokenSymbol} 수수료를 획득하세요."
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:254
+#: src/pages/BuyXvi/BuyXvi.js:254
 msgid "Purchase GMX"
 msgstr "GMX 구입"
 
@@ -1569,7 +1569,7 @@ msgstr "GMX 구입"
 msgid "Purchase Insurance"
 msgstr "보험 구입"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:220
+#: src/pages/BuyXvi/BuyXvi.js:220
 msgid "Purchase LeveragePro"
 msgstr ""
 
@@ -1923,8 +1923,8 @@ msgstr ""
 #~ msgid "Switch Network"
 #~ msgstr "네트워크 변경"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:98
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:182
+#: src/pages/BuyXvi/BuyXvi.js:98
+#: src/pages/BuyXvi/BuyXvi.js:182
 msgid "Synapse"
 msgstr "Synapse"
 
@@ -1977,7 +1977,7 @@ msgstr "티어 {0} ({1}% 할인)"
 msgid "To complete the transfer, you must switch your connected account to {receiver}."
 msgstr "전송을 완료하려면 {receiver} 계정에 다시 연결해야 합니다."
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:127
+#: src/pages/BuyXvi/BuyXvi.js:127
 msgid "To purchase GMX on <0>Arbitrum</0>, please change your network."
 msgstr "<0>Arbitrum</0>에서 GMX를 구입하려면 네트워크를 변경해주세요."
 
@@ -2101,7 +2101,7 @@ msgstr "트레이딩 가이드"
 msgid "Transaction"
 msgstr "거래"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:165
+#: src/pages/BuyXvi/BuyXvi.js:165
 msgid "Transfer AVAX"
 msgstr "AVAX 전송"
 
@@ -2109,7 +2109,7 @@ msgstr "AVAX 전송"
 msgid "Transfer Account"
 msgstr "계정 이전"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:85
+#: src/pages/BuyXvi/BuyXvi.js:85
 msgid "Transfer ETH"
 msgstr "ETH 전송"
 
@@ -2209,7 +2209,7 @@ msgstr "담보를 예치 또는 인출하시려면 \"편집\" 버튼을 사용�
 msgid "Useful Links"
 msgstr "유용한 링크"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:172
+#: src/pages/BuyXvi/BuyXvi.js:172
 msgid "Using the Avalanche or Synapse bridges, you can also transfer any other supported cryptocurrency, and receive free AVAX to pay for the network's fees."
 msgstr "Avalanche나 Synapse 브리지를 사용하면 지원되는 어떤 암호화폐든 이전할 수 있으며 네트워크 수수료 지불을 위한 AVAX를 무료로 받을 수 있습니다."
 
@@ -2370,11 +2370,11 @@ msgstr "인출 완료!"
 msgid "You are earning {nativeTokenSymbol} rewards with {0} tokens.<0/>Tokens: {amountStr}."
 msgstr "귀하는 {nativeTokenSymbol} 보상을 {0} 토큰으로 얻고 있습니다.<0/> 토큰: {amountStr}"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:145
+#: src/pages/BuyXvi/BuyXvi.js:145
 msgid "You can buy AVAX directly on <0>Avalanche</0> using Banxa:"
 msgstr "Banxa를 사용하여 <0>Avalanche</0>상에서 직접 AVAX를 구입:"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:65
+#: src/pages/BuyXvi/BuyXvi.js:65
 msgid "You can buy BNB directly on <0>Binance</0> using Banxa:"
 msgstr ""
 
@@ -2390,7 +2390,7 @@ msgstr "<0>여기</0>에서 수령한 내역을 확인할 수 있습니다."
 msgid "You can currently vest a maximum of {0} esGMX tokens at a ratio of {1} {stakingToken} to 1 esGMX."
 msgstr "{1} {stakingToken} 대 1 esGMX 비율로 최대 {0} esGMX 토큰을 현재 베스팅 할 수 있습니다."
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:170
+#: src/pages/BuyXvi/BuyXvi.js:170
 msgid "You can transfer AVAX to Avalanche using any of the below options."
 msgstr "아래의 옵션중 하나를 사용해, AVAX를 Avalanche에 보낼 수 있습니다."
 
@@ -2398,7 +2398,7 @@ msgstr "아래의 옵션중 하나를 사용해, AVAX를 Avalanche에 보낼 수
 #~ msgid "You can transfer ETH from other networks to Arbitrum using any of the below options:"
 #~ msgstr "아래의 옵션중 하나를 사용해, ETH를 Arbitrum에 보낼 수 있습니다."
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:90
+#: src/pages/BuyXvi/BuyXvi.js:90
 msgid "You can transfer ETH from other networks to Binance using any of the below options:"
 msgstr ""
 

@@ -113,11 +113,11 @@ msgstr ""
 msgid "After claiming, the esGMX tokens will be airdropped to your account on the selected network within 7 days."
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:206
+#: src/pages/BuyXvi/BuyXvi.js:206
 msgid "After you have BNB, set your network to <0>Binance</0> then click the button below:"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:240
+#: src/pages/BuyXvi/BuyXvi.js:240
 msgid "After you have ETH, set your network to <0>Arbitrum</0> then click the button below:"
 msgstr ""
 
@@ -225,7 +225,7 @@ msgstr ""
 msgid "Available:"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:179
+#: src/pages/BuyXvi/BuyXvi.js:179
 msgid "Avalanche"
 msgstr ""
 
@@ -234,11 +234,11 @@ msgstr ""
 #~ msgid "Avalanche APR:"
 #~ msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:125
+#: src/pages/BuyXvi/BuyXvi.js:125
 msgid "Avax is needed on Avalanche to purchase GMX."
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:46
+#: src/pages/BuyXvi/BuyXvi.js:46
 msgid "BNB is needed on Binance to purchase LeveragePro."
 msgstr ""
 
@@ -257,8 +257,8 @@ msgstr ""
 msgid "Balance:"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:78
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:158
+#: src/pages/BuyXvi/BuyXvi.js:78
+#: src/pages/BuyXvi/BuyXvi.js:158
 msgid "Banxa"
 msgstr ""
 
@@ -266,8 +266,8 @@ msgstr ""
 msgid "Begin Transfer"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:111
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:188
+#: src/pages/BuyXvi/BuyXvi.js:111
+#: src/pages/BuyXvi/BuyXvi.js:188
 msgid "Binance"
 msgstr ""
 
@@ -299,11 +299,11 @@ msgstr "买"
 msgid "Buy / Sell GLP"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:122
+#: src/pages/BuyXvi/BuyXvi.js:122
 msgid "Buy / Transfer AVAX"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:43
+#: src/pages/BuyXvi/BuyXvi.js:43
 msgid "Buy / Transfer BNB"
 msgstr ""
 
@@ -311,11 +311,11 @@ msgstr ""
 #~ msgid "Buy / Transfer ETH"
 #~ msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:140
+#: src/pages/BuyXvi/BuyXvi.js:140
 msgid "Buy AVAX"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:60
+#: src/pages/BuyXvi/BuyXvi.js:60
 msgid "Buy BNB"
 msgstr ""
 
@@ -330,11 +330,11 @@ msgstr ""
 msgid "Buy GLP"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:234
+#: src/pages/BuyXvi/BuyXvi.js:234
 msgid "Buy GMX"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:263
+#: src/pages/BuyXvi/BuyXvi.js:263
 msgid "Buy GMX Bonds"
 msgstr ""
 
@@ -342,7 +342,7 @@ msgstr ""
 #~ msgid "Buy GMX or GLP"
 #~ msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:200
+#: src/pages/BuyXvi/BuyXvi.js:200
 msgid "Buy LeveragePro"
 msgstr ""
 
@@ -956,7 +956,7 @@ msgstr ""
 #~ msgid "GMX Pages"
 #~ msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:269
+#: src/pages/BuyXvi/BuyXvi.js:269
 msgid "GMX bonds can be bought on Olympus Pro with a discount and a small vesting period:"
 msgstr ""
 
@@ -1014,7 +1014,7 @@ msgstr ""
 msgid "Home"
 msgstr "家"
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:108
+#: src/pages/BuyXvi/BuyXvi.js:108
 msgid "Hop"
 msgstr ""
 
@@ -1337,8 +1337,8 @@ msgstr ""
 msgid "Multiplier Points APR"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:101
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:185
+#: src/pages/BuyXvi/BuyXvi.js:101
+#: src/pages/BuyXvi/BuyXvi.js:185
 msgid "Multiswap"
 msgstr ""
 
@@ -1384,7 +1384,7 @@ msgstr ""
 msgid "Note that there is a minimum holding time of 15 minutes after a purchase."
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:273
+#: src/pages/BuyXvi/BuyXvi.js:273
 msgid "Olympus Pro"
 msgstr ""
 
@@ -1561,7 +1561,7 @@ msgstr ""
 msgid "Purchase <0>GLP tokens</0> to earn {nativeTokenSymbol} fees from swaps and leverages trading."
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:254
+#: src/pages/BuyXvi/BuyXvi.js:254
 msgid "Purchase GMX"
 msgstr ""
 
@@ -1569,7 +1569,7 @@ msgstr ""
 msgid "Purchase Insurance"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:220
+#: src/pages/BuyXvi/BuyXvi.js:220
 msgid "Purchase LeveragePro"
 msgstr ""
 
@@ -1923,8 +1923,8 @@ msgstr ""
 #~ msgid "Switch Network"
 #~ msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:98
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:182
+#: src/pages/BuyXvi/BuyXvi.js:98
+#: src/pages/BuyXvi/BuyXvi.js:182
 msgid "Synapse"
 msgstr ""
 
@@ -1977,7 +1977,7 @@ msgstr ""
 msgid "To complete the transfer, you must switch your connected account to {receiver}."
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:127
+#: src/pages/BuyXvi/BuyXvi.js:127
 msgid "To purchase GMX on <0>Arbitrum</0>, please change your network."
 msgstr ""
 
@@ -2101,7 +2101,7 @@ msgstr ""
 msgid "Transaction"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:165
+#: src/pages/BuyXvi/BuyXvi.js:165
 msgid "Transfer AVAX"
 msgstr ""
 
@@ -2109,7 +2109,7 @@ msgstr ""
 msgid "Transfer Account"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:85
+#: src/pages/BuyXvi/BuyXvi.js:85
 msgid "Transfer ETH"
 msgstr ""
 
@@ -2209,7 +2209,7 @@ msgstr ""
 msgid "Useful Links"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:172
+#: src/pages/BuyXvi/BuyXvi.js:172
 msgid "Using the Avalanche or Synapse bridges, you can also transfer any other supported cryptocurrency, and receive free AVAX to pay for the network's fees."
 msgstr ""
 
@@ -2370,11 +2370,11 @@ msgstr ""
 msgid "You are earning {nativeTokenSymbol} rewards with {0} tokens.<0/>Tokens: {amountStr}."
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:145
+#: src/pages/BuyXvi/BuyXvi.js:145
 msgid "You can buy AVAX directly on <0>Avalanche</0> using Banxa:"
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:65
+#: src/pages/BuyXvi/BuyXvi.js:65
 msgid "You can buy BNB directly on <0>Binance</0> using Banxa:"
 msgstr ""
 
@@ -2390,7 +2390,7 @@ msgstr ""
 msgid "You can currently vest a maximum of {0} esGMX tokens at a ratio of {1} {stakingToken} to 1 esGMX."
 msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:170
+#: src/pages/BuyXvi/BuyXvi.js:170
 msgid "You can transfer AVAX to Avalanche using any of the below options."
 msgstr ""
 
@@ -2398,7 +2398,7 @@ msgstr ""
 #~ msgid "You can transfer ETH from other networks to Arbitrum using any of the below options:"
 #~ msgstr ""
 
-#: src/pages/BuyLeveragePro/BuyLeveragePro.js:90
+#: src/pages/BuyXvi/BuyXvi.js:90
 msgid "You can transfer ETH from other networks to Binance using any of the below options:"
 msgstr ""
 

@@ -399,7 +399,7 @@ export default function Ecosystem() {
                         <div className="App-card-title-desc">{item.about}</div>
                       </div>
                       <div className="App-card-title-icon">
-                        {chainId == BSC_TESTNET ? (
+                        {chainId === BSC_TESTNET ? (
                           <img width="16" src={BinanceIcon} alt="Binance Icon" />
                         ) : (
                           <img width="16" src={VelasImg} alt="Velas Icon" />
@@ -455,7 +455,7 @@ export default function Ecosystem() {
                       <div className="App-card-title-desc">{item.about}</div>
                     </div>
                     <div className="App-card-title-icon">
-                      {chainId == BSC_TESTNET ? (
+                      {chainId === BSC_TESTNET ? (
                         <img width="16" src={BinanceIcon} alt="Binance Icon" />
                       ) : (
                         <img width="16" src={VelasImg} alt="Velas Icon" />
@@ -504,7 +504,7 @@ export default function Ecosystem() {
                       <div className="App-card-title-desc">{item.about}</div>
                     </div>
                     <div className="App-card-title-icon">
-                      {chainId == BSC_TESTNET ? (
+                      {chainId === BSC_TESTNET ? (
                         <img width="16" src={BinanceIcon} alt="Binance Icon" />
                       ) : (
                         <img width="16" src={VelasImg} alt="Velas Icon" />
@@ -554,7 +554,7 @@ export default function Ecosystem() {
                       <div className="App-card-title-desc">{item.about}</div>
                     </div>
                     <div className="App-card-title-icon">
-                      {chainId == BSC_TESTNET ? (
+                      {chainId === BSC_TESTNET ? (
                         <img width="16" src={BinanceIcon} alt="Binance Icon" />
                       ) : (
                         <img width="16" src={VelasImg} alt="Velas Icon" />
@@ -607,7 +607,7 @@ export default function Ecosystem() {
                         <div className="App-card-title-desc">{item.about}</div>
                       </div>
                       <div className="App-card-title-icon">
-                        {chainId == BSC_TESTNET ? (
+                        {chainId === BSC_TESTNET ? (
                           <img width="16" src={BinanceIcon} alt="Binance Icon" />
                         ) : (
                           <img width="16" src={VelasImg} alt="Velas Icon" />

@@ -11,7 +11,7 @@ import { useWeb3React } from "@web3-react/core";
 
 import XVIIcon from "../../img/xvi_black.png";
 import ExternalLink from "../ExternalLink/ExternalLink";
-import BuyLeveragePro from "../../pages/BuyLeveragePro/BuyLeveragePro";
+import BuyXvi from "../../pages/BuyXvi/BuyXvi";
 
 export default function TokenCard({ showRedirectModal }) {
   const isHome = isHomeSite();
@@ -75,7 +75,7 @@ export default function TokenCard({ showRedirectModal }) {
                 <Trans>Buy on Binance</Trans>
               </BuyLink>
             </div> */}
-            <BuyLeveragePro />
+            <BuyXvi />
             <ExternalLink href="about:blank" className="buy-btn-read-more">
               <Trans>Read more</Trans>
             </ExternalLink>
@@ -100,8 +100,8 @@ export default function TokenCard({ showRedirectModal }) {
           </div>
 
           <div className="Home-token-card-option-action">
-            <BuyLink to="/buy_glp" className="buy-btn" network={BSC_TESTNET}>
-              <Trans>Buy on Binance</Trans>
+            <BuyLink to="/buy_glp" className="buy-btn" network={chainId}>
+              <Trans>Buy on {chainId === BSC_TESTNET ? 'Binance' : 'Velas'}</Trans>
             </BuyLink>
             <ExternalLink href="https://about:blank" className="buy-btn-read-more">
               <Trans>Read more</Trans>

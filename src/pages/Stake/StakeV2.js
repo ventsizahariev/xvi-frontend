@@ -53,7 +53,7 @@ import SEO from "../../components/Common/SEO";
 import WalletIcon from "../../img/wallet_icon.png";
 import VestIcon from "../../img/vest_icon.png";
 import StakeIcon from "../../img/stake_icon.png";
-import BuyLeveragePro from "../BuyLeveragePro/BuyLeveragePro";
+import BuyXvi from "../BuyXvi/BuyXvi";
 const { AddressZero } = ethers.constants;
 
 function StakeModal(props) {
@@ -1659,7 +1659,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                   </div>
                 </div>
                 <div className="App-card-options">
-                  <BuyLeveragePro isModal={true}></BuyLeveragePro>
+                  <BuyXvi isModal={true}></BuyXvi>
                   {active && (
                     <button className="App-button-option-dark App-card-option" onClick={() => showStakeGmxModal()}>
                       Stake
@@ -2090,7 +2090,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                             </>
                           );
                         }}
-                      /> 
+                      />
                       {/* {formatKeyAmount(vestingData, "gmxVesterPairAmount", 18, 2, true)} /{" "}
                       {formatAmount(totalRewardTokens, 18, 2, true)} */}
                     </div>
@@ -2198,7 +2198,7 @@ export default function StakeV2({ setPendingTxns, connectWallet }) {
                             </>
                           );
                         }}
-                      /> 
+                      />
                       {/* {formatKeyAmount(vestingData, "glpVesterPairAmount", 18, 2, true)} /{" "}
                       {formatAmount(processedData.glpBalance, 18, 2, true)} */}
                     </div>

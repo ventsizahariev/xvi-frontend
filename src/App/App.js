@@ -47,7 +47,7 @@ import OrdersOverview from "../pages/OrdersOverview/OrdersOverview";
 import PositionsOverview from "../pages/PositionsOverview/PositionsOverview";
 import Referrals from "../pages/Referrals/Referrals";
 import BuyGlp from "../pages/BuyGlp/BuyGlp";
-import BuyLeveragePro from "../pages/BuyLeveragePro/BuyLeveragePro";
+import BuyXvi from "../pages/BuyXvi/BuyXvi";
 import Buy from "../pages/Buy/Buy";
 import NftWallet from "../pages/NftWallet/NftWallet";
 import ClaimEsGmx from "../pages/ClaimEsGmx/ClaimEsGmx";
@@ -325,7 +325,7 @@ function FullApp() {
     setSelectedToPage(to);
   };
 
-  
+
   useEffect(() => {
     const checkPendingTxns = async () => {
       const updatedPendingTxns = [];
@@ -486,7 +486,7 @@ function FullApp() {
               <Jobs/>
             </Route>
             <Route exact path="/buy_leveragepro">
-              <BuyLeveragePro/>
+              <BuyXvi/>
             </Route>
             <Route exact path="/ecosystem">
               <Ecosystem/>
