@@ -319,7 +319,8 @@ const getWalletConnectConnector = () => {
     rpc: {
       [BSC_TESTNET]: BSC_RPC_PROVIDERS[0],
       [BSC]: BSC_RPC_PROVIDERS[0],
-      [ARBITRUM_TESTNET]: "https://rinkeby.arbitrum.io/rpc",
+      [VELAS_TESTNET]: VELAS_RPC_PROVIDERS[0],
+      [VELAS]: VELAS_RPC_PROVIDERS[0],
     },
     qrcode: true,
     chainId,
