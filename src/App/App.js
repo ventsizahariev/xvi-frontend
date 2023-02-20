@@ -376,14 +376,14 @@ function FullApp() {
   const vaultAddress = getContract(chainId, "Vault");
   const positionRouterAddress = getContract(chainId, "PositionRouter");
 
-  const chooseWallet = () => {
-    if(selectedWallet == 0) {
+  const chooseWallet = (type) => {
+    if(type == 0) {
       activateMetaMask();
     }
-    if(selectedWallet == 1) {
+    if(type == 1) {
       activateCoinBase();
     }
-    if(selectedWallet == 2) {
+    if(type == 2) {
       activateWalletConnect();
     }
   }
@@ -562,19 +562,19 @@ function FullApp() {
       >
         <div className="connect-wallet-total-container">
         <div className="connect-wallet-container">
-        <button className={selectedWallet == 0 ? "Wallet-btn MetaMask-btn active":"Wallet-btn MetaMask-btn"} onClick={() => {setSelectedWallet(0)}}>
+        <button className={selectedWallet == 0 ? "Wallet-btn MetaMask-btn active":"Wallet-btn MetaMask-btn"} onClick={() => {chooseWallet(0);}}>
           <img src={metamaskImg} alt="MetaMask"/>
           <div>
             <Trans>MetaMask</Trans>
           </div>
         </button>
-        <button className={selectedWallet == 1 ?"Wallet-btn CoinbaseWallet-btn active":"Wallet-btn CoinbaseWallet-btn"} onClick={() => {setSelectedWallet(1)}}>
+        <button className={selectedWallet == 1 ?"Wallet-btn CoinbaseWallet-btn active":"Wallet-btn CoinbaseWallet-btn"} onClick={() => {chooseWallet(1);}}>
           <img src={coinbaseImg} alt="Coinbase Wallet"/>
           <div>
             <Trans>Coinbase Wallet</Trans>
           </div>
         </button>
-        <button className={selectedWallet == 2 ?"Wallet-btn WalletConnect-btn active":"Wallet-btn WalletConnect-btn"} onClick={() => {setSelectedWallet(2)}}>
+        <button className={selectedWallet == 2 ?"Wallet-btn WalletConnect-btn active":"Wallet-btn WalletConnect-btn"} onClick={() => {chooseWallet(2);}}>
           <img src={walletConnectImg} alt="WalletConnect"/>
           <div>
             <Trans>Wallet Connect</Trans>
@@ -582,19 +582,19 @@ function FullApp() {
         </button>
 
         </div>
-        <div className="connect-wallet-options">
-            <Checkbox isChecked={walletSelectOption} setIsChecked={setWalletSelectOption}>
-              <Trans>Lorem Ipsum is simply dummy text of the printing and typesetting.</Trans>
-            </Checkbox>
-          </div>
-          <div className="Exchange-settings-button-group wallet-btn-group">
-            <button className={ walletSelectOption ? "App-cta wallet-connect-button active":"App-cta wallet-connect-button inactive"} onClick={chooseWallet}>
-            <Trans>Save Changes</Trans>
-            </button>
-            <button className="App-cta-close-btn wallet-connect-button" onClick={() => {setWalletModalVisible(false)}}>
-              <Trans>Close</Trans>
-            </button>
-        </div>
+        {/*<div className="connect-wallet-options">*/}
+        {/*    <Checkbox isChecked={walletSelectOption} setIsChecked={setWalletSelectOption}>*/}
+        {/*      <Trans>Lorem Ipsum is simply dummy text of the printing and typesetting.</Trans>*/}
+        {/*    </Checkbox>*/}
+        {/*  </div>*/}
+        {/*  <div className="Exchange-settings-button-group wallet-btn-group">*/}
+        {/*    <button className={ walletSelectOption ? "App-cta wallet-connect-button active":"App-cta wallet-connect-button inactive"} onClick={chooseWallet}>*/}
+        {/*    <Trans>Save Changes</Trans>*/}
+        {/*    </button>*/}
+        {/*    <button className="App-cta-close-btn wallet-connect-button" onClick={() => {setWalletModalVisible(false)}}>*/}
+        {/*      <Trans>Close</Trans>*/}
+        {/*    </button>*/}
+        {/*</div>*/}
         </div>
       </Modal>
       <Modal
