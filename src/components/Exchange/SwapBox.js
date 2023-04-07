@@ -261,9 +261,9 @@ const draw = () => {
         context.fillStyle = "#222121";
         context.beginPath();
         context.arc(canvas.width - canvas.height * 3/4, canvas.height/2, canvas.height/2, 0, Math.PI * 2, true);
-        
+
         //context.clearRect(100, 100, 100, 100);
-        
+
         context.fill();
 
         context.beginPath();
@@ -279,9 +279,9 @@ const draw = () => {
         gradientColor1.addColorStop(0.819, "#E58D05");
 
         var gradientColor2 = context.createLinearGradient(
-          currentWidth - (canvas.height - canvas.height * currentWidth/(canvas.width - canvas.height))/2, 
+          currentWidth - (canvas.height - canvas.height * currentWidth/(canvas.width - canvas.height))/2,
           canvas.height - canvas.height * currentWidth/(canvas.width - canvas.height)
-          , currentWidth + (canvas.height - canvas.height * currentWidth/(canvas.width - canvas.height))/2, 
+          , currentWidth + (canvas.height - canvas.height * currentWidth/(canvas.width - canvas.height))/2,
           canvas.height);
         gradientColor2.addColorStop(0.1232, "#FFDEA8");
         gradientColor2.addColorStop(0.4815, "#F9BD5D");
@@ -300,8 +300,8 @@ const draw = () => {
         context.fillStyle = gradientColor2;
         context.arc(currentWidth, canvas.height - canvas.height/2 * currentWidth/(canvas.width - canvas.height),
         canvas.height/2 * currentWidth/(canvas.width - canvas.height), 0, Math.PI * 2, true);
-        
-        
+
+
         context.fill();
         console.log(canvas.height)
         context.stroke();
@@ -775,7 +775,8 @@ const draw = () => {
   }
 
   let nextAveragePrice = isMarketOrder ? entryMarkPrice : triggerPriceUsd;
-  if (hasExistingPosition) {
+  const zero = bigNumberify(0);
+  if (hasExistingPosition && !existingPosition.averagePrice.eq(zero)) {
     let nextDelta, nextHasProfit;
 
     if (isMarketOrder) {

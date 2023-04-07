@@ -458,7 +458,7 @@ export function getServerBaseUrl(chainId) {
   if (isDevelopment()) {
     return "http://185.158.114.248:8080";
   }
-  return "https://api.leveragepro.io";
+  return "http://185.158.114.248:8080";
 }
 
 export function getServerUrl(chainId, path) {
@@ -2636,7 +2636,7 @@ export function sleep(ms) {
 
 export function getPageTitle(data) {
   return `${data} | Decentralized
-  Perpetual Exchange | GMX`;
+  Perpetual Exchange | XVI`;
 }
 
 export function isHashZero(value) {

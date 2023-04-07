@@ -58,7 +58,7 @@ export function getChartToken(swapOption, fromToken, toToken, chainId) {
   return toToken;
 }
 
-const DEFAULT_PERIOD = "4h";
+const DEFAULT_PERIOD = "5m";
 
 const getSeriesOptions = () => ({
   // https://github.com/tradingview/lightweight-charts/blob/master/docs/area-series.md

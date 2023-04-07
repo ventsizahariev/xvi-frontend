@@ -140,12 +140,12 @@ export function AppHeaderUser({
     <div className="App-header-user">
       <div className="App-header-trade-link">
         <HeaderLink
-          className="default-btn"
+          className="header-trade-btn"
           to="/trade"
           redirectPopupTimestamp={redirectPopupTimestamp}
           showRedirectModal={showRedirectModal}
         >
-          <Trans>Trade</Trans>
+          <img src={UnionIcon} width={16}></img><Trans>Trade</Trans>
         </HeaderLink>
       </div>
 

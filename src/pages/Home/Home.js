@@ -38,7 +38,7 @@ import {
   getTotalVolumeSum, BSC_TESTNET,
 } from "../../lib/legacy";
 
-import { useUserStat } from "../../domain/legacy";
+import {useTotalUsers, useUserData} from "../../domain/legacy";
 
 import TokenCard from "../../components/TokenCard/TokenCard";
 
@@ -145,32 +145,27 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
 
 
   // Total Volume
-  const bscTotalVolumeSum = getTotalVolumeSum(bscTotalVolume);
+  // const bscTotalVolumeSum = getTotalVolumeSum(bscTotalVolume);
 
   let totalVolumeSum = bigNumberify(0);
-  if (bscTotalVolumeSum) {
-    totalVolumeSum = totalVolumeSum.add(bscTotalVolumeSum);
-  }
+  // if (bscTotalVolumeSum) {
+  //   totalVolumeSum = totalVolumeSum.add(bscTotalVolumeSum);
+  // }
 
   // Open Interest
 
   let openInterest = bigNumberify(0);
-  if (
-    bscPositionStats &&
-    bscPositionStats.totalLongPositionSizes &&
-    bscPositionStats.totalShortPositionSizes
-  ) {
-    openInterest = openInterest.add(bscPositionStats.totalLongPositionSizes);
-    openInterest = openInterest.add(bscPositionStats.totalShortPositionSizes);
-  }
+  // if (
+  //   bscPositionStats &&
+  //   bscPositionStats.totalLongPositionSizes &&
+  //   bscPositionStats.totalShortPositionSizes
+  // ) {
+  //   openInterest = openInterest.add(bscPositionStats.totalLongPositionSizes);
+  //   openInterest = openInterest.add(bscPositionStats.totalShortPositionSizes);
+  // }
 
   // user stat
-  const bscUserStats = useUserStat(BSC_TESTNET);
   let totalUsers = 0;
-
-  if (bscUserStats && bscUserStats.uniqueCount) {
-    totalUsers += bscUserStats.uniqueCount;
-  }
 
   const LaunchExchangeButton = () => {
     return (
@@ -221,8 +216,8 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
             <LaunchExchangeButton />
           </div>
         </div>
-        
-        
+
+
       </div>
       <div className="Home-latest-info-container default-container">
           <div className="Home-latest-info-block">
@@ -271,18 +266,18 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
                 </Trans>
               </span>
             </div>
-          
+
           </div>
           <div className="Home-benfits-control-progress">
-          <ProgressBar 
-              completed={ (currentSlider + 1) / 6 * 100} 
+          <ProgressBar
+              completed={ (currentSlider + 1) / 6 * 100}
               className="Home-benefits-control-progress-bar"
               barContainerClassName="Home-benefits-control-progress-bar-container"
               isLabelVisible = {false}
               height="6px"
               bgColor="#989898"
 />
-          
+
           <div className="Home-benefits-control-progress-number">
             <span className="Home-benefits-control-section-number-icon-name">
               <Trans>Section</Trans>
@@ -364,7 +359,7 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
              </div>
              <div className="Home-cta-option-info">
                <div className="Home-cta-option-title"><Trans>Velas Blockchain</Trans></div>
-               
+
              </div>
             </div>
           </div>

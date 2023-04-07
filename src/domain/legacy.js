@@ -127,21 +127,16 @@ export function useInfoTokens(library, chainId, active, tokenBalances, fundingRa
   };
 }
 
-export function useUserStat(chainId) {
-  const query = gql(`{
-    userStat(id: "total") {
-      id
-      uniqueCount
-    }
-  }`);
+export function useUserData() {
+  const url = getServerUrl(BSC_TESTNET, "/get_user_count");
 
-  const [res, setRes] = useState();
+  const {data: userCount} = useSWR(url, async () => {
+    const response = await fetch(url);
+    return await response.json();
+  })
 
-  useEffect(() => {
-    getGmxGraphClient(chainId).query({ query }).then(setRes).catch(console.warn);
-  }, [setRes, query, chainId]);
-
-  return res ? res.data.userStat : null;
+  return 0;
+  // return userCount;
 }
 
 export function useLiquidationsData(chainId, account) {
