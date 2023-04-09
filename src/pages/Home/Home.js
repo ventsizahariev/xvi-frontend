@@ -165,7 +165,7 @@ export default function Home({ showRedirectModal, redirectPopupTimestamp }) {
   // }
 
   // user stat
-  let totalUsers = 0;
+  let totalUsers = useUserData();
 
   const LaunchExchangeButton = () => {
     return (

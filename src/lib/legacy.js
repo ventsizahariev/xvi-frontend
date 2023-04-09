@@ -451,7 +451,7 @@ export function getMarginFee(sizeDelta) {
   return sizeDelta.sub(afterFeeUsd);
 }
 
-export function getServerBaseUrl(chainId) {
+export function getServerBaseUrl() {
   if (isLocal()) {
     return "http://185.158.114.248:8080";
   }

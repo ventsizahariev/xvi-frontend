@@ -30,7 +30,13 @@ import {
   getPageTitle,
 } from "../../lib/legacy";
 import { getConstant } from "../../config/chains";
-import { approvePlugin, useInfoTokens, useMinExecutionFee, cancelMultipleOrders } from "../../domain/legacy";
+import {
+  approvePlugin,
+  useInfoTokens,
+  useMinExecutionFee,
+  cancelMultipleOrders,
+  useTokenPrices
+} from "../../domain/legacy";
 
 import { getContract } from "../../config/Addresses";
 import { getTokens, getToken, getWhitelistedTokens, getTokenBySymbol } from "../../config/Tokens";
@@ -524,6 +530,7 @@ export const Exchange = forwardRef((props, ref) => {
   );
 
   const { infoTokens } = useInfoTokens(library, chainId, active, tokenBalances, fundingRateInfo);
+  const tokenPrices = useTokenPrices(chainId);
   const { minExecutionFee, minExecutionFeeUSD, minExecutionFeeErrorMessage } = useMinExecutionFee(
     library,
     active,
@@ -954,6 +961,7 @@ export const Exchange = forwardRef((props, ref) => {
             flagOrdersEnabled={flagOrdersEnabled}
             chainId={chainId}
             infoTokens={infoTokens}
+            tokenPrices={tokenPrices}
             active={active}
             connectWallet={connectWallet}
             library={library}
@@ -992,7 +1000,7 @@ export const Exchange = forwardRef((props, ref) => {
         </div>
         <div className="Exchange-lists small">{getListSection()}</div>
       </div>
-      
+
     </div>
     <Footer />
     </>

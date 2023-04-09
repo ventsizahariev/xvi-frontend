@@ -83,6 +83,17 @@ export function useAllOrdersStats(chainId) {
   return res ? res.data.orderStat : null;
 }
 
+export function useTokenPrices(chainId) {
+  const tokenPricesUrl = getServerUrl(chainId, "/prices/" + chainId);
+  const { data: tokenPrices } = useSWR([tokenPricesUrl], {
+    fetcher: (...args) => fetch(...args).then((res) => res.json()),
+    refreshInterval: 60000,
+    refreshWhenHidden: true,
+  });
+
+  return tokenPrices;
+}
+
 export function useInfoTokens(library, chainId, active, tokenBalances, fundingRateInfo, vaultPropsLength) {
   const tokens = getTokens(chainId);
   const vaultReaderAddress = getContract(chainId, "VaultReader");

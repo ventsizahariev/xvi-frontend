@@ -768,18 +768,17 @@ table.Exchange-list th {
   right: 1.25rem;
   top: 0;
   padding: 0.465rem 0.8rem;
-  color: #fff;
-  outline: 1rem solid rgba(33, 37, 64, 1);
+  color: #222121;
   border-radius: 3px;
   z-index: 1;
   cursor: pointer;
   font-size: var(--font-sm);
-  background: linear-gradient(90deg, rgba(45, 66, 252, 1) 0%, rgba(46, 61, 205, 1) 100%);
+  background: linear-gradient(#ffdea8 20.31%, #f9bd5d 47.62%, #e58d05 96.67%);
 }
 
 .Exchange-swap-max:hover {
-  color: rgba(255, 255, 255, 1);
-  background: linear-gradient(90deg, rgba(58, 78, 252, 1) 0%, rgba(51, 68, 222, 1) 100%);
+  transition: all 0.3s;
+  opacity: 0.8;
 }
 
 .Exchange-swap-section-bottom .TokenSelector-box {

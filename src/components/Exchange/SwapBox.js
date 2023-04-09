@@ -141,6 +141,7 @@ export default function SwapBox(props) {
     pendingPositions,
     setPendingPositions,
     infoTokens,
+    tokenPrices,
     active,
     library,
     account,
@@ -1318,13 +1319,35 @@ const draw = () => {
   };
 
   const onFromValueChange = (e) => {
-    setAnchorOnFromAmount(true);
+    // setAnchorOnFromAmount(true);
     setFromValue(e.target.value);
+    const fromAmount = e.target.value;
+
+    const fromSymbol = getToken(chainId, fromTokenAddress).symbol;
+    const fromTokenPrice = tokenPrices[fromSymbol];
+    const toSymbol = getToken(chainId, toTokenAddress).symbol;
+    const toTokenPrice = tokenPrices[toSymbol];
+    if (hasLeverageOption) {
+      setToValue(fromAmount * leverageOption * fromTokenPrice / toTokenPrice);
+    } else {
+      setToValue(fromAmount * fromTokenPrice / toTokenPrice);
+    }
   };
 
   const onToValueChange = (e) => {
-    setAnchorOnFromAmount(false);
+    // setAnchorOnFromAmount(false);
     setToValue(e.target.value);
+    const toAmount = e.target.value;
+
+    const fromSymbol = getToken(chainId, fromTokenAddress).symbol;
+    const fromTokenPrice = tokenPrices[fromSymbol];
+    const toSymbol = getToken(chainId, toTokenAddress).symbol;
+    const toTokenPrice = tokenPrices[toSymbol];
+    if (hasLeverageOption) {
+      setFromValue(toAmount * leverageOption * toTokenPrice / fromTokenPrice);
+    } else {
+      setFromValue(toAmount * toTokenPrice / fromTokenPrice);
+    }
   };
 
   const switchTokens = () => {
@@ -1896,7 +1919,6 @@ const draw = () => {
 
     const maxAvailableAmount = fromToken.isNative ? fromBalance.sub(bigNumberify(DUST_BNB).mul(2)) : fromBalance;
     setFromValue(formatAmountFree(maxAvailableAmount, fromToken.decimals, fromToken.decimals));
-    setAnchorOnFromAmount(true);
   }
 
   function shouldShowMaxButton() {
